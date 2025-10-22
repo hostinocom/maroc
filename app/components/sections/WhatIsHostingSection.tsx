@@ -5,9 +5,9 @@ import Image from "next/image";
 
 export default function WhatIsHostingSection() {
   return (
-    <section className="pb-[200px] pt-[100px] bg-white">
+    <section className=" lg:my-[150px] my-[80px] bg-white">
       <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 md:gap-10 items-center">
           <div className="col-span-1">
             <h2 className="title-section xl:pr-[100px] lg:pr-[50px] px-0">
               Hébergement web : qu'est-ce que c'est ?
@@ -42,13 +42,13 @@ export default function WhatIsHostingSection() {
               </p>
             </div>
           </div>
-          <div className="col-span-1 flex justify-center">
+          <div className="col-span-1  flex justify-end">
             <Image
-              src="/images/hebergement-web.jpg"
+              src="/images/home/hebergement-web.jpg"
               alt="What is Web Hosting?"
               width={1484}
               height={1243}
-              className="rounded-lg  max-w-full h-auto"
+              className="rounded-lg  lg:max-w-full sm:w-[89%] w-[100%] h-auto"
             />
           </div>
         </div>

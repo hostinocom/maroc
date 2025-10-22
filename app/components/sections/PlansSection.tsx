@@ -6,7 +6,6 @@ import Link from "next/link";
 import AnimatedButton from "../ui/AnimatedButton";
 import { montserrat } from "@/public/font";
 
-
 // Define plan type
 type Plan = {
   id: number;
@@ -186,41 +185,48 @@ const PlanCard = ({ plan }: { plan: Plan }) => {
     <div
       className={`${
         plan.most_popular.is_most_popular && "border-3 border-primary"
-      } bg-white relative lg:text-left text-center rounded-lg lg:w-full md:w-[70vw] mx-auto mb-4 lg:py-12 lg:px-10 py-8 px-6 border border-gray-300  h-full`}
+      } bg-white relative lg:text-left text-center rounded-[10px] lg:w-full md:w-[70vw] w-full mx-auto mb-4 md:pt-[55px] md:px-[50px] md:pb-[50px] lg:pt-[50px] lg:pb-[40px] lg:px-[40px] pt-[45px] px-[25px] pb-[35px]  border border-gray-300  h-full`}
     >
       {plan.most_popular.is_most_popular && (
-        <div className=" absolute sm:left-1/3 left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 text-white text-center  text-sm font-bold inline-block">
+        <div className=" absolute py-[8px] bg-primary px-[20px] text-[16px]  sm:left-1/3 left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 text-white text-center  font-[500] inline-block">
           <AnimatedButton
-            text={plan.most_popular.text}
-            hoverText={plan.most_popular.text}
+            text={plan.most_popular.text.toUpperCase()}
+            hoverText={plan.most_popular.text.toUpperCase()}
             bgColor="bg-primary"
             textColor="text-white"
             hoverBgColor="bg-primary"
-            className="py-2 px-5"
           />
         </div>
       )}
 
       <h3
-        className="text-[30px] text-title font-semibold mb-2"
+        className="lg:text-[26px] md:text-left text-center md:text-[30px] text-[28px] text-title font-[600] md:leading-[33px] leading-[1.3em] mb-4"
         dangerouslySetInnerHTML={{ __html: plan.name }}
       />
-      <p className="text-gray-600 mb-6">{plan.subtext}</p>
+      <p className="text-[#022545BD] md:text-left text-center text-[14px] font-[400] leading-[21px] tracking-[0.3px]">
+        {plan.subtext}
+      </p>
 
-      <div className="border-t border-gray-200 my-4"></div>
+      <div className="border-t py-[15px] border-gray-200 my-4"></div>
 
       {/* Pricing */}
       <div className="mb-6">
         <div className="flex items-center lg:justify-start justify-center gap-2 mb-2">
-          <span className={`${montserrat.className} text-primary font-medium line-through text-lg`}>
+          <span
+            className={`${montserrat.className} text-primary font-medium line-through text-lg`}
+          >
             {plan.price_original}
           </span>
-          <span className={`${montserrat.className} bg-primary py-3 text-white text-sm font-semibold px-2  rounded-lg`}>
+          <span
+            className={`${montserrat.className} bg-primary py-[8px] text-white text-[15px] font-[600] px-[10px]  rounded-[8px]`}
+          >
             Economisez {plan.save}
           </span>
         </div>
         <p className="text-base text-title font-semibold mb-1">À seulement</p>
-        <p className={`${montserrat.className} text-[45px] font-bold leading-[54px] text-[#14213D]`}>
+        <p
+          className={`${montserrat.className} text-[45px] font-bold leading-[54px] text-[#14213D]`}
+        >
           {plan.price_discounted}
         </p>
       </div>
@@ -231,7 +237,7 @@ const PlanCard = ({ plan }: { plan: Plan }) => {
           plan.most_popular.is_most_popular
             ? "bg-primary"
             : "bg-title hover:bg-primary transition"
-        } text-white flex items-center gap-3 justify-center font-bold py-3 px-4 rounded-lg text-center mb-4 transition`}
+        } text-white flex items-center mt-[18px] gap-3 justify-center font-bold py-[16px] rounded-[10px] text-center mb-4 transition`}
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -251,15 +257,17 @@ const PlanCard = ({ plan }: { plan: Plan }) => {
         </svg>
       </Link>
 
-      
-      <p className="text-sm text-gray-600 mb-4" dangerouslySetInnerHTML={{ __html: plan.price_ttc }} />
+      <p
+        className="text-sm text-gray-600 mb-4"
+        dangerouslySetInnerHTML={{ __html: plan.price_ttc }}
+      />
 
       <div className="border-t border-gray-200 my-4"></div>
 
       <StarRating stars={plan.performance_stars} />
 
       <ul className="text-gray-700 text-sm space-y-2 flex-grow">
-        <li className="flex items-center lg:justify-start justify-center gap-2">
+        <li className="flex items-center lg:justify-start justify-center">
           {plan.features.seo_optimized ? (
             <>
               <Image
@@ -320,7 +328,7 @@ const PlanCard = ({ plan }: { plan: Plan }) => {
           )}
         </li>
         <li>
-          Panneau de contrôle {" "}
+          Panneau de contrôle{" "}
           <b>
             <i>{plan.features.control_panel}</i>
           </b>
@@ -362,9 +370,9 @@ const PlanCard = ({ plan }: { plan: Plan }) => {
 
 export default function PlansSection() {
   return (
-    <section id="plans" className="py-16 bg-gray-200">
+    <section id="plans" className="overflow-hidden plans-section mb-[50px] relative">
       <div className="container">
-        <div className="text-center mb-12">
+        <div className="text-center ">
           <h2 className="title-section text-title">
             Nos offres
             <br />
@@ -372,10 +380,29 @@ export default function PlansSection() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-8 gap-10  w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-6 gap-8  w-full">
           {hostingPlans.map((plan) => (
             <PlanCard key={plan.id} plan={plan} />
           ))}
+        </div>
+        <div
+          className="elementor-shape elementor-shape-bottom"
+          aria-hidden="true"
+          data-negative="false"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1000 100"
+            preserveAspectRatio="none"
+            className=" md:h-auto md:w-auto h-[1541px] w-[2000px]"
+          >
+            <path
+              className="elementor-shape-fill"
+              opacity="0.12"
+              d="M473,67.3c-203.9,88.3-263.1-34-320.3,0C66,119.1,0,59.7,0,59.7V0h1000v59.7 c0,0-62.1,26.1-94.9,29.3c-32.8,3.3-62.8-12.3-75.8-22.1C806,49.6,745.3,8.7,694.9,4.7S492.4,59,473,67.3z"
+            ></path>
+           
+          </svg>{" "}
         </div>
       </div>
     </section>

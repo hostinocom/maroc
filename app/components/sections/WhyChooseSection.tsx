@@ -51,8 +51,8 @@ const hostingFeatures = [
 
 export default function WhyChooseSection() {
   return (
-    <section className="pb-[50px] pt-[100px] bg-white">
-      <div className="container mx-auto">
+    <section className="my-[80px] lg:my-[150px] bg-white">
+      <div className="container ">
         <h2 className="title-section text-center mb-16">
           Pourquoi choisir <br />
           Hébergement <i>web Maroc </i>?
@@ -60,7 +60,7 @@ export default function WhyChooseSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-3 mb-12">
           {hostingFeatures.map((feature, i) => (
-            <div key={i} className="bg-white border-1 border-gray-100 p-6 rounded-xl">
+            <div key={i} className="bg-white border-1 border-gray-100 px-6 py-8 rounded-xl">
               <Image
                 src={`/images/${feature.image}`}
                 alt={feature.alt}
@@ -68,8 +68,8 @@ export default function WhyChooseSection() {
                 height={65}
                 className="mb-6  w-[22%] rounded-lg"
               />
-              <h3 style={{ letterSpacing: "-0.6px" }} className="mb-[33px] lg:pr-[140px] md:pr-[100px] titles-whyChoose text-[27px] text-2xl font-semibold text-title" dangerouslySetInnerHTML={{ __html: feature.title }} />
-              <p className="paragraph" dangerouslySetInnerHTML={{ __html: feature.description }} />
+              <h3 style={{ letterSpacing: "-0.6px" }} className="mb-[33px] font-[600] lg:pr-[170px] md:pr-[120px] titles-whyChoose text-[27px]  text-title" dangerouslySetInnerHTML={{ __html: feature.title }} />
+              <p className="paragraph-16" dangerouslySetInnerHTML={{ __html: feature.description }} />
             </div>
           ))}
         </div>

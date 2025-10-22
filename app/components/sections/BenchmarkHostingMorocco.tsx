@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function BenchmarkHostingMorocco() {
   return (
-    <section className="bg-white pt-[100px] pb-[100px]">
+    <section className="bg-white lg:my-[150px] my-[80px]">
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
@@ -68,10 +68,11 @@ export default function BenchmarkHostingMorocco() {
           <div className="relative">
             {/* Morocco Map */}
             <Image
-              src="/images/hebergeur-web-maroc-978x1024.jpg"
+              src="/images/home/hebergeur-web-maroc.jpg"
               alt="Hébergeur web au Maroc"
               width={900}
               height={600}
+              className="lg:w-[88%] ml-auto"
             />
           </div>
         </div>

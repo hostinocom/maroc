@@ -2,12 +2,12 @@ import Image from 'next/image';
 
 export default function EasyHebergementSection() {
   return (
-    <section className="bg-white">
+    <section className="bg-white lg:my-[150px] my-[80px]">
       <div className="container">
         <div className="grid lg:grid-cols-2  items-center">
           {/* Left Content */}
           <div className="space-y-8">
-            <h2 className="title-section">
+            <h2 className="title-section md:pr-[180px] lg:pr-[0]">
               Votre hébergement web en toute facilité
             </h2>
 
@@ -55,12 +55,11 @@ export default function EasyHebergementSection() {
               <div className='flex justify-end'>
                 {/* Replace this div with actual Image component */}
                 <Image 
-                  src="/images/hebergement-web-facile-1024x924.jpg" 
+                  src="/images/home/hebergement-web-facile.jpg" 
                   alt="Hébergement web Maroc"
                    width={3508}
                   height={2481}
-                  className="xl:w-[90%] lg:w-[95%] h-auto rounded-lg"
-            
+                  className="xl:w-[90%] md:mt-[20px] mt-[40px] md:ml-auto md:w-[86%] w-[100%] h-auto rounded-lg"
                 />
               </div>
               

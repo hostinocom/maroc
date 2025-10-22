@@ -7,18 +7,18 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-white text-title py-8">
-      <div className="container mx-auto px-4">
-        <div className=" md:w-[60%] sm:w-[80%] w-[100%] mx-auto  mb-16">
+      <div className="container">
+        <div className=" md:w-[65%]  w-[100%] mx-auto  mb-16">
           <Image
-            src="/images/cmi-hebergement-1024x70.jpg"
+            src="/images/home/cmi-hebergement.jpg"
             alt="CMI Hosting"
             className="mx-auto mb-6"
             width={1024}
             height={70}
           />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-          <div>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:pt-[60px]  mb-12">
+          <div className="md:col-span-4 col-span-1">
             <Link href="/">
               <Image
                 src="/images/logo-maroc.png"
@@ -60,11 +60,11 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
-            <h5 className="text-lg font-bold mb-4">
-              <Link href="/ma-domain-name">Domains</Link>
+          <div className="md:col-span-2 col-span-1">
+            <h5 className="text-lg  mb-4">
+              <Link href="/ma-domain-name">Nom de domaine</Link>
             </h5>
-            <h5 className="text-lg font-bold mb-2">Web Hosting</h5>
+            <h5 className="md:text-[15px] font-[600] lg:text-[17px] text-[17px] mb-3">Hébergement web</h5>
             <ul className="space-y-2">
               <li>
                 <Link href="/starty" className="animated-link">
@@ -77,18 +77,19 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-            <h5 className="text-lg font-bold mt-4 mb-2">Services</h5>
+            <h5 className="md:text-[15px] font-[600] lg:text-[17px] text-[17px] mt-4 mb-2">Services</h5>
             <ul className="space-y-2">
               <li>
                 <Link href="/business-email" className="animated-link">
-                  @Business Email
+                 @Messagerie
                 </Link>
               </li>
             </ul>
           </div>
 
-          <div>
-            <h5 className="text-lg font-bold mb-4">Useful links</h5>
+          <div className="md:col-span-2 col-span-1">
+            <h5 className="md:text-[15px] font-[600] lg:text-[17px] text-[17px] mb-4">Liens utiles
+</h5>
             <ul className="space-y-2">
               <li>
                 <Link
@@ -96,7 +97,7 @@ export default function Footer() {
                   target="_blank"
                   className="animated-link"
                 >
-                  Client Area
+                  Espace Client
                 </Link>
               </li>
               <li>
@@ -123,7 +124,7 @@ export default function Footer() {
                   target="_blank"
                   className="animated-link"
                 >
-                  Payments
+                  Paiements
                 </Link>
               </li>
               <li>
@@ -138,35 +139,38 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="md:col-span-4 col-span-1">
             <div className="mb-6">
-              <h6 className="text-gray-400 mb-2">Any questions?</h6>
-              <h2 className="text-xl font-bold">+212 (05) 31 03 11 86</h2>
+              <h6 className="text-title bg-gray-200 max-w-max text-[16px] font-[400] rounded-[4px] py-[5px] px-[10px] mb-2">Des questions ?</h6>
+              <h2 className="lg:text-[30px] md:text-[22px] text-[34px]  font-bold">+212 (05) 31 03 11 86</h2>
             </div>
             <div>
-              <h6 className="text-gray-400 mb-2">Need support?</h6>
-              <h2 className="text-xl font-bold border-bottom">
+              <h6 className="text-title bg-gray-200 max-w-max text-[16px] font-[400] rounded-[4px] py-[5px] px-[10px] mb-2">BESOIN DE SUPPORT?</h6>
+              <h2 className="lg:text-[30px] md:text-[22px] text-[34px]  font-bold border-bottom">
                 info@hostino.com
               </h2>
             </div>
           </div>
         </div>
 
-        <div className="text-center text-gray-400 text-sm">
-          <Link href="/terms" className="mx-2 hover:text-title">
-            Terms and Conditions
+        <div className="text-center py-[30px] text-gray-400 text-sm">
+          <Link href="https://www.hostino.ma/conditions-generales/" className="mx-2 hover:text-title">
+            Conditions générales
           </Link>{" "}
           |
-          <Link href="/legal-notice" className="mx-2 hover:text-title">
-            Legal Notice
+          <Link href="https://www.hostino.ma/mentions-legales/" className="mx-2 hover:text-title">
+            Mentions légales
+
           </Link>{" "}
           |
-          <Link href="/privacy" className="mx-2 hover:text-title">
-            Privacy Policy
+          <Link href="https://www.hostino.ma/politique-de-confidentialite/" className="mx-2 hover:text-title">
+            Politique de confidentialité
           </Link>{" "}
           |
-          <Link href="/abuse" className="mx-2 hover:text-title">
-            Anti-Abuse Policy
+          <Link href="https://www.hostino.ma/abus/" className="mx-2 hover:text-title">
+            
+              Politique anti-abus
+
           </Link>
         </div>
       </div>

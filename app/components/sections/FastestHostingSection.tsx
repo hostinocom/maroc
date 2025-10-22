@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function FastestHostingSection() {
   return (
-    <section className="py-16">
+    <section className="lg:my-[150px] my-[80px]">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div className="col-span-1">
@@ -39,11 +39,11 @@ export default function FastestHostingSection() {
           </div>
           <div className="col-span-1 flex justify-end">
             <Image
-              src="/images/hebergement-web-maroc-cloud.svg"
+              src="/images/home/hebergement-web-maroc-cloud.svg"
               alt="Cloud Hosting in Morocco"
               width={3508}
               height={2481}
-              className="xl:w-[90%] lg:w-[95%] h-auto rounded-lg"
+              className="xl:w-[90%] lg:w-[85%] md:[85%] h-auto rounded-lg"
             />
           </div>
         </div>

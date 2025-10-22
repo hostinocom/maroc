@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   description: "Hostino® est un hébergeur web marocain offrant des solutions d'hébergement fiables et performantes adaptées aux besoins des entreprises et particuliers au Maroc.",
   icons: {
-    icon: 'data:,', // This removes the favicon
+    icon: '/favicon.png', // This removes the favicon
   }
 };
 

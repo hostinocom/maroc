@@ -14,9 +14,9 @@ export default function Header() {
   const [mobileSeoOpen, setMobileSeoOpen] = useState(false);
 
   return (
-    <header className="bg-white shadow-sm top-0 z-70">
-      <div className="container">
-        <div className="flex items-center justify-between h-20">
+    <header className="bg-white  py-[20px] shadow-sm top-0 z-70">
+      <div className="h-[70px] flex items-center justify-between container">
+        <div className="flex w-full items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <Image
@@ -63,19 +63,19 @@ export default function Header() {
                 >
                   <Link
                     href="https://www.hostino.ma/starty"
-                    className="block animated-link px-6 py-3 text-title font-bold  "
+                    className="block animated-link px-6 py-3 text-title font-[600]  "
                   >
                     Starty
                   </Link>
                   <Link
                     href="https://www.hostino.ma/business"
-                    className="block animated-link px-6 py-3 text-title font-bold  "
+                    className="block animated-link px-6 py-3 text-title font-[600]  "
                   >
                     Business
                   </Link>
                   <Link
                     href="https://www.hostino.ma/cloud-maroc/"
-                    className="block animated-link px-6 py-3 text-title font-bold  "
+                    className="block animated-link px-6 py-3 text-title font-[600]  "
                   >
                     Cloud Maroc
                   </Link>
@@ -86,7 +86,7 @@ export default function Header() {
             {/* @Email Pro */}
             <Link
               href="https://www.hostino.ma/email-professionnel/"
-              className="font-poppins animated-link text-[17px] flex items-center gap-2 text-title font-semibold border-none p-0"
+              className="font-poppins animated-link text-[17px] flex items-center gap-2 text-title font-[600] border-none p-0"
             >
               @Email Pro
             </Link>
@@ -94,7 +94,7 @@ export default function Header() {
             {/* Nom de domaine */}
             <Link
               href="https://www.hostino.ma/nom-de-domaine-ma"
-              className="text-[#14213D] animated-link font-semibold hover:text-primary transition-colors"
+              className="text-[#14213D] animated-link font-[600] hover:text-primary transition-colors"
             >
               Nom de domaine
             </Link>
@@ -104,7 +104,7 @@ export default function Header() {
               <button
                 onClick={() => setSeoOpen(!seoOpen)}
                 onMouseEnter={() => setSeoOpen(true)}
-                className="flex items-center animated-link gap-2 text-[#14213D] font-semibold hover:text-primary transition-colors"
+                className="flex items-center animated-link gap-2 text-[#14213D] font-[600] hover:text-primary transition-colors"
               >
                 <Image
                   src="/images/google-svg.svg"
@@ -138,25 +138,25 @@ export default function Header() {
                 >
                   <Link
                     href="https://www.hostino.ma/agence-seo-maroc/"
-                    className="block font-bold px-6 py-3 animated-link text-title hover:text-primary transition-colors"
+                    className="block font-[600] px-6 py-3 animated-link text-title hover:text-primary transition-colors"
                   >
                     Agence SEO
                   </Link>
                   <Link
                     href="https://www.hostino.ma/google-my-business-maroc/"
-                    className="block font-bold px-6 py-3 animated-link text-title  hover:text-primary transition-colors"
+                    className="block font-[600] px-6 py-3 animated-link text-title  hover:text-primary transition-colors"
                   >
                     Agence GMB
                   </Link>
                   <Link
                     href="https://www.hostino.ma/google-ads-maroc/"
-                    className="block font-bold px-6 py-3 animated-link text-title hover:bg-gray-50 hover:text-primary transition-colors"
+                    className="block font-[600] px-6 py-3 animated-link text-title hover:bg-gray-50 hover:text-primary transition-colors"
                   >
                     Google Ads
                   </Link>
                   <Link
                     href="https://www.hostino.ma/creation-site-web-maroc/"
-                    className="block font-bold px-6 py-3 animated-link text-[#14213D] hover:bg-gray-50 hover:text-primary transition-colors"
+                    className="block font-[600] px-6 py-3 animated-link text-[#14213D] hover:bg-gray-50 hover:text-primary transition-colors"
                   >
                     Site web
                   </Link>
@@ -175,7 +175,7 @@ export default function Header() {
                 bgColor="bg-gray-100"
                 hoverBgColor="bg-title"
                 textColor="text-white"
-                className="px-5 py-3 rounded-lg text-title font-bold lg:block hidden transition-colors"
+                className="btn-10-20 text-title  lg:block hidden transition-colors"
               />
             </Link>
 
@@ -208,7 +208,7 @@ export default function Header() {
             <div>
               <button
                 onClick={() => setMobileHebergementOpen(!mobileHebergementOpen)}
-                className="w-full hover:text-primary cursor-pointer flex items-center justify-between py-2 text-[#14213D] font-semibold "
+                className="w-full hover:text-primary cursor-pointer flex items-center justify-between py-2 text-[#14213D] font-[600] "
               >
                 Hébergement web
                 <svg
@@ -232,21 +232,21 @@ export default function Header() {
                 <div className="pl-4  space-y-2 mt-2">
                   <Link
                     href="https://www.hostino.ma/starty"
-                    className="block py-2 text-title font-bold"
+                    className="block py-2 text-title font-[600]"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Starty
                   </Link>
                   <Link
                     href="https://www.hostino.ma/business"
-                    className="block py-2 text-title font-bold "
+                    className="block py-2 text-title font-[600] "
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Business
                   </Link>
                   <Link
                     href="https://www.hostino.ma/cloud-maroc/"
-                    className="block py-2 text-title font-bold "
+                    className="block py-2 text-title font-[600] "
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Cloud Maroc
@@ -258,7 +258,7 @@ export default function Header() {
             {/* @Email Pro */}
             <Link
               href="https://www.hostino.ma/email-professionnel/"
-              className="block   text-[#14213D] cursor-pointer hover:text-primary py-2 font-semibold "
+              className="block   text-[#14213D] cursor-pointer hover:text-primary py-2 font-[600] "
               onClick={() => setMobileMenuOpen(false)}
             >
               @Email Pro
@@ -267,7 +267,7 @@ export default function Header() {
             {/* Nom de domaine */}
             <Link
               href="https://www.hostino.ma/nom-de-domaine-ma"
-              className="block text-[#14213D] cursor-pointer hover:text-primary font-semibold py-2"
+              className="block text-[#14213D] cursor-pointer hover:text-primary font-[600] py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               Nom de domaine
@@ -277,7 +277,7 @@ export default function Header() {
             <div>
               <button
                 onClick={() => setMobileSeoOpen(!mobileSeoOpen)}
-                className=" flex items-center justify-between w-full py-2 hover:text-primary text-[#14213D] font-semibold "
+                className=" flex items-center justify-between w-full py-2 hover:text-primary text-[#14213D] font-[600] "
               >
                 <div className="flex items-center gap-2">
                   <Image
@@ -309,28 +309,28 @@ export default function Header() {
                 <div className="pl-4 space-y-2 mt-2">
                   <Link
                     href="https://www.hostino.ma/agence-seo-maroc/"
-                    className="block max-w-max py-2 text-title font-bold animated-link"
+                    className="block max-w-max py-2 text-title font-[600] animated-link"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Agence SEO
                   </Link>
                   <Link
                     href="https://www.hostino.ma/google-my-business-maroc/"
-                    className="block max-w-max py-2 text-title font-bold animated-link"
+                    className="block max-w-max py-2 text-title font-[600] animated-link"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Agence GMB
                   </Link>
                   <Link
                     href="https://www.hostino.ma/google-ads-maroc/"
-                    className="block  max-w-max py-2 text-title font-bold animated-link"
+                    className="block  max-w-max py-2 text-title font-[600] animated-link"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Google Ads
                   </Link>
                   <Link
                     href="https://www.hostino.ma/creation-site-web-maroc/"
-                    className="block   max-w-max py-2 text-title font-bold animated-link"
+                    className="block   max-w-max py-2 text-title font-[600] animated-link"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Site web
@@ -343,12 +343,12 @@ export default function Header() {
             <div className="pt-4 space-y-3 border-t border-gray-200">
               <Link
                 href="/connexion"
-                className="block w-full py-3 text-center text-[#14213D] font-semibold hover:text-primary transition-colors"
+                className="block w-full py-3 text-center text-[#14213D] font-[600] hover:text-primary transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Connexion
               </Link>
-              <button className="w-full bg-primary text-white font-bold px-4 py-3 rounded-lg hover:bg-[#00a84e] transition-colors">
+              <button className="w-full bg-primary text-white font-[600] px-4 py-3 rounded-lg hover:bg-[#00a84e] transition-colors">
                 EN
               </button>
             </div>

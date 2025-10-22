@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function FAQSection() {
-  const [openItems, setOpenItems] = useState<number[]>([0]); // First item open by default
+  const [openItems, setOpenItems] = useState<number[] >([-1]); // First item open by default
 
   const toggleItem = (index: number) => {
     // Accordion mode: only one item open at a time
@@ -139,9 +139,9 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="bg-gray-100 py-20">
+    <section className="bg-gray-100 py-[150px]">
       <div className="container">
-        <h2 className="title-section mb-12">FAQ – Hébergement web</h2>
+        <h2 className="title-section mb-[50px]">FAQ – Hébergement web</h2>
 
         <div className="flex md:flex-row flex-col gap-6">
           <div className="col-span-1 flex flex-col gap-6">

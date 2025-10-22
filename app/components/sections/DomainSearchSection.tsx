@@ -54,10 +54,10 @@ export default function DomainSearchSection() {
       style={{
         backgroundImage: "linear-gradient(180deg, #004C48 18%, #084448 100%)",
       }}
-      className="py-[130px] bg-gradient-to-r from-[#1b083b] to-[#7e5eba] text-white"
+      className="lg:mt-[150px] mt-[60px] bg-gradient-to-r from-[#1b083b] to-[#7e5eba] text-white"
     >
-      <div className="container text-center">
-        <h2 className="title-section-white scale-110 text-white font-bold mb-4">
+      <div className="container py-[120px] text-center">
+        <h2 className="title-section-white lg:text-[49px] md:text-[40px] text-[38px] text-white font-bold mb-4">
           Enregistrer votre nom de domaine
         </h2>
         <p className="mb-8 paragraph-white ">
@@ -71,7 +71,10 @@ export default function DomainSearchSection() {
           à partir de 118 DH/an..
         </p>
 
-        <form onSubmit={handleSubmit} className="max-w-2xl mx-auto mb-8">
+        <form
+          onSubmit={handleSubmit}
+          className="md:max-w-2xl w-full mx-auto mb-8"
+        >
           <div className="flex rounded-lg overflow-hidden sm:border-0 border border-primary bg-white flex-col sm:flex-row">
             <input
               type="text"
@@ -82,17 +85,19 @@ export default function DomainSearchSection() {
               required
             />
 
-            <select
-              name="domain_tld"
-              defaultValue=".ma"
-              className="  sm:block hidden pr-[20px] text-right  text-lg text-title font-semibold"
-            >
-              {domainOptions.map((domain) => (
-                <option key={domain} className="font-bold" value={domain}>
-                  {domain}
-                </option>
-              ))}
-            </select>
+            <div className="mr-[20px] flex items-center">
+              <select
+                name="domain_tld"
+                defaultValue=".ma"
+                className="sm:block hidden  text-right text-[20px] text-title font-[600]"
+              >
+                {domainOptions.map((domain) => (
+                  <option key={domain} className="font-bold" value={domain}>
+                    {domain}
+                  </option>
+                ))}
+              </select>
+            </div>
             <button
               type="submit"
               className="bg-primary sm:py-0 py-6 text-white font-bold px-8 sm:text-lg text-xl   transition whitespace-nowrap"
@@ -103,7 +108,7 @@ export default function DomainSearchSection() {
         </form>
 
         <Image
-          src="/images/nav-domaines.png"
+          src="/images/home/nav-domaines.png"
           alt="Nav domaines"
           className="mx-auto md:w-[50%] sm:w-[80%] w-[100%] "
           width={1226}

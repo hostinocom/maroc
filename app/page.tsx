@@ -10,7 +10,6 @@ import BenefitsSection from "./components/sections/BenefitsSection"
 import FaqSection from "./components/sections/FaqSection"
 import EasyHebergementSection from "./components/sections/EasyHebergementSection"
 import BenchmarkHostingMorocco from "./components/sections/BenchmarkHostingMorocco"
-import ScrollProgressButton from "./components/ui/scrollProgress"
 import CookieConsent from "./components/ui/CookieConsentBanner"
 import WhatsAppFloat from "./components/ui/WhatsAppFloat"
 
@@ -29,9 +28,8 @@ export default async function HomePage(){
          <BenefitsSection />
          <BenchmarkHostingMorocco />
          <FaqSection />
-         <ScrollProgressButton />
          <CookieConsent />
-         <WhatsAppFloat />
+         {/* <WhatsAppFloat /> */}
       </main>
   )
 }
