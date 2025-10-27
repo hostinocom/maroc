@@ -110,17 +110,17 @@ export default async function HotelMarketingPage() {
   return (
     <main>
       <ClaimReviewJsonLd
-        scriptId="hotel-marketing-claim"
-        scriptKey="hostino-review"
-        url="https://maroc-1hp.pages.dev/agence-seo-maroc"
-        author="Hostino"
-        claimReviewed="Hostino augmente les réservations directes et la visibilité Google des hôtels au Maroc."
-        reviewRating={{
-          ratingValue: "55",
-          bestRating: "55",
-          worstRating: "0",
-          alternateName: "Excellent", // ✅ required field
-        }}
+        url="https://maroc-1hp.pages.dev/agence-marketing-hotel/"
+        author={{ name: "Hostino" } as any}
+        claimReviewed="Agence Marketing Hôtel Maroc"
+        reviewRating={
+          {
+            ratingValue: "5",
+            bestRating: "5",
+            worstRating: "1",
+            ratingCount: "55",
+          } as any
+        }
       />
 
       <HeroSection

@@ -12,85 +12,91 @@ import SeoServiceCards from "../components/sectionsGoogleAdsMarocPage/SeoService
 import GmbServices from "../components/commonSections/GmbServices";
 import GooglePositioning from "../components/commonSections/GooglePositioning";
 import ComparisonTable from "../components/commonSections/ComparisonTable";
+import { ClaimReviewJsonLd } from "next-seo";
 
-
-
-const faqData  = [
+const faqData = [
   {
-    question: "Les sites créés par votre agence web au Maroc sont-ils évolutifs ?",
+    question:
+      "Les sites créés par votre agence web au Maroc sont-ils évolutifs ?",
     answers: [
       "Oui, nos créations de sites web au Maroc sont évolutives.",
       "Dès la conception, notre agence de création site web au Maroc met en place une architecture moderne et flexible qui permet au site de grandir avec votre entreprise.",
       "Vous pouvez commencer par un simple site vitrine et le faire évoluer vers une boutique en ligne, un espace client ou une plateforme plus complexe, sans avoir à repartir de zéro.",
-      "Notre priorité est de vous offrir une solution durable, capable de s'adapter à vos besoins actuels et futurs, tout en garantissant performance et sécurité."
-    ]
+      "Notre priorité est de vous offrir une solution durable, capable de s'adapter à vos besoins actuels et futurs, tout en garantissant performance et sécurité.",
+    ],
   },
   {
-    question: "Quels avantages offre une agence web basée au Maroc pour les entreprises locales ?",
+    question:
+      "Quels avantages offre une agence web basée au Maroc pour les entreprises locales ?",
     answers: [
       "Notre agence web au Maroc offre de véritables avantages pour les entreprises locales. En maîtrisant parfaitement le marché marocain et le référencement local, nous assurons une visibilité accrue et un positionnement rapide sur Google. Cela permet d'attirer un trafic ciblé et qualifié.",
-      "Grâce à des stratégies digitales adaptées, notre agence web aide les entreprises à générer des leads et des prospects de qualité, favorisant leur croissance et leur réussite dans un environnement de plus en plus digitalisé."
-    ]
+      "Grâce à des stratégies digitales adaptées, notre agence web aide les entreprises à générer des leads et des prospects de qualité, favorisant leur croissance et leur réussite dans un environnement de plus en plus digitalisé.",
+    ],
   },
   {
-    question: "Offrez-vous des outils et un suivi d'analyse avec la création de site web ?",
+    question:
+      "Offrez-vous des outils et un suivi d'analyse avec la création de site web ?",
     answers: [
-      "Oui, chaque création de site web Maroc inclut l'intégration d'outils d'analyse comme <a style='text-decoration: underline;' href='https://search.google.com/search-console/about?hl=fr' rel='noopener' target='_blank'>Google Analytics</a>, Google Tag Manager et Google Search Console. Ils permettent de suivre le trafic, le comportement des visiteurs et le positionnement sur Google, afin de mesurer la performance de votre site en temps réel."
-    ]
+      "Oui, chaque création de site web Maroc inclut l'intégration d'outils d'analyse comme <a style='text-decoration: underline;' href='https://search.google.com/search-console/about?hl=fr' rel='noopener' target='_blank'>Google Analytics</a>, Google Tag Manager et Google Search Console. Ils permettent de suivre le trafic, le comportement des visiteurs et le positionnement sur Google, afin de mesurer la performance de votre site en temps réel.",
+    ],
   },
   {
     question: "Je veux que mon site soit n°1 sur Google, est-ce possible ?",
     answers: [
       "Oui, nous vous accompagnons avec une stratégie SEO complète afin d'atteindre les meilleures positions sur Google.",
       "Chez Hostino, la création de site web constitue une base solide pour un référencement réussi : un code optimisé, une vitesse de chargement conforme aux standards Google, un contenu structuré pour le SEO et une architecture technique pensée pour le long terme.",
-      "En combinant ces fondations avec une stratégie SEO avancée (mots-clés, netlinking, suivi des performances), nous maximisons vos chances d'arriver au top des résultats et de générer des leads qualifiés."
-    ]
+      "En combinant ces fondations avec une stratégie SEO avancée (mots-clés, netlinking, suivi des performances), nous maximisons vos chances d'arriver au top des résultats et de générer des leads qualifiés.",
+    ],
   },
   {
-    question: "Votre agence de création de site web est basée où exactement au Maroc ?",
+    question:
+      "Votre agence de création de site web est basée où exactement au Maroc ?",
     answers: [
       "Notre agence de création de sites web est installée au Technopark de Tanger, à l'adresse T100, Boulevard Mohamed V, Tanger.",
-      "Située à seulement quelques kilomètres de l'Europe, Tanger bénéficie d'une position géographique privilégiée qui fait de notre agence un partenaire idéal pour accompagner aussi bien les entreprises locales que les clients internationaux."
-    ]
+      "Située à seulement quelques kilomètres de l'Europe, Tanger bénéficie d'une position géographique privilégiée qui fait de notre agence un partenaire idéal pour accompagner aussi bien les entreprises locales que les clients internationaux.",
+    ],
   },
   {
-    question: "Votre agence de création site web au Maroc assure-t-elle la sécurité ?",
+    question:
+      "Votre agence de création site web au Maroc assure-t-elle la sécurité ?",
     answers: [
       "Chaque site que nous développons est protégé par des solutions avancées : certificats SSL, pare-feu applicatif, détection en temps réel des malwares, protection anti-DDoS et intégration avec des outils tels que <a href='/cloudflare-maroc' style='text-decoration: underline;' rel='noopener' target='_blank'>Cloudflare</a>.",
-      "Nous veillons à ce que vos données et celles de vos clients soient sécurisées, tout en respectant les normes légales de protection des données au Maroc (CNDP) et en Europe (RGPD)."
-    ]
+      "Nous veillons à ce que vos données et celles de vos clients soient sécurisées, tout en respectant les normes légales de protection des données au Maroc (CNDP) et en Europe (RGPD).",
+    ],
   },
   {
     question: "Proposez-vous des services de maintenance pour les sites web ?",
     answers: [
       "Oui, nous proposons des services complets de <a style='text-decoration: underline;' href='/maintenance-site-web-maroc' rel='noopener' target='_blank'>maintenance pour les sites</a> web. Notre agence assure la mise à jour régulière de votre site, la correction des éventuelles anomalies, la sauvegarde sécurisée des données ainsi qu'un suivi continu des performances.",
-      "Nous veillons aussi à renforcer la sécurité et à intégrer les évolutions nécessaires afin que votre site reste rapide, fiable et conforme aux standards du web."
-    ]
+      "Nous veillons aussi à renforcer la sécurité et à intégrer les évolutions nécessaires afin que votre site reste rapide, fiable et conforme aux standards du web.",
+    ],
   },
   {
-    question: "Faites-vous du sponsoring après la création de site web au Maroc ?",
+    question:
+      "Faites-vous du sponsoring après la création de site web au Maroc ?",
     answers: [
       "Oui, après la création de votre site web au Maroc, nous proposons des campagnes <a style='text-decoration: underline;' href='/google-ads-maroc' rel='noopener' target='_blank'>Google Ads</a> ciblées.",
-      "Cela permet de positionner immédiatement votre site en haut des résultats de recherche, d'attirer du trafic qualifié et de générer des prospects, tout en renforçant votre visibilité en complément du SEO."
-    ]
+      "Cela permet de positionner immédiatement votre site en haut des résultats de recherche, d'attirer du trafic qualifié et de générer des prospects, tout en renforçant votre visibilité en complément du SEO.",
+    ],
   },
   {
-    question: "Je suis à l'étranger, puis-je avoir un site conforme aux lois locales ?",
+    question:
+      "Je suis à l'étranger, puis-je avoir un site conforme aux lois locales ?",
     answers: [
       "Oui, nous créons des sites web conformes aux réglementations locales partout dans le monde.",
-      "Que vous soyez en Europe, aux États-Unis, au Canada, dans la région MENA ou ailleurs, nos sites respectent les standards internationaux : RGPD, législation nord-américaine, gestion des cookies, sécurité des données et conformité légale adaptée à chaque pays."
-    ]
+      "Que vous soyez en Europe, aux États-Unis, au Canada, dans la région MENA ou ailleurs, nos sites respectent les standards internationaux : RGPD, législation nord-américaine, gestion des cookies, sécurité des données et conformité légale adaptée à chaque pays.",
+    ],
   },
   {
-    question: "J'ai créé un site avec une agence mais il n'est pas visible sur Google, que faire ?",
+    question:
+      "J'ai créé un site avec une agence mais il n'est pas visible sur Google, que faire ?",
     answers: [
       "Si votre site n'apparaît pas sur Google, c'est généralement qu'il n'a pas été optimisé pour le référencement (SEO).",
       "Dans ce cas, une refonte complète peut être nécessaire : amélioration du code, restructuration du contenu, optimisation des mots-clés, vitesse de chargement et mise en conformité avec les standards Google.",
-      "Chez Hostino, nous proposons la refonte de sites web afin de transformer une simple vitrine en un outil performant, capable de générer du trafic qualifié, des leads et d'obtenir un meilleur positionnement sur Google."
-    ]
-  }
+      "Chez Hostino, nous proposons la refonte de sites web afin de transformer une simple vitrine en un outil performant, capable de générer du trafic qualifié, des leads et d'obtenir un meilleur positionnement sur Google.",
+    ],
+  },
 ];
-
 
 const prestations = [
   {
@@ -209,44 +215,56 @@ const advantages = [
   },
 ];
 
-
-const tableData  = [
-    {
-      criteria: "Objectif principal",
-      leadGen: "Attirer des prospects qualifiés et convertir en clients",
-      lowCost: "Présence basique sans réelle stratégie"
-    },
-    {
-      criteria: "SEO",
-      leadGen: "Optimisation technique et contenu original",
-      lowCost: "Peu ou pas optimisé, contenu générique"
-    },
-    {
-      criteria: "Design & UX",
-      leadGen: "Expérience fluide, CTA stratégiques",
-      lowCost: "Design basique, faible impact"
-    },
-    {
-      criteria: "Vitesse",
-      leadGen: "Chargement rapide conforme PageSpeed",
-      lowCost: "Lent, pénalisé par Google"
-    },
-    {
-      criteria: "Sécurité",
-      leadGen: "SSL, protection avancée, Anti DDOS, Zero Trust",
-      lowCost: "Sécurité minimale"
-    },
-    {
-      criteria: "ROI",
-      leadGen: "Investissement rentable à long terme",
-      lowCost: "Faible retour sur investissement"
-    }
-  ];
-
+const tableData = [
+  {
+    criteria: "Objectif principal",
+    leadGen: "Attirer des prospects qualifiés et convertir en clients",
+    lowCost: "Présence basique sans réelle stratégie",
+  },
+  {
+    criteria: "SEO",
+    leadGen: "Optimisation technique et contenu original",
+    lowCost: "Peu ou pas optimisé, contenu générique",
+  },
+  {
+    criteria: "Design & UX",
+    leadGen: "Expérience fluide, CTA stratégiques",
+    lowCost: "Design basique, faible impact",
+  },
+  {
+    criteria: "Vitesse",
+    leadGen: "Chargement rapide conforme PageSpeed",
+    lowCost: "Lent, pénalisé par Google",
+  },
+  {
+    criteria: "Sécurité",
+    leadGen: "SSL, protection avancée, Anti DDOS, Zero Trust",
+    lowCost: "Sécurité minimale",
+  },
+  {
+    criteria: "ROI",
+    leadGen: "Investissement rentable à long terme",
+    lowCost: "Faible retour sur investissement",
+  },
+];
 
 export default async function HomePage() {
   return (
     <main>
+      <ClaimReviewJsonLd
+        url="https://maroc-1hp.pages.dev/creation-site-web-maroc/"
+        author={{ name: "Hostino" } as any}
+        claimReviewed="Création Site Web Maroc - Agence Web SEO"
+        reviewRating={
+          {
+            ratingValue: "5",
+            bestRating: "5",
+            worstRating: "1",
+            ratingCount: "70",
+          } as any
+        }
+      />
+
       <HeroSection
         subtitle="Création site web Maroc"
         title="Création site web 100 % optimisé SEO"
@@ -263,7 +281,8 @@ export default async function HomePage() {
       <ContactForm
         title={
           <>
-            Création de site web : un conseiller <br className="lg:hidden block " />
+            Création de site web : un conseiller{" "}
+            <br className="lg:hidden block " />
             <span className="border-bottom">vous rappelle !</span>
           </>
         }
@@ -332,21 +351,23 @@ export default async function HomePage() {
         href="https://www.hostino.ma/contact"
       />
 
-      <GmbAdvantages advantages={advantages} title="Pourquoi choisir Hostino pour la<br/> création site web Maroc ?"/>
+      <GmbAdvantages
+        advantages={advantages}
+        title="Pourquoi choisir Hostino pour la<br/> création site web Maroc ?"
+      />
 
-      
       <TextLeftImageRight
         title="Création de site web orientée génération de leads"
         paragraphs={[
           "Créer un site internet <b>optimisé pour la génération de leads</b>&nbsp;ne se limite pas à des compétences techniques de base. Cela implique une véritable expertise en développement web, une parfaite maîtrise des standards Google et l’accompagnement de chefs de projet ainsi que de professionnels expérimentés.",
           "Que vous souhaitiez mettre en place un site web corporate conçu pour <b>générer des leads qualifiés</b> ou développer une boutique en ligne <b>optimisée pour la conversion</b>, notre agence web Maroc vous accompagne à chaque étape — de la conception à la mise en ligne — afin de garantir un site performant, durable et compétitif.",
-          "Appelez le +212 663 75 09 08 et confiez la création de votre site web à une agence LeadGen réputée au Maroc."
+          "Appelez le +212 663 75 09 08 et confiez la création de votre site web à une agence LeadGen réputée au Maroc.",
         ]}
         imageSrc="images/creation-site-web-maroc/creation-site-web-lead-generation.jpg"
         imageAlt="creation-site-web-lead-generation.jpg"
         consultButtonTextExiste={false}
         className="lg:mt-[150px] mb-[20px] mt-[80px]"
-      /> 
+      />
       <ComparisonTable tableData={tableData} />
 
       <NationalCoverage

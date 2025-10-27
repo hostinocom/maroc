@@ -6,6 +6,7 @@ import FAQSection from "../components/commonSections/FaqSection";
 import TitleParagraphButton from "../components/commonSections/TitleParagraphButton";
 import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter";
 import GmbServices from "../components/commonSections/GmbServices";
+import { ClaimReviewJsonLd } from "next-seo";
 
 const faqData = [
   {
@@ -23,7 +24,8 @@ const faqData = [
     ],
   },
   {
-    question: "Pouvez-vous publier des articles sur de grands sites médias au Maroc ?",
+    question:
+      "Pouvez-vous publier des articles sur de grands sites médias au Maroc ?",
     answers: [
       "Oui ✅. Grâce à notre réseau exclusif de partenaires médias marocains, nous pouvons publier des articles avec des liens « dofollow » sur des grands sites à forte autorité.",
       "Cela inclut des portails d'actualités nationaux, des magazines en ligne, ainsi que des plateformes sectorielles bien établies.",
@@ -31,7 +33,8 @@ const faqData = [
     ],
   },
   {
-    question: "Votre agence RP propose-t-elle un service de netlinking et d'acquisition de backlinks au Maroc ?",
+    question:
+      "Votre agence RP propose-t-elle un service de netlinking et d'acquisition de backlinks au Maroc ?",
     answers: [
       "Oui, notre agence RP au Maroc propose un service complet de netlinking et d'acquisition de backlinks premium, en complément de nos actions médias classiques. Grâce à notre large réseau de partenaires — médias en ligne, sites d'actualités marocains présents sur Google Actualités, blogs à forte autorité et plateformes spécialisées — nous vous aidons à obtenir des liens \"dofollow\" stratégiques qui renforcent la visibilité et l'autorité de votre site sur Google.",
       "Nous prenons en charge l'ensemble du processus : identification des opportunités les plus pertinentes, rédaction de contenus SEO optimisés, publication sur des supports fiables, et négociation personnalisée selon votre budget et votre secteur d'activité.",
@@ -46,14 +49,16 @@ const faqData = [
     ],
   },
   {
-    question: "Proposez-vous des services de publication sur les grands médias marocains ?",
+    question:
+      "Proposez-vous des services de publication sur les grands médias marocains ?",
     answers: [
       "Oui. Nous collaborons avec un large réseau de médias marocains à forte audience et présents sur Google Actualités.",
       "Nous proposons la rédaction et la publication d'articles sponsorisés ou éditoriaux, avec la possibilité d'intégrer des backlinks SEO premium pour renforcer la visibilité digitale de votre marque.",
     ],
   },
   {
-    question: "Travaillez-vous avec des entreprises étrangères ou internationales ?",
+    question:
+      "Travaillez-vous avec des entreprises étrangères ou internationales ?",
     answers: [
       "Oui. Nous accompagnons aussi bien des marques marocaines que des entreprises étrangères souhaitant pénétrer le marché marocain.",
       "Grâce à notre expertise biculturelle et multilingue (français, arabe, anglais, espagnol), nous adaptons les messages pour assurer une communication efficace auprès du public et des médias locaux.",
@@ -116,6 +121,19 @@ const services = [
 export default async function RPAgencyPage() {
   return (
     <main>
+      <ClaimReviewJsonLd
+        url="https://maroc-1hp.pages.dev/agence-rp-maroc/"
+        author={{ name: "Hostino" } as any}
+        claimReviewed="Agence RP Maroc - Relations Publiques"
+        reviewRating={
+          {
+            ratingValue: "5",
+            bestRating: "5",
+            worstRating: "1",
+            ratingCount: "52",
+          } as any
+        }
+      />
       <HeroSection
         subtitle="Agence RP Maroc"
         title="Agence relations presse & influence"
@@ -132,8 +150,7 @@ export default async function RPAgencyPage() {
       <ContactForm
         title={
           <>
-            RP Maroc : un conseiller{" "}
-            <br className="lg:hidden block " />
+            RP Maroc : un conseiller <br className="lg:hidden block " />
             <span className="border-bottom">vous rappelle !</span>
           </>
         }

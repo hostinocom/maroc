@@ -9,22 +9,20 @@ import SeoServiceCards from "../components/commonSections/SeoServiceCards";
 import NationalCoverage from "../components/commonSections/NationalCoverage";
 import FAQSection from "../components/commonSections/FaqSection";
 import GooglePositioning from "../components/commonSections/GooglePositioning";
-
-
-
-
-
+import { ClaimReviewJsonLd } from "next-seo";
 
 const faqData = [
   {
-    question: "Qu'est-ce que le SEO et pourquoi est-il important pour mon entreprise au Maroc ?",
+    question:
+      "Qu'est-ce que le SEO et pourquoi est-il important pour mon entreprise au Maroc ?",
     answers: [
       "Le SEO (Search Engine Optimization), ou optimisation pour les moteurs de recherche, regroupe l'ensemble des stratégies et techniques — telles que la rapidité de chargement des pages, le respect des normes de sécurité, l'originalité du contenu, les relations publiques numériques (PR) ou encore l'achat de backlinks — visant à améliorer le positionnement de votre site web dans les résultats organiques des moteurs de recherche.",
       "Avec le SEO, il ne s'agit pas seulement de positionner votre entreprise dans les premières places sur Google. C'est aussi bénéficier d'un flux continu de publications presse autour de votre société, d'une augmentation régulière du trafic qualifié, et d'une visibilité renforcée auprès de vos clients potentiels. Et désormais, le SEO ouvre la porte à une nouvelle dimension : la présence dans les réponses des moteurs de recherche basés sur l'IA tels que ChatGPT ou Gemini, qui deviennent des canaux incontournables pour capter l'attention de vos prospects.",
     ],
   },
   {
-    question: "Combien de temps faut-il pour voir des résultats avec une stratégie SEO ?",
+    question:
+      "Combien de temps faut-il pour voir des résultats avec une stratégie SEO ?",
     answers: [
       "La mise en place d'une stratégie SEO demande du temps avant de produire des résultats visibles. En général, il faut compter entre 3 et 9 mois pour commencer à observer des améliorations notables dans le positionnement et le trafic organique.",
       "Le délai varie fortement selon le niveau de concurrence dans votre secteur d'activité. Dans des marchés très compétitifs (immobilier, juridique, santé…), il peut falloir plus de temps pour dépasser des concurrents déjà bien établis.",
@@ -32,44 +30,80 @@ const faqData = [
     ],
   },
   {
-    question: "Quelles sont les étapes si je souhaite collaborer avec votre agence SEO ?",
+    question:
+      "Quelles sont les étapes si je souhaite collaborer avec votre agence SEO ?",
     answer: (
       <>
         <p className="paragraph">
-          Chez Hostino, le référencement SEO d'un site internet au Maroc se déroule en deux étapes principales.
+          Chez Hostino, le référencement SEO d'un site internet au Maroc se
+          déroule en deux étapes principales.
         </p>
         <p className="paragraph">
           <b>La première est le setup SEO :</b>
         </p>
         <ul className="flex flex-col gap-[10px] mb-[20px]">
           <li className="flex gap-2">
-            <svg className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+            <svg
+              className="w-5 h-5 text-primary flex-shrink-0 mt-0.5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clipRule="evenodd"
+              />
             </svg>
             <span>
-              Si vous disposez déjà d'un site web, nous l'optimisons afin qu'il devienne pleinement Google-friendly : mise en place des normes de sécurité (intégration <a href="/cloudflare-maroc" target="_blank">Cloudflare</a>), amélioration de la structure et du contenu, accélération du temps de chargement des pages, ainsi que la création de landing pages dédiées pour chaque service et chaque ville.
+              Si vous disposez déjà d'un site web, nous l'optimisons afin qu'il
+              devienne pleinement Google-friendly : mise en place des normes de
+              sécurité (intégration{" "}
+              <a href="/cloudflare-maroc" target="_blank">
+                Cloudflare
+              </a>
+              ), amélioration de la structure et du contenu, accélération du
+              temps de chargement des pages, ainsi que la création de landing
+              pages dédiées pour chaque service et chaque ville.
             </span>
           </li>
           <li className="flex gap-2">
-            <svg className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+            <svg
+              className="w-5 h-5 text-primary flex-shrink-0 mt-0.5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clipRule="evenodd"
+              />
             </svg>
             <span>
-              Si vous n'avez pas encore de site internet, nous créons pour vous un site 100 % optimisé SEO dès le départ. C'est l'option la plus rapide pour obtenir des résultats, car améliorer le scoring et la visibilité d'un site déjà existant sur Google demande généralement plus de temps.
+              Si vous n'avez pas encore de site internet, nous créons pour vous
+              un site 100 % optimisé SEO dès le départ. C'est l'option la plus
+              rapide pour obtenir des résultats, car améliorer le scoring et la
+              visibilité d'un site déjà existant sur Google demande généralement
+              plus de temps.
             </span>
           </li>
         </ul>
         <p>
-          <b>La phase de setup est facturée une seule fois, au démarrage du projet.</b>
+          <b>
+            La phase de setup est facturée une seule fois, au démarrage du
+            projet.
+          </b>
         </p>
         <p>
-          <b>La deuxième étape</b> correspond à la mensualité SEO, sans engagement, avec un budget défini selon la concurrence des mots-clés choisis.
+          <b>La deuxième étape</b> correspond à la mensualité SEO, sans
+          engagement, avec un budget défini selon la concurrence des mots-clés
+          choisis.
         </p>
       </>
     ),
   },
   {
-    question: "Pourquoi choisir Hostino plutôt qu'une autre agence SEO au Maroc ?",
+    question:
+      "Pourquoi choisir Hostino plutôt qu'une autre agence SEO au Maroc ?",
     answers: [
       "La plus grande partie de notre clientèle est constituée <b>d'entreprises qui ont été déçues par des agences incapables de leur fournir des résultats concrets.</b> Nous connaissons parfaitement le marché du SEO marocain et nous avons les compétences pour transformer ces mauvaises expériences en succès.",
       "Chez Hostino, nous ne vendons pas de promesses, nous livrons des résultats. Chaque projet est une chance de démontrer notre supériorité.",
@@ -85,47 +119,76 @@ const faqData = [
     ],
   },
   {
-    question: "J'ai déjà fait du SEO avec une agence, mais ça n'a pas marché. Pourquoi ?",
+    question:
+      "J'ai déjà fait du SEO avec une agence, mais ça n'a pas marché. Pourquoi ?",
     answer: (
       <>
         <p className="paragraph">
-          De nombreuses entreprises marocaines ont déjà tenté le référencement naturel avec une agence ou un freelance, mais sans véritable succès.
+          De nombreuses entreprises marocaines ont déjà tenté le référencement
+          naturel avec une agence ou un freelance, mais sans véritable succès.
         </p>
         <p className="paragraph">
-          <b>La raison est souvent la même</b> : un manque de maîtrise. Presque toutes les agences web prétendent faire du SEO, mais très peu en possèdent l'expertise réelle.
+          <b>La raison est souvent la même</b> : un manque de maîtrise. Presque
+          toutes les agences web prétendent faire du SEO, mais très peu en
+          possèdent l'expertise réelle.
         </p>
         <p className="paragraph">
-          Dans bien des cas, elles se limitent à des actions superficielles comme l'ajout de balises ou l'installation de plugins, sans mettre en place une véritable stratégie de contenu, de netlinking ou de suivi de performance.
+          Dans bien des cas, elles se limitent à des actions superficielles
+          comme l'ajout de balises ou l'installation de plugins, sans mettre en
+          place une véritable stratégie de contenu, de netlinking ou de suivi de
+          performance.
         </p>
         <p className="paragraph">
-          Or, un bon référencement ne s'improvise pas : il exige une méthode rigoureuse, adaptée à votre secteur et à vos objectifs, afin de générer des résultats concrets et mesurables.
+          Or, un bon référencement ne s'improvise pas : il exige une méthode
+          rigoureuse, adaptée à votre secteur et à vos objectifs, afin de
+          générer des résultats concrets et mesurables.
         </p>
         <p className="paragraph">
-          Avant de choisir une agence SEO, prenez le temps de vérifier ses éléments :
+          Avant de choisir une agence SEO, prenez le temps de vérifier ses
+          éléments :
         </p>
         <ul className="flex flex-col gap-[10px] mb-[20px]">
           <li className="flex gap-2">
-            <svg className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+            <svg
+              className="w-5 h-5 text-primary flex-shrink-0 mt-0.5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clipRule="evenodd"
+              />
             </svg>
             <span>
-              Assurez-vous que les références présentées sont bien réelles, que le travail cité a bien été réalisé par l'agence, et que son nom figure clairement sur les sites ou projets mis en avant.
+              Assurez-vous que les références présentées sont bien réelles, que
+              le travail cité a bien été réalisé par l'agence, et que son nom
+              figure clairement sur les sites ou projets mis en avant.
             </span>
           </li>
           <li className="flex gap-2">
-            <svg className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+            <svg
+              className="w-5 h-5 text-primary flex-shrink-0 mt-0.5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clipRule="evenodd"
+              />
             </svg>
-            <span>
-              Vérifiez le positionnement de l'agence SEO sur Google
-            </span>
+            <span>Vérifiez le positionnement de l'agence SEO sur Google</span>
           </li>
         </ul>
         <p className="paragraph">
-          Par exemple, une agence qui se présente comme "agence SEO au Maroc" doit logiquement apparaître sur des mots-clés pertinents tels que "agence SEO Maroc".
+          Par exemple, une agence qui se présente comme "agence SEO au Maroc"
+          doit logiquement apparaître sur des mots-clés pertinents tels que
+          "agence SEO Maroc".
         </p>
         <p className="paragraph">
-          Si elle n'arrive pas à se positionner elle-même, comment pourrait-elle positionner efficacement votre site ?
+          Si elle n'arrive pas à se positionner elle-même, comment pourrait-elle
+          positionner efficacement votre site ?
         </p>
       </>
     ),
@@ -133,101 +196,136 @@ const faqData = [
   {
     question: "Proposez-vous du SEO local pour Google Maps au Maroc ?",
     answers: [
-      "Oui. Nous optimisons votre profil <a href=\"/google-my-business-maroc/\" target=\"_blank\"><b>Google Business</b></a>, gérons vos avis clients et renforçons votre visibilité locale pour que votre entreprise apparaisse parmi les premières positions sur Google Maps.",
+      'Oui. Nous optimisons votre profil <a href="/google-my-business-maroc/" target="_blank"><b>Google Business</b></a>, gérons vos avis clients et renforçons votre visibilité locale pour que votre entreprise apparaisse parmi les premières positions sur Google Maps.',
     ],
   },
   {
-    question: "Votre agence SEO peut-elle référencer mon entreprise dans ChatGPT et Gemini ?",
+    question:
+      "Votre agence SEO peut-elle référencer mon entreprise dans ChatGPT et Gemini ?",
     answer: (
       <>
         <p className="paragraph">
-          Oui, notre agence SEO travaille déjà sur ce qu'on appelle le Generative Engine Optimization (<a href="https://www.hostino.ma/agence-geo-maroc" target="_blank"><b>Agence GEO</b></a>), c'est-à-dire l'optimisation de la visibilité des entreprises dans les moteurs d'IA comme ChatGPT et Gemini. L'objectif n'est pas seulement d'apparaître sur Google, mais aussi d'être mentionné dans les réponses générées par l'intelligence artificielle.
+          Oui, notre agence SEO travaille déjà sur ce qu'on appelle le
+          Generative Engine Optimization (
+          <a href="https://www.hostino.ma/agence-geo-maroc" target="_blank">
+            <b>Agence GEO</b>
+          </a>
+          ), c'est-à-dire l'optimisation de la visibilité des entreprises dans
+          les moteurs d'IA comme ChatGPT et Gemini. L'objectif n'est pas
+          seulement d'apparaître sur Google, mais aussi d'être mentionné dans
+          les réponses générées par l'intelligence artificielle.
         </p>
         <p className="paragraph">
-          Nous avons déjà des références concrètes dans ce domaine. Par exemple, si vous demandez à ChatGPT : "<b>Une société de GPS à Tanger</b> ?", la première réponse qui apparaît est <b>Sendatrack</b>, l'un de nos clients fidèles. Ce résultat est le fruit de plusieurs mois de travail sur leur site web, leur profil Google Business et leur présence dans des sources fiables que les moteurs d'IA consultent.
+          Nous avons déjà des références concrètes dans ce domaine. Par exemple,
+          si vous demandez à ChatGPT : "<b>Une société de GPS à Tanger</b> ?",
+          la première réponse qui apparaît est <b>Sendatrack</b>, l'un de nos
+          clients fidèles. Ce résultat est le fruit de plusieurs mois de travail
+          sur leur site web, leur profil Google Business et leur présence dans
+          des sources fiables que les moteurs d'IA consultent.
         </p>
         <p className="paragraph">
-          C'est la preuve que notre approche fonctionne : en combinant SEO classique, notoriété en ligne, contenus de qualité et un paramétrage d'indexation adapté aux robots d'IA, nous augmentons significativement vos chances d'être cités par ChatGPT, Gemini et les autres moteurs d'IA.
+          C'est la preuve que notre approche fonctionne : en combinant SEO
+          classique, notoriété en ligne, contenus de qualité et un paramétrage
+          d'indexation adapté aux robots d'IA, nous augmentons significativement
+          vos chances d'être cités par ChatGPT, Gemini et les autres moteurs
+          d'IA.
         </p>
         <p className="paragraph">
-          Avec Hostino, votre entreprise ne se limite pas à Google, elle gagne en visibilité sur la nouvelle génération de moteurs de recherche.
+          Avec Hostino, votre entreprise ne se limite pas à Google, elle gagne
+          en visibilité sur la nouvelle génération de moteurs de recherche.
         </p>
         <div className="mt-4 w-full">
-          <iframe src="https://www.youtube.com/embed/Bqn3SNyjsSE" width="1108" height="623" frameBorder="0"></iframe>
+          <iframe
+            src="https://www.youtube.com/embed/Bqn3SNyjsSE"
+            width="1108"
+            height="623"
+            frameBorder="0"
+          ></iframe>
         </div>
       </>
     ),
   },
 ];
 
-
-  const rankingsData  = [
-    {
-      url: "serrurierpro.ma",
-      country: "Maroc",
-      keywords: [
-        { term: "Serrurier Maroc", position: 1 },
-        { term: "Ouverture Coffre-fort rabat", position: 1 },
-        { term: "Serrurier Tanger", position: 1 },
-        { term: "Serrurier Tétouan", position: 1 }
-      ]
-    },
-    {
-      url: "sendatrack.ma",
-      country: "Maroc",
-      keywords: [
-        { term: "GPS Tanger", position: 1 },
-        { term: "Société de GPS Tanger", position: 1 },
-        { term: "Installation GPS Tanger", position: 1 },
-        { term: "Société de Géolocalisation Tanger", position: 1 }
-      ]
-    },
-    {
-      url: "medilpodcast.com",
-      country: "Maroc",
-      keywords: [
-        { term: "Podcast", position: 2 },
-        { term: "Podcast Maroc", position: 2 },
-        { term: "Plateforme Podcast Maroc", position: 1 },
-        { term: "بودكاست المغرب", position: 1 }
-      ]
-    },
-    {
-      url: "lyonparebrise.fr",
-      country: "France",
-      keywords: [
-        { term: "Réparation Pare Brise Lyon", position: 1 },
-        { term: "Remplacement Pare Brise Lyon", position: 2 },
-        { term: "Changement Pare Brise Lyon", position: 2 },
-        { term: "Pare Brise Lyon", position: 3 }
-      ]
-    },
-    {
-      url: "pcreparatieamsterdam.nl",
-      country: "Pays-Bas",
-      keywords: [
-        { term: "PC reparatie Amsterdam", position: 1 },
-        { term: "Laptopreparatie Amsterdam", position: 2 },
-        { term: "Laptop reparatie Amstedam", position: 1 },
-        { term: "Computer reparatie Amsterdam", position: 1 }
-      ]
-    },
-    {
-      url: "prestigecolor.be",
-      country: "Belgique",
-      keywords: [
-        { term: "Peintre Arlon", position: 1 },
-        { term: "Peinture résidentielle Arlon", position: 1 },
-        { term: "Peinture en Batiment à Arlon", position: 1 },
-        { term: "Expert Peintre Arlon", position: 2 }
-      ]
-    }
-  ];
-
+const rankingsData = [
+  {
+    url: "serrurierpro.ma",
+    country: "Maroc",
+    keywords: [
+      { term: "Serrurier Maroc", position: 1 },
+      { term: "Ouverture Coffre-fort rabat", position: 1 },
+      { term: "Serrurier Tanger", position: 1 },
+      { term: "Serrurier Tétouan", position: 1 },
+    ],
+  },
+  {
+    url: "sendatrack.ma",
+    country: "Maroc",
+    keywords: [
+      { term: "GPS Tanger", position: 1 },
+      { term: "Société de GPS Tanger", position: 1 },
+      { term: "Installation GPS Tanger", position: 1 },
+      { term: "Société de Géolocalisation Tanger", position: 1 },
+    ],
+  },
+  {
+    url: "medilpodcast.com",
+    country: "Maroc",
+    keywords: [
+      { term: "Podcast", position: 2 },
+      { term: "Podcast Maroc", position: 2 },
+      { term: "Plateforme Podcast Maroc", position: 1 },
+      { term: "بودكاست المغرب", position: 1 },
+    ],
+  },
+  {
+    url: "lyonparebrise.fr",
+    country: "France",
+    keywords: [
+      { term: "Réparation Pare Brise Lyon", position: 1 },
+      { term: "Remplacement Pare Brise Lyon", position: 2 },
+      { term: "Changement Pare Brise Lyon", position: 2 },
+      { term: "Pare Brise Lyon", position: 3 },
+    ],
+  },
+  {
+    url: "pcreparatieamsterdam.nl",
+    country: "Pays-Bas",
+    keywords: [
+      { term: "PC reparatie Amsterdam", position: 1 },
+      { term: "Laptopreparatie Amsterdam", position: 2 },
+      { term: "Laptop reparatie Amstedam", position: 1 },
+      { term: "Computer reparatie Amsterdam", position: 1 },
+    ],
+  },
+  {
+    url: "prestigecolor.be",
+    country: "Belgique",
+    keywords: [
+      { term: "Peintre Arlon", position: 1 },
+      { term: "Peinture résidentielle Arlon", position: 1 },
+      { term: "Peinture en Batiment à Arlon", position: 1 },
+      { term: "Expert Peintre Arlon", position: 2 },
+    ],
+  },
+];
 
 export default async function HomePage() {
   return (
     <main>
+      <ClaimReviewJsonLd
+        url="https://maroc-1hp.pages.dev/agence-seo-maroc/"
+        author={{ name: "Hostino" } as any}
+        claimReviewed="Agence SEO Maroc - Référencement Google"
+        reviewRating={
+          {
+            ratingValue: "5",
+            bestRating: "5",
+            worstRating: "1",
+            ratingCount: "65",
+          } as any
+        }
+      />
       <HeroSection
         subtitle="Agence SEO Maroc"
         title="L’agence SEO qui délivre de vrais résultats"
@@ -240,12 +338,12 @@ export default async function HomePage() {
         imageSrc="/images/agence-seo-maroc/agence-seo-maroc.png"
         imageAlt="Agence SEO au Maroc"
       />
-      <ContactForm 
+      <ContactForm
         title={
-            <>
-                Votre stratégie SEO {" "}
-, <br className='lg:hidden block '/><span className='border-bottom'>commence ici !</span>
-            </>
+          <>
+            Votre stratégie SEO , <br className="lg:hidden block " />
+            <span className="border-bottom">commence ici !</span>
+          </>
         }
       />
 
@@ -264,8 +362,11 @@ export default async function HomePage() {
         href={"https://www.hostino.ma/contact"}
       />
 
-      <GooglePositioning title="Cas clients de <br/>notre agence SEO Maroc" rankingsData={rankingsData}  
-      subtitle="Marre de payer des agences&nbsp;<b>sans résultats ? </b>Il est temps de passer à une <b>solution qui fonctionne</b>." />
+      <GooglePositioning
+        title="Cas clients de <br/>notre agence SEO Maroc"
+        rankingsData={rankingsData}
+        subtitle="Marre de payer des agences&nbsp;<b>sans résultats ? </b>Il est temps de passer à une <b>solution qui fonctionne</b>."
+      />
 
       <TextLeftImageRight
         title="Agence SEO Maroc : qu'est-ce que c'est ?"
@@ -312,8 +413,6 @@ export default async function HomePage() {
         href="https://www.hostino.ma/contact"
       />
 
-      
-
       <section className="lg:mt-[150px] mt-[80px]">
         <div className="container">
           <h2 className="title-section mb-[20px]">
@@ -356,7 +455,11 @@ export default async function HomePage() {
 
       <SeoServiceCards />
 
-      <NationalCoverage topic="Agence SEO" text="Chez Hostino™, nous accompagnons des clients de tous niveaux et de tous secteurs d'activité, partout au Maroc, dans leur stratégie de référencement Google et IA." title="Agence SEO, une <br /> couverture nationale"/>
+      <NationalCoverage
+        topic="Agence SEO"
+        text="Chez Hostino™, nous accompagnons des clients de tous niveaux et de tous secteurs d'activité, partout au Maroc, dans leur stratégie de référencement Google et IA."
+        title="Agence SEO, une <br /> couverture nationale"
+      />
 
       <FAQSection faqData={faqData} title="FAQ - Agence SEO Maroc" />
     </main>

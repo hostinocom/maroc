@@ -10,6 +10,9 @@ import Plans from "../components/commonSections/Plans";
 import HeroHeadingPages from "../components/ui/heroHeadingPages";
 import TrustedBySection from "../components/sections/TrustedBySection";
 import PromoBanner from "../components/ui/PromoBanner";
+import { ClaimReviewJsonLd } from "next-seo";
+import Head from "next/head";
+import { generateNextSeo } from "next-seo/pages";
 
 const hostingPlans: Plan[] = [
   {
@@ -90,7 +93,36 @@ const hostingPlans: Plan[] = [
 
 export default async function StartyPage() {
   return (
+
+<>
+     <Head>
+        {generateNextSeo({
+          title: "Starty - Hébergement Web Pas Cher au Maroc | Hostino",
+          description: "Lancez votre site à petit prix avec Starty. Hébergement web performant et sécurisé au Maroc.",
+          canonical: "https://maroc-1hp.pages.dev/starty",
+          openGraph: {
+            url: "https://maroc-1hp.pages.dev/starty",
+            title: "Starty - Hébergement Web",
+            description: "Hébergement web pas cher et performant",
+            type: "website",
+          },
+        })}
+      </Head>
     <main>
+
+      <ClaimReviewJsonLd
+        url="https://maroc-1hp.pages.dev/starty"
+        author={{ name: "Hostino" } as any}
+        claimReviewed="Starty - Hébergement Web Maroc"
+        reviewRating={
+          {
+            ratingValue: "5",
+            bestRating: "5",
+            worstRating: "1",
+            ratingCount: "55",
+          } as any
+        }
+      />
       <HeroHeadingPages
         smallTitle="Hébergement web pas cher"
         bigTitle="Starty®, Hébergement web pas cher"
@@ -100,7 +132,6 @@ export default async function StartyPage() {
         smallTitle="Hébergement web pas cher"
         plans={hostingPlans}
         heroHeading={true}
-        
       />
       <PromoBanner
         icon="⚠️"
@@ -129,5 +160,6 @@ export default async function StartyPage() {
       <FAQSection title={"FAQ sur l'hébergement web Starty"} />
       <StarRating />
     </main>
+    </>
   );
 }

@@ -10,16 +10,19 @@ import GmbServices from "../components/commonSections/GmbServices";
 import StarRating from "../components/ui/StartRatingFooter";
 import TitleParagraphButton from "../components/commonSections/TitleParagraphButton";
 import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter";
+import { ClaimReviewJsonLd } from "next-seo";
 
 const faqData = [
   {
-    question: "Est-ce que Google peut réellement me générer des clients prêts à acheter un bien immobilier ?",
+    question:
+      "Est-ce que Google peut réellement me générer des clients prêts à acheter un bien immobilier ?",
     answers: [
       "Oui, car les personnes qui recherchent directement « appartement à vendre à Rabat » ou « villa à Marrakech » sont déjà en phase active d'achat. Avec une bonne stratégie SEO ou Google Ads, ces prospects tombent sur votre site au moment exact où ils veulent investir.",
     ],
   },
   {
-    question: "Pourquoi choisir Google plutôt que les plateformes d'annonces immobilières ?",
+    question:
+      "Pourquoi choisir Google plutôt que les plateformes d'annonces immobilières ?",
     answers: [
       "Investir dans le marketing Google est plus rentable et stratégique que de dépendre uniquement des plateformes d'annonces immobilières.",
       "Sur Google, vous contrôlez totalement votre visibilité : votre site web, vos projets et vos coordonnées apparaissent en premier plan, sans être noyés parmi des dizaines d'annonces concurrentes.",
@@ -28,34 +31,38 @@ const faqData = [
     ],
   },
   {
-    question: "Quelle est la différence entre générer des leads via Google Ads et via le référencement naturel (SEO) ?",
+    question:
+      "Quelle est la différence entre générer des leads via Google Ads et via le référencement naturel (SEO) ?",
     answers: [
       "La différence entre générer des leads via Google Ads et via le référencement naturel (SEO) se situe surtout dans la rapidité et la durabilité des résultats.",
-      "Avec <span style=\"text-decoration: underline\"><strong><a href=\"/google-ads-maroc/\">Google Ads</a></strong></span>, vos annonces apparaissent immédiatement en haut de Google dès que la campagne est activée. Cela permet de capter rapidement des prospects qualifiés et d'obtenir des appels ou des demandes de contact presque instantanément.",
+      'Avec <span style="text-decoration: underline"><strong><a href="/google-ads-maroc/">Google Ads</a></strong></span>, vos annonces apparaissent immédiatement en haut de Google dès que la campagne est activée. Cela permet de capter rapidement des prospects qualifiés et d\'obtenir des appels ou des demandes de contact presque instantanément.',
       "Cependant, cette visibilité dépend entièrement du budget investi : dès que vous arrêtez de payer, vos annonces disparaissent et vous ne recevez plus de leads.",
-      "Le <span style=\"text-decoration: underline\"><strong><a href=\"/agence-seo-maroc/\">référencement naturel</a></strong></span> fonctionne différemment. C'est une stratégie plus progressive qui demande du temps pour positionner un site internet en haut des résultats de recherche.",
+      'Le <span style="text-decoration: underline"><strong><a href="/agence-seo-maroc/">référencement naturel</a></strong></span> fonctionne différemment. C\'est une stratégie plus progressive qui demande du temps pour positionner un site internet en haut des résultats de recherche.',
       "En revanche, une fois que votre site est bien référencé, il continue de générer des visites et des prospects de manière régulière, sans coût par clic. Le SEO est donc un investissement à long terme, qui construit une visibilité stable et durable sur Google.",
     ],
   },
   {
-    question: "Pourquoi Google est-il plus efficace pour vendre de l'immobilier que les réseaux sociaux ?",
+    question:
+      "Pourquoi Google est-il plus efficace pour vendre de l'immobilier que les réseaux sociaux ?",
     answers: [
       "Google est plus efficace pour vendre de l'immobilier car il capte les personnes qui recherchent déjà activement un bien à acheter. Lorsqu'un prospect tape sur Google des mots-clés comme « appartement à vendre Rabat » ou « villa Marrakech », il exprime une intention d'achat claire et immédiate.",
       "C'est ce qui fait la grande différence avec les réseaux sociaux : sur Facebook, Instagram ou TikTok, les utilisateurs ne cherchent pas forcément un bien immobilier, ils sont en mode divertissement.",
       "Ainsi, le référencement naturel (SEO) et les campagnes Google Ads permettent de se placer devant ces acheteurs au moment précis où ils sont prêts à passer à l'action.",
       "C'est un levier de conversion directe, qui génère plus d'appels, de visites et de ventes qualifiées. Cependant, pour maximiser les résultats, il ne faut pas négliger les réseaux sociaux.",
-      "Ils complètent parfaitement la stratégie en travaillant la notoriété, l'image de marque et en touchant un public plus large. Un projet immobilier bien présenté sur <span style=\"text-decoration: underline\"><strong><a href=\"https://www.facebook.com/business/instagram\" rel=\"noopener\">Instagram</a></strong></span>, Facebook ou TikTok, avec du sponsoring ciblé, attire l'attention, crée de la confiance et ramène des prospects supplémentaires, qui seront ensuite convertis grâce à Google.",
+      'Ils complètent parfaitement la stratégie en travaillant la notoriété, l\'image de marque et en touchant un public plus large. Un projet immobilier bien présenté sur <span style="text-decoration: underline"><strong><a href="https://www.facebook.com/business/instagram" rel="noopener">Instagram</a></strong></span>, Facebook ou TikTok, avec du sponsoring ciblé, attire l\'attention, crée de la confiance et ramène des prospects supplémentaires, qui seront ensuite convertis grâce à Google.',
     ],
   },
   {
-    question: "Est-ce que votre agence gère le marketing immobilier dans toutes les villes du Maroc ?",
+    question:
+      "Est-ce que votre agence gère le marketing immobilier dans toutes les villes du Maroc ?",
     answers: [
       "Oui, notre agence accompagne les promoteurs et agences immobilières dans toutes les villes du Maroc.",
       "Grâce à des campagnes Google Ads géolocalisées et un référencement SEO optimisé par ville et par type de bien, nous vous permettons de capter des prospects qualifiés exactement là où se trouvent vos acheteurs potentiels.",
     ],
   },
   {
-    question: "Est-il possible de cibler par exemple les Marocains résidant aux Pays-Bas pour un projet immobilier au Maroc ?",
+    question:
+      "Est-il possible de cibler par exemple les Marocains résidant aux Pays-Bas pour un projet immobilier au Maroc ?",
     answers: [
       "Oui, c'est tout à fait possible. Grâce à des campagnes Google Ads internationales et des stratégies SEO adaptées, nous pouvons cibler spécifiquement les Marocains résidant aux Pays-Bas qui recherchent activement à investir au Maroc. Nous travaillons sur la localisation, la langue et les intentions de recherche afin que vos annonces apparaissent devant les bonnes personnes au bon moment.",
       "Par exemple, lorsqu'un prospect tape depuis Amsterdam « appartement à vendre à Casablanca » ou « villa à vendre à Marrakech », votre projet peut apparaître directement dans les premiers résultats. Cette méthode permet d'attirer des clients sérieux, souvent avec un fort pouvoir d'achat, qui souhaitent concrétiser un investissement immobilier dans leur pays d'origine.",
@@ -93,9 +100,23 @@ const prestations = [
     textButton: "Lire la suite",
   },
 ];
-export default async function HomePage() {
+export default async function AgenceMarketingImmobilierPage() {
   return (
     <main>
+      <ClaimReviewJsonLd
+        url="https://maroc-1hp.pages.dev/agence-marketing-immobilier/"
+        author={{ name: "Hostino" } as any}
+        claimReviewed="Agence Marketing Immobilier Maroc"
+        reviewRating={
+          {
+            ratingValue: "5",
+            bestRating: "5",
+            worstRating: "1",
+            ratingCount: "60",
+          } as any
+        }
+      />
+
       <HeroSection
         subtitle="Agence Marketing Immobilier Maroc"
         title="Agence marketing immobilier au Maroc"
@@ -167,13 +188,16 @@ export default async function HomePage() {
         title="Prestations de notre agence<br />de marketing Immobilier Maroc"
       />
 
-     <SeoServiceCards />
+      <SeoServiceCards />
 
       <NationalCoverage
         title="FAQ - Agence Marketing Immobilier Maroc"
         topic={"Marketing immobilier "}
       />
-      <FAQSection faqData={faqData} title="FAQ - Agence Marketing Immobilier Maroc" />
+      <FAQSection
+        faqData={faqData}
+        title="FAQ - Agence Marketing Immobilier Maroc"
+      />
       <StartsRatingYellowFooter />
     </main>
   );

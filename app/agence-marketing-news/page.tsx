@@ -10,6 +10,7 @@ import GmbServices from "../components/commonSections/GmbServices";
 import StarRating from "../components/ui/StartRatingFooter";
 import TitleParagraphButton from "../components/commonSections/TitleParagraphButton";
 import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter";
+import { ClaimReviewJsonLd } from "next-seo";
 
 const faqData = [
   {
@@ -20,16 +21,18 @@ const faqData = [
     ],
   },
   {
-    question: "Pourquoi externaliser notre stratégie marketing digital à votre agence ?",
+    question:
+      "Pourquoi externaliser notre stratégie marketing digital à votre agence ?",
     answers: [
       "Externaliser votre stratégie marketing digital vous permet de profiter d'une expertise spécialisée et d'un regard externe capable d'identifier rapidement les leviers de croissance les plus efficaces.",
-      "Notre équipe suit en permanence l'évolution des pratiques numériques et met en place des stratégies adaptées au secteur des médias pour renforcer votre présence en ligne. En collaborant avec <strong>des acteurs majeurs comme <span style=\"text-decoration: underline\"><a href=\"https://www.medi1tv.com/\" rel=\"noopener\">Medi1TV</a></span></strong>, nous avons acquis une expérience concrète avec des équipes internes structurées, en intervenant comme un renfort stratégique et opérationnel.",
+      'Notre équipe suit en permanence l\'évolution des pratiques numériques et met en place des stratégies adaptées au secteur des médias pour renforcer votre présence en ligne. En collaborant avec <strong>des acteurs majeurs comme <span style="text-decoration: underline"><a href="https://www.medi1tv.com/" rel="noopener">Medi1TV</a></span></strong>, nous avons acquis une expérience concrète avec des équipes internes structurées, en intervenant comme un renfort stratégique et opérationnel.',
       "Cette collaboration nous a permis de coordonner efficacement la partie technique et la diffusion digitale, tout en respectant la ligne éditoriale et les objectifs de la rédaction.",
       "Travailler avec notre agence, c'est bénéficier de méthodes éprouvées, d'outils professionnels et d'une vision globale, tout en gardant une synergie fluide avec vos équipes internes. Nous mettons en place des actions mesurables qui augmentent votre audience, renforcent votre notoriété et assurent une croissance durable de votre média en ligne.",
     ],
   },
   {
-    question: "Notre site d'actualité n'est pas visible sur Google, que faire ?",
+    question:
+      "Notre site d'actualité n'est pas visible sur Google, que faire ?",
     answers: [
       "Notre agence vous garantit une visibilité optimale sur Google grâce à une stratégie complète alliant audit technique, optimisation SEO et diffusion ciblée. Nous analysons en profondeur votre site pour corriger les problèmes qui bloquent son indexation, nous mettons en place toutes les bonnes pratiques exigées par Google et nous optimisons votre présence pour qu'elle soit durable.",
       "Grâce à notre expertise, votre site média ou TV bénéficie d'une meilleure position dans les résultats de recherche, d'une augmentation progressive du trafic organique, et d'une visibilité renforcée auprès de votre audience cible.",
@@ -43,21 +46,24 @@ const faqData = [
     ],
   },
   {
-    question: "Est-ce que vous proposez des services PR et de publication sur les sites médias marocains (backlinks) ?",
+    question:
+      "Est-ce que vous proposez des services PR et de publication sur les sites médias marocains (backlinks) ?",
     answers: [
       "Oui ✅. Nous proposons des services de relations presse (PR) et de publication d'articles sponsorisés ou éditoriaux sur une large sélection de sites médias marocains reconnus, couvrant différents secteurs (actualité, économie, lifestyle, tech, régional…).",
       "Ces publications permettent d'obtenir des backlinks (Achat backlinks Maroc) puissants et naturels, de renforcer votre autorité SEO et d'augmenter votre visibilité auprès d'un public ciblé au Maroc.",
     ],
   },
   {
-    question: "Combien de temps faut-il pour voir des résultats concrets de la stratégie marketing ?",
+    question:
+      "Combien de temps faut-il pour voir des résultats concrets de la stratégie marketing ?",
     answers: [
       "En général, notre stratégie marketing s'inscrit dans une démarche à moyen et long terme.",
       "Les premiers effets peuvent commencer à apparaître dès les premières semaines (notamment sur la notoriété et l'indexation), mais il faut compter en moyenne entre 3 et 4 mois pour constater une augmentation significative du trafic organique et des performances globales.",
     ],
   },
   {
-    question: "Pourquoi un site de presse au Maroc a-t-il besoin du référencement Google (SEO) ?",
+    question:
+      "Pourquoi un site de presse au Maroc a-t-il besoin du référencement Google (SEO) ?",
     answers: [
       "Le référencement Google (SEO) est essentiel pour générer un trafic organique régulier et durable.",
       "Contrairement à la publicité payante, le SEO permet à vos articles, vidéos et podcasts d'apparaître naturellement dans les résultats de recherche lorsque les internautes s'informent sur l'actualité.",
@@ -68,20 +74,23 @@ const faqData = [
     ],
   },
   {
-    question: "Est-ce que vous proposez des formations pour les équipes éditoriales ?",
+    question:
+      "Est-ce que vous proposez des formations pour les équipes éditoriales ?",
     answers: [
       "Oui. Nous formons vos rédacteurs et journalistes aux bonnes pratiques SEO, à la rédaction Google-friendly et à l'optimisation de la diffusion sur les réseaux sociaux pour renforcer votre visibilité à long terme.",
     ],
   },
   {
-    question: "Accompagnez-vous les médias dans la monétisation de leur audience ?",
+    question:
+      "Accompagnez-vous les médias dans la monétisation de leur audience ?",
     answers: [
       "Oui, nous accompagnons les médias dans la monétisation efficace de leur audience en mettant en place des stratégies digitales adaptées à leur modèle éditorial. Notre approche combine l'optimisation du trafic organique, la fidélisation des lecteurs et la mise en valeur des espaces publicitaires pour augmenter les revenus.",
       "Nous intervenons également sur des leviers avancés tels que Google Ad Manager, la publicité programmatique, les abonnements payants, le brand content et les partenariats stratégiques. L'objectif est de transformer votre audience en source de revenus durable, tout en renforçant la valeur de votre marque média sur le long terme.",
     ],
   },
   {
-    question: "Pouvez-vous gérer nos réseaux sociaux en plus du référencement ?",
+    question:
+      "Pouvez-vous gérer nos réseaux sociaux en plus du référencement ?",
     answers: [
       "Oui. Nous proposons des plans de diffusion multicanal incluant la gestion stratégique de plateformes comme Facebook, X, LinkedIn et Threads pour augmenter le reach organique et renforcer le trafic en temps réel.",
     ],
@@ -121,6 +130,19 @@ const prestations = [
 export default async function HomePage() {
   return (
     <main>
+      <ClaimReviewJsonLd
+        url="https://maroc-1hp.pages.dev/agence-marketing-news/"
+        author={{ name: "Hostino" } as any}
+        claimReviewed="Agence Marketing News - Référencement Presse"
+        reviewRating={
+          {
+            ratingValue: "5",
+            bestRating: "5",
+            worstRating: "1",
+            ratingCount: "50",
+          } as any
+        }
+      />
       <HeroSection
         subtitle="Agence Marketing News Maroc"
         title="Agence marketing news & médias"
@@ -202,16 +224,9 @@ export default async function HomePage() {
         buttonHref="https://www.hostino.ma/contact"
       />
 
-      
-
       <SeoServiceCards />
 
-      
-
-      <FAQSection
-        faqData={faqData}
-        title="FAQ - Agence Marketing News Maroc"
-      />
+      <FAQSection faqData={faqData} title="FAQ - Agence Marketing News Maroc" />
       <StartsRatingYellowFooter />
     </main>
   );

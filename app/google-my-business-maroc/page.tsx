@@ -8,26 +8,30 @@ import GmbServices from "../components/commonSections/GmbServices";
 import TextLeftVideoRight from "../components/commonSections/TextLeftVideoRight";
 import GmbAdvantages from "../components/commonSections/GmbAdvantage";
 import StarRating from "../components/ui/StartRatingFooter";
+import { ClaimReviewJsonLd } from "next-seo";
 
 const faqData = [
   {
-    question: "Je veux créer une fiche Google My Business pour mon entreprise, comment faire ?",
+    question:
+      "Je veux créer une fiche Google My Business pour mon entreprise, comment faire ?",
     answers: [
       "Créer une fiche Google My Business nécessite de respecter les règles et conditions imposées par Google. Vous devez fournir des informations précises : nom de l'entreprise, adresse, numéro de téléphone, catégorie d'activité, site web, ainsi que des photos de qualité. Ensuite, Google demande une validation, généralement par courrier (code PIN envoyé à votre adresse) ou parfois par téléphone ou email.",
       "Notre agence vous accompagne dans chaque étape : nous préparons correctement vos informations, choisissons les catégories les plus pertinentes et gérons la procédure de validation afin d'assurer que votre fiche soit approuvée rapidement et correctement.",
     ],
   },
   {
-    question: "J'ai essayé de créer une fiche mais elle a été suspendue, que faire ?",
+    question:
+      "J'ai essayé de créer une fiche mais elle a été suspendue, que faire ?",
     answers: [
       'Une suspension intervient souvent quand Google détecte une incohérence (adresse incomplète, faux numéro, catégorie incorrecte) ou un non-respect de ses <a style={{ textDecoration: "underline" }} href="https://support.google.com/business/answer/7667250?hl=fr" target="_blank">politiques</a>.',
-      'Cela peut aussi arriver si l\'entreprise est jugée « service-area business » (se déplaçant chez les clients) sans adresse physique valide.',
+      "Cela peut aussi arriver si l'entreprise est jugée « service-area business » (se déplaçant chez les clients) sans adresse physique valide.",
       "Dans ce cas, il est essentiel d'analyser la raison précise de la suspension. Notre agence prend en charge le diagnostic et les démarches de réactivation.",
       "Nous fournissons les justificatifs nécessaires (factures, registre de commerce, preuves d'adresse) et argumentons auprès de Google pour débloquer votre fiche. Sans expertise, une suspension peut durer des mois, alors qu'avec un accompagnement professionnel, le délai de rétablissement est considérablement réduit.",
     ],
   },
   {
-    question: "Combien de temps faut-il pour créer une fiche Google My Business au Maroc ?",
+    question:
+      "Combien de temps faut-il pour créer une fiche Google My Business au Maroc ?",
     answers: [
       "En général, la création d'une fiche Google My Business prend seulement quelques minutes, mais c'est l'étape de validation qui demande le plus de temps.",
       "Au Maroc, la vérification par courrier peut durer 2 à 3 semaines, parfois plus selon la localisation. En revanche, certaines méthodes comme la validation par téléphone ou par vidéo permettent d'accélérer le processus et d'obtenir une validation en seulement 1 à 5 jours.",
@@ -36,10 +40,11 @@ const faqData = [
     ],
   },
   {
-    question: "Je veux faire du sponsoring de ma fiche Google My Business, comment ça marche ?",
+    question:
+      "Je veux faire du sponsoring de ma fiche Google My Business, comment ça marche ?",
     answers: [
       'Le sponsoring d\'une fiche Google My Business se fait via <a style={{ textDecoration: "underline !important" }} href="/google-ads-maroc" target="_blank">Google Ads</a>. Concrètement, cela permet de mettre en avant votre fiche directement dans les résultats de recherche et sur Google Maps, devant celles de vos concurrents.',
-      "Ainsi, lorsque des clients recherchent vos services ou vos produits, votre fiche apparaît en première position avec un label \"sponsorisé\".",
+      'Ainsi, lorsque des clients recherchent vos services ou vos produits, votre fiche apparaît en première position avec un label "sponsorisé".',
       "Notre agence gère pour vous la mise en place des campagnes Google Ads liées à votre fiche GMB : choix des bons mots-clés, ciblage géographique (par ville ou quartier), paramétrage du budget et suivi des performances.",
       "L'avantage est que vous pouvez capter immédiatement des appels, des demandes d'itinéraires et des visites sur votre site web.",
       "En optimisant simultanément votre fiche et vos campagnes, nous créons une véritable synergie : votre présence organique est renforcée, et le sponsoring vous permet d'accélérer la visibilité afin de générer rapidement plus de clients.",
@@ -55,10 +60,11 @@ const faqData = [
     ],
   },
   {
-    question: "Ma fiche Google My Business est déjà créée mais je n'ai pas accès, comment la récupérer ?",
+    question:
+      "Ma fiche Google My Business est déjà créée mais je n'ai pas accès, comment la récupérer ?",
     answers: [
       "Il arrive souvent qu'une fiche Google My Business soit déjà créée par un ancien employé, un prestataire, ou automatiquement par Google grâce aux informations trouvées en ligne.",
-      "Dans ce cas, vous pouvez demander le transfert de propriété. La démarche consiste à cliquer sur \"Revendiquer cette fiche\" directement depuis Google Maps ou Google Search. Google vous proposera de demander l'accès au propriétaire actuel.",
+      'Dans ce cas, vous pouvez demander le transfert de propriété. La démarche consiste à cliquer sur "Revendiquer cette fiche" directement depuis Google Maps ou Google Search. Google vous proposera de demander l\'accès au propriétaire actuel.',
       "Celui-ci dispose alors de 3 à 7 jours pour répondre. Si vous n'obtenez pas de réponse, vous pouvez suivre les étapes indiquées par Google (preuve d'adresse, factures, documents légaux) afin de récupérer la propriété de votre fiche.",
       "Notre agence peut vous accompagner dans cette procédure : nous préparons les justificatifs nécessaires et faisons le suivi auprès de Google afin que vous récupériez rapidement la gestion complète de votre fiche.",
     ],
@@ -67,12 +73,31 @@ const faqData = [
     question: "Faites-vous du sponsoring pour ma fiche Google My Business ?",
     answer: (
       <p>
-        Oui, absolument. Nous aidons les entreprises locales à promouvoir leur fiche <a style={{ textDecoration: 'underline' }} href="/google-my-business-maroc/" target="_blank"><b>Google My Business</b></a> via des campagnes sponsorisées. Cela permet à votre établissement d'apparaître tout en haut des résultats Google Maps, avec plus de visibilité que vos concurrents directs. Lorsqu'un utilisateur tape "restaurant italien Rabat", votre fiche peut être mise en avant, accompagnée d'appels à l'action comme "Appeler" ou "Itinéraire". En complément, nous optimisons aussi votre fiche : ajout de photos attractives, gestion des avis clients, mise à jour régulière des horaires et des services. Ce travail combiné (optimisation + sponsoring) améliore considérablement votre crédibilité et attire davantage de clients potentiels directement dans votre restaurant.
+        Oui, absolument. Nous aidons les entreprises locales à promouvoir leur
+        fiche{" "}
+        <a
+          style={{ textDecoration: "underline" }}
+          href="/google-my-business-maroc/"
+          target="_blank"
+        >
+          <b>Google My Business</b>
+        </a>{" "}
+        via des campagnes sponsorisées. Cela permet à votre établissement
+        d'apparaître tout en haut des résultats Google Maps, avec plus de
+        visibilité que vos concurrents directs. Lorsqu'un utilisateur tape
+        "restaurant italien Rabat", votre fiche peut être mise en avant,
+        accompagnée d'appels à l'action comme "Appeler" ou "Itinéraire". En
+        complément, nous optimisons aussi votre fiche : ajout de photos
+        attractives, gestion des avis clients, mise à jour régulière des
+        horaires et des services. Ce travail combiné (optimisation + sponsoring)
+        améliore considérablement votre crédibilité et attire davantage de
+        clients potentiels directement dans votre restaurant.
       </p>
     ),
   },
   {
-    question: "Pouvez-vous gérer plusieurs fiches Google My Business à la fois ?",
+    question:
+      "Pouvez-vous gérer plusieurs fiches Google My Business à la fois ?",
     answers: [
       "Oui, notre agence peut gérer plusieurs fiches Google My Business en même temps, qu'il s'agisse d'entreprises multi-sites (plusieurs agences, boutiques, showrooms, restaurants, etc.) ou de réseaux de franchises. La gestion centralisée permet d'assurer la cohérence des informations (nom, adresse, téléphone, horaires, catégories), mais aussi de publier du contenu et de répondre aux avis clients de manière homogène sur l'ensemble de vos fiches.",
       "Chaque localisation est travaillée individuellement (photos, horaires, avis clients) mais reste reliée à votre marque principale pour renforcer votre crédibilité. Grâce à notre accompagnement, vos points de vente ou agences apparaissent correctement dans chaque ville ciblée, avec des informations fiables et optimisées.",
@@ -80,7 +105,7 @@ const faqData = [
   },
 ];
 
-const gmbServicesData  = [
+const gmbServicesData = [
   {
     title: "Création fiches Google My Business",
     description:
@@ -101,8 +126,7 @@ const gmbServicesData  = [
   },
   {
     title: "Récupération des fiches suspendues",
-    description:
-      `Confronté à une <a style={{ textDecoration: 'underline' }} href='https://support.google.com/business/answer/13597551?hl=fr'><strong>suspension de votre fiche Google My Business</strong></a>? Nous vous accompagnons à chaque étape : nos spécialistes identifient la cause du problème et mettent en œuvre les actions nécessaires pour rétablir votre fiche dans les meilleurs délais.`,
+    description: `Confronté à une <a style={{ textDecoration: 'underline' }} href='https://support.google.com/business/answer/13597551?hl=fr'><strong>suspension de votre fiche Google My Business</strong></a>? Nous vous accompagnons à chaque étape : nos spécialistes identifient la cause du problème et mettent en œuvre les actions nécessaires pour rétablir votre fiche dans les meilleurs délais.`,
     link: "https://www.hostino.ma/contact/",
   },
 ];
@@ -130,10 +154,22 @@ const gmbAdvantagesData = [
   },
 ];
 
-
 export default async function HomePage() {
   return (
     <main>
+      <ClaimReviewJsonLd
+        url="https://maroc-1hp.pages.dev/google-my-business-maroc/"
+        author={{ name: "Hostino" } as any}
+        claimReviewed="Google My Business Maroc - Fiche d'Établissement"
+        reviewRating={
+          {
+            ratingValue: "5",
+            bestRating: "5",
+            worstRating: "1",
+            ratingCount: "58",
+          } as any
+        }
+      />
       <HeroSection
         subtitle="Google My Business Maroc"
         title="Agence Google My Business Maroc"
@@ -157,15 +193,12 @@ export default async function HomePage() {
         }
       />
 
-      
-
-
       <TextLeftImageRight
         title="Agence Google My Business au Maroc"
         paragraphs={[
           "Hostino est une agence spécialisée dans Google My Business au Maroc. Nous accompagnons les entreprises, qu’elles soient implantées au Maroc ou à l’étranger, à renforcer leur <b>présence locale</b> sur <b>Google et Google Maps</b>, ainsi que sur les services de localisation proposés par d’autres plateformes comme Instagram, Snapchat et <b>Waze</b>.",
           "Que ce soit pour la création de fiches de localisation destinées à des <b>hôtels</b>, boutiques, magasins, showrooms, bureaux, <b>restaurants</b>, <b>médecins</b>, avocats, écoles ou <b>institutions</b>, ou encore pour la gestion de fiches multi-sites dans plusieurs villes, Hostino prend en charge l’ensemble du processus de A à Z.",
-          "Appelez-nous dès maintenant au +212 663 75 09 08 et confiez la gestion de votre fiche Google My Business à des experts certifiés Google."
+          "Appelez-nous dès maintenant au +212 663 75 09 08 et confiez la gestion de votre fiche Google My Business à des experts certifiés Google.",
         ]}
         imageSrc="images/agence-my-business-maroc/google-my-business-maroc.jpg"
         imageAlt="C'est quoi une agence Google My Business Maroc ?"
@@ -174,8 +207,10 @@ export default async function HomePage() {
         href="https://www.hostino.ma/contact"
       />
 
-      <GmbServices data={gmbServicesData} title="Les prestations de notre agence <br/> Google My Business" />
-
+      <GmbServices
+        data={gmbServicesData}
+        title="Les prestations de notre agence <br/> Google My Business"
+      />
 
       <section className="lg:mt-[150px] mt-[80px]">
         <div className="container">
@@ -227,7 +262,10 @@ export default async function HomePage() {
         href="https://www.hostino.ma/contact"
       />
 
-      <GmbAdvantages advantages={gmbAdvantagesData} title="Avantages de la fiche <br /> Google My Business" />
+      <GmbAdvantages
+        advantages={gmbAdvantagesData}
+        title="Avantages de la fiche <br /> Google My Business"
+      />
 
       <TextLeftImageRight
         title="Maximiser vos résultats grâce à la synergie Google My Business & SEO"
@@ -249,7 +287,10 @@ export default async function HomePage() {
         title="Une agence Google My Business à vos côtés partout au Maroc"
       />
 
-      <FAQSection faqData={faqData} title="FAQ - Agence Google My Business Maroc" />
+      <FAQSection
+        faqData={faqData}
+        title="FAQ - Agence Google My Business Maroc"
+      />
 
       <StarRating />
     </main>

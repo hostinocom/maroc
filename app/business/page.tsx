@@ -8,26 +8,22 @@ import HeroHeadingPages from "../components/ui/heroHeadingPages";
 import TrustedBySection from "../components/sections/TrustedBySection";
 import PromoBanner from "../components/ui/PromoBanner";
 import { text } from "stream/consumers";
-
-
-
-
+import { ClaimReviewJsonLd } from "next-seo";
 
 const hostingPlans = [
   {
     id: 1,
     name: "Business",
-    subtext:
-      "",
+    subtext: "",
     price_original: "1199 DH/an",
     price_discounted: "999 DH/an",
     save: "20%",
     price_ttc: "Pour 1 an, vous payez <b>1198,8 DH TTC.</b>",
     performance_stars: 4,
-    more_performance:{
+    more_performance: {
       text: "Plus de performances ?",
-      href : "dd",
-      exists : false
+      href: "dd",
+      exists: false,
     },
     order: {
       text: "Commander",
@@ -55,15 +51,15 @@ const hostingPlans = [
     id: 2,
     name: "Business Plus",
     subtext: "",
-    price_original : "",
+    price_original: "",
     price_discounted: "1800 DH/an",
     price_ttc: "Pour 1 an, vous payez <b>2160 DH TTC.</b>",
-    save :"",
+    save: "",
     performance_stars: 5,
-    more_performance:{
+    more_performance: {
       text: "Plus de performances ?",
-      href : "dd",
-      exists : false
+      href: "dd",
+      exists: false,
     },
     order: {
       text: "Commander",
@@ -90,17 +86,16 @@ const hostingPlans = [
   {
     id: 3,
     name: "Business <i>Pro</i>",
-    subtext:
-      "",
-    price_original : "",
+    subtext: "",
+    price_original: "",
     price_discounted: "3000 DH/an",
     price_ttc: "Pour 1 an, vous payez <b>3600 DH TTC.</b>",
     performance_stars: 5,
     save: "",
-    more_performance:{
+    more_performance: {
       text: "Plus de performances ?",
-      href : "dd",
-      exists : false
+      href: "dd",
+      exists: false,
     },
     order: {
       text: "Commander",
@@ -126,15 +121,14 @@ const hostingPlans = [
   },
 ];
 
-
 const faqData = [
   {
     question: "Est-ce que l’hébergement web Business répond à mes besoins ?",
     answers: [
       "Nos packs Business sont spécialement conçus pour les sites d’entreprises, qu’il s’agisse de sites vitrines ou de plateformes e-commerce.",
       "L’hébergement Business offre à votre site web sécurité, fiabilité, ainsi qu’une flexibilité totale.",
-      "Vous pouvez évoluer à tout moment, sans interruption de service : passez facilement de Business à Business Plus, puis à Business Pro, au rythme du développement de votre activité."
-    ]
+      "Vous pouvez évoluer à tout moment, sans interruption de service : passez facilement de Business à Business Plus, puis à Business Pro, au rythme du développement de votre activité.",
+    ],
   },
   {
     question: "Quel délai pour activer mon compte hébergement web Business® ?",
@@ -146,7 +140,7 @@ const faqData = [
   {
     question: "Mes envois d’emails sont-ils limités ?",
     answers: [
-      "Afin de prévenir toute utilisation abusive du mass-mailing, le nombre d’e-mails envoyés par heure est limité en fonction de la quantité d’e-mails incluse dans votre formule."
+      "Afin de prévenir toute utilisation abusive du mass-mailing, le nombre d’e-mails envoyés par heure est limité en fonction de la quantité d’e-mails incluse dans votre formule.",
     ],
   },
   {
@@ -156,7 +150,8 @@ const faqData = [
     ],
   },
   {
-    question: "Mon hébergement Business® a expiré, est-ce que mes données sont perdues ?",
+    question:
+      "Mon hébergement Business® a expiré, est-ce que mes données sont perdues ?",
     answers: [
       "Vos données restent disponibles sur nos serveurs pendant une période de 30 jours après l’expiration de votre service.",
       "Elles peuvent être récupérées instantanément une fois que les frais de renouvellement sont réglés.",
@@ -172,10 +167,22 @@ const faqData = [
   },
 ];
 
-
 export default async function StartyPage() {
   return (
     <main>
+      <ClaimReviewJsonLd
+        url="https://maroc-1hp.pages.dev/business/"
+        author={{ name: "Hostino" } as any}
+        claimReviewed="Business - Solutions Professionnelles"
+        reviewRating={
+          {
+            ratingValue: "5",
+            bestRating: "5",
+            worstRating: "1",
+            ratingCount: "55",
+          } as any
+        }
+      />
       <HeroHeadingPages
         smallTitle="Hébergement web business"
         bigTitle="Business®, Hébergement web pour les professionnels"
@@ -212,9 +219,10 @@ la révolution de la messagerie <i>pro</i>"
         alignment="left"
       />
 
-      <FAQSection 
+      <FAQSection
         faqData={faqData}
-        title={"FAQ sur l'hébergement web Business"} />
+        title={"FAQ sur l'hébergement web Business"}
+      />
       <StarRating />
     </main>
   );

@@ -10,6 +10,7 @@ import GmbServices from "../components/commonSections/GmbServices";
 import StarRating from "../components/ui/StartRatingFooter";
 import TitleParagraphButton from "../components/commonSections/TitleParagraphButton";
 import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter";
+import { ClaimReviewJsonLd } from "next-seo";
 
 const faqData = [
   {
@@ -191,9 +192,23 @@ const prestations = [
   },
 ];
 
-export default async function HomePage() {
+export default async function AgenceMarketingMedicalPage() {
   return (
     <main>
+      <ClaimReviewJsonLd
+        url="https://maroc-1hp.pages.dev/agence-marketing-medical/"
+        author={{ name: "Hostino" } as any}
+        claimReviewed="Agence Marketing Médical Maroc"
+        reviewRating={
+          {
+            ratingValue: "5",
+            bestRating: "5",
+            worstRating: "1",
+            ratingCount: "55",
+          } as any
+        }
+      />
+
       <HeroSection
         subtitle="Agence Marketing Médical Maroc"
         title="Agence marketing digital santé"
@@ -220,7 +235,6 @@ export default async function HomePage() {
       <TextLeftImageRight
         title="Référencement Google pour articles de presse"
         paragraphs={[
-          
           "Le référencement Google pour articles de presse est aujourd’hui indispensable. Il permet aux <b>sites médias</b>, aux <b>chaînes de télévision</b> et aux <b>radios</b>, qu’elles soient <b>publiques ou privées</b>, d’optimiser leur stratégie de génération de trafic afin que leurs dépêches, articles, podcasts et vidéos ressortent davantage sur Google.",
           "L’objectif est clair : <b>générer un trafic organique</b> régulier et renforcer la visibilité de votre site web sur le moteur de recherche.",
           "Avec Hostino, vous bénéficiez d’un <b>suivi complet</b> : optimisation technique (vitesse du site, sécurité, structure) et accompagnement rédactionnel pour écrire selon les critères de Google. Résultat : vos articles gardent leur visibilité plus longtemps et continuent à attirer régulièrement des lecteurs.",

@@ -13,6 +13,7 @@ import HostingSolutionsCards from "../components/sectionsCloudMarocPage/HostingS
 import PlansSection from "../components/commonSections/Plans";
 import ServerVps from "../components/sectionsCloudMarocPage/ServerVps";
 import PlansPack from "../components/sectionsCloudMarocPage/PlansPack";
+import { ClaimReviewJsonLd } from "next-seo";
 
 const faqData = [
   {
@@ -285,21 +286,35 @@ const hostingFeatures = [
 export default async function CloudMarocPage() {
   return (
     <main>
+      <ClaimReviewJsonLd
+        url="https://maroc-1hp.pages.dev/cloud-maroc/"
+        author={{ name: "Hostino" } as any}
+        claimReviewed="Cloud Maroc - Sécurité et Souveraineté des Données"
+        reviewRating={
+          {
+            ratingValue: "5",
+            bestRating: "5",
+            worstRating: "1",
+            ratingCount: "55",
+          } as any
+        }
+      />
       <HeroHeadingPages
         smallTitle="Cloud Maroc"
         bigTitle="Commander un Cloud souverain au Maroc"
       />
       <div className="bg-gray-100">
         <div className="container">
-        <div className="md:px-[220px]  text-center">
-        <p className="paragraph">
-          Hébergez vos données sensibles, e-mails, sites web et applications
-          dans <b>un datacenter au Maroc </b>🇲🇦.  Avec Hostino®, profitez
-          de l’offre de
-          <b>Cloud souverain</b> la plus accessible et avantageuse du Royaume.
-        </p>
-      </div>
-      </div>
+          <div className="md:px-[220px]  text-center">
+            <p className="paragraph">
+              Hébergez vos données sensibles, e-mails, sites web et applications
+              dans <b>un datacenter au Maroc </b>🇲🇦. Avec Hostino®, profitez de
+              l’offre de
+              <b>Cloud souverain</b> la plus accessible et avantageuse du
+              Royaume.
+            </p>
+          </div>
+        </div>
       </div>
 
       <HostingSolutionsCards />
@@ -361,10 +376,7 @@ export default async function CloudMarocPage() {
 
       <ServerVps />
 
-      <FAQSection
-        faqData={faqData}
-        title={"FAQ - Cloud Maroc"}
-      />
+      <FAQSection faqData={faqData} title={"FAQ - Cloud Maroc"} />
       <StarRating />
     </main>
   );

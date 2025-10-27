@@ -6,6 +6,7 @@ import FAQSection from "../components/commonSections/FaqSection";
 import TitleParagraphButton from "../components/commonSections/TitleParagraphButton";
 import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter";
 import GmbServices from "../components/commonSections/GmbServices";
+import { ClaimReviewJsonLd } from "next-seo";
 
 const faqData = [
   {
@@ -23,7 +24,8 @@ const faqData = [
     ],
   },
   {
-    question: "Pouvez-vous publier des articles sur de grands sites médias au Maroc ?",
+    question:
+      "Pouvez-vous publier des articles sur de grands sites médias au Maroc ?",
     answers: [
       "Oui ✅. Grâce à notre réseau exclusif de partenaires médias marocains, nous pouvons publier des articles avec des liens « dofollow » sur des grands sites à forte autorité.",
       "Cela inclut des portails d'actualités nationaux, des magazines en ligne, ainsi que des plateformes sectorielles bien établies.",
@@ -46,7 +48,8 @@ const faqData = [
     ],
   },
   {
-    question: "Gérez-vous des campagnes PR de publication sur les sites médias marocains ?",
+    question:
+      "Gérez-vous des campagnes PR de publication sur les sites médias marocains ?",
     answers: [
       "Oui, nous prenons entièrement en charge la gestion de campagnes PR de publication sur les sites médias marocains.",
       "Cela comprend la rédaction ou l'adaptation de vos articles pour les rendre à la fois éditorialement pertinents et optimisés pour le référencement, la sélection stratégique des médias les plus adaptés à votre secteur, ainsi que la négociation et la publication effective sur des portails d'actualités nationaux, des magazines en ligne ou des plateformes sectorielles reconnues.",
@@ -61,7 +64,8 @@ const faqData = [
     ],
   },
   {
-    question: "Les backlinks marocains sont-ils utiles pour une entreprise étrangère qui cible le marché local ?",
+    question:
+      "Les backlinks marocains sont-ils utiles pour une entreprise étrangère qui cible le marché local ?",
     answers: [
       "Oui ✅. Même si votre entreprise est basée à l'étranger, les backlinks marocains jouent un rôle clé pour améliorer votre visibilité locale auprès des internautes marocains.",
       "En obtenant des liens depuis des sites marocains à forte autorité (médias, blogs locaux, annuaires professionnels…), vous envoyez à Google un signal clair sur votre pertinence géographique.",
@@ -97,6 +101,19 @@ const services = [
 export default async function BacklinksPage() {
   return (
     <main>
+      <ClaimReviewJsonLd
+        url="https://maroc-1hp.pages.dev/backlinks-maroc/"
+        author={{ name: "Hostino" } as any}
+        claimReviewed="Backlinks Maroc - Service de Création de Liens"
+        reviewRating={
+          {
+            ratingValue: "5",
+            bestRating: "5",
+            worstRating: "1",
+            ratingCount: "48",
+          } as any
+        }
+      />
       <HeroSection
         subtitle="Agence de Backlinks Maroc"
         title="Agence de backlinks au Maroc"
@@ -113,8 +130,7 @@ export default async function BacklinksPage() {
       <ContactForm
         title={
           <>
-            Backlinks Maroc : un conseiller{" "}
-            <br className="lg:hidden block " />
+            Backlinks Maroc : un conseiller <br className="lg:hidden block " />
             <span className="border-bottom">vous rappelle !</span>
           </>
         }
@@ -124,7 +140,7 @@ export default async function BacklinksPage() {
         title="Agence d'acquisition de backlinks au Maroc"
         paragraphs={[
           "Notre agence accompagne les marques et les entreprises dans l'acquisition de backlinks locaux au Maroc.",
-          "Nous disposons d'un <b>réseau stratégique de plus de 200 sites web</b> à forte autorité (DA) répartis dans différents secteurs d'activité. Grâce à ces partenariats solides, nous vous aidons à renforcer votre visibilité sur Google et à améliorer durablement votre positionnement <strong><span style=\"text-decoration: underline;\"><a href=\"/backlinks-maroc/\">SEO</a></span></strong>.",
+          'Nous disposons d\'un <b>réseau stratégique de plus de 200 sites web</b> à forte autorité (DA) répartis dans différents secteurs d\'activité. Grâce à ces partenariats solides, nous vous aidons à renforcer votre visibilité sur Google et à améliorer durablement votre positionnement <strong><span style="text-decoration: underline;"><a href="/backlinks-maroc/">SEO</a></span></strong>.',
           "En plus de la mise à disposition de backlinks de qualité, nous proposons un service complet <b>d'acquisition et de négociation</b> personnalisée. Nous identifions les opportunités les plus pertinentes en fonction de votre secteur d'activité, de vos objectifs stratégiques et de votre budget.",
           "Appelez le +212 663 75 09 08 et confiez l'acquisition de backlinks à une agence SEO experte au Maroc.",
         ]}
@@ -150,7 +166,7 @@ export default async function BacklinksPage() {
         title="Achat backlinks Maroc"
         paragraphs={[
           "Chez Hostino, nous vous proposons une <b>sélection exclusive</b> de backlinks stratégiques, conçus pour propulser le site web de votre marque ou de votre entreprise vers les premières positions des moteurs de recherche.",
-          "Imaginez un article publié sur Maroc24.com ou un autre grand média local, mettant en avant votre société tout en intégrant un backlink \"<span style=\"text-decoration: underline;\"><strong><a href=\"https://developers.google.com/search/docs/crawling-indexing/qualify-outbound-links?hl=fr\" rel=\"noopener\">dofollow</a></strong></span>\" vers votre site. Cette action renforce considérablement votre autorité en ligne, améliore votre référencement naturel et vous permet de <b>dépasser efficacement vos concurrents</b>.",
+          'Imaginez un article publié sur Maroc24.com ou un autre grand média local, mettant en avant votre société tout en intégrant un backlink "<span style="text-decoration: underline;"><strong><a href="https://developers.google.com/search/docs/crawling-indexing/qualify-outbound-links?hl=fr" rel="noopener">dofollow</a></strong></span>" vers votre site. Cette action renforce considérablement votre autorité en ligne, améliore votre référencement naturel et vous permet de <b>dépasser efficacement vos concurrents</b>.',
           "Boostez vos positions sur Google et atteignez de nouveaux sommets grâce à nos solutions de <b>backlinking de qualité supérieure</b>, proposées à des prix très compétitifs.",
         ]}
         imageSrc="images/backlinks-maroc/achat-backlinks-maroc.jpg"
@@ -166,7 +182,7 @@ export default async function BacklinksPage() {
       />
 
       <FAQSection faqData={faqData} title="FAQ - Backlinks Maroc" />
-      <StartsRatingYellowFooter totalVotes={49}/>
+      <StartsRatingYellowFooter totalVotes={49} />
     </main>
   );
 }

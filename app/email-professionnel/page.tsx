@@ -13,6 +13,9 @@ import EmailCreationSteps from "../components/sectionsEmailProfessionnelPage/Ema
 import PlansEmail from "../components/sectionsEmailProfessionnelPage/PlansEmail";
 import ServiceProximite from "../components/commonSections/ServiceProximite";
 import StarRatingYellowFooter from "../components/ui/StartsRatingYellowFooter";
+import { ClaimReviewJsonLd } from "next-seo";
+import Head from "next/head";
+import { generateNextSeo } from "next-seo/pages";
 
 const faqData = [
   {
@@ -279,126 +282,161 @@ const hostingFeatures = [
 
 export default async function EmailProfessionnelPage() {
   return (
-    <main>
-      <HeroHeadingPages
-        smallTitle="Email professionnel Maroc"
-        bigTitle="Adresse email professionnelle pour votre entreprise"
-        lineGreen={true}
+    <>
+      <Head>
+          {generateNextSeo({
+            title:
+              "Email Professionnel Maroc - Maily® Solution Mail Pro | Hostino",
+            description:
+              "Email professionnel au Maroc. Solution mail cloud sécurisée avec Maily®. Dès 25 DH/mois.",
+            canonical: "https://maroc-1hp.pages.dev/email-professionnel/",
+            openGraph: {
+              url: "https://maroc-1hp.pages.dev/email-professionnel/",
+              title: "Email Professionnel - Maily® Solution Pro",
+              description: "Email professionnel au Maroc avec Maily®",
+              type: "website",
+            },
+          })}
+      </Head>
+
+      <ClaimReviewJsonLd
+        url="https://maroc-1hp.pages.dev/email-professionnel/"
+        author={{ name: "Hostino" } as any}
+        claimReviewed="Email Professionnel - Solution Mail Pro"
+        reviewRating={
+          {
+            ratingValue: "5",
+            bestRating: "5",
+            worstRating: "1",
+            ratingCount: "55",
+          } as any
+        }
       />
-      <div className="bg-gray-100 md:pb-[100px] pb-[80px]">
-        <div className="container">
-          <div className=" text-center">
-            <p className="paragraph">
-              Créez votre Email Professionnel Maroc, associés à votre nom de
-              domaine, <b>à partir de 25 DH/mois.</b>
-            </p>
-            <Link href={"#offres"} className="">
-              <AnimatedButton
-                text={"Voir nos offres"}
-                hoverText="Voir nos offres"
-                bgColor={"bg-transparent"}
-                textColor={"text-title"}
-                hoverBgColor={"bg-transparent"}
-                className="text-title border-3 border-primary rounded-sm px-[40px] text-[18px] font-[600] py-[10px] "
-                arrowButton={true}
-                colorArrow={"#022545"}
-              />
-            </Link>
+
+      <main>
+        <HeroHeadingPages
+          smallTitle="Email professionnel Maroc"
+          bigTitle="Adresse email professionnelle pour votre entreprise"
+          lineGreen={true}
+        />
+        <div className="bg-gray-100 md:pb-[100px] pb-[80px]">
+          <div className="container">
+            <div className=" text-center">
+              <p className="paragraph">
+                Créez votre Email Professionnel Maroc, associés à votre nom de
+                domaine, <b>à partir de 25 DH/mois.</b>
+              </p>
+              <Link href={"#offres"} className="">
+                <AnimatedButton
+                  text={"Voir nos offres"}
+                  hoverText="Voir nos offres"
+                  bgColor={"bg-transparent"}
+                  textColor={"text-title"}
+                  hoverBgColor={"bg-transparent"}
+                  className="text-title border-3 border-primary rounded-sm px-[40px] text-[18px] font-[600] py-[10px] "
+                  arrowButton={true}
+                  colorArrow={"#022545"}
+                />
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
 
-      <ContactForm
-        title={
-          <>
-            {" "}
-            Remplissez vos infos, <br className="lg:hidden block " />
-            <span className="border-bottom">on s'occupe du reste !</span>
-          </>
-        }
-      />
+        <ContactForm
+          title={
+            <>
+              {" "}
+              Remplissez vos infos, <br className="lg:hidden block " />
+              <span className="border-bottom">on s'occupe du reste !</span>
+            </>
+          }
+        />
 
-      <TextLeftImageRight
-        title="Maily®, la révolution de la messagerie Pro au Maroc"
-        paragraphs={[
-          "Hébergez votre messagerie professionnelle sur un service <b>Cloud sécurisé et chiffré</b>, garantissant la confidentialité de vos informations et une communication rapide et fiable.",
-          'Cette solution garantit que vos données restent sous la juridiction marocaine, tout en assurant une conformité totale avec la <span style="text-decoration: underline;"><a href="https://www.dgssi.gov.ma/fr/loi-09-08-relative-la-protection-des-personnes-physiques-legard-du-traitement-des" rel="noopener"><b>loi 09-08</b></a></span> relative à la protection des données personnelles, la <span style="text-decoration: underline;"><a href="https://www.dgssi.gov.ma/fr/loi-ndeg-0520-relative-la-cybersecurite" rel="noopener"><b>loi 05-20</b></a></span> sur la cybersécurité, ainsi qu’avec les recommandations de la CNDP.',
-          "Appelez le +212 531-031-186 et confiez l’hébergement de vos données sensibles à un prestataire de confiance basé au Maroc.",
-        ]}
-        imageSrc="images/email-professionnel/email-professionnel-maroc.jpg"
-        imageAlt="Email professionnel Maroc"
-        consultButtonTextExiste={false}
-      />
-      <TrustedBySection classNameImage="md:w-[65%]  w-[100%] mx-auto h-auto" />
+        <TextLeftImageRight
+          title="Maily®, la révolution de la messagerie Pro au Maroc"
+          paragraphs={[
+            "Hébergez votre messagerie professionnelle sur un service <b>Cloud sécurisé et chiffré</b>, garantissant la confidentialité de vos informations et une communication rapide et fiable.",
+            'Cette solution garantit que vos données restent sous la juridiction marocaine, tout en assurant une conformité totale avec la <span style="text-decoration: underline;"><a href="https://www.dgssi.gov.ma/fr/loi-09-08-relative-la-protection-des-personnes-physiques-legard-du-traitement-des" rel="noopener"><b>loi 09-08</b></a></span> relative à la protection des données personnelles, la <span style="text-decoration: underline;"><a href="https://www.dgssi.gov.ma/fr/loi-ndeg-0520-relative-la-cybersecurite" rel="noopener"><b>loi 05-20</b></a></span> sur la cybersécurité, ainsi qu’avec les recommandations de la CNDP.',
+            "Appelez le +212 531-031-186 et confiez l’hébergement de vos données sensibles à un prestataire de confiance basé au Maroc.",
+          ]}
+          imageSrc="images/email-professionnel/email-professionnel-maroc.jpg"
+          imageAlt="Email professionnel Maroc"
+          consultButtonTextExiste={false}
+        />
+        <TrustedBySection classNameImage="md:w-[65%]  w-[100%] mx-auto h-auto" />
 
-      <EmailCreationSteps />
+        <EmailCreationSteps />
 
-      <PlansEmail
-        titleExiste={true}
-        title="Choisissez votre plan email professionnel Maroc"
-        id="plans"
-      />
+        <PlansEmail
+          titleExiste={true}
+          title="Choisissez votre plan email professionnel Maroc"
+          id="plans"
+        />
 
-      <SixCards
-        title={
-          "Pourquoi choisir Maily® pour votre<br /> adresse email professionnelle ?"
-        }
-        alignment="left"
-        features={hostingFeatures}
-      />
+        <SixCards
+          title={
+            "Pourquoi choisir Maily® pour votre<br /> adresse email professionnelle ?"
+          }
+          alignment="left"
+          features={hostingFeatures}
+        />
 
-      <TextLeftImageRight
-        title="Email Pro au Maroc"
-        paragraphs={[
-          "Créez des adresses e-mail professionnelles pour vos collaborateurs à Tétouan, <b>facilement et en quelques clics</b> avec Hostino®.",
-          "Maily est la solution de messagerie premium pensée pour les entreprises exigeantes, en quête d’un service fiable, sécurisé et hautement performant pour accompagner leur développement. Grâce à notre <b>infrastructure Cloud</b>, vous bénéficiez d’une sécurité avancée, d’une productivité optimisée et d’outils collaboratifs puissants pour une communication interne et externe fluide et efficace.",
-          "Notre équipe est à votre écoute du lundi au vendredi de 9h à 18h pour répondre à toutes vos questions et vous aider à configurer votre messagerie professionnelle au Maroc. Appelez-nous au +212 (05) 31 03 11 86.",
-        ]}
-        imageSrc="/images/email-professionnel/email-pro-maroc.jpg"
-        imageAlt="Email Pro au Maroc"
-        consultButtonTextExiste={false}
-      />
+        <TextLeftImageRight
+          title="Email Pro au Maroc"
+          paragraphs={[
+            "Créez des adresses e-mail professionnelles pour vos collaborateurs à Tétouan, <b>facilement et en quelques clics</b> avec Hostino®.",
+            "Maily est la solution de messagerie premium pensée pour les entreprises exigeantes, en quête d’un service fiable, sécurisé et hautement performant pour accompagner leur développement. Grâce à notre <b>infrastructure Cloud</b>, vous bénéficiez d’une sécurité avancée, d’une productivité optimisée et d’outils collaboratifs puissants pour une communication interne et externe fluide et efficace.",
+            "Notre équipe est à votre écoute du lundi au vendredi de 9h à 18h pour répondre à toutes vos questions et vous aider à configurer votre messagerie professionnelle au Maroc. Appelez-nous au +212 (05) 31 03 11 86.",
+          ]}
+          imageSrc="/images/email-professionnel/email-pro-maroc.jpg"
+          imageAlt="Email Pro au Maroc"
+          consultButtonTextExiste={false}
+        />
 
-      <TextLeftImageRight
-        title="Sécurité et confidentialité incomparables"
-        paragraphs={[
-          "La solution Maily, conçue par Hostino, est le choix idéal pour les entreprises marocaines en quête d’une plateforme de collaboration <b>conforme aux normes</b>, dotée de mesures de sécurité avancées et facile à utiliser.",
-          'De plus, nous mettons en place des protocoles d’authentification reconnus comme <span style="text-decoration: underline;"><a href="https://www.cloudflare.com/fr-fr/learning/dns/dns-records/dns-dkim-record/" rel="noopener">DKIM</a></span>, SPF et DMARC.&nbsp;<span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Ces technologies permettent de protéger l’identité de votre domaine, d’éviter l’usurpation d’adresse email, et d’assurer une meilleure </span><b style="font-family: inherit; font-size: inherit; font-style: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">délivrabilité de vos emails.</b>',
-          "Nous proposons également plusieurs options avancées pour renforcer davantage la sécurité de vos comptes email, notamment :",
-          <ul className="pl-[30px] flex flex-col gap-5">
-            <li >
-              L’activation obligatoire de l’authentification à deux facteurs
-              (2FA)
-            </li>
-            <li>
-              La restriction d’accès par adresse IP, permettant par exemple de
-              limiter l’accès aux boîtes mail uniquement depuis les locaux de
-              l’entreprise.
-            </li>
-          </ul>,
-        ]}
-        imageSrc="/images/email-professionnel/email-professionnel-securise.jpg"
-        imageAlt="Email professionnel Hostino sécurisé au Maroc"
-        consultButtonTextExiste={false}
-      />
+        <TextLeftImageRight
+          title="Sécurité et confidentialité incomparables"
+          paragraphs={[
+            "La solution Maily, conçue par Hostino, est le choix idéal pour les entreprises marocaines en quête d’une plateforme de collaboration <b>conforme aux normes</b>, dotée de mesures de sécurité avancées et facile à utiliser.",
+            'De plus, nous mettons en place des protocoles d’authentification reconnus comme <span style="text-decoration: underline;"><a href="https://www.cloudflare.com/fr-fr/learning/dns/dns-records/dns-dkim-record/" rel="noopener">DKIM</a></span>, SPF et DMARC.&nbsp;<span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Ces technologies permettent de protéger l’identité de votre domaine, d’éviter l’usurpation d’adresse email, et d’assurer une meilleure </span><b style="font-family: inherit; font-size: inherit; font-style: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">délivrabilité de vos emails.</b>',
+            "Nous proposons également plusieurs options avancées pour renforcer davantage la sécurité de vos comptes email, notamment :",
+            <ul className="pl-[30px] flex flex-col gap-5">
+              <li>
+                L’activation obligatoire de l’authentification à deux facteurs
+                (2FA)
+              </li>
+              <li>
+                La restriction d’accès par adresse IP, permettant par exemple de
+                limiter l’accès aux boîtes mail uniquement depuis les locaux de
+                l’entreprise.
+              </li>
+            </ul>,
+          ]}
+          imageSrc="/images/email-professionnel/email-professionnel-securise.jpg"
+          imageAlt="Email professionnel Hostino sécurisé au Maroc"
+          consultButtonTextExiste={false}
+        />
 
-      <TextLeftImageRight
-        title="Email Professionnel Maroc : Qu'est-ce que c'est ?"
-        paragraphs={[
-          `Un email professionnel est une adresse électronique personnalisée utilisant le nom de domaine d’une entreprise — par exemple, <b>contact@votreentreprise.ma</b> — au lieu d’un service gratuit comme Gmail, <span style="text-decoration: underline;"><a href="https://signup.live.com/?lic=1" rel="noopener">Hotmail</a></span> ou Yahoo. Cela renforce la crédibilité de l’entreprise auprès des clients et partenaires, tout en véhiculant une image plus sérieuse et professionnelle.`,
-          `<span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Aujourd’hui, au Maroc comme ailleurs, disposer d’un email professionnel est devenu un standard incontournable pour les entreprises souhaitant </span><span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;"><b>communiquer de manière professionnelle</b></span><span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;"> avec leurs clients, partenaires et collaborateurs, tant au niveau national qu’international.</span>`,
-          `Les offres low-cost proposées par certains confrères peuvent présenter des risques : failles de sécurité, <b>mauvaise délivrabilité</b> ou perte de données. <b>Prenez le temps d’évaluer</b> les options disponibles et optez pour une solution de messagerie professionnelle à la hauteur des enjeux de votre entreprise.`,
-        ]}
-        imageSrc="/images/email-professionnel/messagerie-professionnelle.jpg"
-        imageAlt="Adresse e-mail professionnelle"
-        consultButtonTextExiste={false}
-      />
+        <TextLeftImageRight
+          title="Email Professionnel Maroc : Qu'est-ce que c'est ?"
+          paragraphs={[
+            `Un email professionnel est une adresse électronique personnalisée utilisant le nom de domaine d’une entreprise — par exemple, <b>contact@votreentreprise.ma</b> — au lieu d’un service gratuit comme Gmail, <span style="text-decoration: underline;"><a href="https://signup.live.com/?lic=1" rel="noopener">Hotmail</a></span> ou Yahoo. Cela renforce la crédibilité de l’entreprise auprès des clients et partenaires, tout en véhiculant une image plus sérieuse et professionnelle.`,
+            `<span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Aujourd’hui, au Maroc comme ailleurs, disposer d’un email professionnel est devenu un standard incontournable pour les entreprises souhaitant </span><span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;"><b>communiquer de manière professionnelle</b></span><span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;"> avec leurs clients, partenaires et collaborateurs, tant au niveau national qu’international.</span>`,
+            `Les offres low-cost proposées par certains confrères peuvent présenter des risques : failles de sécurité, <b>mauvaise délivrabilité</b> ou perte de données. <b>Prenez le temps d’évaluer</b> les options disponibles et optez pour une solution de messagerie professionnelle à la hauteur des enjeux de votre entreprise.`,
+          ]}
+          imageSrc="/images/email-professionnel/messagerie-professionnelle.jpg"
+          imageAlt="Adresse e-mail professionnelle"
+          consultButtonTextExiste={false}
+        />
 
-      <FAQSection faqData={faqData} title={"FAQ - Email Professionnel Maroc"} />
+        <FAQSection
+          faqData={faqData}
+          title={"FAQ - Email Professionnel Maroc"}
+        />
 
-      <ServiceProximite  page="email-professionel"/>
+        <ServiceProximite page="email-professionel" />
 
-      <StarRatingYellowFooter totalVotes={34} />
-    </main>
+        <StarRatingYellowFooter totalVotes={34} />
+      </main>
+    </>
   );
 }

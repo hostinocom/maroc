@@ -14,10 +14,13 @@ import CookieConsent from "./components/ui/CookieConsentBanner";
 import WhatsAppFloat from "./components/ui/WhatsAppFloat";
 import SixCards from "./components/commonSections/SixCards";
 import { ClaimReviewJsonLd } from "next-seo";
+import { generateNextSeo } from "next-seo/pages";
+import Head from "next/head";
 
 export default async function HomePage() {
   return (
-    <main>
+    <>
+    
       <ClaimReviewJsonLd
         scriptId="hotel-marketing-claim"
         scriptKey="hostino-review"
@@ -35,20 +38,22 @@ export default async function HomePage() {
           datePublished: "2025-10-27",
         }}
       />
-      <HeroSection />
-      <PlansSection />
-      <TrustedBySection classNameImage="md:w-[80%]  w-[100%] mx-auto h-auto" />
-      <WhatIsHostingSection />
-      <DomainSearchSection id="ma" />
-      <SixCards
-        title={"Pourquoi choisir <br />Hébergement <i>web Maroc </i>?"}
-        alignment="center"
-      />
-      <FastestHostingSection />
-      <EasyHebergementSection />
-      <BenefitsSection />
-      <BenchmarkHostingMorocco />
-      <FaqSection />
-    </main>
+      <main>
+        <HeroSection />
+        <PlansSection />
+        <TrustedBySection classNameImage="md:w-[80%]  w-[100%] mx-auto h-auto" />
+        <WhatIsHostingSection />
+        <DomainSearchSection id="ma" />
+        <SixCards
+          title={"Pourquoi choisir <br />Hébergement <i>web Maroc </i>?"}
+          alignment="center"
+        />
+        <FastestHostingSection />
+        <EasyHebergementSection />
+        <BenefitsSection />
+        <BenchmarkHostingMorocco />
+        <FaqSection />
+      </main>
+    </>
   );
 }
