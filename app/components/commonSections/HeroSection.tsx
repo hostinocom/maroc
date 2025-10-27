@@ -31,13 +31,13 @@ export default function HeroSection({
       <div className="container grid-cols-1 md:py-[150px] py-[80px] px-5 mx-auto max-w-screen-xl md:grid-cols-2 gap-x-8 grid items-center">
         {/* Text Content */}
         <div className="col-span-1 flex flex-col custom-row-gap gap-y-[20px] md:mb-0 md:pr-10 text-center md:text-left">
-          <h2 className="md:text-[19px] text-[18px] font-[600] tracking-[-0.5px] text-title">
+          <h1 className="md:text-[19px] text-[18px] font-[600] tracking-[-0.5px] text-title">
             {subtitle}
-          </h2>
-
-          <h1 className="big-title title font-semibold text-title">
-            {title}
           </h1>
+
+          <h2 className="big-title title font-semibold text-title">
+            {title}
+          </h2>
 
           <p className="paragraph" style={{marginBottom:"0 !important"}} dangerouslySetInnerHTML={{__html : text}}/>
 
