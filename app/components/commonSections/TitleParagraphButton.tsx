@@ -1,8 +1,9 @@
 import ConsultButton from "../ui/ConsultButton";
+import { Fragment } from "react";
 
 interface MaintenanceContractSectionProps {
   title: string;
-  paragraphs: (string | JSX.Element)[];
+  paragraphs: (string | React.ReactNode)[];
   buttonText: string;
   buttonHref: string;
   subtitle?: string
@@ -44,8 +45,7 @@ const TitleParagraphButton: React.FC<MaintenanceContractSectionProps> = ({
                   dangerouslySetInnerHTML={{ __html: paragraph }}
               />
             ) : (
-              <>{paragraph as any}</>
-            )
+            <Fragment key={index}>{paragraph}</Fragment>            )
         )}
 
         <ConsultButton arrowButton={arrowButton} href={buttonHref} text={buttonText} />

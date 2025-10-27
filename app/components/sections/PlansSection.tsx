@@ -19,6 +19,7 @@ export type Plan = {
   more_performance: {
     text: string;
     href: string;
+    exists: boolean;
   };
   order: {
     text: string;
@@ -33,7 +34,7 @@ export type Plan = {
     disk_space: string | number;
     bandwidth: string;
     databases: number | string;
-    email_accounts: number;
+    email_accounts: number | string;
     subdomains: number;
     backups: string;
   };
@@ -47,7 +48,7 @@ type Props = {
   className?: string;
   title?: string;
   smallTitle?: string;
-  plans: Plan[];
+  plans?: Plan[];
 };
 
 const hostingPlans: Plan[] = [
@@ -64,6 +65,7 @@ const hostingPlans: Plan[] = [
     more_performance: {
       text: "Plus de performances ?",
       href: "/business/",
+      exists: true,
     },
     order: {
       text: "Commander",
@@ -100,6 +102,7 @@ const hostingPlans: Plan[] = [
     more_performance: {
       text: "Plus de performances ?",
       href: "/business/",
+      exists: true,
     },
     order: {
       text: "Commander",
@@ -136,6 +139,7 @@ const hostingPlans: Plan[] = [
     more_performance: {
       text: "Plus de performances ?",
       href: "/business/",
+      exists: true,
     },
     order: {
       text: "Commander",
@@ -201,7 +205,6 @@ const PlanCard = ({ plan }: { plan: Plan }) => {
             hoverText={plan.most_popular.text.toUpperCase()}
             bgColor="bg-primary"
             textColor="text-white"
-            
           />
         </div>
       )}
@@ -364,12 +367,14 @@ const PlanCard = ({ plan }: { plan: Plan }) => {
       </ul>
 
       <div className="mt-6">
-        <Link
-          href={plan.more_performance.href}
-          className="text-title text-base font-semibold underline inline-flex items-center"
-        >
-          {plan.more_performance.text}
-        </Link>
+        {plan.more_performance.exists && (
+          <Link
+            href={plan.more_performance?.href}
+            className="text-title text-base font-semibold underline inline-flex items-center"
+          >
+            {plan.more_performance.text}
+          </Link>
+        )}
       </div>
     </div>
   );
@@ -380,6 +385,7 @@ export default function PlansSection({
   title,
   smallTitle,
   plans = hostingPlans,
+  
 }: Props) {
   return (
     <section
@@ -399,7 +405,6 @@ export default function PlansSection({
             Hébergement Web Maroc
           </h2>
         </div>
-
 
         <div
           className={`${

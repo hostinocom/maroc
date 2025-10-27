@@ -44,7 +44,7 @@ export default function TextAroundImage({
             <p>
             {paragraphs.map((paragraph, index) =>
               typeof paragraph === "object" ? (
-                <React.Fragment key={index}>{paragraph}</React.Fragment>
+                <React.Fragment key={index}>{paragraph as React.ReactNode}</React.Fragment>
               ) : (
                 <p
                   key={index}
@@ -104,7 +104,7 @@ export default function TextAroundImage({
               <div className="text-wrap">
                 {paragraphs.map((paragraph, index) =>
                   typeof paragraph === "object" ? (
-                    <React.Fragment key={index}>{paragraph}</React.Fragment>
+                    <React.Fragment key={index}>{paragraph as React.ReactNode}</React.Fragment>
                   ) : (
                     <p
                       key={index}

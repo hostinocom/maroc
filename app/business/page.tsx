@@ -7,6 +7,7 @@ import Plans from "../components/commonSections/Plans";
 import HeroHeadingPages from "../components/ui/heroHeadingPages";
 import TrustedBySection from "../components/sections/TrustedBySection";
 import PromoBanner from "../components/ui/PromoBanner";
+import { text } from "stream/consumers";
 
 
 
@@ -23,7 +24,11 @@ const hostingPlans = [
     save: "20%",
     price_ttc: "Pour 1 an, vous payez <b>1198,8 DH TTC.</b>",
     performance_stars: 4,
-    more_performance:false,
+    more_performance:{
+      text: "Plus de performances ?",
+      href : "dd",
+      exists : false
+    },
     order: {
       text: "Commander",
       href: "https://my.hostino.com/order.php?pid=79&language=french&country=MA",
@@ -55,7 +60,11 @@ const hostingPlans = [
     price_ttc: "Pour 1 an, vous payez <b>2160 DH TTC.</b>",
     save :"",
     performance_stars: 5,
-    more_performance: false,
+    more_performance:{
+      text: "Plus de performances ?",
+      href : "dd",
+      exists : false
+    },
     order: {
       text: "Commander",
       href: "https://my.hostino.com/order.php?pid=80&language=french&country=MA",
@@ -88,7 +97,11 @@ const hostingPlans = [
     price_ttc: "Pour 1 an, vous payez <b>3600 DH TTC.</b>",
     performance_stars: 5,
     save: "",
-    more_performance: false,
+    more_performance:{
+      text: "Plus de performances ?",
+      href : "dd",
+      exists : false
+    },
     order: {
       text: "Commander",
       href: "https://my.hostino.com/order.php?pid=81&language=french&country=MA",

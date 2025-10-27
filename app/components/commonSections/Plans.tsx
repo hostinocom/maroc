@@ -7,7 +7,8 @@ import HeroHeadingPages from "../ui/heroHeadingPages";
 
 interface more_performance {
   text : string;
-  href? : string
+  href? : string;
+  exists : boolean
 }
 
 // Define plan type
@@ -20,7 +21,7 @@ export type Plan = {
   save: string;
   price_ttc: string;
   performance_stars: number;
-  more_performance: more_performance |  boolean;
+  more_performance: more_performance;
   order: {
     text: string;
     href: string;
@@ -34,9 +35,9 @@ export type Plan = {
     disk_space: string | number;
     bandwidth: string;
     databases: number | string;
-    email_accounts: number;
-    subdomains: number;
-    backups: string;
+    email_accounts: number |string;
+    subdomains: number | string;
+    backups: string | number;
   };
   most_popular: {
     text: string;
@@ -71,6 +72,7 @@ const hostingPlans: Plan[] = [
     more_performance: {
       text: "Plus de performances ?",
       href: "/business/",
+      exists : false
     },
     order: {
       text: "Commander",
@@ -108,6 +110,7 @@ const hostingPlans: Plan[] = [
     more_performance: {
       text: "Plus de performances ?",
       href: "/business/",
+      exists : false
     },
     order: {
       text: "Commander",
@@ -145,6 +148,7 @@ const hostingPlans: Plan[] = [
     more_performance: {
       text: "Plus de performances ?",
       href: "/business/",
+      exists : false
     },
     order: {
       text: "Commander",

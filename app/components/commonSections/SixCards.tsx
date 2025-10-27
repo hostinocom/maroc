@@ -64,7 +64,7 @@ export default function SixCards({
   alignment = "center",
   features = hostingFeatures,
   classNameTitleCard,
-  classNameImageCard
+  classNameImageCard,
 }: Props) {
   return (
     <section className="my-[80px] lg:my-[150px] bg-white">
@@ -82,19 +82,25 @@ export default function SixCards({
               key={i}
               className="bg-white border-1 border-gray-100 px-6 py-8 rounded-xl"
             >
-                <Image
+              <Image
                 src={`/images/${feature.image}`}
-                alt={feature.alt}
+                alt={feature.alt || "Feature image"}
                 width={63}
                 height={65}
-                className={`${classNameImageCard ? classNameImageCard : "w-[22%]"}  mb-[20px]   rounded-lg`}
+                className={`${
+                  classNameImageCard ? classNameImageCard : "w-[22%]"
+                } mb-[20px] rounded-lg`}
               />
               <h3
                 style={{ letterSpacing: "-0.6px" }}
-                className={`${classNameTitleCard ? classNameTitleCard : "lg:pr-[150px] md:pr-[120px]"} leading-[33px] mb-[22px] font-[600]  titles-whyChoose text-[27px]  text-title`}
+                className={`${
+                  classNameTitleCard
+                    ? classNameTitleCard
+                    : "lg:pr-[150px] md:pr-[120px]"
+                } leading-[33px] mb-[22px] font-[600]  titles-whyChoose text-[27px]  text-title`}
                 dangerouslySetInnerHTML={{ __html: feature.title }}
               />
-              
+
               <p
                 className="paragraph-16"
                 dangerouslySetInnerHTML={{ __html: feature.description }}

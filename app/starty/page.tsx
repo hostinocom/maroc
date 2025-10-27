@@ -25,6 +25,7 @@ const hostingPlans: Plan[] = [
     more_performance: {
       text: "Plus de performances ?",
       href: "/business/",
+      exists: true,
     },
     order: {
       text: "Commander",
@@ -61,6 +62,7 @@ const hostingPlans: Plan[] = [
     more_performance: {
       text: "Plus de performances ?",
       href: "https://www.hostino.ma/business/",
+      exists: true,
     },
     order: {
       text: "Commander",

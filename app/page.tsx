@@ -19,10 +19,10 @@ export default async function HomePage(){
   return (
       <main>
          <HeroSection />
-         <PlansSection  />
+         <PlansSection />
          <TrustedBySection classNameImage="md:w-[80%]  w-[100%] mx-auto h-auto"/>
          <WhatIsHostingSection />
-         <DomainSearchSection />
+         <DomainSearchSection id="ma"/>
          <SixCards title={"Pourquoi choisir <br />Hébergement <i>web Maroc </i>?"} alignment="center" />
          <FastestHostingSection />
          <EasyHebergementSection />

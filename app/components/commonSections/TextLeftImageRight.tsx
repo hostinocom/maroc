@@ -1,10 +1,10 @@
 // src/components/sections/TextLeftImageRight.tsx
 import Image from "next/image";
 import ConsultButton from "../ui/ConsultButton";
-import React from "react";
+import React, { Fragment } from "react";
 interface TextLeftImageRightProps {
   title: string | React.ReactNode;
-  paragraphs: (string | JSX.Element)[];
+  paragraphs: (string | React.ReactNode ) [];
   imageSrc: string;
   imageAlt?: string;
   consultButtonTextExiste?: boolean;
@@ -43,12 +43,12 @@ export default function TextLeftImageRight({
             )}
             {paragraphs.map((paragraph, index) =>
               typeof paragraph === "object" ? (
-                <>{paragraph}</>
+                  <Fragment key={index}>{paragraph}</Fragment>
               ) : (
                 <p
                   key={index}
                   className="paragraph"
-                  dangerouslySetInnerHTML={{ __html: paragraph }}
+                  dangerouslySetInnerHTML={{ __html: paragraph as string }}
                 />
               )
             )}{" "}

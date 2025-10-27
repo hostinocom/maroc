@@ -95,7 +95,7 @@ const EmailCreationSteps = () => {
   interface StepCardProps {
     number?: string;
     icon?: React.ReactNode;
-    title: string;
+    title: string | React.ReactNode;
     content: React.ReactNode;
     button?: StepButton;
   }
