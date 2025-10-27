@@ -3,7 +3,7 @@ import AnimatedButton from "../ui/AnimatedButton";
 
 interface SEOServiceCard {
   title: string;
-  paragraphs: (string | JSX.Element) [];
+  paragraphs: (string | React.ReactNode) [];
   buttonText: string;
   buttonLink: string;
   bgColor: string;

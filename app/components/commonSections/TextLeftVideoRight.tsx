@@ -4,7 +4,7 @@ import React from "react";
 
 interface TextLeftImageRightProps {
   title?: string;
-  paragraphs: (string | JSX.Element)[];
+  paragraphs: string[];
   videoUrl?: string; // 👉 Add this prop
   consultButtonTextExiste?: boolean;
   textButton?: string;
@@ -33,7 +33,7 @@ export default function TextLeftVideoRight({
             />)}
             {paragraphs.map((paragraph, index) =>
               typeof paragraph === "object" ? (
-                <>{paragraph}</>
+                <>{paragraph as React.ReactNode}</>
               ) : (
                 <p
                   key={index}

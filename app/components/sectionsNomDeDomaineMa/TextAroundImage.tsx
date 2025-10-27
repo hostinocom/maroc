@@ -5,7 +5,7 @@ import React from "react";
 
 interface TextLeftImageRightProps {
   title: string | React.ReactNode;
-  paragraphs: (string | JSX.Element)[];
+  paragraphs: string[];
   imageSrc: string;
   imageAlt?: string;
   consultButtonTextExiste?: boolean;

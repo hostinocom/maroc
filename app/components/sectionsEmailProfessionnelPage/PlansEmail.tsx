@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { montserrat } from "@/public/font";
 import AnimatedButton from "../ui/AnimatedButton";
@@ -19,7 +19,7 @@ export type Plan = {
     text: string;
     href: string;
   };
-  features: (string | JSX.Element)[];
+  features: string[] | React.ReactNode[];
   most_popular: {
     text: string;
     is_most_popular: boolean;
@@ -315,13 +315,13 @@ const PlanCard = ({
       <div className="border-t border-gray-200 my-4"></div>
 
       <ul className="text-gray-700 text-sm space-y-2 flex-grow">
-        {plan.features.map((feature, index) => (
+        {plan.features.map((feature : any, index : number)  => (
           <li
             key={index}
             className="flex items-center lg:justify-start justify-center"
           >
             {typeof feature == "object" ? (
-              <>{feature}</>
+              <>{feature as React.ReactNode}</>
             ) : (
               <span
                 className="text-title"

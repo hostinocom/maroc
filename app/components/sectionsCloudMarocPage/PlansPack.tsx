@@ -15,7 +15,7 @@ type Plan = {
   description: string;
   price: string;
   isHighlighted: boolean;
-  features: (string | JSX.Element)[];
+  features: (string | React.ReactNode)[];
   is_most_popular: boolean;
   href: string;
 };
@@ -288,7 +288,7 @@ const PlanCard = ({ plan }: { plan: Plan }) => {
       <div className="border-t border-gray-200 my-4"></div>
 
       <div>
-        {plan.features.map((feature, index) => (
+        {plan.features.map((feature : any, index : number) => (
           <div key={index} className="flex items-start">
             
             {typeof feature === "object" ? (

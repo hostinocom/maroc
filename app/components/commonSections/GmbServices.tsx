@@ -25,7 +25,7 @@ interface GMBService {
 }
 
 
-const GmbServices = ({ data  , title } : { data : GMBService[], title : string | JSX.Element }) => {
+const GmbServices = ({ data  , title } : { data : GMBService[], title : string }) => {
   return (
     <section className="lg:my-[150px] my-[80px]">
       <div className="container">
