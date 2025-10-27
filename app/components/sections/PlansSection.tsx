@@ -7,7 +7,7 @@ import AnimatedButton from "../ui/AnimatedButton";
 import { montserrat } from "@/public/font";
 
 // Define plan type
-type Plan = {
+export type Plan = {
   id: number;
   name: string;
   subtext: string;
@@ -43,6 +43,13 @@ type Plan = {
   };
 };
 
+type Props = {
+  className?: string;
+  title?: string;
+  smallTitle?: string;
+  plans: Plan[];
+};
+
 const hostingPlans: Plan[] = [
   {
     id: 1,
@@ -56,7 +63,7 @@ const hostingPlans: Plan[] = [
     performance_stars: 1,
     more_performance: {
       text: "Plus de performances ?",
-      href: "https://www.hostino.ma/business/",
+      href: "/business/",
     },
     order: {
       text: "Commander",
@@ -92,7 +99,7 @@ const hostingPlans: Plan[] = [
     performance_stars: 4,
     more_performance: {
       text: "Plus de performances ?",
-      href: "https://www.hostino.ma/business/",
+      href: "/business/",
     },
     order: {
       text: "Commander",
@@ -128,7 +135,7 @@ const hostingPlans: Plan[] = [
     performance_stars: 5,
     more_performance: {
       text: "Plus de performances ?",
-      href: "https://www.hostino.ma/business/",
+      href: "/business/",
     },
     order: {
       text: "Commander",
@@ -185,7 +192,7 @@ const PlanCard = ({ plan }: { plan: Plan }) => {
     <div
       className={`${
         plan.most_popular.is_most_popular && "border-3 border-primary"
-      } bg-white relative lg:text-left text-center rounded-[10px] lg:w-full md:w-[70vw] w-full mx-auto mb-4 md:pt-[55px] md:px-[50px] md:pb-[50px] lg:pt-[50px] lg:pb-[40px] lg:px-[40px] pt-[45px] px-[25px] pb-[35px]  border border-gray-300  h-full`}
+      } bg-white relative  lg:text-left text-center rounded-[10px] lg:w-full md:w-[70vw] w-full mx-auto mb-4 md:pt-[55px] md:px-[50px] md:pb-[50px] lg:pt-[50px] lg:pb-[40px] lg:px-[40px] pt-[45px] px-[25px] pb-[35px]  border border-gray-300  h-full`}
     >
       {plan.most_popular.is_most_popular && (
         <div className=" absolute py-[8px] bg-primary px-[20px] text-[16px]  sm:left-1/3 left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 text-white text-center  font-[500] inline-block">
@@ -194,7 +201,7 @@ const PlanCard = ({ plan }: { plan: Plan }) => {
             hoverText={plan.most_popular.text.toUpperCase()}
             bgColor="bg-primary"
             textColor="text-white"
-            hoverBgColor="bg-primary"
+            
           />
         </div>
       )}
@@ -368,11 +375,24 @@ const PlanCard = ({ plan }: { plan: Plan }) => {
   );
 };
 
-export default function PlansSection() {
+export default function PlansSection({
+  className,
+  title,
+  smallTitle,
+  plans = hostingPlans,
+}: Props) {
   return (
-    <section id="plans" className="overflow-hidden plans-section mb-[50px] relative">
+    <section
+      id="plans"
+      className={`${className} overflow-hidden  plans-section  relative`}
+    >
       <div className="container">
         <div className="text-center ">
+          {smallTitle && (
+            <h1 className="md:text-[19px] text-[18px]  font-[600] tracking-[-0.5px] text-title ">
+              {smallTitle}
+            </h1>
+          )}
           <h2 className="title-section text-title">
             Nos offres
             <br />
@@ -380,8 +400,15 @@ export default function PlansSection() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-6 gap-8  w-full">
-          {hostingPlans.map((plan) => (
+
+        <div
+          className={`${
+            plans.length >= 3
+              ? "grid grid-cols-1 py-[30px]  lg:grid-cols-3 lg:gap-6 gap-8  w-full"
+              : "flex lg:flex-row flex-col justify-center py-[30px] lg:gap-6 gap-8  w-full"
+          } `}
+        >
+          {plans?.map((plan: Plan) => (
             <PlanCard key={plan.id} plan={plan} />
           ))}
         </div>
@@ -401,7 +428,6 @@ export default function PlansSection() {
               opacity="0.12"
               d="M473,67.3c-203.9,88.3-263.1-34-320.3,0C66,119.1,0,59.7,0,59.7V0h1000v59.7 c0,0-62.1,26.1-94.9,29.3c-32.8,3.3-62.8-12.3-75.8-22.1C806,49.6,745.3,8.7,694.9,4.7S492.4,59,473,67.3z"
             ></path>
-           
           </svg>{" "}
         </div>
       </div>

@@ -38,7 +38,7 @@ const domainOptions = [
   ".ai",
 ];
 
-export default function DomainSearchSection() {
+export default function DomainSearchSection({id} : {id : string}) {
   const [domain, setDomain] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -51,19 +51,20 @@ export default function DomainSearchSection() {
   };
   return (
     <section
+      id={id}
       style={{
         backgroundImage: "linear-gradient(180deg, #004C48 18%, #084448 100%)",
       }}
       className="lg:mt-[150px] mt-[60px] bg-gradient-to-r from-[#1b083b] to-[#7e5eba] text-white"
     >
       <div className="container py-[120px] text-center">
-        <h2 className="title-section-white lg:text-[49px] md:text-[40px] text-[38px] text-white font-bold mb-4">
+        <h2 className="title-section-white max-big-title text-white font-[600] mb-4">
           Enregistrer votre nom de domaine
         </h2>
         <p className="mb-8 paragraph-white ">
           Achetez dès maintenant votre{" "}
           <a
-            href="https://www.hostino.ma/nom-de-domaine-ma/"
+            href="/nom-de-domaine-ma/"
             className="underline"
           >
             .ma domain name

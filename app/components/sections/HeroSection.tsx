@@ -1,8 +1,5 @@
-"use client";
 import Image from "next/image";
-import Link from "next/link";
-import AnimatedButton from "../ui/AnimatedButton";
-
+import ConsultButton from "../ui/ConsultButton";
 export default function HeroSection() {
   return (
     <section className="bg-gray-200">
@@ -16,22 +13,7 @@ export default function HeroSection() {
             Hébergement web depuis le Maroc
           </h1>
 
-          <div>
-            <Link
-              href="#plans"
-              className="inline-block text-white "
-            >
-              <AnimatedButton
-                text="Consultez les plans"
-                hoverText="Consultez les plans"
-                bgColor="bg-primary"
-                textColor="text-white"
-                hoverBgColor="bg-title"
-                className=" btn-10-40 rounded-lg"
-                //onClick={handleClick}
-              />
-            </Link>
-          </div>
+          <ConsultButton href="#plans" />
           <div className="flex flex-col md:items-start items-center">
             <p className="text-title text-[13px] font-[500] py-[5px] mb-[10px] tracking-[1.2px]">CONSULTATION PAR EMAIL ?</p>
             <p className=" border-bottom text-[31px] font-[600] text-title">

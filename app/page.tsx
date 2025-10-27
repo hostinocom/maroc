@@ -12,24 +12,23 @@ import EasyHebergementSection from "./components/sections/EasyHebergementSection
 import BenchmarkHostingMorocco from "./components/sections/BenchmarkHostingMorocco"
 import CookieConsent from "./components/ui/CookieConsentBanner"
 import WhatsAppFloat from "./components/ui/WhatsAppFloat"
+import SixCards from "./components/commonSections/SixCards"
 
 export default async function HomePage(){
 
   return (
       <main>
          <HeroSection />
-         <PlansSection />
-         <TrustedBySection />
+         <PlansSection  />
+         <TrustedBySection classNameImage="md:w-[80%]  w-[100%] mx-auto h-auto"/>
          <WhatIsHostingSection />
          <DomainSearchSection />
-         <WhyChooseSection />
+         <SixCards title={"Pourquoi choisir <br />Hébergement <i>web Maroc </i>?"} alignment="center" />
          <FastestHostingSection />
          <EasyHebergementSection />
          <BenefitsSection />
          <BenchmarkHostingMorocco />
          <FaqSection />
-         <CookieConsent />
-         {/* <WhatsAppFloat /> */}
       </main>
   )
 }

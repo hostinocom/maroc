@@ -1,5 +1,3 @@
-'use client';
-
 interface BurgerButtonProps {
   isOpen: boolean;
   onToggle: () => void;

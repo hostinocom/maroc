@@ -1,4 +1,3 @@
-'use client';
 import Image from 'next/image';
 
 const benefits = [
@@ -10,7 +9,7 @@ const benefits = [
   {
     image: "hebergement-web-evolutive.jpg",
     title: "Hébergement web flexible",
-    text: "Avec nos packs d'hébergement web Maroc <a style='text-decoration:underline;' href='https://www.hostino.ma/starty/'>Starty</a>, <a style='text-decoration:underline;' href='https://www.hostino.ma/business/'>Business</a>, vous bénéficiez de solutions flexibles qui permettent une transition facile sans interruption de service. Commencez avec <b>Starty</b> pour une solution économique et évoluez vers <b>Business</b> à mesure que vos besoins augmentent, sans avoir à reconfigurer ou transférer vos services."
+    text: "Avec nos packs d'hébergement web Maroc <a style='text-decoration:underline;' href='/starty'>Starty</a>, <a style='text-decoration:underline;' href='/business'>Business</a>, vous bénéficiez de solutions flexibles qui permettent une transition facile sans interruption de service. Commencez avec <b>Starty</b> pour une solution économique et évoluez vers <b>Business</b> à mesure que vos besoins augmentent, sans avoir à reconfigurer ou transférer vos services."
   },
   {
     image: "hebergement-web-rapide.jpg",

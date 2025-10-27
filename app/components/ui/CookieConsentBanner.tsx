@@ -96,13 +96,13 @@ export default function CookieConsent() {
             {/* Links */}
             <div className="flex justify-center gap-6 text-sm">
               <Link
-                href="https://www.hostino.ma/politique-cookies/"
+                href="/politique-cookies/"
                 className="text-blue-600 text-[12px]  underline font-medium"
               >
                 Politique cookies
               </Link>
               <Link
-                href="https://www.hostino.ma/conditions-generales/"
+                href="/conditions-generales/"
                 className="text-blue-600 text-[12px]  underline font-medium"
               >
                 Conditions générales

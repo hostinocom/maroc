@@ -154,20 +154,20 @@ export default function Footer() {
         </div>
 
         <div className="text-center py-[30px] text-gray-400 text-sm">
-          <Link href="https://www.hostino.ma/conditions-generales/" className="mx-2 hover:text-title">
+          <Link href="/conditions-generales" className="mx-2 hover:text-title">
             Conditions générales
           </Link>{" "}
           |
-          <Link href="https://www.hostino.ma/mentions-legales/" className="mx-2 hover:text-title">
+          <Link href="/mentions-legales/" className="mx-2 hover:text-title">
             Mentions légales
 
           </Link>{" "}
           |
-          <Link href="https://www.hostino.ma/politique-de-confidentialite/" className="mx-2 hover:text-title">
+          <Link href="/politique-de-confidentialite/" className="mx-2 hover:text-title">
             Politique de confidentialité
           </Link>{" "}
           |
-          <Link href="https://www.hostino.ma/abus/" className="mx-2 hover:text-title">
+          <Link href="/abus/" className="mx-2 hover:text-title">
             
               Politique anti-abus
 

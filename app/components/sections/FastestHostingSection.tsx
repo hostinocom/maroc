@@ -1,4 +1,3 @@
-"use client";
 
 // src/components/sections/FastestHostingSection.tsx
 import Image from "next/image";

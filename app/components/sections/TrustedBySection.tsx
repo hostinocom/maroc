@@ -1,10 +1,11 @@
-'use client';
-
-
 // src/components/sections/TrustedBySection.tsx
 import Image from 'next/image';
 
-export default function TrustedBySection() {
+interface TrustedBySectionProps {
+  classNameImage?: string;
+}
+
+export default function TrustedBySection({ classNameImage }: TrustedBySectionProps) {
   return (
     <section className=" bg-white">
       <div className="container text-center">
@@ -17,7 +18,7 @@ export default function TrustedBySection() {
             alt="Réferences hébergement web maroc"
             width={2048}
             height={107}
-            className="md:w-[80%]  w-[100%] mx-auto h-auto"
+            className={`${classNameImage}`}
           />
         </div>
       </div>

@@ -62,19 +62,19 @@ export default function Header() {
                   onMouseLeave={() => setHebergementOpen(false)}
                 >
                   <Link
-                    href="https://www.hostino.ma/starty"
+                    href="/starty"
                     className="block animated-link px-6 py-3 text-title font-[600]  "
                   >
                     Starty
                   </Link>
                   <Link
-                    href="https://www.hostino.ma/business"
+                    href="/business"
                     className="block animated-link px-6 py-3 text-title font-[600]  "
                   >
                     Business
                   </Link>
                   <Link
-                    href="https://www.hostino.ma/cloud-maroc/"
+                    href="/cloud-maroc"
                     className="block animated-link px-6 py-3 text-title font-[600]  "
                   >
                     Cloud Maroc
@@ -85,7 +85,7 @@ export default function Header() {
 
             {/* @Email Pro */}
             <Link
-              href="https://www.hostino.ma/email-professionnel/"
+              href="/email-professionnel/"
               className="font-poppins animated-link text-[17px] flex items-center gap-2 text-title font-[600] border-none p-0"
             >
               @Email Pro
@@ -93,7 +93,7 @@ export default function Header() {
 
             {/* Nom de domaine */}
             <Link
-              href="https://www.hostino.ma/nom-de-domaine-ma"
+              href="/nom-de-domaine-ma"
               className="text-[#14213D] animated-link font-[600] hover:text-primary transition-colors"
             >
               Nom de domaine
@@ -137,25 +137,25 @@ export default function Header() {
                   onMouseLeave={() => setSeoOpen(false)}
                 >
                   <Link
-                    href="https://www.hostino.ma/agence-seo-maroc/"
+                    href="/agence-seo-maroc/"
                     className="block font-[600] px-6 py-3 animated-link text-title hover:text-primary transition-colors"
                   >
                     Agence SEO
                   </Link>
                   <Link
-                    href="https://www.hostino.ma/google-my-business-maroc/"
+                    href="/google-my-business-maroc/"
                     className="block font-[600] px-6 py-3 animated-link text-title  hover:text-primary transition-colors"
                   >
                     Agence GMB
                   </Link>
                   <Link
-                    href="https://www.hostino.ma/google-ads-maroc/"
+                    href="/google-ads-maroc/"
                     className="block font-[600] px-6 py-3 animated-link text-title hover:bg-gray-50 hover:text-primary transition-colors"
                   >
                     Google Ads
                   </Link>
                   <Link
-                    href="https://www.hostino.ma/creation-site-web-maroc/"
+                    href="/creation-site-web-maroc/"
                     className="block font-[600] px-6 py-3 animated-link text-[#14213D] hover:bg-gray-50 hover:text-primary transition-colors"
                   >
                     Site web
@@ -168,7 +168,7 @@ export default function Header() {
           {/* Right Side Actions */}
           <div className="flex items-center gap-4">
             {/* Connexion Button */}
-            <Link href="/connexion" className="hidden sm:block">
+            <Link href="https://my.hostino.com/index.php?rp=/login" className="hidden sm:block text-title" >
               <AnimatedButton
                 text="Connexion"
                 hoverText="Connexion"
@@ -231,21 +231,21 @@ export default function Header() {
               {mobileHebergementOpen && (
                 <div className="pl-4  space-y-2 mt-2">
                   <Link
-                    href="https://www.hostino.ma/starty"
+                    href="/starty"
                     className="block py-2 text-title font-[600]"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Starty
                   </Link>
                   <Link
-                    href="https://www.hostino.ma/business"
+                    href="/business"
                     className="block py-2 text-title font-[600] "
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Business
                   </Link>
                   <Link
-                    href="https://www.hostino.ma/cloud-maroc/"
+                    href="/cloud-maroc/"
                     className="block py-2 text-title font-[600] "
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -257,7 +257,7 @@ export default function Header() {
 
             {/* @Email Pro */}
             <Link
-              href="https://www.hostino.ma/email-professionnel/"
+              href="/email-professionnel/"
               className="block   text-[#14213D] cursor-pointer hover:text-primary py-2 font-[600] "
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -266,7 +266,7 @@ export default function Header() {
 
             {/* Nom de domaine */}
             <Link
-              href="https://www.hostino.ma/nom-de-domaine-ma"
+              href="/nom-de-domaine-ma"
               className="block text-[#14213D] cursor-pointer hover:text-primary font-[600] py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -308,28 +308,28 @@ export default function Header() {
               {mobileSeoOpen && (
                 <div className="pl-4 space-y-2 mt-2">
                   <Link
-                    href="https://www.hostino.ma/agence-seo-maroc/"
+                    href="/agence-seo-maroc/"
                     className="block max-w-max py-2 text-title font-[600] animated-link"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Agence SEO
                   </Link>
                   <Link
-                    href="https://www.hostino.ma/google-my-business-maroc/"
+                    href="/google-my-business-maroc/"
                     className="block max-w-max py-2 text-title font-[600] animated-link"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Agence GMB
                   </Link>
                   <Link
-                    href="https://www.hostino.ma/google-ads-maroc/"
+                    href="/google-ads-maroc/"
                     className="block  max-w-max py-2 text-title font-[600] animated-link"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Google Ads
                   </Link>
                   <Link
-                    href="https://www.hostino.ma/creation-site-web-maroc/"
+                    href="/creation-site-web-maroc/"
                     className="block   max-w-max py-2 text-title font-[600] animated-link"
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -342,7 +342,7 @@ export default function Header() {
             {/* Mobile Actions */}
             <div className="pt-4 space-y-3 border-t border-gray-200">
               <Link
-                href="/connexion"
+                href="https://my.hostino.com/index.php?rp=/login"
                 className="block w-full py-3 text-center text-[#14213D] font-[600] hover:text-primary transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
