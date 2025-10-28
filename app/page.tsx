@@ -65,20 +65,49 @@ export const metadata  = {
 export default async function HomePage() {
   return (
     <>
+import { ClaimReviewJsonLd } from 'next-seo';
+
+export default function SeoStars() {
+  return (
+    <>
+      {/* ClaimReview Schema (individual review) */}
       <ClaimReviewJsonLd
-        url="/"
-        author="Hostino"
+        url="https://www.hostino.ma/"
         claimReviewed="Hostino"
+        authorName="Hostino"
+        authorType="Organization"
+        datePublished="2025-10-27"
         reviewRating={{
-          ratingValue: "5",
-          reviewCount: "55",
-          alternateName: "Excellent",
-        }}
-        itemReviewed={{
-          author: "Hostino",
-          datePublished: "2025-10-27",
+          ratingValue: '5',
+          bestRating: '5',
+          worstRating: '1',
+          alternateName: 'Excellent',
         }}
       />
+
+      {/* AggregateRating Schema (global rating count) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Hostino",
+            "url": "https://www.hostino.ma",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": 5,
+              "bestRating": 5,
+              "worstRating": 1,
+              "ratingCount": 55,
+              "reviewCount": 55
+            }
+          }),
+        }}
+      />
+    </>
+  );
+}
 
       <main>
         <HeroSection />
