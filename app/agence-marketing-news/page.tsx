@@ -9,6 +9,12 @@ import TitleParagraphButton from "../components/commonSections/TitleParagraphBut
 import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter";
 import { ClaimReviewJsonLd } from "next-seo";
 
+const title = "Agence Marketing News | SEO et Visibilité Google Actualités"
+const description =  "Agence marketing pour sites d’actualités, radios et chaînes TV. Génération de trafic organique via Google et réseaux sociaux ☎️ 0663 75 09 08"
+const imageUrl = "https://maroc-1hp.pages.dev/images/agence-marketing-news/agence-marketing-news.png" 
+const canonical_url = "https://www.hostino.ma/agence-marketing-news"
+const og_alt = "Agence Marketing News"
+
 const faqData = [
   {
     question: "C'est quoi une agence marketing news Maroc ?",
