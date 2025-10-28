@@ -68,7 +68,7 @@ export default async function HomePage() {
       <ClaimReviewJsonLd
         url="/"
         author="Hostino"
-        claimReviewed= og_alt,
+        claimReviewed:og_alt,
         reviewRating={{
           ratingValue: "5",
           reviewCount: "55",
