@@ -152,7 +152,7 @@ export default async function HomePage() {
           color: "text-primary",
         }}
         email="info@hostino.com"
-        imageSrc="/images/google-ads-maroc/google-ads-maroc.png"
+        imageSrc="/images/07/google-ads-maroc.png"
         imageAlt="Google My Business au Maroc"
       />
 
@@ -173,7 +173,7 @@ export default async function HomePage() {
           "Notre force réside dans notre parfaite compréhension du <b>marché marocain</b> : ses langues, sa culture, ses zones géographiques et ses habitudes de consommation.",
           "Appelez-nous dès maintenant au +212 663 75 09 08 et confiez vos campagnes publicitaires à des experts Google Ads reconnus.",
         ]}
-        imageSrc="/images/google-ads-maroc/agence-google-ads.jpg"
+        imageSrc="/images/07/agence-google-ads.jpg"
         imageAlt="Google My Business au Maroc"
         consultButtonTextExiste={true}
         textButton={"Contactez-nous"}
@@ -190,7 +190,7 @@ export default async function HomePage() {
           "Notre agence spécialisée en Google Ads se distingue par son professionnalisme dans la création de campagnes rentables pour votre entreprise, aussi bien au niveau local qu’au niveau national partout au Maroc.",
           "Nous combinons expérience, outils avancés et connaissance approfondie du marché marocain afin de garantir des résultats mesurables et durables.",
         ]}
-        imageSrc="images/google-ads-maroc/quoi-agence-google-ads-maroc.jpg"
+        imageSrc="images/07/quoi-agence-google-ads-maroc.jpg"
         imageAlt="Qu’est-ce qu’une agence Google Ads Maroc"
         consultButtonTextExiste={true}
         textButton="Contactez-nous"
@@ -249,7 +249,7 @@ export default async function HomePage() {
           "Grâce à une solide expérience dans des secteurs variés, nos experts Google Ads savent exactement quelle méthodologie adopter selon les spécificités de votre entreprise. Nous avons accompagné avec succès de grandes marques de l’agroalimentaire, des <b>compagnies aériennes</b>, des <b>banques</b>, des <b>assureurs</b> ainsi que de nombreux <b>prestataires de services</b>.",
           "Appelez-nous dès maintenant au +212 663 75 09 08 et confiez vos campagnes publicitaires à des experts Google Ads reconnus.",
         ]}
-        imageSrc="images/google-ads-maroc/expert-google-ads-maroc.jpg"
+        imageSrc="images/07/expert-google-ads-maroc.jpg"
         imageAlt="Expert Google Ads au Maroc"
         consultButtonTextExiste={true}
         textButton="Contactez-nous"
@@ -272,7 +272,7 @@ export default async function HomePage() {
           "Les deux leviers se complètent : les données issues des campagnes Ads aident à cibler les bons mots-clés pour le <strong>SEO</strong>, et un site bien optimisé améliore le Quality Score, réduisant ainsi le <strong>coût par clic</strong>.",
           "Résultat : plus de visibilité, un trafic qualifié et des conversions accrues. L’association <strong>Google Ads + SEO</strong> offre un impact rapide et une croissance pérenne.",
         ]}
-        imageSrc="/images/google-ads-maroc/seo-google-ads-maroc.jpg"
+        imageSrc="/images/07/seo-google-ads-maroc.jpg"
         imageAlt="Synergie entre Google Ads et SEO"
         consultButtonTextExiste={true}
         textButton="Contactez-nous"

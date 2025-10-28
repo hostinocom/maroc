@@ -126,7 +126,7 @@ export default async function AgenceMarketingImmobilierPage() {
           color: "text-primary",
         }}
         email="info@hostino.com"
-        imageSrc="images/agence-marketing-immobilier/agence-marketing-immobilier-maroc.png"
+        imageSrc="images/16/agence-marketing-immobilier-maroc.png"
         imageAlt="Agence marketing immobilier au Maroc"
       />
 
@@ -148,7 +148,7 @@ export default async function AgenceMarketingImmobilierPage() {
           "L'acquisition de clients via Google est la plus performante en termes de conversion, surtout dans l'immobilier : les prospects qui recherchent activement un appartement à vendre sont des acheteurs prêts à investir. Il ne reste qu'à les convaincre grâce à une <b>offre attractive</b> et un <b>suivi commercial de qualité</b>.",
           "Appelez le +212 663 75 09 08 et confiez votre marketing immo à des experts de confiance au Maroc.",
         ]}
-        imageSrc="images/agence-marketing-immobilier/agence-marketing-immobilier-maroc.jpg"
+        imageSrc="images/16/agence-marketing-immobilier-maroc.jpg"
         imageAlt="Publicité et marketing immobilier au Maroc"
         consultButtonTextExiste={true}
         textButton="Contactez-nous"
@@ -176,7 +176,7 @@ export default async function AgenceMarketingImmobilierPage() {
           'Les <a href="https://www.mre.gov.ma/" rel="noopener"><b>Marocains Résidant à l\'Étranger</b></a>, notamment en France, en Belgique, aux Pays-Bas ou en Espagne, cherchent de plus en plus à investir au Maroc. Être visible en première ligne sur Google vous permet de capter leur attention et de les convaincre plus facilement.',
           "Cette visibilité est tout aussi essentielle localement : à Rabat, Fès ou Marrakech, les acheteurs veulent trouver immédiatement un promoteur de confiance.",
         ]}
-        imageSrc="images/agence-marketing-immobilier/marketing-google-immobilier.jpg"
+        imageSrc="images/16/marketing-google-immobilier.jpg"
         imageAlt="Marketing et Publicité Google pour projets immobiliers"
         consultButtonTextExiste={true}
         textButton="Contactez-nous"

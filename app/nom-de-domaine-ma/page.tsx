@@ -234,18 +234,18 @@ const domains = [
 
 const hostingFeatures = [
   {
-    image: "nom-de-domaine-ma/lancer-domaine.png",
+    image: "08/lancer-domaine.png",
     title: "Nom de domaine pour lancer un <span>site web</span>",
     description: `Un nom de domaine .ma, c’est l’assurance d’une identité locale forte pour votre site web. Gagnez la confiance des internautes marocains et renforcez votre crédibilité. Sélectionnez un <b>pack <span style="text-decoration: underline;"><a href="https://www.hostino.ma/">d’hébergement web</a></span></b> et publiez votre site dès <b>maintenant</b> !`,
   },
   {
-    image: "nom-de-domaine-ma/email-domaine.png",
+    image: "08/email-domaine.png",
     title:
       "Nom de domaine <br>pour créer des<br> <span><span>e-mails Pro</span></span>",
     description: `Boostez votre crédibilité et votre communication avec des adresses emails personnalisées <b>@votreentreprise.ma</b>. <span style="text-decoration: underline;"><a href="/email-professionnel/#plans">Sélectionnez le pack</a></span> adapté, confirmez votre domaine .ma et profitez d’une messagerie professionnelle pour votre entreprise.`,
   },
   {
-    image: "nom-de-domaine-ma/shopify.png",
+    image: "08/shopify.png",
     title:
       "Nom de domaine <br>pour <span><span>Shopify</span></span>, Youcan etc.",
     description: `Donnez une identité unique à votre boutique en ligne ! Achetez votre nom de domaine et connectez-le à Shopify, Youcan ou toute autre plateforme en quelques clics grâce à notre service <b>DNS gratuit</b>.
@@ -255,35 +255,35 @@ Démarrez votre e-commerce dès maintenant !`,
 
 const whyChooseNomDomaineHostino = [
   {
-    image: "nom-de-domaine-ma/local.png",
+    image: "08/local.png",
     title: "100% <span>Marocain</span>",
     description: "Prestataire local, qui facture en MAD (dirham marocain).",
   },
   {
-    image: "nom-de-domaine-ma/price.png",
+    image: "08/price.png",
     title: "Tarifs <span>compétitifs</span>",
     description:
       "Économisez jusqu'à 50 % comparé à nos compétiteurs internationaux.",
   },
   {
-    image: "nom-de-domaine-ma/secure.png",
+    image: "08/secure.png",
     title: "Paiement <span>sécurisé</span>",
     description:
       "Paiement sécurisé par carte bancaire pour une mise en service immédiate.",
   },
   {
-    image: "nom-de-domaine-ma/accredited.png",
+    image: "08/accredited.png",
     title: "Entreprise <span>réputée</span>",
     description: "Accréditée par l'ANRT, avec 5,000+ domaines sous gestion.",
   },
   {
-    image: "nom-de-domaine-ma/dns.png",
+    image: "08/dns.png",
     title: "Gestion <span>simple</span>",
     description:
       "Interface sécurisée, intuitive et facile pour la gestion de vos domaines.",
   },
   {
-    image: "nom-de-domaine-ma/fast-icon.png",
+    image: "08/fast-icon.png",
     title: "Activation <span>instantanée</span>",
     description:
       "Enregistrement rapide, avec une <b>activation instantanée.</b>",
@@ -423,7 +423,7 @@ const NomDeDomaineMaPage = () => {
           `<span style="color: #022545;">Un domaine <strong>.MA (<span style="text-decoration: underline;"><a href="https://www.hostino.ma/en/ma-domain-name/">.ma domain name</a></span>)</strong> indique immédiatement à vos clients que votre entreprise est implantée au Maroc et engagée dans son économie locale. Il inspire confiance en montrant que vous êtes un acteur du marché marocain, que vous respectez les réglementations locales et que vous facilitez les transactions en dirhams.</span>`,
           `<span style="color: #022545; font-weight: var(--e-global-typography-text-font-weight); letter-spacing: 0.2px; text-align: inherit;">Appelez-nous au (+212) 531 031 186 : l’un de nos conseillers vous répondra à toutes vos questions.</span>`,
         ]}
-        imageSrc="/images/nom-de-domaine-ma/nom-de-domaine-maroc-quoi.jpg"
+        imageSrc="/images/08/nom-de-domaine-maroc-quoi.jpg"
         imageAlt="Maily - Messagerie professionnelle"
         textButton="Commancer maintenant"
         arrowButton={true}
@@ -442,7 +442,7 @@ const NomDeDomaineMaPage = () => {
           `<span style="color: #022545;">La réservation de noms de domaine .MA incluant des mots ou expressions réservés, tels que ‘maroc’, ‘morocco’, ‘gov’ (ou leurs traductions), des noms de villes, communes, pays, des acronymes d’organismes publics, des termes techniques spécifiques, etc., ou des noms de domaine sous les extensions restrictives .AC.MA, .PRESS.MA et .GOV.MA, est soumise à des conditions particulières concernant l’identité et les droits du demandeur.</span>`,
           `<span style="color: #022545;">Vous pouvez consulter à la&nbsp;<span style="text-decoration: underline;"><a style="color: #022545; text-decoration: underline;" href="https://www.registre.ma/wp-content/themes/domaine/pdf/Liste_terme_reserves.pdf" rel="noopener"><b>liste des termes</b></a></span> non exhaustive des termes réservés définis par l’agence nationale de réglementation des télécommunications (ANRT).</span>`,
         ]}
-        imageSrc="/images/nom-de-domaine-ma/nom-de-domaine-maroc-terme.jpg"
+        imageSrc="/images/08/nom-de-domaine-maroc-terme.jpg"
         imageAlt="Nom de domaine Maroc à Statut réservé"
         textButton="Commencer maintenant"
         href="#ma"
@@ -494,7 +494,7 @@ const NomDeDomaineMaPage = () => {
             </li>
           </ul>,
         ]}
-        imageSrc="/images/nom-de-domaine-ma/nom-de-domaine-anrt.jpg"
+        imageSrc="/images/08/nom-de-domaine-anrt.jpg"
         imageAlt="Nom de domaine Maroc à Statut réservé"
         textButton="Commencer maintenant"
         href="#ma"
@@ -508,7 +508,7 @@ const NomDeDomaineMaPage = () => {
           "Pour garantir une protection efficace des droits de propriété intellectuelle, l’Agence Nationale de Réglementation des Télécommunications (ANRT), en collaboration avec , <b>l’Organisation Mondiale de la Propriété Intellectuelle</b> (OMPI), a mis en place une Procédure Alternative de Résolution de Litiges (PARL).",
           "Cette procédure permet de traiter les conflits liés à l’enregistrement abusif de noms de domaine correspondant à des marques protégées, des dénominations sociales, ainsi que des indications géographiques ou appellations d’origine au Maroc.",
         ]}
-        imageSrc="/images/nom-de-domaine-ma/nom-de-domaine-ompi-anrt.jpg"
+        imageSrc="/images/08/nom-de-domaine-ompi-anrt.jpg"
         className="lg:mt-[150px] mt-[80px] mb-[0]"
         consultButtonTextExiste={false}
       />
@@ -605,6 +605,7 @@ const NomDeDomaineMaPage = () => {
       <ServiceProximite page="nom-de-domaine" />
       <StartsRatingYellowFooter totalVotes={323} />
     </main>
+
   </>
   );
 };

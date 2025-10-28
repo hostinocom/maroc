@@ -130,7 +130,7 @@ const faqData = [
 
 const hostingFeatures = [
   {
-    image: "email-professionnel/email-professionnel-outlook.jpg",
+    image: "05/05-outlook.jpg",
     alt: "Compatible tout logiciel",
     title: "Compatible tout <span>logiciel</span>",
     description: `
@@ -139,7 +139,7 @@ const hostingFeatures = [
     `,
   },
   {
-    image: "email-professionnel/email-pro-compatible-apple.jpg",
+    image: "05/email-pro-compatible-apple.jpg",
     alt: "Compatible tout appareil",
     title: "Compatible tout <span>appareil</span>",
     description: `
@@ -148,7 +148,7 @@ const hostingFeatures = [
     `,
   },
   {
-    image: "email-professionnel/hebergeur-marocain.jpg",
+    image: "05/hebergeur-marocain.jpg",
     alt: "Email Pro @entreprise.ma",
     title: "Email Pro <span>@entreprise.ma</span>",
     description: `
@@ -157,7 +157,7 @@ const hostingFeatures = [
     `,
   },
   {
-    image: "email-professionnel/email-professionnel-stockage.jpg",
+    image: "05/email-professionnel-stockage.jpg",
     alt: "Adresse mail pro jusqu'à 100GB",
     title: "Adresse mail pro <span>Jusqu'à 100GB</span>",
     description: `
@@ -166,7 +166,7 @@ const hostingFeatures = [
     `,
   },
   {
-    image: "email-professionnel/email-professionnel-securite.jpg",
+    image: "05/email-professionnel-securite.jpg",
     alt: "Anti-virus Anti-spam",
     title: "Anti-virus <span>Anti-spam</span>",
     description: `
@@ -175,7 +175,7 @@ const hostingFeatures = [
     `,
   },
   {
-    image: "email-professionnel/support-maroc.jpg",
+    image: "05/support-maroc.jpg",
     alt: "Assistance Experte",
     title: "Assistance <span>Experte</span>",
     description: `
@@ -390,7 +390,7 @@ export default async function EmailProfessionnelPage() {
             "Maily est la solution de messagerie premium pensée pour les entreprises exigeantes, en quête d’un service fiable, sécurisé et hautement performant pour accompagner leur développement. Grâce à notre <b>infrastructure Cloud</b>, vous bénéficiez d’une sécurité avancée, d’une productivité optimisée et d’outils collaboratifs puissants pour une communication interne et externe fluide et efficace.",
             "Notre équipe est à votre écoute du lundi au vendredi de 9h à 18h pour répondre à toutes vos questions et vous aider à configurer votre messagerie professionnelle au Maroc. Appelez-nous au +212 (05) 31 03 11 86.",
           ]}
-          imageSrc="/images/email-professionnel/email-pro-maroc.jpg"
+          imageSrc="/images/05/email-pro-maroc.jpg"
           imageAlt="Email Pro au Maroc"
           consultButtonTextExiste={false}
         />

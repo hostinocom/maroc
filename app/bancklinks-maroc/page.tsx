@@ -122,7 +122,7 @@ export default async function BacklinksPage() {
           color: "text-primary",
         }}
         email="info@hostino.com"
-        imageSrc="images/backlinks-maroc/backlinks-maroc.png"
+        imageSrc="images/12/backlinks-maroc.png"
         imageAlt="Backlinks Maroc"
       />
 
@@ -139,11 +139,11 @@ export default async function BacklinksPage() {
         title="Agence d'acquisition de backlinks au Maroc"
         paragraphs={[
           "Notre agence accompagne les marques et les entreprises dans l'acquisition de backlinks locaux au Maroc.",
-          'Nous disposons d\'un <b>réseau stratégique de plus de 200 sites web</b> à forte autorité (DA) répartis dans différents secteurs d\'activité. Grâce à ces partenariats solides, nous vous aidons à renforcer votre visibilité sur Google et à améliorer durablement votre positionnement <strong><span style="text-decoration: underline;"><a href="/backlinks-maroc/">SEO</a></span></strong>.',
+          'Nous disposons d\'un <b>réseau stratégique de plus de 200 sites web</b> à forte autorité (DA) répartis dans différents secteurs d\'activité. Grâce à ces partenariats solides, nous vous aidons à renforcer votre visibilité sur Google et à améliorer durablement votre positionnement <strong><span style="text-decoration: underline;"><a href="/bancklinks-maroc/">SEO</a></span></strong>.',
           "En plus de la mise à disposition de backlinks de qualité, nous proposons un service complet <b>d'acquisition et de négociation</b> personnalisée. Nous identifions les opportunités les plus pertinentes en fonction de votre secteur d'activité, de vos objectifs stratégiques et de votre budget.",
           "Appelez le +212 663 75 09 08 et confiez l'acquisition de backlinks à une agence SEO experte au Maroc.",
         ]}
-        imageSrc="images/backlinks-maroc/backlinks-maroc.jpg"
+        imageSrc="images/12/backlinks-maroc.jpg"
         imageAlt="Agence Backlinks Maroc"
         consultButtonTextExiste={true}
         textButton="Contactez-nous"
@@ -168,7 +168,7 @@ export default async function BacklinksPage() {
           'Imaginez un article publié sur Maroc24.com ou un autre grand média local, mettant en avant votre société tout en intégrant un backlink "<span style="text-decoration: underline;"><strong><a href="https://developers.google.com/search/docs/crawling-indexing/qualify-outbound-links?hl=fr" rel="noopener">dofollow</a></strong></span>" vers votre site. Cette action renforce considérablement votre autorité en ligne, améliore votre référencement naturel et vous permet de <b>dépasser efficacement vos concurrents</b>.',
           "Boostez vos positions sur Google et atteignez de nouveaux sommets grâce à nos solutions de <b>backlinking de qualité supérieure</b>, proposées à des prix très compétitifs.",
         ]}
-        imageSrc="images/backlinks-maroc/achat-backlinks-maroc.jpg"
+        imageSrc="images/12/achat-backlinks-maroc.jpg"
         imageAlt="Achat backlinks au Maroc"
         consultButtonTextExiste={true}
         textButton="Contactez-nous"

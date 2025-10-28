@@ -133,7 +133,7 @@ export default async function HotelMarketingPage() {
           color: "text-primary",
         }}
         email="info@hostino.com"
-        imageSrc="images/agence-marketing-hotel/agence-marketing-hotel-maroc.png"
+        imageSrc="images/11/agence-marketing-hotel-maroc.png"
         imageAlt="Agence Marketing Hotel au Maroc"
       />
 
@@ -155,7 +155,7 @@ export default async function HotelMarketingPage() {
           "Nous mettons à votre disposition une équipe d'experts prête à vous guider dans la <b>conception, l'exécution, le suivi et l'optimisation</b> de votre stratégie de marketing digital.",
           "Appelez le +212 663 75 09 08 et confiez votre marketing hôtelier à des experts reconnus au Maroc.",
         ]}
-        imageSrc="images/agence-marketing-hotel/agence-marketing-hotel-maroc.jpg"
+        imageSrc="images/11/agence-marketing-hotel-maroc.jpg"
         imageAlt="Agence Marketing pour les hôtels au Maroc"
         consultButtonTextExiste={true}
         textButton="Contactez-nous"
@@ -174,7 +174,7 @@ export default async function HotelMarketingPage() {
           "Cela passe par l'optimisation technique de votre site, la création de contenus pertinents, et une gestion efficace de votre fiche d'établissement Google afin de renforcer la visibilité locale. Être bien référencé vous permet également d'être plus <b>visible auprès des agences de voyages</b>, un atout majeur pour capter des réservations de groupe.",
           "Appelez le +212 663 75 09 08 et confiez le référencement SEO de votre hôtel ou riad à des experts reconnus au Maroc.",
         ]}
-        imageSrc="images/agence-marketing-hotel/agence-seo-hotel-maroc.jpg"
+        imageSrc="images/11/agence-seo-hotel-maroc.jpg"
         imageAlt="Agence de référencement SEO Hôtel au Maroc"
         consultButtonTextExiste={true}
         textButton="Contactez-nous"

@@ -217,7 +217,7 @@ export default async function AgenceMarketingMedicalPage() {
           color: "text-primary",
         }}
         email="info@hostino.com"
-        imageSrc="images/agence-marketing-medical/agence-marketing-medical-maroc.png"
+        imageSrc="images/14/agence-marketing-medical-maroc.png"
         imageAlt="Agence Marketing Médical au Maroc"
       />
 
@@ -239,7 +239,7 @@ export default async function AgenceMarketingMedicalPage() {
           "Avec Hostino, vous bénéficiez d’un <b>suivi complet</b> : optimisation technique (vitesse du site, sécurité, structure) et accompagnement rédactionnel pour écrire selon les critères de Google. Résultat : vos articles gardent leur visibilité plus longtemps et continuent à attirer régulièrement des lecteurs.",
           "Appelez le +212 663 75 09 08 et confiez le marketing digital de votre site média à l’agence SEO n°1 au Maroc.",
         ]}
-        imageSrc="images/agence-marketing-news/referencement-seo-articles-google-maroc.jpg"
+        imageSrc="images/17/referencement-seo-articles-google-maroc.jpg"
         imageAlt="Référencement Google pour articles de presse au Maroc"
         consultButtonTextExiste={true}
         textButton="Contactez-nous"
@@ -252,7 +252,7 @@ export default async function AgenceMarketingMedicalPage() {
           `Lorsqu’un médecin souhaite renforcer sa visibilité, il pense souvent d’abord aux réseaux sociaux ou aux plateformes de prise de rendez-vous en ligne. Ces solutions semblent simples et rapides à mettre en place, mais elles restent limitées : <span><b>tout le monde peut le faire</b></span>, et au final, cela ne permet pas de réellement se différencier.`,
           `En réalité, lorsqu’on parle de plateformes de prise de rendez-vous, elles mettent souvent en avant l’argument selon lequel votre cabinet serait « <span style="font-weight: bold;">référencé sur Google</span> ». Mais en vérité, ce n’est pas le médecin qui est mis en avant, <span style="font-weight: bold;">c’est la plateforme elle-même</span>.`,
           `Votre nom se retrouve alors intégré dans une <span style="font-weight: bold;">longue liste de confrères</span> sur leur site, au lieu de mettre en avant votre cabinet directement et en première ligne sur Google, capable même de <b>dépasser ces plateformes</b>.`,
-          `<img loading="lazy" src="images/agence-marketing-medical/marketing-medecin-maroc-google-scaled-e1759336272263.jpg" alt="Marketing médical pour médecins au Maroc" width="2560" height="940" />`,
+          `<img loading="lazy" src="images/14/marketing-medecin-maroc-google-scaled-e1759336272263.jpg" alt="Marketing médical pour médecins au Maroc" width="2560" height="940" />`,
           `Notre approche est différente : nous <span style="text-decoration: underline;"><strong><a href="/creation-site-web-maroc/">créons pour vous un site</a></strong></span> web Google-friendly, conçu pour être positionné en haut des résultats Google sur des mots-clés très concurrentiels liés à votre spécialité et votre ville.`,
           `Cette stratégie vous permet de générer des consultations directes, de développer la notoriété de votre cabinet et d’installer une image forte et indépendante auprès de vos patients.`,
         ]}
@@ -268,7 +268,7 @@ export default async function AgenceMarketingMedicalPage() {
           "Cela passe par l'optimisation technique de votre site, la création de contenus de santé pertinents, et une gestion efficace de votre fiche <a href='/google-my-business-maroc/' style='text-decoration: underline;' target='_blank'><strong>Google Business</strong></a> afin de renforcer votre <b>visibilité locale</b>. Être bien référencé vous permet également d'inspirer confiance et de faciliter la prise de rendez-vous, un atout majeur pour fidéliser vos patients.",
           "Contactez-nous au +212 663 75 09 08 et confiez le référencement SEO de votre cabinet à des experts reconnus en marketing santé au Maroc.",
         ]}
-        imageSrc="images/agence-marketing-medical/marketing-google-medecins-maroc.png"
+        imageSrc="images/14/marketing-google-medecins-maroc.png"
         imageAlt="Marketing Google pour médecins et cliniques au Maroc"
         consultButtonTextExiste={true}
         textButton="Contactez-nous"

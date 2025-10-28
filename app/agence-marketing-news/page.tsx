@@ -149,7 +149,7 @@ export default async function HomePage() {
           color: "text-primary",
         }}
         email="info@hostino.com"
-        imageSrc="images/agence-marketing-news/agence-marketing-news.png"
+        imageSrc="images/17/agence-marketing-news.png"
         imageAlt="Agence Marketing News et SEO"
       />
 

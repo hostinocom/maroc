@@ -29,7 +29,7 @@ const palaisFarajCaseStudy: CaseStudyContent = {
     "Notre agence SEO a relevé le défi avec le Palais Faraj : hisser un hôtel de Fès au même niveau – voire au-dessus – des établissements de Marrakech, afin de capter l'attention des <strong>voyageurs en quête d'expériences authentiques et raffinées</strong>.",
   ],
   trafficImage: {
-    src: "/images/agence-seo-maroc/etude-de-cas-agence-seo-palaisfaraj.jpg",
+    src: "/images/06/etude-de-cas-agence-seo-palaisfaraj.jpg",
     alt: "Palais Faraj SEO Traffic Growth - SEMrush Analytics",
   },
   sections: [
@@ -48,7 +48,7 @@ const palaisFarajCaseStudy: CaseStudyContent = {
         'Ainsi, pour des recherches telles que "<strong>Mellah Fès</strong>", un article dédié au Palais Faraj se positionne en tête des résultats Google, attirant un trafic qualifié à l\'échelle mondiale. Ce type de contenu a directement contribué à générer un flux régulier de réservations directes depuis le site officiel, en ciblant des voyageurs et agences de voyages internationales. Nous avons également travaillé sur la gastronomie marocaine en produisant des contenus à forte valeur ajoutée. Un exemple marquant est l\'article "<strong>Quand Gordon Ramsay découvrait à Fès la cuisine marocaine</strong>", que nous avons référencé en tête des résultats Google sur le mot-clé "<strong>Meilleure Cuisine Marocaine</strong>".',
       ],
       image: {
-        src: "/images/agence-seo-maroc/cas-reel-agence-seo-maroc.jpg",
+        src: "/images/06/cas-reel-agence-seo-maroc.jpg",
         alt: "Gordon Ramsay Fès cuisine article Google search results",
       },
     },

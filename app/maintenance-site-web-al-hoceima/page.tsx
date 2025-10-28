@@ -161,7 +161,7 @@ export default async function HomePage() {
           color: "text-primary",
         }}
         email="info@hostino.com"
-        imageSrc="/images/maintenance-site-web-al-hoceima/maintenance-site-web-maroc.png"
+        imageSrc="/images/15/maintenance-site-web-maroc.png"
         imageAlt="Maintenance site web au Maroc"
       />
 
@@ -183,7 +183,7 @@ export default async function HomePage() {
           "Chaque prestation de maintenance est <b>encadrée par un SLA</b> clair et transparent. Cet engagement définit les niveaux de disponibilité, les délais d'intervention et la qualité de service que nous garantissons.",
           "Appelez le (+212) 663 75 09 08 et confiez la maintenance de votre site web à nos experts reconnus dans le domaine.",
         ]}
-        imageSrc="images/maintenance-site-web-al-hoceima/maintenance-site-web-maroc.jpg"
+        imageSrc="images/15/maintenance-site-web-maroc.jpg"
         imageAlt="Maintenance de votre site web au Maroc"
         consultButtonTextExiste={true}
         textButton="Contactez-nous"
@@ -199,7 +199,7 @@ export default async function HomePage() {
           "Notre agence propose des services de maintenance web haut de gamme. Nous nous appuyons sur l'expertise de spécialistes expérimentés et intégrons les <b>dernières technologies</b> pour que votre site soit toujours performant, sécurisé et visible.",
           "Appelez le (+212) 663 75 09 08 et confiez la maintenance de votre site web à nos experts reconnus dans le domaine.",
         ]}
-        imageSrc="/images/maintenance-site-web-al-hoceima/service-maintenance-site-web-maroc.jpg"
+        imageSrc="/images/15/service-maintenance-site-web-maroc.jpg"
         imageAlt="Service maintenance site web au Maroc"
         consultButtonTextExiste={true}
         textButton="Contactez-nous"

@@ -341,7 +341,7 @@ export default async function HomePage() {
           color: "text-primary",
         }}
         email="info@hostino.com"
-        imageSrc="/images/agence-seo-maroc/agence-seo-maroc.png"
+        imageSrc="/images/06/agence-seo-maroc.png"
         imageAlt="Agence SEO au Maroc"
       />
       <ContactForm
@@ -361,7 +361,7 @@ export default async function HomePage() {
           "En plus du SEO classique, notre agence vous accompagne également dans le référencement sur les nouveaux <b>moteurs d’IA</b> (ChatGPT, Gemini, etc.), afin de vous aider à profiter pleinement de ce nouveau canal d’acquisition.",
           '<span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Appelez le +212 663 75 09 08 et confiez votre stratégie SEO à des experts reconnus dans le domaine.</span>',
         ]}
-        imageSrc="/images/agence-seo-maroc/agence-seo-maroc.jpg"
+        imageSrc="/images/06/agence-seo-maroc.jpg"
         imageAlt="Vendez plus grâce à l'agence SEO Maroc"
         consultButtonTextExiste={true}
         textButton={"Contactez-nous"}
@@ -381,7 +381,7 @@ export default async function HomePage() {
           "La nouveauté aujourd’hui est que les agences SEO ne se limitent plus aux moteurs de recherche traditionnels. Elles interviennent désormais aussi sur les nouveaux moteurs d’intelligence artificielle. C’est ce que l’on appelle une Agence GEO <b>(Generative Engine Optimization)</b>, une évolution du SEO qui représente une opportunité unique pour exploiter des canaux encore peu saturés, renforcer sa présence digitale et toucher un public beaucoup plus large.",
           "Appelez le +212 663 75 09 08et confiez votre stratégie de visibilité SEO et GEO à une <b>agence innovante</b>, toujours à la pointe des tendances technologiques internationales.",
         ]}
-        imageSrc="images/agence-seo-maroc/quoi-agence-seo-maroc.jpg"
+        imageSrc="images/06/quoi-agence-seo-maroc.jpg"
         imageAlt="Agence SEO Maroc"
         consultButtonTextExiste={true}
         textButton="Contactez-nous"
@@ -396,7 +396,7 @@ export default async function HomePage() {
           "<b>Être visible sur ChatGPT</b>, c’est apparaître directement dans les réponses que les utilisateurs consultent chaque jour. Là où vos concurrents n’ont pas encore investi, vous pouvez placer vos services et vos solutions au cœur des recommandations de l’IA et ainsi créer un avantage compétitif décisif.",
           'Notre agence SEO vous accompagne dans cette transition. Grâce à une méthodologie avancée — analyse des requêtes, optimisation des contenus et intégration des <b>signaux adaptés à l’IA</b> — nous transformons cette opportunité en croissance durable. Selon nos experts seniors, ChatGPT deviendra le nouveau SEO d’ici les deux prochaines années.&nbsp;<b style="font-family: inherit; font-size: inherit; font-style: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Agir dès aujourd’hui, c’est s’assurer une place de leader demain.</b>',
         ]}
-        imageSrc="images/agence-seo-maroc/agence-seo-chatgpt.jpg"
+        imageSrc="images/06/agence-seo-chatgpt.jpg"
         imageAlt="Agence SEO Chatgpt"
         consultButtonTextExiste={true}
         textButton="Contactez-nous"
@@ -412,7 +412,7 @@ export default async function HomePage() {
           'L’agence Hostino est la seule au Maroc à avoir mis en place une cellule de <b>recherche et développement (R&amp;D)</b> dédiée exclusivement au SEO, afin de rester à l’avant-garde des innovations et des futures mises à jour de Google.&nbsp;<span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Grâce à cette veille proactive, nous optimisons en continu nos performances et garantissons à nos clients la stabilité de leurs positions, tout en restant pleinement conformes aux normes et recommandations de Google.</span>',
           '<span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Ce groupe de consultants SEO est dirigé par&nbsp;<span style="text-decoration: underline;"><strong><a href="https://www.linkedin.com/in/aniss-kiassi" rel="noopener">Aniss Kiassi</a></strong></span>, CEO – expert international réputé en SEO, lauréat du prestigieux programme d’innovation <span style="text-decoration: underline;"><strong><a href="https://www.investinspain.org/content/icex-invest/en/rising-up-in-spain.html" rel="noopener">Rising UP Spain</a></strong></span> et vainqueur de plusieurs prix nationaux et internationaux.</span>',
         ]}
-        imageSrc="images/agence-seo-maroc/expert-seo-maroc.jpg"
+        imageSrc="images/06/expert-seo-maroc.jpg"
         imageAlt="Expert SEO au Maroc"
         consultButtonTextExiste={true}
         textButton="Contactez-nous"
@@ -449,7 +449,7 @@ export default async function HomePage() {
           "Résultat : une hausse de <b>130 % du trafic organique</b> en seulement 6 mois, accompagnée d’une augmentation de <b>40 % du taux de conversion.</b>&nbsp;",
           'En parallèle, une stratégie de contenu éditorial de qualité a été déployée et des partenariats locaux ont été établis afin de renforcer l’autorité et la crédibilité du site.&nbsp;&nbsp;<span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Cette approche globale a permis à Pcreparatieamsterdam.nl de s’imposer comme le </span><span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;"><b>référent local en matière de réparation informatique</b></span><span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">, attirant une clientèle fidèle et générant une croissance significative de son chiffre d’affaires.</span>',
         ]}
-        imageSrc="images/agence-seo-maroc/agence-seo-maroc-pour-diaspora.jpg"
+        imageSrc="images/06/agence-seo-maroc-pour-diaspora.jpg"
         imageAlt=""
         consultButtonTextExiste={true}
         textButton="Contactez-nous"

@@ -210,7 +210,7 @@ const PlanCard = ({ plan }: { plan: Plan }) => {
       )}
 
       <h3
-        className="lg:text-[26px] md:text-left text-center md:text-[30px] text-[28px] text-title font-[600] md:leading-[33px] leading-[1.3em] mb-4"
+        className="lg:text-[26px] lg:text-left text-center md:text-[30px] text-[28px] text-title font-[600] md:leading-[33px] leading-[1.3em] mb-4"
         dangerouslySetInnerHTML={{ __html: plan.name }}
       />
       <p className="text-[#022545BD] md:text-left text-center text-[14px] font-[400] leading-[21px] tracking-[0.3px]">

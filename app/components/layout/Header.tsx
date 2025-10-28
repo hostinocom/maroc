@@ -34,7 +34,6 @@ export default function Header() {
             <div className="relative">
               <button
                 onClick={() => setHebergementOpen(!hebergementOpen)}
-                onMouseEnter={() => setHebergementOpen(true)}
                 className="font-poppins animated-link text-[17px] flex items-center gap-2 font-semibold border-none p-0"
               >
                 Hébergement web
@@ -59,7 +58,6 @@ export default function Header() {
               {hebergementOpen && (
                 <div
                   className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 py-2"
-                  onMouseLeave={() => setHebergementOpen(false)}
                 >
                   <Link
                     href="/starty"
@@ -103,7 +101,6 @@ export default function Header() {
             <div className="relative">
               <button
                 onClick={() => setSeoOpen(!seoOpen)}
-                onMouseEnter={() => setSeoOpen(true)}
                 className="flex items-center animated-link gap-2 text-[#14213D] font-[600] hover:text-primary transition-colors"
               >
                 <Image
@@ -111,6 +108,7 @@ export default function Header() {
                   alt="Hostino"
                   width={20}
                   height={20}
+                  
                 />
                 SEO/SEA
                 <svg
@@ -134,7 +132,6 @@ export default function Header() {
               {seoOpen && (
                 <div
                   className="absolute z-50 top-full right-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 py-2"
-                  onMouseLeave={() => setSeoOpen(false)}
                 >
                   <Link
                     href="/agence-seo-maroc/"
