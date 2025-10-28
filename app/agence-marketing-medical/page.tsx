@@ -11,6 +11,12 @@ import TitleParagraphButton from "../components/commonSections/TitleParagraphBut
 import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter";
 import { ClaimReviewJsonLd } from "next-seo";
 
+const title = "Agence Marketing Médical | SEO Santé – Médecins &amp; Cliniques"
+const description =  "Agence Marketing Medical Au Maroc. Publicité Google &amp; Référencement SEO pour Médecins, Cabinets, Cliniques et Laboratoires ☎️ 0663 75 09 08"
+const imageUrl = "https://maroc-1hp.pages.dev/images/agence-marketing-medical/agence-marketing-medical-maroc.png" 
+const canonical_url = "https://www.hostino.ma/agence-marketing-medical"
+const og_alt = "Agence Marketing Médical"
+
 const faqData = [
   {
     question: "Je suis médecin, est-ce possible d’être n°1 sur Google ?",
