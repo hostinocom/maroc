@@ -9,8 +9,11 @@ import TrustedBySection from "../components/sections/TrustedBySection";
 import PromoBanner from "../components/ui/PromoBanner";
 import { ClaimReviewJsonLd } from "next-seo";
 
-
-
+const title = "Hébergement web Business - Solutions d&#039;hébergement pour les Pros"
+const description =  "Hébergement de site web d&#039;entreprise au Maroc, Solution d&#039;hébergement professionnel parfaitement adaptée aux sites corporate"
+const imageUrl = "XXXXX" 
+const canonical_url = "https://www.hostino.ma/business"
+const og_alt = "Hébergement web Business"
 
 const hostingPlans = [
   {
