@@ -15,7 +15,7 @@ import { ClaimReviewJsonLd } from "next-seo";
 const title = "Hébergement web pas cher au Maroc | Hostino"
 const description =  "Hébergement web pas cher Maroc. Starty® vous permet d&#039;héberger vos sites web à petit prix pour débuter votre activité en ligne"
 const imageUrl = "XXXXX" 
-const canonical_url = "https://www.hostino.ma"
+const canonical_url = "https://www.hostino.ma/starty"
 const og_alt = "Hébergement web pas cher"
 
 const hostingPlans: Plan[] = [
