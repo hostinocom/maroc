@@ -1,32 +1,39 @@
-// components/cookiebanner.tsx
-
 "use client";
-
+import { useEffect, useState } from "react";
+import { updateConsent, waitForGtag } from "../lib/gtag";
 import Link from "next/link";
-import { useState, useEffect } from "react";
-import { getLocalStorage, setLocalStorage } from "../lib/storageHelper";
 
 export default function CookieBanner() {
-  const [cookieConsent, setCookieConsent] = useState(false);
+  const [cookieConsent, setCookieConsent] = useState<boolean | null>(null);
 
   useEffect(() => {
-    const storedCookieConsent = getLocalStorage("cookie_consent", null);
-
-    setCookieConsent(storedCookieConsent);
-  }, [setCookieConsent]);
+    const storedConsent = localStorage.getItem("cookie_consent");
+    if (storedConsent !== null) {
+      setCookieConsent(storedConsent === "true");
+    }
+  }, []);
 
   useEffect(() => {
+    if (cookieConsent === null) return;
+
     const newValue = cookieConsent ? "granted" : "denied";
 
-    window.gtag("consent", "update", {
-      analytics_storage: newValue,
+    waitForGtag(() => {
+      updateConsent(newValue);
     });
-
-    setLocalStorage("cookie_consent", cookieConsent);
-
-    //For Testing
-    console.log("Cookie Consent: ", cookieConsent);
   }, [cookieConsent]);
+
+  const acceptCookies = () => {
+    setCookieConsent(true);
+    localStorage.setItem("cookie_consent", "true");
+  };
+
+  const declineCookies = () => {
+    setCookieConsent(false);
+    localStorage.setItem("cookie_consent", "false");
+  };
+
+  if (cookieConsent !== null) return null;
 
   return (
     <div
@@ -46,13 +53,13 @@ export default function CookieBanner() {
 
       <div className="flex gap-2">
         <button
-          onClick={() => setCookieConsent(false)}
+          onClick={declineCookies}
           className="px-5 py-2 text-title rounded-md border-gray-300 border-1"
         >
           Decline
         </button>
         <button
-          onClick={() => setCookieConsent(true)}
+          onClick={acceptCookies}
           className="bg-primary font-[600] px-5 py-2 text-white rounded-lg"
         >
           Allow Cookies
