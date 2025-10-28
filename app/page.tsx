@@ -75,11 +75,12 @@ export default async function HomePage() {
           worstRating: "1",
           alternateName: "Excellent",
           ratingCount: "130",
-        }}
+        
+        } as any}
         itemReviewed={{
           author: "Hostino",
           datePublished: "2025-10-27",
-        }}
+        } as any}
       />
 
       <main>
