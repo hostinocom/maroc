@@ -40,7 +40,7 @@ export default function CookieBanner() {
       className={` bg-white mx-auto lg:w-[45%] sm:w-[80%] w-[90%] z-[111]
                         fixed bottom-[10px] left-0 right-0 
                         flex px-3 md:px-4 py-3 justify-between  items-center flex-col sm:flex-row gap-4  
-                          rounded-lg shadow_main`}
+                          rounded-lg shadow`}
     >
       <div className="text-center z-2">
         <p className="text-title sm:text-left text-center text-[14px] sm:px-[0] px-[25px]">
