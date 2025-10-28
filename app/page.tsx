@@ -74,6 +74,7 @@ export default async function HomePage() {
           bestRating: "5",
           worstRating: "1",
           alternateName: "Excellent",
+          ratingCount: "130",
         }}
         itemReviewed={{
           author: "Hostino",
