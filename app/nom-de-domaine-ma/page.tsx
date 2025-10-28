@@ -14,7 +14,7 @@ import Head from "next/head";
 
 const title = "Nom de domaine Maroc - .Ma à seulement 118 DH"
 const description =  "Nom de domaine Maroc. En quelques clics, enregistrez votre nom de domaine. Sécurisez votre .ma à 118 Dhs/an. Activation instantanée 24h/24."
-const imageUrl = "XXXXX" 
+const imageUrl = "https://www.hostino.ma/wp-content/uploads/2024/10/hebergement-web.png" 
 const canonical_url = "https://www.hostino.ma/nom-de-domaine-ma"
 const og_alt = "Nom de domaine Maroc"
 
