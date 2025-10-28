@@ -1,6 +1,11 @@
 import Link from "next/link";
 import StarRating from "../components/ui/StartRatingFooter";
 
+const title = "Politique de confidentialité - Hostino"
+const description =  "La politique de confidentialité de l&#039;hébergement web Hostino a été conçue afin de protéger les informations de nos clients."
+const imageUrl = "https://www.hostino.ma/wp-content/uploads/2024/10/hebergement-web.png" 
+const canonical_url = "https://www.hostino.ma/politique-de-confidentialite"
+const og_alt = "Politique de confidentialité"
 
 
 export default async function LegalDocumentPage() {

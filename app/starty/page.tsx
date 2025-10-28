@@ -12,6 +12,12 @@ import TrustedBySection from "../components/sections/TrustedBySection";
 import PromoBanner from "../components/ui/PromoBanner";
 import { ClaimReviewJsonLd } from "next-seo";
 
+const title = "Hébergement web pas cher au Maroc | Hostino"
+const description =  "Hébergement web pas cher Maroc. Starty® vous permet d&#039;héberger vos sites web à petit prix pour débuter votre activité en ligne"
+const imageUrl = "https://www.hostino.ma/wp-content/uploads/2024/10/hebergement-web.png" 
+const canonical_url = "https://www.hostino.ma/starty"
+const og_alt = "Hébergement web pas cher"
+
 const hostingPlans: Plan[] = [
   {
     id: 1,

@@ -12,11 +12,11 @@ import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter"
 import Head from "next/head";
 
 
-const title = "Hébergement Web Maroc - Hébergeur web 100% marocain"
-const description =  "Hébergement Web Maroc. Hostino™ Hébergeur recommandé par les développeurs, les agences web et les professionnels du numérique au Maroc"
+const title = "Nom de domaine Maroc - .Ma à seulement 118 DH"
+const description =  "Nom de domaine Maroc. En quelques clics, enregistrez votre nom de domaine. Sécurisez votre .ma à 118 Dhs/an. Activation instantanée 24h/24."
 const imageUrl = "https://www.hostino.ma/wp-content/uploads/2024/10/hebergement-web.png" 
-const canonical_url = "https://www.hostino.ma/"
-const og_alt = "Hébergement Web Maroc"
+const canonical_url = "https://www.hostino.ma/nom-de-domaine-ma"
+const og_alt = "Nom de domaine Maroc"
 
 export const metadata  = {
   title: title,

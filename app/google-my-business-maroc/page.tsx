@@ -9,6 +9,12 @@ import GmbAdvantages from "../components/commonSections/GmbAdvantage";
 import StarRating from "../components/ui/StartRatingFooter";
 import { ClaimReviewJsonLd } from "next-seo";
 
+const title = "Agence Google My Business Maroc | Référencement Maps"
+const description =  "Google My Business Maroc, Création et gestion des fiches Google Business (GMB) pour entreprises et marques au Maroc ☎️ 0663 75 09 08"
+const imageUrl = "https://maroc-1hp.pages.dev/images/agence-my-business-maroc/google-my-business-maroc.png" 
+const canonical_url = "https://www.hostino.ma/google-my-business-maroc"
+const og_alt = "Agence Google My Business Maroc"
+
 const faqData = [
   {
     question:

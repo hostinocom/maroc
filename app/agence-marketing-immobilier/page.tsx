@@ -12,6 +12,12 @@ import TitleParagraphButton from "../components/commonSections/TitleParagraphBut
 import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter";
 import { ClaimReviewJsonLd } from "next-seo";
 
+const title = "Agence Marketing Immobilier | Plus de ventes + de clients"
+const description =  "Agence Marketing Immobilier Maroc. Publicité Google &amp; SEO local et international pour promoteurs et projets immobiliers Maroc ☎️ 0663 75 09 08"
+const imageUrl = "https://maroc-1hp.pages.dev/images/agence-marketing-immobilier/agence-marketing-immobilier-maroc.png" 
+const canonical_url = "https://www.hostino.ma/agence-marketing-immobilier"
+const og_alt = "Agence Marketing Immobilier"
+
 const faqData = [
   {
     question:

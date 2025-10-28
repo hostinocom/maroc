@@ -1,6 +1,11 @@
 import Link from "next/link";
 import StarRating from "../components/ui/StartRatingFooter";
 
+const title = "Mentions légales - Hostino"
+const description =  "Mentions légales: le site web Hostino.ma est édité par la société Hostino SARL AU, T200 Technopark de Tanger - Maroc"
+const imageUrl = "https://www.hostino.ma/wp-content/uploads/2024/10/hebergement-web.png" 
+const canonical_url = "https://www.hostino.ma/mentions-legales"
+const og_alt = "Mentions légales"
 
 
 export default async function LegalDocumentPage() {

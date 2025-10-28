@@ -8,6 +8,12 @@ import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter"
 import GmbServices from "../components/commonSections/GmbServices";
 import { ClaimReviewJsonLd } from "next-seo";
 
+const title = "Agence RP Maroc | Communication presse, relations publiques"
+const description =  "Agence RP Maroc. Actions RP, influence, digitales, brand content et évènementielles. Publication d’articles sur des sites médias ☎️ 0663 75 09 08"
+const imageUrl = "https://maroc-1hp.pages.dev/images/agence-rp-maroc/agence-marketing-hotel-maroc.png" 
+const canonical_url = "https://www.hostino.ma/agence-rp-maroc"
+const og_alt = "Agence RP Maroc"
+
 const faqData = [
   {
     question: "Qu'est-ce qu'une agence de relations presse au Maroc ?",

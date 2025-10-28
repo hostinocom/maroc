@@ -18,7 +18,7 @@ import { generateNextSeo } from "next-seo/pages";
 
 
 const title = "Hébergement Web Maroc - Hébergeur web 100% marocain"
-const description =  "Hébergement Web Maroc. Hostino™ Hébergeur recommandé par les développeurs, les agences web et les professionnels du numérique au Maroc"
+const description =  "Hébergement Web Maroc. Hostino™️ Hébergeur recommandé par les développeurs, les agences web et les professionnels du numérique au Maroc"
 const imageUrl = "https://www.hostino.ma/wp-content/uploads/2024/10/hebergement-web.png" 
 const canonical_url = "https://www.hostino.ma/"
 const og_alt = "Hébergement Web Maroc"
@@ -74,11 +74,13 @@ export default async function HomePage() {
           bestRating: "5",
           worstRating: "1",
           alternateName: "Excellent",
-        }}
+          ratingCount: "130",
+        
+        } as any}
         itemReviewed={{
           author: "Hostino",
           datePublished: "2025-10-27",
-        }}
+        } as any}
       />
 
       <main>
