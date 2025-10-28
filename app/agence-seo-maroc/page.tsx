@@ -8,7 +8,6 @@ import SeoServiceCards from "../components/commonSections/SeoServiceCards";
 import NationalCoverage from "../components/commonSections/NationalCoverage";
 import FAQSection from "../components/commonSections/FaqSection";
 import GooglePositioning from "../components/commonSections/GooglePositioning";
-import { ClaimReviewJsonLd } from "next-seo";
 import Head from "next/head";
 
 const title = "Agence SEO Maroc | Référencement Google et moteurs d&#039;IA"
@@ -325,19 +324,7 @@ export default async function HomePage() {
       <title>Agence SEO Maroc - Référencement Google</title>
     </Head>
     <main>
-      <ClaimReviewJsonLd
-        url="https://maroc-1hp.pages.dev/agence-seo-maroc/"
-        author={{ name: "Hostino" } as any}
-        claimReviewed="Agence SEO Maroc - Référencement Google"
-        reviewRating={
-          {
-            ratingValue: "5",
-            bestRating: "5",
-            worstRating: "1",
-            ratingCount: "65",
-          } as any
-        }
-      />
+     
       <HeroSection
         subtitle="Agence SEO Maroc"
         title="L’agence SEO qui délivre de vrais résultats"

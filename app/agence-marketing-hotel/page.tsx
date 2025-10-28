@@ -8,7 +8,6 @@ import SeoServiceCards from "../components/commonSections/SeoServiceCards";
 import GmbServices from "../components/commonSections/GmbServices";
 import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter";
 import CaseStudyPalaisFajar from "../components/sectionsAgenceSeoMaroc/CaseDtudyPalaisFajar";
-import { ClaimReviewJsonLd } from "next-seo";
 
 const title = "Agence Marketing Hôtel | SEO &amp; Google Ads pour Hôtels Maroc"
 const description =  "Agence de marketing hôtelier Maroc. Publicité Google Ads et SEO pour augmenter vos réservations directes depuis votre site web ☎️ 0663 75 09 08"
@@ -114,19 +113,7 @@ const prestations = [
 export default async function HotelMarketingPage() {
   return (
     <main>
-      <ClaimReviewJsonLd
-        url="https://maroc-1hp.pages.dev/agence-marketing-hotel/"
-        author={{ name: "Hostino" } as any}
-        claimReviewed="Agence Marketing Hôtel Maroc"
-        reviewRating={
-          {
-            ratingValue: "5",
-            bestRating: "5",
-            worstRating: "1",
-            ratingCount: "55",
-          } as any
-        }
-      />
+    
 
       <HeroSection
         subtitle="Agence Marketing Hôtel Maroc"

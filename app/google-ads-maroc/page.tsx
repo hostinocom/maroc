@@ -8,7 +8,6 @@ import TextLeftVideoRight from "../components/commonSections/TextLeftVideoRight"
 import GmbAdvantages from "../components/commonSections/GmbAdvantage";
 import HostingImpactSection from "../components/sectionsGoogleAdsMarocPage/HostingImpactSection";
 import SeoServiceCards from "../components/sectionsGoogleAdsMarocPage/SeoServiceCards";
-import { ClaimReviewJsonLd } from "next-seo";
 
 const title = "Agence Google Ads Maroc | Publicité Google et Sponsoring"
 const description =  "Google Ads Maroc. Hostino accompagne les professionnels et les marques dans la gestion des campagnes Google Ads au Maroc ☎️ 0663 75 09 08"
@@ -136,19 +135,7 @@ const advantages = [
 export default async function HomePage() {
   return (
     <main>
-      <ClaimReviewJsonLd
-        url="https://maroc-1hp.pages.dev/google-ads-maroc/"
-        author={{ name: "Hostino" } as any}
-        claimReviewed="Google Ads Maroc - Campagnes Publicitaires"
-        reviewRating={
-          {
-            ratingValue: "5",
-            bestRating: "5",
-            worstRating: "1",
-            ratingCount: "62",
-          } as any
-        }
-      />
+      
       <HeroSection
         subtitle="Agence Google Ads Maroc"
         title="Agence de publicité Google Ads"

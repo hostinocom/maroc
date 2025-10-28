@@ -1,4 +1,3 @@
-import { ClaimReviewJsonLd } from "next-seo";
 import FAQSection from "../components/commonSections/FaqSection";
 import ServiceProximite from "../components/commonSections/ServiceProximite";
 import SixCards from "../components/commonSections/SixCards";
@@ -295,19 +294,7 @@ const NomDeDomaineMaPage = () => {
 
     <>
     <main>
-      <ClaimReviewJsonLd
-        url="https://maroc-1hp.pages.dev/nom-de-domaine-ma/"
-        author={{ name: "Hostino" } as any}
-        claimReviewed="Nom de Domaine .MA - Enregistrement Domaines"
-        reviewRating={
-          {
-            ratingValue: "5",
-            bestRating: "5",
-            worstRating: "1",
-            ratingCount: "50",
-          } as any
-        }
-      />
+     
       <HeroHeadingPages
         smallTitle="Nom de domaine Maroc"
         bigTitle="Réservez votre <br /> nom de domaine"

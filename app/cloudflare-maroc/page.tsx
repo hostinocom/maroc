@@ -5,7 +5,6 @@ import FAQSection from "../components/commonSections/FaqSection";
 import TitleParagraphButton from "../components/commonSections/TitleParagraphButton";
 import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter";
 import GmbServices from "../components/commonSections/GmbServices";
-import { ClaimReviewJsonLd } from "next-seo";
 
 const title = "Cloudflare Maroc | Cybersécurité et performance"
 const description =  "Sécurisez vos sites web et applications avec Cloudflare. Hostino est une agence partenaire officielle de Cloudflare au Maroc ☎️ 0663 75 09 08"
@@ -96,19 +95,7 @@ const services = [
 export default async function CloudflarePage() {
   return (
     <main>
-      <ClaimReviewJsonLd
-        url="https://maroc-1hp.pages.dev/cloudflare-maroc/"
-        author={{ name: "Hostino" } as any}
-        claimReviewed="Cloudflare Maroc - Sécurité & Performance"
-        reviewRating={
-          {
-            ratingValue: "5",
-            bestRating: "5",
-            worstRating: "1",
-            ratingCount: "54",
-          } as any
-        }
-      />
+      
 
       {/* Hero Section */}
       <HeroSection

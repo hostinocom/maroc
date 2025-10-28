@@ -5,7 +5,6 @@ import FAQSection from "../components/commonSections/FaqSection";
 import TitleParagraphButton from "../components/commonSections/TitleParagraphButton";
 import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter";
 import GmbServices from "../components/commonSections/GmbServices";
-import { ClaimReviewJsonLd } from "next-seo";
 
 const faqData = [
   {
@@ -100,19 +99,7 @@ const services = [
 export default async function BacklinksPage() {
   return (
     <main>
-      <ClaimReviewJsonLd
-        url="https://maroc-1hp.pages.dev/backlinks-maroc/"
-        author={{ name: "Hostino" } as any}
-        claimReviewed="Backlinks Maroc - Service de Création de Liens"
-        reviewRating={
-          {
-            ratingValue: "5",
-            bestRating: "5",
-            worstRating: "1",
-            ratingCount: "48",
-          } as any
-        }
-      />
+     
       <HeroSection
         subtitle="Agence de Backlinks Maroc"
         title="Agence de backlinks au Maroc"

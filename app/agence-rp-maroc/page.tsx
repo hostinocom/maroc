@@ -6,7 +6,6 @@ import FAQSection from "../components/commonSections/FaqSection";
 import TitleParagraphButton from "../components/commonSections/TitleParagraphButton";
 import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter";
 import GmbServices from "../components/commonSections/GmbServices";
-import { ClaimReviewJsonLd } from "next-seo";
 
 const title = "Agence RP Maroc | Communication presse, relations publiques"
 const description =  "Agence RP Maroc. Actions RP, influence, digitales, brand content et évènementielles. Publication d’articles sur des sites médias ☎️ 0663 75 09 08"
@@ -127,19 +126,7 @@ const services = [
 export default async function RPAgencyPage() {
   return (
     <main>
-      <ClaimReviewJsonLd
-        url="https://maroc-1hp.pages.dev/agence-rp-maroc/"
-        author={{ name: "Hostino" } as any}
-        claimReviewed="Agence RP Maroc - Relations Publiques"
-        reviewRating={
-          {
-            ratingValue: "5",
-            bestRating: "5",
-            worstRating: "1",
-            ratingCount: "52",
-          } as any
-        }
-      />
+     
       <HeroSection
         subtitle="Agence RP Maroc"
         title="Agence relations presse & influence"

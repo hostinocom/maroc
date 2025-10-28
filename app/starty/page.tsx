@@ -10,7 +10,6 @@ import Plans from "../components/commonSections/Plans";
 import HeroHeadingPages from "../components/ui/heroHeadingPages";
 import TrustedBySection from "../components/sections/TrustedBySection";
 import PromoBanner from "../components/ui/PromoBanner";
-import { ClaimReviewJsonLd } from "next-seo";
 
 const title = "Hébergement web pas cher au Maroc | Hostino"
 const description =  "Hébergement web pas cher Maroc. Starty® vous permet d&#039;héberger vos sites web à petit prix pour débuter votre activité en ligne"
@@ -101,19 +100,7 @@ export default async function StartyPage() {
   return (
     <>
       <main>
-        <ClaimReviewJsonLd
-          url="https://maroc-1hp.pages.dev/starty"
-          author={{ name: "Hostino" } as any}
-          claimReviewed="Starty - Hébergement Web Maroc"
-          reviewRating={
-            {
-              ratingValue: "5",
-              bestRating: "5",
-              worstRating: "1",
-              ratingCount: "55",
-            } as any
-          }
-        />
+        
         
         <HeroHeadingPages
           smallTitle="Hébergement web pas cher"

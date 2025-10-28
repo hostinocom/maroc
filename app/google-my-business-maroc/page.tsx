@@ -7,7 +7,6 @@ import GmbServices from "../components/commonSections/GmbServices";
 import TextLeftVideoRight from "../components/commonSections/TextLeftVideoRight";
 import GmbAdvantages from "../components/commonSections/GmbAdvantage";
 import StarRating from "../components/ui/StartRatingFooter";
-import { ClaimReviewJsonLd } from "next-seo";
 
 const title = "Agence Google My Business Maroc | Référencement Maps"
 const description =  "Google My Business Maroc, Création et gestion des fiches Google Business (GMB) pour entreprises et marques au Maroc ☎️ 0663 75 09 08"
@@ -162,19 +161,7 @@ const gmbAdvantagesData = [
 export default async function HomePage() {
   return (
     <main>
-      <ClaimReviewJsonLd
-        url="https://maroc-1hp.pages.dev/google-my-business-maroc/"
-        author={{ name: "Hostino" } as any}
-        claimReviewed="Google My Business Maroc - Fiche d'Établissement"
-        reviewRating={
-          {
-            ratingValue: "5",
-            bestRating: "5",
-            worstRating: "1",
-            ratingCount: "58",
-          } as any
-        }
-      />
+      
       <HeroSection
         subtitle="Google My Business Maroc"
         title="Agence Google My Business Maroc"

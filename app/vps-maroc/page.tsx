@@ -5,7 +5,6 @@ import TrustedBySection from "../components/sections/TrustedBySection";
 import VPSQuoteForm from "../components/sectionsPageVpsMaroc/VPSQuoteForm";
 import HeroHeadingPages from "../components/ui/heroHeadingPages";
 import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter";
-import { ClaimReviewJsonLd } from "next-seo";
 
 const hostingFeatures = [
   {
@@ -119,19 +118,7 @@ const faqData = [
 const VpsMarocPage = () => {
   return (
     <main>
-      <ClaimReviewJsonLd
-        url="https://maroc-1hp.pages.dev/vps-maroc/"
-        author={{ name: "Hostino" } as any}
-        claimReviewed="VPS Maroc - Serveurs Privés Virtuels"
-        reviewRating={
-          {
-            ratingValue: "5",
-            bestRating: "5",
-            worstRating: "1",
-            ratingCount: "60",
-          } as any
-        }
-      />
+      
       <HeroHeadingPages
         smallTitle="VPS Maroc"
         bigTitle="Location de serveur <br/> Cloud VPS Maroc"

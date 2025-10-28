@@ -13,9 +13,7 @@ import EmailCreationSteps from "../components/sectionsEmailProfessionnelPage/Ema
 import PlansEmail from "../components/sectionsEmailProfessionnelPage/PlansEmail";
 import ServiceProximite from "../components/commonSections/ServiceProximite";
 import StarRatingYellowFooter from "../components/ui/StartsRatingYellowFooter";
-import { ClaimReviewJsonLd } from "next-seo";
 import Head from "next/head";
-import { generateNextSeo } from "next-seo/pages";
 
 const title = "Email professionnel - Solution Mail Pro rapide et chiffrée"
 const description =  "Email professionnel Maroc. Créer votre email Pro avec Hostino. Solution de messagerie d&#039;entreprise nom@entreprise.ma ✉️ dès 25 DH/mois"
@@ -305,19 +303,7 @@ export default async function EmailProfessionnelPage() {
       </Head>
       </Head>
 
-      <ClaimReviewJsonLd
-        url="https://maroc-1hp.pages.dev/email-professionnel/"
-        author={{ name: "Hostino" } as any}
-        claimReviewed="Email Professionnel - Solution Mail Pro"
-        reviewRating={
-          {
-            ratingValue: "5",
-            bestRating: "5",
-            worstRating: "1",
-            ratingCount: "55",
-          } as any
-        }
-      />
+      
 
       <main>
         <HeroHeadingPages

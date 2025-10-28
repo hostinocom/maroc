@@ -8,7 +8,6 @@ import PromoBanner from "../components/ui/PromoBanner";
 import HostingSolutionsCards from "../components/sectionsCloudMarocPage/HostingSolutionsCards";
 import ServerVps from "../components/sectionsCloudMarocPage/ServerVps";
 import PlansPack from "../components/sectionsCloudMarocPage/PlansPack";
-import { ClaimReviewJsonLd } from "next-seo";
 import ContactForm from "../components/commonSections/ContactForm";
 
 const title = "Cloud Maroc | Sécurité et souveraineté des données"
@@ -288,19 +287,7 @@ const hostingFeatures = [
 export default async function CloudMarocPage() {
   return (
     <main>
-      <ClaimReviewJsonLd
-        url="https://maroc-1hp.pages.dev/cloud-maroc/"
-        author={{ name: "Hostino" } as any}
-        claimReviewed="Cloud Maroc - Sécurité et Souveraineté des Données"
-        reviewRating={
-          {
-            ratingValue: "5",
-            bestRating: "5",
-            worstRating: "1",
-            ratingCount: "55",
-          } as any
-        }
-      />
+      
       <HeroHeadingPages
         smallTitle="Cloud Maroc"
         bigTitle="Commander un Cloud souverain au Maroc"

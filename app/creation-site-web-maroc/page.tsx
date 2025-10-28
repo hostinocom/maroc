@@ -12,7 +12,6 @@ import SeoServiceCards from "../components/sectionsGoogleAdsMarocPage/SeoService
 import GmbServices from "../components/commonSections/GmbServices";
 import GooglePositioning from "../components/commonSections/GooglePositioning";
 import ComparisonTable from "../components/commonSections/ComparisonTable";
-import { ClaimReviewJsonLd } from "next-seo";
 
 const title = "Création site web Maroc | Agence web – sites optimisés SEO"
 const description =  "Création site web Maroc, Hostino crée des sites web 100 % optimisés SEO &amp; IA pour booster la visibilité de votre entreprise ☎️ 0663 75 09 08"
@@ -257,19 +256,7 @@ const tableData = [
 export default async function HomePage() {
   return (
     <main>
-      <ClaimReviewJsonLd
-        url="https://maroc-1hp.pages.dev/creation-site-web-maroc/"
-        author={{ name: "Hostino" } as any}
-        claimReviewed="Création Site Web Maroc - Agence Web SEO"
-        reviewRating={
-          {
-            ratingValue: "5",
-            bestRating: "5",
-            worstRating: "1",
-            ratingCount: "70",
-          } as any
-        }
-      />
+     
 
       <HeroSection
         subtitle="Création site web Maroc"

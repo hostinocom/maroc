@@ -9,7 +9,6 @@ import GmbServices from "../components/commonSections/GmbServices";
 import TrustedBySection from "../components/sections/TrustedBySection";
 import StarRating from "../components/ui/StartRatingFooter";
 import TitleParagraphButton from "../components/commonSections/TitleParagraphButton";
-import { ClaimReviewJsonLd } from "next-seo";
 
 const title = "Maintenance site web Al Hoceima | Performances et sécurité"
 const description =  "Maintenance site web Al Hoceima, Agence spécialisée dans la maintenance web, l’optimisation, la sécurité et le suivi continu ☎️ 0663 75 09 08"
@@ -145,19 +144,7 @@ const advantages = [
 export default async function HomePage() {
   return (
     <main>
-      <ClaimReviewJsonLd
-        url="https://maroc-1hp.pages.dev/maintenance-site-web-al-hoceima/"
-        author={{ name: "Hostino" } as any}
-        claimReviewed="Maintenance Site Web Al Hoceima"
-        reviewRating={
-          {
-            ratingValue: "5",
-            bestRating: "5",
-            worstRating: "1",
-            ratingCount: "45",
-          } as any
-        }
-      />
+     
       <HeroSection
         subtitle="Maintenance site web Al Hoceima"
         title="Agence de maintenance web à Al Hoceima"

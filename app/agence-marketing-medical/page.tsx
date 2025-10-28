@@ -9,7 +9,6 @@ import SeoServiceCards from "../components/commonSections/SeoServiceCards";
 import GmbServices from "../components/commonSections/GmbServices";
 import TitleParagraphButton from "../components/commonSections/TitleParagraphButton";
 import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter";
-import { ClaimReviewJsonLd } from "next-seo";
 
 const title = "Agence Marketing Médical | SEO Santé – Médecins &amp; Cliniques"
 const description =  "Agence Marketing Medical Au Maroc. Publicité Google &amp; Référencement SEO pour Médecins, Cabinets, Cliniques et Laboratoires ☎️ 0663 75 09 08"
@@ -200,19 +199,7 @@ const prestations = [
 export default async function AgenceMarketingMedicalPage() {
   return (
     <main>
-      <ClaimReviewJsonLd
-        url="https://maroc-1hp.pages.dev/agence-marketing-medical/"
-        author={{ name: "Hostino" } as any}
-        claimReviewed="Agence Marketing Médical Maroc"
-        reviewRating={
-          {
-            ratingValue: "5",
-            bestRating: "5",
-            worstRating: "1",
-            ratingCount: "55",
-          } as any
-        }
-      />
+      
 
       <HeroSection
         subtitle="Agence Marketing Médical Maroc"

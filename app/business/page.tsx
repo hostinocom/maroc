@@ -7,7 +7,6 @@ import Plans from "../components/commonSections/Plans";
 import HeroHeadingPages from "../components/ui/heroHeadingPages";
 import TrustedBySection from "../components/sections/TrustedBySection";
 import PromoBanner from "../components/ui/PromoBanner";
-import { ClaimReviewJsonLd } from "next-seo";
 
 const title = "Hébergement web Business - Solutions d&#039;hébergement pour les Pros"
 const description =  "Hébergement de site web d&#039;entreprise au Maroc, Solution d&#039;hébergement professionnel parfaitement adaptée aux sites corporate"
@@ -175,19 +174,7 @@ const faqData = [
 export default async function StartyPage() {
   return (
     <main>
-      <ClaimReviewJsonLd
-        url="https://maroc-1hp.pages.dev/business/"
-        author={{ name: "Hostino" } as any}
-        claimReviewed="Business - Solutions Professionnelles"
-        reviewRating={
-          {
-            ratingValue: "5",
-            bestRating: "5",
-            worstRating: "1",
-            ratingCount: "55",
-          } as any
-        }
-      />
+      
       <HeroHeadingPages
         smallTitle="Hébergement web business"
         bigTitle="Business®, Hébergement web pour les professionnels"

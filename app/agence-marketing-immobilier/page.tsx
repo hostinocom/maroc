@@ -1,4 +1,3 @@
-import Link from "next/link";
 import HeroSection from "../components/commonSections/HeroSection";
 import ContactForm from "../components/commonSections/ContactForm";
 import TextLeftImageRight from "../components/commonSections/TextLeftImageRight";
@@ -10,7 +9,6 @@ import GmbServices from "../components/commonSections/GmbServices";
 import StarRating from "../components/ui/StartRatingFooter";
 import TitleParagraphButton from "../components/commonSections/TitleParagraphButton";
 import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter";
-import { ClaimReviewJsonLd } from "next-seo";
 
 const title = "Agence Marketing Immobilier | Plus de ventes + de clients"
 const description =  "Agence Marketing Immobilier Maroc. Publicité Google &amp; SEO local et international pour promoteurs et projets immobiliers Maroc ☎️ 0663 75 09 08"
@@ -109,19 +107,7 @@ const prestations = [
 export default async function AgenceMarketingImmobilierPage() {
   return (
     <main>
-      <ClaimReviewJsonLd
-        url="https://maroc-1hp.pages.dev/agence-marketing-immobilier/"
-        author={{ name: "Hostino" } as any}
-        claimReviewed="Agence Marketing Immobilier Maroc"
-        reviewRating={
-          {
-            ratingValue: "5",
-            bestRating: "5",
-            worstRating: "1",
-            ratingCount: "60",
-          } as any
-        }
-      />
+     
 
       <HeroSection
         subtitle="Agence Marketing Immobilier Maroc"

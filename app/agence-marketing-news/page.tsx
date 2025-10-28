@@ -7,7 +7,6 @@ import SeoServiceCards from "../components/commonSections/SeoServiceCards";
 import GmbServices from "../components/commonSections/GmbServices";
 import TitleParagraphButton from "../components/commonSections/TitleParagraphButton";
 import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter";
-import { ClaimReviewJsonLd } from "next-seo";
 
 const title = "Agence Marketing News | SEO et Visibilité Google Actualités"
 const description =  "Agence marketing pour sites d’actualités, radios et chaînes TV. Génération de trafic organique via Google et réseaux sociaux ☎️ 0663 75 09 08"
@@ -133,19 +132,7 @@ const prestations = [
 export default async function HomePage() {
   return (
     <main>
-      <ClaimReviewJsonLd
-        url="https://maroc-1hp.pages.dev/agence-marketing-news/"
-        author={{ name: "Hostino" } as any}
-        claimReviewed="Agence Marketing News - Référencement Presse"
-        reviewRating={
-          {
-            ratingValue: "5",
-            bestRating: "5",
-            worstRating: "1",
-            ratingCount: "50",
-          } as any
-        }
-      />
+     
       <HeroSection
         subtitle="Agence Marketing News Maroc"
         title="Agence marketing news & médias"
