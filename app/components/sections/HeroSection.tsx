@@ -28,7 +28,7 @@ export default function HeroSection() {
         <div className="col-span-1 flex z-10 justify-center">
           <div className="relative w-full">
             <Image
-              src="/images/home/hebergement-web-maroc.png"
+              src="/images/home/hebergement-web-maroc.webp"
               alt="Web Hosting in Morocco"
               width={1300}
               height={977}
