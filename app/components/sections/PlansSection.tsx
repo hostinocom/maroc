@@ -422,18 +422,7 @@ export default function PlansSection({
           aria-hidden="true"
           data-negative="false"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1000 100"
-            preserveAspectRatio="none"
-            className=" md:h-auto md:w-auto h-[1541px] w-[2000px]"
-          >
-            <path
-              className="elementor-shape-fill"
-              opacity="0.12"
-              d="M473,67.3c-203.9,88.3-263.1-34-320.3,0C66,119.1,0,59.7,0,59.7V0h1000v59.7 c0,0-62.1,26.1-94.9,29.3c-32.8,3.3-62.8-12.3-75.8-22.1C806,49.6,745.3,8.7,694.9,4.7S492.4,59,473,67.3z"
-            ></path>
-          </svg>{" "}
+         
         </div>
       </div>
     </section>

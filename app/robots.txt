@@ -1,0 +1,5 @@
+# app/robots.txt
+User-agent: *
+Allow: /
+
+sitemap: https://mysite.com/sitemap.xml 

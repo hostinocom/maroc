@@ -92,7 +92,7 @@ span {
   top: 0;
   left: 0;
   width: 100%;
-  height: 50%;
+  height: 80%;
   z-index: -1;
   background-color: var(--color-gray-200);
 
@@ -356,7 +356,6 @@ span {
 
 }
 
-.text-legal-documents thead tr {}
 
 .text-legal-documents thead th {
   text-align: start;
@@ -540,8 +539,6 @@ label.label-radio:hover label.label-radio {
     opacity: 1;
   }
 }
-
-
 
 .shadow_main {
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.1),
