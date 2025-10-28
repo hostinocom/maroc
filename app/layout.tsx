@@ -3,8 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
-import CookieConsent from "./components/ui/CookieConsentBanner"
-import GoogleAnalytics from "./components/GoogleAnalytics";
 import CookieBanner from "./components/CookieBanner";
 
 
@@ -26,7 +24,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <GoogleAnalytics GA_MEASUREMENT_ID="G_000"/>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
