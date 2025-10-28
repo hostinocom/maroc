@@ -11,6 +11,12 @@ import GooglePositioning from "../components/commonSections/GooglePositioning";
 import { ClaimReviewJsonLd } from "next-seo";
 import Head from "next/head";
 
+const title = "Agence SEO Maroc | Référencement Google et moteurs d&#039;IA"
+const description =  "Agence SEO Maroc. Agence de référencement Google et moteurs de recherche IA : Ventes, trafic, notoriété. SEO Maroc ☎️ 0663 75 09 08"
+const imageUrl = "https://maroc-1hp.pages.dev/images/agence-seo-maroc/agence-seo-maroc.png" 
+const canonical_url = "https://www.hostino.ma/agence-seo-maroc"
+const og_alt = "Agence SEO Maroc"
+
 const faqData = [
   {
     question:
