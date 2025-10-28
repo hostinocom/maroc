@@ -31,7 +31,8 @@ export default function HeroSection() {
               width={1300}
               height={977}
               className=" w-full h-full md:p-[20px] p-[25px] md:scale-100 lg:scale-100 rounded-lg "
-              priority
+              fetchPriority="high" // ✅ Add this line
+
             />
           </div>
         </div>
