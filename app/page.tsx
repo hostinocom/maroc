@@ -153,13 +153,12 @@ export default async function HomePage() {
       {
         "@type": "Product",
         name: "Nom de domaine Maroc - .Ma à seulement 118 DH",
-        url: "https://www.hostino.ma/nom-de-domaine-ma",
-        description:
-          "Nom de domaine Maroc. En quelques clics, enregistrez votre nom de domaine. Sécurisez votre .ma à 118 Dhs/an. Activation instantanée 24h/24.",
+        url: canonical_url,
+        description: description,
         brand: { "@type": "Brand", name: "Hostino" },
         offers: {
           "@type": "AggregateOffer",
-          url: "https://www.hostino.ma/nom-de-domaine-ma",
+          url: canonical_url,
           lowPrice: "118",
           priceCurrency: "MAD",
           availability: "InStock",
@@ -174,9 +173,10 @@ export default async function HomePage() {
   };
   return (
     <>
-      <Head>
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      </Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       <main>
         <HeroSection />
@@ -198,4 +198,3 @@ export default async function HomePage() {
   );
 }
 
-// shema.org
