@@ -14,6 +14,12 @@ import GooglePositioning from "../components/commonSections/GooglePositioning";
 import ComparisonTable from "../components/commonSections/ComparisonTable";
 import { ClaimReviewJsonLd } from "next-seo";
 
+const title = "Création site web Maroc | Agence web – sites optimisés SEO"
+const description =  "Création site web Maroc, Hostino crée des sites web 100 % optimisés SEO &amp; IA pour booster la visibilité de votre entreprise ☎️ 0663 75 09 08"
+const imageUrl = "https://maroc-1hp.pages.dev/images/creation-site-web-maroc/creation-site-web-maroc.png" 
+const canonical_url = "https://www.hostino.ma/creation-site-web-maroc"
+const og_alt = "Création site web Maroc"
+
 const faqData = [
   {
     question:
