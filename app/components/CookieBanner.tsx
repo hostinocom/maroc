@@ -37,16 +37,15 @@ export default function CookieBanner() {
 
   return (
     <div
-      className={`my-10 mx-auto max-w-max md:max-w-screen-sm
+      className={`my-10 bg-white mx-auto md:w-[65vw] z-1
                         fixed bottom-0 left-0 right-0 
                         flex px-3 md:px-4 py-3 justify-between items-center flex-col sm:flex-row gap-4  
-                         bg-white rounded-lg shadow`}
+                          rounded-lg shadow`}
     >
-      <div className="text-center">
+      <div className="text-center  z-2">
         <Link href="/info/cookies">
-          <p className="text-title">
-            Nous utilisons <span className="font-bold text-primary font-bold">cookies</span> sur
-            Notre site.
+          <p className="text-title text-[15px] text-left">
+            En continuant à naviguer sur ce site, vous acceptez l'utilisation des cookies.
           </p>
         </Link>
       </div>
@@ -54,9 +53,9 @@ export default function CookieBanner() {
       <div className="flex gap-2">
         <button
           onClick={declineCookies}
-          className="px-5 py-2 font-[400] text-title rounded-md border-gray-300 border-1"
+          className="px-5 py-2 text-title font-[400] rounded-md border-gray-300 border-1"
         >
-          refuser
+          Refuser
         </button>
         <button
           onClick={acceptCookies}
