@@ -7,6 +7,12 @@ import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter"
 import GmbServices from "../components/commonSections/GmbServices";
 import { ClaimReviewJsonLd } from "next-seo";
 
+const title = "Cloudflare Maroc | Cybersécurité et performance"
+const description =  "Sécurisez vos sites web et applications avec Cloudflare. Hostino est une agence partenaire officielle de Cloudflare au Maroc ☎️ 0663 75 09 08"
+const imageUrl = "https://maroc-1hp.pages.dev/images/cloudflare-maroc/cloudflare-maroc.png" 
+const canonical_url = "https://www.hostino.ma/cloudflare-maroc"
+const og_alt = "Cloudflare Maroc"
+
 // FAQ Data extracted from Cloudflare Maroc HTML
 const faqData = [
   {
