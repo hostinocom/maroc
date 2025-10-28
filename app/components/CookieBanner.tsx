@@ -37,9 +37,9 @@ export default function CookieBanner() {
 
   return (
     <div
-      className={`my-10 bg-white mx-auto lg:w-[55%] sm:w-[80%] w-[80%] z-1
-                        fixed bottom-0 left-0 right-0 
-                        flex px-3 md:px-4 py-3 justify-between cursor-none items-center flex-col sm:flex-row gap-4  
+      className={` bg-white mx-auto lg:w-[55%] sm:w-[80%] w-[80%] z-1
+                        fixed bottom-[10px] left-0 right-0 
+                        flex px-3 md:px-4 py-3 justify-between  items-center flex-col sm:flex-row gap-4  
                           rounded-lg shadow`}
     >
       <div className="text-center z-2">
