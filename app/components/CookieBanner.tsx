@@ -45,8 +45,8 @@ export default function CookieBanner() {
       <div className="text-center">
         <Link href="/info/cookies">
           <p className="text-title">
-            We use <span className="font-bold text-primary font-bold">cookies</span> on
-            our site.
+            Nous utilisons <span className="font-bold text-primary font-bold">cookies</span> sur
+            Notre site.
           </p>
         </Link>
       </div>
@@ -54,15 +54,15 @@ export default function CookieBanner() {
       <div className="flex gap-2">
         <button
           onClick={declineCookies}
-          className="px-5 py-2 text-title rounded-md border-gray-300 border-1"
+          className="px-5 py-2 font-[400] text-title rounded-md border-gray-300 border-1"
         >
-          Decline
+          refuser
         </button>
         <button
           onClick={acceptCookies}
-          className="bg-primary font-[600] px-5 py-2 text-white rounded-lg"
+          className="bg-primary font-[400] px-5 py-2 text-white rounded-lg"
         >
-          Allow Cookies
+          Accepter
         </button>
       </div>
     </div>
