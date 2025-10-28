@@ -37,15 +37,15 @@ export default function CookieBanner() {
 
   return (
     <div
-      className={`my-10 bg-white mx-auto md:w-[65vw] z-1
+      className={`my-10 bg-white mx-auto lg:w-[55vw] z-1
                         fixed bottom-0 left-0 right-0 
-                        flex px-3 md:px-4 py-3 justify-between items-center flex-col sm:flex-row gap-4  
+                        flex px-3 md:px-4 py-3 justify-between cursor-none items-center flex-col sm:flex-row gap-4  
                           rounded-lg shadow`}
     >
       <div className="text-center  z-2">
         <Link href="/info/cookies">
           <p className="text-title text-[15px] text-left">
-            En continuant à naviguer sur ce site, vous acceptez l'utilisation des cookies.
+            Ce site web utilise des cookies pour améliorer votre expérience.
           </p>
         </Link>
       </div>
