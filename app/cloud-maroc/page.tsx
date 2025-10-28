@@ -14,84 +14,8 @@ import PlansSection from "../components/commonSections/Plans";
 import ServerVps from "../components/sectionsCloudMarocPage/ServerVps";
 import PlansPack from "../components/sectionsCloudMarocPage/PlansPack";
 import { ClaimReviewJsonLd } from "next-seo";
+import ContactForm from "../components/commonSections/ContactForm";
 
-
-
-export const metadata = {
-  title: "Cloud Maroc | Sécurité et souveraineté des données",
-  description: "Cloud Maroc. Solution Cloud de souveraineté numérique, conforme aux obligations légales d'hébergement des données sur le Cloud au Maroc.",
-  keywords: ["Cloud Maroc"],
-  
-  robots: {
-    index: true,
-    follow: true,
-    maxImagePreview: 'large',
-    maxSnippet: -1,
-    maxVideoPreview: -1,
-  },
-  
-  openGraph: {
-    type: 'article',
-    locale: 'fr_FR',
-    url: 'https://www.hostino.ma/cloud-maroc/',
-    siteName: 'Hostino',
-    title: "Cloud Maroc | Sécurité et souveraineté des données",
-    description: "Cloud Maroc. Solution Cloud de souveraineté numérique, conforme aux obligations légales d'hébergement des données sur le Cloud au Maroc.",
-    images: [
-      {
-        url: 'https://www.hostino.ma/wp-content/uploads/2025/03/cloud-maroc.jpg',
-        secureUrl: 'https://www.hostino.ma/wp-content/uploads/2025/03/cloud-maroc.jpg',
-        width: 1465,
-        height: 1408,
-        alt: 'Cloud au Maroc',
-        type: 'image/jpeg',
-      },
-    ],
-    publishedTime: '2025-03-24T22:24:08+00:00',
-    modifiedTime: '2025-04-10T12:04:25+00:00',
-  },
-  
-  twitter: {
-    card: 'summary_large_image',
-    title: "Cloud Maroc | Sécurité et souveraineté des données",
-    description: "Cloud Maroc. Solution Cloud de souveraineté numérique, conforme aux obligations légales d'hébergement des données sur le Cloud au Maroc.",
-    images: ['https://www.hostino.ma/wp-content/uploads/2025/03/cloud-maroc.jpg'],
-  },
-  
-  alternates: {
-    canonical: 'https://www.hostino.ma/cloud-maroc/',
-    types: {
-      'application/rss+xml': [
-        {
-          url: 'https://www.hostino.ma/feed/',
-          title: 'Hébergement web Maroc » Flux',
-        },
-      ],
-    },
-  },
-  
-  icons: {
-    icon: [
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon-192x192.png', sizes: '192x192', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/apple-touch-icon-180x180.png', sizes: '180x180', type: 'image/png' },
-    ],
-    other: [
-      {
-        rel: 'msapplication-TileImage',
-        url: '/ms-icon-270x270.png',
-      },
-    ],
-  },
-  
-  authors: [{ name: 'admin', url: 'https://www.hostino.ma/author/admin/' }],
-  
-  other: {
-    'article:publisher': 'https://web.facebook.com/hostinocom/?_rdc=1&_rdr',
-  },
-};
 
 
 const faqData = [
@@ -382,7 +306,8 @@ export default async function CloudMarocPage() {
         smallTitle="Cloud Maroc"
         bigTitle="Commander un Cloud souverain au Maroc"
       />
-      <div className="bg-gray-100">
+
+      <div className="bg-gray-200 lg:pb-[100px] pb-[80px]">
         <div className="container">
           <div className="md:px-[220px]  text-center">
             <p className="paragraph">
@@ -395,6 +320,15 @@ export default async function CloudMarocPage() {
           </div>
         </div>
       </div>
+
+      <ContactForm
+        title={
+          <>
+            Remplissez vos infos, <br className="lg:hidden block " />
+            <span className="border-bottom">on s’occupe du reste !</span>
+          </>
+        }
+      />
 
       <HostingSolutionsCards />
 

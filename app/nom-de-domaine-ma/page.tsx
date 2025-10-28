@@ -7,87 +7,133 @@ import TitleParagraphButton from "../components/commonSections/TitleParagraphBut
 import DomainSearchSection from "../components/sections/DomainSearchSection";
 import TrustedBySection from "../components/sections/TrustedBySection";
 import DomainPricingSection from "../components/sectionsNomDeDomaineMa/DomainPricingSection";
-import TextAroundImage from "../components/sectionsNomDeDomaineMa/TextAroundImage";
 import HeroHeadingPages from "../components/ui/heroHeadingPages";
 import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter";
+import Head from "next/head";
 
 
+const title = "Hébergement Web Maroc - Hébergeur web 100% marocain"
+const description =  "Hébergement Web Maroc. Hostino™ Hébergeur recommandé par les développeurs, les agences web et les professionnels du numérique au Maroc"
+const imageUrl = "https://www.hostino.ma/wp-content/uploads/2024/10/hebergement-web.png" 
+const canonical_url = "https://www.hostino.ma/"
+const og_alt = "Hébergement Web Maroc"
 
-export const metadata = {
-  title: "Nom de domaine Maroc - .Ma à seulement 118 DH",
-  description: "Nom de domaine Maroc. En quelques clics, enregistrez votre nom de domaine. Sécurisez votre .ma à 118 Dhs/an. Activation instantanée 24h/24.",
-  keywords: ["Nom de domaine Maroc"],
-  
-  robots: {
-    index: true,
-    follow: true,
-    maxImagePreview: 'large',
-    maxSnippet: -1,
-    maxVideoPreview: -1,
+export const metadata  = {
+  title: title,
+  description: description,
+  robots:
+    "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  alternates: {
+    canonical: canonical_url,
   },
-  
   openGraph: {
-    type: 'article',
-    locale: 'fr_FR',
-    url: 'https://www.hostino.ma/nom-de-domaine-ma/',
-    siteName: 'Hostino',
-    title: "Nom de domaine Maroc - .Ma à seulement 118 DH",
-    description: "Nom de domaine Maroc. En quelques clics, enregistrez votre nom de domaine. Sécurisez votre .ma à 118 Dhs/an. Activation instantanée 24h/24.",
+    type: "website",
+    locale: "fr_FR",
+    url: canonical_url,
+    siteName: "Hostino",
+    title: title,
+    description:
+      description,
     images: [
       {
-        url: 'https://www.hostino.ma/wp-content/uploads/2025/03/nom-de-domaine-maroc.jpg',
-        secureUrl: 'https://www.hostino.ma/wp-content/uploads/2025/03/nom-de-domaine-maroc.jpg',
-        width: 1452,
-        height: 1398,
-        alt: 'Nom de domaine Maroc',
-        type: 'image/jpeg',
+        url: imageUrl,
+        secureUrl:
+          imageUrl,
+        width: 1200,
+        height: 630,
+        alt: og_alt,
+        type: "image/png",
       },
     ],
-    publishedTime: '2024-07-27T15:44:19+00:00',
-    modifiedTime: '2025-04-23T22:22:08+00:00',
   },
-  
   twitter: {
-    card: 'summary_large_image',
-    title: "Nom de domaine Maroc - .Ma à seulement 118 DH",
-    description: "Nom de domaine Maroc. En quelques clics, enregistrez votre nom de domaine. Sécurisez votre .ma à 118 Dhs/an. Activation instantanée 24h/24.",
-    images: ['https://www.hostino.ma/wp-content/uploads/2025/03/nom-de-domaine-maroc.jpg'],
-  },
-  
-  alternates: {
-    canonical: 'https://www.hostino.ma/nom-de-domaine-ma/',
-    types: {
-      'application/rss+xml': [
-        {
-          url: 'https://www.hostino.ma/feed/',
-          title: 'Hébergement web Maroc » Flux',
-        },
-      ],
-    },
-  },
-  
-  icons: {
-    icon: [
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon-192x192.png', sizes: '192x192', type: 'image/png' },
+    card: "summary_large_image",
+    title:title,
+    description:
+      description,
+    images: [
+      imageUrl,
     ],
-    apple: [
-      { url: '/apple-touch-icon-180x180.png', sizes: '180x180', type: 'image/png' },
-    ],
-    other: [
-      {
-        rel: 'msapplication-TileImage',
-        url: '/ms-icon-270x270.png',
-      },
-    ],
-  },
-  
-  authors: [{ name: 'admin', url: 'https://www.hostino.ma/author/admin/' }],
-  
-  other: {
-    'article:publisher': 'https://web.facebook.com/hostinocom/?_rdc=1&_rdr',
+    creator: "@admin",
   },
 };
+
+
+// export const metadata = {
+//   title: "Nom de domaine Maroc - .Ma à seulement 118 DH",
+//   description: "Nom de domaine Maroc. En quelques clics, enregistrez votre nom de domaine. Sécurisez votre .ma à 118 Dhs/an. Activation instantanée 24h/24.",
+//   keywords: ["Nom de domaine Maroc"],
+  
+//   robots: {
+//     index: true,
+//     follow: true,
+//     maxImagePreview: 'large',
+//     maxSnippet: -1,
+//     maxVideoPreview: -1,
+//   },
+  
+//   openGraph: {
+//     type: 'article',
+//     locale: 'fr_FR',
+//     url: 'https://www.hostino.ma/nom-de-domaine-ma/',
+//     siteName: 'Hostino',
+//     title: "Nom de domaine Maroc - .Ma à seulement 118 DH",
+//     description: "Nom de domaine Maroc. En quelques clics, enregistrez votre nom de domaine. Sécurisez votre .ma à 118 Dhs/an. Activation instantanée 24h/24.",
+//     images: [
+//       {
+//         url: 'https://www.hostino.ma/wp-content/uploads/2025/03/nom-de-domaine-maroc.jpg',
+//         secureUrl: 'https://www.hostino.ma/wp-content/uploads/2025/03/nom-de-domaine-maroc.jpg',
+//         width: 1452,
+//         height: 1398,
+//         alt: 'Nom de domaine Maroc',
+//         type: 'image/jpeg',
+//       },
+//     ],
+//     publishedTime: '2024-07-27T15:44:19+00:00',
+//     modifiedTime: '2025-04-23T22:22:08+00:00',
+//   },
+  
+//   twitter: {
+//     card: 'summary_large_image',
+//     title: "Nom de domaine Maroc - .Ma à seulement 118 DH",
+//     description: "Nom de domaine Maroc. En quelques clics, enregistrez votre nom de domaine. Sécurisez votre .ma à 118 Dhs/an. Activation instantanée 24h/24.",
+//     images: ['https://www.hostino.ma/wp-content/uploads/2025/03/nom-de-domaine-maroc.jpg'],
+//   },
+  
+//   alternates: {
+//     canonical: 'https://www.hostino.ma/nom-de-domaine-ma/',
+//     types: {
+//       'application/rss+xml': [
+//         {
+//           url: 'https://www.hostino.ma/feed/',
+//           title: 'Hébergement web Maroc » Flux',
+//         },
+//       ],
+//     },
+//   },
+  
+//   icons: {
+//     icon: [
+//       { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+//       { url: '/favicon-192x192.png', sizes: '192x192', type: 'image/png' },
+//     ],
+//     apple: [
+//       { url: '/apple-touch-icon-180x180.png', sizes: '180x180', type: 'image/png' },
+//     ],
+//     other: [
+//       {
+//         rel: 'msapplication-TileImage',
+//         url: '/ms-icon-270x270.png',
+//       },
+//     ],
+//   },
+  
+//   authors: [{ name: 'admin', url: 'https://www.hostino.ma/author/admin/' }],
+  
+//   other: {
+//     'article:publisher': 'https://web.facebook.com/hostinocom/?_rdc=1&_rdr',
+//   },
+// };
 
 const faqData = [
   {
@@ -245,6 +291,9 @@ const whyChooseNomDomaineHostino = [
 ];
 const NomDeDomaineMaPage = () => {
   return (
+
+
+    <>
     <main>
       <ClaimReviewJsonLd
         url="https://maroc-1hp.pages.dev/nom-de-domaine-ma/"
@@ -556,6 +605,7 @@ const NomDeDomaineMaPage = () => {
       <ServiceProximite page="nom-de-domaine" />
       <StartsRatingYellowFooter totalVotes={323} />
     </main>
+  </>
   );
 };
 

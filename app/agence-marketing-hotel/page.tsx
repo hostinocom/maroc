@@ -11,6 +11,8 @@ import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter"
 import CaseStudyPalaisFajar from "../components/sectionsAgenceSeoMaroc/CaseDtudyPalaisFajar";
 import { ClaimReviewJsonLd } from "next-seo";
 
+
+
 const faqData = [
   {
     question:

@@ -94,88 +94,6 @@ const hostingPlans: Plan[] = [
 
 
 
-// ============================================
-// STARTY - CHEAP WEB HOSTING PAGE METADATA
-// ============================================
-
-export const metadata: Metadata = {
-  title: "Hébergement web pas cher au Maroc | Hostino",
-  description: "Hébergement web pas cher Maroc. Starty® vous permet d'héberger vos sites web à petit prix pour débuter votre activité en ligne",
-  keywords: ["Hébergement web pas cher"],
-  
-  robots: {
-    index: true,
-    follow: true,
-    maxImagePreview: 'large',
-    maxSnippet: -1,
-    maxVideoPreview: -1,
-  } as any,
-  
-  openGraph: {
-    type: 'article',
-    locale: 'fr_FR',
-    url: 'https://www.hostino.ma/starty/',
-    siteName: 'Hostino',
-    title: "Hébergement web pas cher au Maroc | Hostino",
-    description: "Hébergement web pas cher Maroc. Starty® vous permet d'héberger vos sites web à petit prix pour débuter votre activité en ligne",
-    images: [
-      {
-        url: 'https://www.hostino.ma/wp-content/uploads/2025/05/email-professionnel-maroc.jpg',
-        secureUrl: 'https://www.hostino.ma/wp-content/uploads/2025/05/email-professionnel-maroc.jpg',
-        width: 1465,
-        height: 1408,
-        alt: 'Email professionnel Maroc',
-        type: 'image/jpeg',
-      },
-    ],
-    publishedTime: '2024-07-21T21:19:22+00:00',
-    modifiedTime: '2025-08-02T20:52:29+00:00',
-  },
-  
-  twitter: {
-    card: 'summary_large_image',
-    title: "Hébergement web pas cher au Maroc | Hostino",
-    description: "Hébergement web pas cher Maroc. Starty® vous permet d'héberger vos sites web à petit prix pour débuter votre activité en ligne",
-    images: ['https://www.hostino.ma/wp-content/uploads/2025/05/email-professionnel-maroc.jpg'],
-  },
-  
-  alternates: {
-    canonical: 'https://www.hostino.ma/starty/',
-    types: {
-      'application/rss+xml': [
-        {
-          url: 'https://www.hostino.ma/feed/',
-          title: 'Hébergement web Maroc » Flux',
-        },
-      ],
-    },
-  },
-  
-  icons: {
-    icon: [
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon-192x192.png', sizes: '192x192', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/apple-touch-icon-180x180.png', sizes: '180x180', type: 'image/png' },
-    ],
-    other: [
-      {
-        rel: 'msapplication-TileImage',
-        url: '/ms-icon-270x270.png',
-      },
-    ],
-  },
-  
-  authors: [{ name: 'admin', url: 'https://www.hostino.ma/author/admin/' }],
-  
-  other: {
-    'article:publisher': 'https://web.facebook.com/hostinocom/?_rdc=1&_rdr',
-  },
-};
-
-
-
 export default async function StartyPage() {
   return (
     <>
@@ -193,6 +111,7 @@ export default async function StartyPage() {
             } as any
           }
         />
+        
         <HeroHeadingPages
           smallTitle="Hébergement web pas cher"
           bigTitle="Starty®, Hébergement web pas cher"
