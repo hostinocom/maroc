@@ -1,6 +1,11 @@
 import Link from "next/link";
 import StarRating from "../components/ui/StartRatingFooter";
 
+const title = "Conditions générales - Hostino"
+const description =  "Conditions Générales Hostino: accord avec Hostino qui est lié par les conditions de service décrites dans le présent document."
+const imageUrl = "https://www.hostino.ma/wp-content/uploads/2024/10/hebergement-web.png" 
+const canonical_url = "https://www.hostino.ma/conditions-generales"
+const og_alt = "Conditions générales"
 
 
 export default async function LegalDocumentPage() {
