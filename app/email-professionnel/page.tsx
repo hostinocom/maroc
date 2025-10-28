@@ -19,7 +19,7 @@ import { generateNextSeo } from "next-seo/pages";
 
 const title = "Email professionnel - Solution Mail Pro rapide et chiffrée"
 const description =  "Email professionnel Maroc. Créer votre email Pro avec Hostino. Solution de messagerie d&#039;entreprise nom@entreprise.ma ✉️ dès 25 DH/mois"
-const imageUrl = "XXXXX" 
+const imageUrl = "https://www.hostino.ma/wp-content/uploads/2024/10/hebergement-web.png" 
 const canonical_url = "https://www.hostino.ma/email-professionnel"
 const og_alt = "Email professionnel"
 
