@@ -10,11 +10,7 @@ import BenefitsSection from "./components/sections/BenefitsSection";
 import FaqSection from "./components/sections/FaqSection";
 import EasyHebergementSection from "./components/sections/EasyHebergementSection";
 import BenchmarkHostingMorocco from "./components/sections/BenchmarkHostingMorocco";
-import CookieConsent from "./components/ui/CookieConsentBanner";
-import WhatsAppFloat from "./components/ui/WhatsAppFloat";
 import SixCards from "./components/commonSections/SixCards";
-import { ProductJsonLd } from "next-seo";
-import { generateNextSeo } from "next-seo/pages";
 
 
 const title = "Hébergement Web Maroc - Hébergeur web 100% marocain"
@@ -65,23 +61,6 @@ export const metadata  = {
 export default async function HomePage() {
   return (
     <>
-<ProductJsonLd
-        productName="Nom de domaine Maroc"
-        description="Nom de domaine au Maroc. En quelques clics, enregistrez votre nom de domaine. Sécurisez votre .ma à 118 Dhs/an. Activation instantanée 24h/24"
-        brand="Hostino"
-        images={["https://www.hostino.ma/wp-content/uploads/2025/03/nom-de-domaine-maroc.jpg"]}
-        aggregateRating={{ ratingValue: "5", reviewCount: "818" }}
-        offers={[
-          {
-            price: "119",
-            priceCurrency: "MAD",
-            url: "https://www.hostino.ma/nom-de-domaine-ma",
-            availability: "InStock",
-            seller: { name: "Hostino" },
-          },
-        ]}
-      />
-
       <main>
         <HeroSection />
         <PlansSection />
