@@ -18,7 +18,7 @@ import { generateNextSeo } from "next-seo/pages";
 
 
 const title = "Hébergement Web Maroc - Hébergeur web 100% marocain"
-const description =  "Hébergement Web Maroc. Hostino™ Hébergeur recommandé par les développeurs, les agences web et les professionnels du numérique au Maroc"
+const description =  "Hébergement Web Maroc. Hostino™️ Hébergeur recommandé par les développeurs, les agences web et les professionnels du numérique au Maroc"
 const imageUrl = "https://www.hostino.ma/wp-content/uploads/2024/10/hebergement-web.png" 
 const canonical_url = "https://www.hostino.ma/"
 const og_alt = "Hébergement Web Maroc"
@@ -65,49 +65,21 @@ export const metadata  = {
 export default async function HomePage() {
   return (
     <>
-import { ClaimReviewJsonLd } from 'next-seo';
-
-export default function SeoStars() {
-  return (
-    <>
-      {/* ClaimReview Schema (individual review) */}
       <ClaimReviewJsonLd
-        url="https://www.hostino.ma/"
-        claimReviewed="Hostino"
-        authorName="Hostino"
-        authorType="Organization"
-        datePublished="2025-10-27"
+        url="/"
+        author="Hostino"
+        claimReviewed="Hébergement web Maroc"
         reviewRating={{
-          ratingValue: '5',
-          bestRating: '5',
-          worstRating: '1',
-          alternateName: 'Excellent',
+          ratingValue: "5",
+          bestRating: "5",
+          worstRating: "1",
+          alternateName: "Excellent",
+        }}
+        itemReviewed={{
+          author: "Hostino",
+          datePublished: "2025-10-27",
         }}
       />
-
-      {/* AggregateRating Schema (global rating count) */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Hostino",
-            "url": "https://www.hostino.ma",
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": 5,
-              "bestRating": 5,
-              "worstRating": 1,
-              "ratingCount": 55,
-              "reviewCount": 55
-            }
-          }),
-        }}
-      />
-    </>
-  );
-}
 
       <main>
         <HeroSection />
