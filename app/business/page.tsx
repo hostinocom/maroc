@@ -214,7 +214,7 @@ la révolution de la messagerie <i>pro</i>"
           "Oubliez les problèmes d’envoi et de réception liés aux solutions mail traditionnelles intégrées au cPanel (webmail de Roundcube). Maily® est bien plus qu’une simple boîte mail : c’est la solution qui allie sécurité, productivité et efficacité pour une expérience collaborative inégalée.",
           "Notre équipe d’experts est à votre écoute pour vous accompagner dans la mise en place, la configuration et l’utilisation de Maily®. Appelez-nous dès maintenant au +212 (05) 31 03 11 86.",
         ]}
-        imageSrc="/images/starty/email-professionnel-maroc.jpg"
+        imageSrc="/images/02/email-professionnel-maroc.jpg"
         imageAlt="Maily - Messagerie professionnelle"
       />
       <SixCards

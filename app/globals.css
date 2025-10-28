@@ -544,5 +544,7 @@ label.label-radio:hover label.label-radio {
 
 
 .shadow_main {
-  box-shadow: 0 0px 2px 0 #0000001a, 0 1px 2px -1px #0000001a;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.1),
+              0 0px 2px 0px rgba(0, 0, 0, 0.1);
 }
+
