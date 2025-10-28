@@ -1,17 +1,11 @@
-import Link from "next/link";
 import HeroSection from "../components/commonSections/HeroSection";
 import ContactForm from "../components/commonSections/ContactForm";
 import TextLeftImageRight from "../components/commonSections/TextLeftImageRight";
 
 import NationalCoverage from "../components/commonSections/NationalCoverage";
 import FAQSection from "../components/commonSections/FaqSection";
-import TextLeftVideoRight from "../components/commonSections/TextLeftVideoRight";
 import GmbAdvantages from "../components/commonSections/GmbAdvantage";
-import HostingImpactSection from "../components/sectionsGoogleAdsMarocPage/HostingImpactSection";
-import SeoServiceCards from "../components/sectionsGoogleAdsMarocPage/SeoServiceCards";
 import GmbServices from "../components/commonSections/GmbServices";
-import GooglePositioning from "../components/commonSections/GooglePositioning";
-import ComparisonTable from "../components/commonSections/ComparisonTable";
 import TrustedBySection from "../components/sections/TrustedBySection";
 import StarRating from "../components/ui/StartRatingFooter";
 import TitleParagraphButton from "../components/commonSections/TitleParagraphButton";

@@ -7,9 +7,7 @@ import Plans from "../components/commonSections/Plans";
 import HeroHeadingPages from "../components/ui/heroHeadingPages";
 import TrustedBySection from "../components/sections/TrustedBySection";
 import PromoBanner from "../components/ui/PromoBanner";
-import { text } from "stream/consumers";
 import { ClaimReviewJsonLd } from "next-seo";
-import { Metadata } from "next";
 
 
 

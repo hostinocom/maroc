@@ -1,16 +1,11 @@
-import Link from "next/link";
-import StartyComparison from "../components/sectionsStartyPage/StartyComparison";
 import TextLeftImageRight from "../components/commonSections/TextLeftImageRight";
-import WhyChooseSection from "../components/sections/WhyChooseSection";
 import SixCards from "../components/commonSections/SixCards";
 import FAQSection from "../components/commonSections/FaqSection";
 import StarRating from "../components/ui/StartRatingFooter";
-import Plans from "../components/commonSections/Plans";
 import HeroHeadingPages from "../components/ui/heroHeadingPages";
 import TrustedBySection from "../components/sections/TrustedBySection";
 import PromoBanner from "../components/ui/PromoBanner";
 import HostingSolutionsCards from "../components/sectionsCloudMarocPage/HostingSolutionsCards";
-import PlansSection from "../components/commonSections/Plans";
 import ServerVps from "../components/sectionsCloudMarocPage/ServerVps";
 import PlansPack from "../components/sectionsCloudMarocPage/PlansPack";
 import { ClaimReviewJsonLd } from "next-seo";

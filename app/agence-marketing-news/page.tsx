@@ -1,13 +1,10 @@
-import Link from "next/link";
 import HeroSection from "../components/commonSections/HeroSection";
 import ContactForm from "../components/commonSections/ContactForm";
 import TextLeftImageRight from "../components/commonSections/TextLeftImageRight";
 
-import NationalCoverage from "../components/commonSections/NationalCoverage";
 import FAQSection from "../components/commonSections/FaqSection";
 import SeoServiceCards from "../components/commonSections/SeoServiceCards";
 import GmbServices from "../components/commonSections/GmbServices";
-import StarRating from "../components/ui/StartRatingFooter";
 import TitleParagraphButton from "../components/commonSections/TitleParagraphButton";
 import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter";
 import { ClaimReviewJsonLd } from "next-seo";

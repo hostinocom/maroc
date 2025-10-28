@@ -11,9 +11,6 @@ import HeroHeadingPages from "../components/ui/heroHeadingPages";
 import TrustedBySection from "../components/sections/TrustedBySection";
 import PromoBanner from "../components/ui/PromoBanner";
 import { ClaimReviewJsonLd } from "next-seo";
-import Head from "next/head";
-import { generateNextSeo } from "next-seo/pages";
-import { Metadata } from "next";
 
 const hostingPlans: Plan[] = [
   {

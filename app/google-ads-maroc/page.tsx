@@ -1,4 +1,3 @@
-import Link from "next/link";
 import HeroSection from "../components/commonSections/HeroSection";
 import ContactForm from "../components/commonSections/ContactForm";
 import TextLeftImageRight from "../components/commonSections/TextLeftImageRight";

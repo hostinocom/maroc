@@ -4,8 +4,8 @@ import "./globals.css";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import CookieConsent from "./components/ui/CookieConsentBanner"
-import Head from "next/head";
-import { generateNextSeo } from "next-seo/pages";
+import GoogleAnalytics from "./components/GoogleAnalytics";
+import CookieBanner from "./components/CookieBanner";
 
 
 const geistSans = Geist({
@@ -26,14 +26,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      
+      <GoogleAnalytics GA_MEASUREMENT_ID="G_000"/>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
 
          <Header />
              {children}
-             <CookieConsent />
+             <CookieBanner />
           <Footer />
       </body>
     </html>

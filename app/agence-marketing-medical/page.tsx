@@ -7,7 +7,6 @@ import NationalCoverage from "../components/commonSections/NationalCoverage";
 import FAQSection from "../components/commonSections/FaqSection";
 import SeoServiceCards from "../components/commonSections/SeoServiceCards";
 import GmbServices from "../components/commonSections/GmbServices";
-import StarRating from "../components/ui/StartRatingFooter";
 import TitleParagraphButton from "../components/commonSections/TitleParagraphButton";
 import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter";
 import { ClaimReviewJsonLd } from "next-seo";
