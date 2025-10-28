@@ -68,11 +68,10 @@ export default async function HomePage() {
       <ClaimReviewJsonLd
         url="/"
         author="Hostino"
-        claimReviewed="Hébergement web Maroc"
+        claimReviewed= og_alt,
         reviewRating={{
           ratingValue: "5",
-          bestRating: "5",
-          worstRating: "1",
+          reviewCount: "55",
           alternateName: "Excellent",
         }}
         itemReviewed={{
