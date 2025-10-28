@@ -17,6 +17,83 @@ import { ClaimReviewJsonLd } from "next-seo";
 import Head from "next/head";
 import { generateNextSeo } from "next-seo/pages";
 
+
+export const metadata = {
+  title: "Email professionnel - Solution Mail Pro rapide et chiffrée",
+  description: "Email professionnel Maroc. Créer votre email Pro avec Hostino. Solution de messagerie d'entreprise nom@entreprise.ma ✉️ dès 25 DH/mois",
+  keywords: ["Email professionnel"],
+  
+  robots: {
+    index: true,
+    follow: true,
+    maxImagePreview: 'large',
+    maxSnippet: -1,
+    maxVideoPreview: -1,
+  },
+  
+  openGraph: {
+    type: 'article',
+    locale: 'fr_FR',
+    url: 'https://www.hostino.ma/email-professionnel/',
+    siteName: 'Hostino',
+    title: "Email professionnel - Solution Mail Pro rapide et chiffrée",
+    description: "Email professionnel Maroc. Créer votre email Pro avec Hostino. Solution de messagerie d'entreprise nom@entreprise.ma ✉️ dès 25 DH/mois",
+    images: [
+      {
+        url: 'https://www.hostino.ma/wp-content/uploads/2025/05/email-professionnel-maroc.jpg',
+        secureUrl: 'https://www.hostino.ma/wp-content/uploads/2025/05/email-professionnel-maroc.jpg',
+        width: 1465,
+        height: 1408,
+        alt: 'Email professionnel Maroc',
+        type: 'image/jpeg',
+      },
+    ],
+    publishedTime: '2024-07-27T14:42:56+00:00',
+    modifiedTime: '2025-09-16T21:26:39+00:00',
+  },
+  
+  twitter: {
+    card: 'summary_large_image',
+    title: "Email professionnel - Solution Mail Pro rapide et chiffrée",
+    description: "Email professionnel Maroc. Créer votre email Pro avec Hostino. Solution de messagerie d'entreprise nom@entreprise.ma ✉️ dès 25 DH/mois",
+    images: ['https://www.hostino.ma/wp-content/uploads/2025/05/email-professionnel-maroc.jpg'],
+  },
+  
+  alternates: {
+    canonical: 'https://www.hostino.ma/email-professionnel/',
+    types: {
+      'application/rss+xml': [
+        {
+          url: 'https://www.hostino.ma/feed/',
+          title: 'Hébergement web Maroc » Flux',
+        },
+      ],
+    },
+  },
+  
+  icons: {
+    icon: [
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-192x192.png', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon-180x180.png', sizes: '180x180', type: 'image/png' },
+    ],
+    other: [
+      {
+        rel: 'msapplication-TileImage',
+        url: '/ms-icon-270x270.png',
+      },
+    ],
+  },
+  
+  authors: [{ name: 'admin', url: 'https://www.hostino.ma/author/admin/' }],
+  
+  other: {
+    'article:publisher': 'https://web.facebook.com/hostinocom/?_rdc=1&_rdr',
+  },
+};
+
 const faqData = [
   {
     question: "Quels sont les avantages d'utiliser Maily® ?",
@@ -284,19 +361,19 @@ export default async function EmailProfessionnelPage() {
   return (
     <>
       <Head>
-          {generateNextSeo({
-            title:
-              "Email Professionnel Maroc - Maily® Solution Mail Pro | Hostino",
-            description:
-              "Email professionnel au Maroc. Solution mail cloud sécurisée avec Maily®. Dès 25 DH/mois.",
-            canonical: "https://maroc-1hp.pages.dev/email-professionnel/",
-            openGraph: {
-              url: "https://maroc-1hp.pages.dev/email-professionnel/",
-              title: "Email Professionnel - Maily® Solution Pro",
-              description: "Email professionnel au Maroc avec Maily®",
-              type: "website",
-            },
-          })}
+          <Head>
+        <title>Cool Title</title>
+        <meta name="description" content="Checkout our cool page" key="desc" />
+        <meta property="og:title" content="Social Title for Cool Page" />
+        <meta
+          property="og:description"
+          content="And a social description for our cool page"
+        />
+        <meta
+          property="og:image"
+          content="https://example.com/images/cool-page.jpg"
+        />
+      </Head>
       </Head>
 
       <ClaimReviewJsonLd

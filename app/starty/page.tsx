@@ -13,6 +13,7 @@ import PromoBanner from "../components/ui/PromoBanner";
 import { ClaimReviewJsonLd } from "next-seo";
 import Head from "next/head";
 import { generateNextSeo } from "next-seo/pages";
+import { Metadata } from "next";
 
 const hostingPlans: Plan[] = [
   {
@@ -91,75 +92,144 @@ const hostingPlans: Plan[] = [
   },
 ];
 
+
+
+// ============================================
+// STARTY - CHEAP WEB HOSTING PAGE METADATA
+// ============================================
+
+export const metadata: Metadata = {
+  title: "Hébergement web pas cher au Maroc | Hostino",
+  description: "Hébergement web pas cher Maroc. Starty® vous permet d'héberger vos sites web à petit prix pour débuter votre activité en ligne",
+  keywords: ["Hébergement web pas cher"],
+  
+  robots: {
+    index: true,
+    follow: true,
+    maxImagePreview: 'large',
+    maxSnippet: -1,
+    maxVideoPreview: -1,
+  } as any,
+  
+  openGraph: {
+    type: 'article',
+    locale: 'fr_FR',
+    url: 'https://www.hostino.ma/starty/',
+    siteName: 'Hostino',
+    title: "Hébergement web pas cher au Maroc | Hostino",
+    description: "Hébergement web pas cher Maroc. Starty® vous permet d'héberger vos sites web à petit prix pour débuter votre activité en ligne",
+    images: [
+      {
+        url: 'https://www.hostino.ma/wp-content/uploads/2025/05/email-professionnel-maroc.jpg',
+        secureUrl: 'https://www.hostino.ma/wp-content/uploads/2025/05/email-professionnel-maroc.jpg',
+        width: 1465,
+        height: 1408,
+        alt: 'Email professionnel Maroc',
+        type: 'image/jpeg',
+      },
+    ],
+    publishedTime: '2024-07-21T21:19:22+00:00',
+    modifiedTime: '2025-08-02T20:52:29+00:00',
+  },
+  
+  twitter: {
+    card: 'summary_large_image',
+    title: "Hébergement web pas cher au Maroc | Hostino",
+    description: "Hébergement web pas cher Maroc. Starty® vous permet d'héberger vos sites web à petit prix pour débuter votre activité en ligne",
+    images: ['https://www.hostino.ma/wp-content/uploads/2025/05/email-professionnel-maroc.jpg'],
+  },
+  
+  alternates: {
+    canonical: 'https://www.hostino.ma/starty/',
+    types: {
+      'application/rss+xml': [
+        {
+          url: 'https://www.hostino.ma/feed/',
+          title: 'Hébergement web Maroc » Flux',
+        },
+      ],
+    },
+  },
+  
+  icons: {
+    icon: [
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-192x192.png', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon-180x180.png', sizes: '180x180', type: 'image/png' },
+    ],
+    other: [
+      {
+        rel: 'msapplication-TileImage',
+        url: '/ms-icon-270x270.png',
+      },
+    ],
+  },
+  
+  authors: [{ name: 'admin', url: 'https://www.hostino.ma/author/admin/' }],
+  
+  other: {
+    'article:publisher': 'https://web.facebook.com/hostinocom/?_rdc=1&_rdr',
+  },
+};
+
+
+
 export default async function StartyPage() {
   return (
+    <>
+      <main>
+        <ClaimReviewJsonLd
+          url="https://maroc-1hp.pages.dev/starty"
+          author={{ name: "Hostino" } as any}
+          claimReviewed="Starty - Hébergement Web Maroc"
+          reviewRating={
+            {
+              ratingValue: "5",
+              bestRating: "5",
+              worstRating: "1",
+              ratingCount: "55",
+            } as any
+          }
+        />
+        <HeroHeadingPages
+          smallTitle="Hébergement web pas cher"
+          bigTitle="Starty®, Hébergement web pas cher"
+        />
+        <Plans
+          title="Starty®, Hébergement web pas cher"
+          smallTitle="Hébergement web pas cher"
+          plans={hostingPlans}
+          heroHeading={true}
+        />
+        <PromoBanner
+          icon="⚠️"
+          text="Lancez votre site à petit prix avec nos offres d’hébergement web <b><i>Starty</i></b>. Quand votre activité grandit, passez aux packs <b><a style={{textDecoration:'underline'}} href='https://www.hostino.ma/business/'>Business</a></b> pour des performances pro."
+        />
+        <TrustedBySection classNameImage="md:w-[65%]  w-[100%] mx-auto h-auto" />
 
-<>
-     <Head>
-        {generateNextSeo({
-          title: "Starty - Hébergement Web Pas Cher au Maroc | Hostino",
-          description: "Lancez votre site à petit prix avec Starty. Hébergement web performant et sécurisé au Maroc.",
-          canonical: "https://maroc-1hp.pages.dev/starty",
-          openGraph: {
-            url: "https://maroc-1hp.pages.dev/starty",
-            title: "Starty - Hébergement Web",
-            description: "Hébergement web pas cher et performant",
-            type: "website",
-          },
-        })}
-      </Head>
-    <main>
+        <StartyComparison />
+        <TextLeftImageRight
+          title="Découvrez Maily®, la révolution de la messagerie <i>pro</i>"
+          paragraphs={[
+            "Sécurisez vos échanges professionnels avec Maily®, la messagerie cloud la plus fiable du marché, conçue par Hostino®.",
+            "Oubliez les problèmes d’envoi et de réception liés aux solutions mail traditionnelles intégrées au cPanel (webmail de Roundcube). Maily® est bien plus qu’une simple boîte mail : c’est la solution qui allie sécurité, productivité et efficacité pour une expérience collaborative inégalée.",
+            "Notre équipe d’experts est à votre écoute pour vous accompagner dans la mise en place, la configuration et l’utilisation de Maily®. Appelez-nous dès maintenant au +212 (05) 31 03 11 86.",
+          ]}
+          imageSrc="/images/starty/email-professionnel-maroc.jpg"
+          imageAlt="Maily - Messagerie professionnelle"
+        />
+        <SixCards
+          title={
+            "Pourquoi faire confiance à Hostino pour l'hébergement de votre site web ?"
+          }
+          alignment="left"
+        />
 
-      <ClaimReviewJsonLd
-        url="https://maroc-1hp.pages.dev/starty"
-        author={{ name: "Hostino" } as any}
-        claimReviewed="Starty - Hébergement Web Maroc"
-        reviewRating={
-          {
-            ratingValue: "5",
-            bestRating: "5",
-            worstRating: "1",
-            ratingCount: "55",
-          } as any
-        }
-      />
-      <HeroHeadingPages
-        smallTitle="Hébergement web pas cher"
-        bigTitle="Starty®, Hébergement web pas cher"
-      />
-      <Plans
-        title="Starty®, Hébergement web pas cher"
-        smallTitle="Hébergement web pas cher"
-        plans={hostingPlans}
-        heroHeading={true}
-      />
-      <PromoBanner
-        icon="⚠️"
-        text="Lancez votre site à petit prix avec nos offres d’hébergement web <b><i>Starty</i></b>. Quand votre activité grandit, passez aux packs <b><a style={{textDecoration:'underline'}} href='https://www.hostino.ma/business/'>Business</a></b> pour des performances pro."
-      />
-      <TrustedBySection classNameImage="md:w-[65%]  w-[100%] mx-auto h-auto" />
-
-      <StartyComparison />
-      <TextLeftImageRight
-        title="Découvrez Maily®, la révolution de la messagerie <i>pro</i>"
-        paragraphs={[
-          "Sécurisez vos échanges professionnels avec Maily®, la messagerie cloud la plus fiable du marché, conçue par Hostino®.",
-          "Oubliez les problèmes d’envoi et de réception liés aux solutions mail traditionnelles intégrées au cPanel (webmail de Roundcube). Maily® est bien plus qu’une simple boîte mail : c’est la solution qui allie sécurité, productivité et efficacité pour une expérience collaborative inégalée.",
-          "Notre équipe d’experts est à votre écoute pour vous accompagner dans la mise en place, la configuration et l’utilisation de Maily®. Appelez-nous dès maintenant au +212 (05) 31 03 11 86.",
-        ]}
-        imageSrc="/images/starty/email-professionnel-maroc.jpg"
-        imageAlt="Maily - Messagerie professionnelle"
-      />
-      <SixCards
-        title={
-          "Pourquoi faire confiance à Hostino pour l'hébergement de votre site web ?"
-        }
-        alignment="left"
-      />
-
-      <FAQSection title={"FAQ sur l'hébergement web Starty"} />
-      <StarRating />
-    </main>
+        <FAQSection title={"FAQ sur l'hébergement web Starty"} />
+        <StarRating />
+      </main>
     </>
   );
 }

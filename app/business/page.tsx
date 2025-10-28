@@ -9,6 +9,84 @@ import TrustedBySection from "../components/sections/TrustedBySection";
 import PromoBanner from "../components/ui/PromoBanner";
 import { text } from "stream/consumers";
 import { ClaimReviewJsonLd } from "next-seo";
+import { Metadata } from "next";
+
+
+export const metadata: Metadata = {
+  title: "Hébergement web Business - Solutions d'hébergement pour les Pros",
+  description: "Hébergement de site web d'entreprise au Maroc, Solution d'hébergement professionnel parfaitement adaptée aux sites corporate",
+  keywords: ["Hébergement web Business"],
+  
+  robots: {
+    index: true,
+    follow: true,
+    maxImagePreview: 'large',
+    maxSnippet: -1,
+    maxVideoPreview: -1,
+  } as any,
+  
+  openGraph: {
+    type: 'article',
+    locale: 'fr_FR',
+    url: 'https://www.hostino.ma/business/',
+    siteName: 'Hostino',
+    title: "Hébergement web Business - Solutions d'hébergement pour les Pros",
+    description: "Hébergement de site web d'entreprise au Maroc, Solution d'hébergement professionnel parfaitement adaptée aux sites corporate",
+    images: [
+      {
+        url: 'https://www.hostino.ma/wp-content/uploads/2025/05/email-professionnel-maroc.jpg',
+        secureUrl: 'https://www.hostino.ma/wp-content/uploads/2025/05/email-professionnel-maroc.jpg',
+        width: 1465,
+        height: 1408,
+        alt: 'Email professionnel Maroc',
+        type: 'image/jpeg',
+      },
+    ],
+    publishedTime: '2024-07-21T23:19:26+00:00',
+    modifiedTime: '2025-08-03T01:16:16+00:00',
+  },
+  
+  twitter: {
+    card: 'summary_large_image',
+    title: "Hébergement web Business - Solutions d'hébergement pour les Pros",
+    description: "Hébergement de site web d'entreprise au Maroc, Solution d'hébergement professionnel parfaitement adaptée aux sites corporate",
+    images: ['https://www.hostino.ma/wp-content/uploads/2025/05/email-professionnel-maroc.jpg'],
+  },
+  
+  alternates: {
+    canonical: 'https://www.hostino.ma/business/',
+    types: {
+      'application/rss+xml': [
+        {
+          url: 'https://www.hostino.ma/feed/',
+          title: 'Hébergement web Maroc » Flux',
+        },
+      ],
+    },
+  },
+  
+  icons: {
+    icon: [
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-192x192.png', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon-180x180.png', sizes: '180x180', type: 'image/png' },
+    ],
+    other: [
+      {
+        rel: 'msapplication-TileImage',
+        url: '/ms-icon-270x270.png',
+      },
+    ],
+  },
+  
+  authors: [{ name: 'admin', url: 'https://www.hostino.ma/author/admin/' }],
+  
+  other: {
+    'article:publisher': 'https://web.facebook.com/hostinocom/?_rdc=1&_rdr',
+  },
+};
 
 const hostingPlans = [
   {

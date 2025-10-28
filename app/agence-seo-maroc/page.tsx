@@ -10,6 +10,7 @@ import NationalCoverage from "../components/commonSections/NationalCoverage";
 import FAQSection from "../components/commonSections/FaqSection";
 import GooglePositioning from "../components/commonSections/GooglePositioning";
 import { ClaimReviewJsonLd } from "next-seo";
+import Head from "next/head";
 
 const faqData = [
   {
@@ -312,6 +313,12 @@ const rankingsData = [
 
 export default async function HomePage() {
   return (
+
+
+    <>
+    <Head>
+      <title>Agence SEO Maroc - Référencement Google</title>
+    </Head>
     <main>
       <ClaimReviewJsonLd
         url="https://maroc-1hp.pages.dev/agence-seo-maroc/"
@@ -463,5 +470,6 @@ export default async function HomePage() {
 
       <FAQSection faqData={faqData} title="FAQ - Agence SEO Maroc" />
     </main>
+    </>
   );
 }
