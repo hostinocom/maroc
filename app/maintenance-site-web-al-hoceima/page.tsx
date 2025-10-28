@@ -11,6 +11,12 @@ import StarRating from "../components/ui/StartRatingFooter";
 import TitleParagraphButton from "../components/commonSections/TitleParagraphButton";
 import { ClaimReviewJsonLd } from "next-seo";
 
+const title = "Maintenance site web Al Hoceima | Performances et sécurité"
+const description =  "Maintenance site web Al Hoceima, Agence spécialisée dans la maintenance web, l’optimisation, la sécurité et le suivi continu ☎️ 0663 75 09 08"
+const imageUrl = "https://maroc-1hp.pages.dev/images/maintenance-site-web-al-hoceima/maintenance-site-web-maroc.png" 
+const canonical_url = "https://www.hostino.ma/maintenance-site-web-al-hoceima"
+const og_alt = "Maintenance site web Al Hoceima"
+
 const faqData = [
   {
     question: "La maintenance site web est-elle obligatoire ?",
