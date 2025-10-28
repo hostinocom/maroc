@@ -10,7 +10,11 @@ import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter"
 import CaseStudyPalaisFajar from "../components/sectionsAgenceSeoMaroc/CaseDtudyPalaisFajar";
 import { ClaimReviewJsonLd } from "next-seo";
 
-
+const title = "Agence Marketing Hôtel | SEO &amp; Google Ads pour Hôtels Maroc"
+const description =  "Agence de marketing hôtelier Maroc. Publicité Google Ads et SEO pour augmenter vos réservations directes depuis votre site web ☎️ 0663 75 09 08"
+const imageUrl = "https://maroc-1hp.pages.dev/images/agence-marketing-hotel/agence-marketing-hotel-maroc.png" 
+const canonical_url = "https://www.hostino.ma/agence-marketing-hotel"
+const og_alt = "Agence Marketing Hôtel"
 
 const faqData = [
   {
