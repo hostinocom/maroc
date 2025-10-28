@@ -11,7 +11,11 @@ import PlansPack from "../components/sectionsCloudMarocPage/PlansPack";
 import { ClaimReviewJsonLd } from "next-seo";
 import ContactForm from "../components/commonSections/ContactForm";
 
-
+const title = "Cloud Maroc | Sécurité et souveraineté des données"
+const description =  "Cloud Maroc. Solution Cloud de souveraineté numérique, conforme aux obligations légales d’hébergement des données sur le Cloud au Maroc."
+const imageUrl = "XXXXX" 
+const canonical_url = "https://www.hostino.ma/cloud-maroc/"
+const og_alt = "Cloud Maroc"
 
 const faqData = [
   {
