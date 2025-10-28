@@ -205,7 +205,7 @@ export default async function HomePage() {
           "Que ce soit pour la création de fiches de localisation destinées à des <b>hôtels</b>, boutiques, magasins, showrooms, bureaux, <b>restaurants</b>, <b>médecins</b>, avocats, écoles ou <b>institutions</b>, ou encore pour la gestion de fiches multi-sites dans plusieurs villes, Hostino prend en charge l’ensemble du processus de A à Z.",
           "Appelez-nous dès maintenant au +212 663 75 09 08 et confiez la gestion de votre fiche Google My Business à des experts certifiés Google.",
         ]}
-        imageSrc="images/agence-my-business-maroc/google-my-business-maroc.jpg"
+        imageSrc="images/04/google-my-business-maroc.jpg"
         imageAlt="C'est quoi une agence Google My Business Maroc ?"
         consultButtonTextExiste={true}
         textButton="Contactez-nous"
@@ -260,7 +260,7 @@ export default async function HomePage() {
           `<ul><li><span style="text-align: inherit;">Intégration web : Nous ajoutons des boutons d’évaluation sur votre site, vos e-mails et vos réseaux sociaux.</span></li><li><span style="text-align: inherit;"><span style="letter-spacing: -0.1px;">Autocollants QR :&nbsp;</span></span><b>Impression de stickers QR</b> : Nous créons des autocollants avec code QR redirigeant directement vers la page de <b>publication d’avis</b> de votre profil GMB.</li><li><b>Carte NFC</b> permettent à vos clients de donner facilement des avis sur Google en toute simplicité et d’un simple clic depuis leur téléphone.</li></ul>`,
           "Appelez-nous dès maintenant au +212 663 75 09 08 et confiez la gestion de votre fiche Google My Business à des experts certifiés Google.",
         ]}
-        imageSrc="images/agence-my-business-maroc/avis-google-my-business-maroc.jpg"
+        imageSrc="images/04/avis-google-my-business-maroc.jpg"
         imageAlt="Avis Google My Business au Maroc"
         consultButtonTextExiste={true}
         textButton="Contactez-nous"
@@ -280,7 +280,7 @@ export default async function HomePage() {
           "Par exemple, un internaute cherchant “restaurant italien à Rabat” clique sur la fiche, puis réserve via le site optimisé avec menu et formulaire.&nbsp;",
           "En occupant à la fois Google Maps et les premiers résultats de recherche, votre entreprise domine la visibilité en ligne, attire plus de clics et <b>s’impose comme référence</b> dans son secteur.",
         ]}
-        imageSrc="images/agence-my-business-maroc/seo-google-my-business-maroc.jpg"
+        imageSrc="images/04/seo-google-my-business-maroc.jpg"
         imageAlt="Agence SEO Google My Business Maroc"
         consultButtonTextExiste={true}
         textButton="Contactez-nous"
