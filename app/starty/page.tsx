@@ -10,12 +10,74 @@ import Plans from "../components/commonSections/Plans";
 import HeroHeadingPages from "../components/ui/heroHeadingPages";
 import TrustedBySection from "../components/sections/TrustedBySection";
 import PromoBanner from "../components/ui/PromoBanner";
+import { main_schema } from "../schema";
 
-const title = "Hébergement web pas cher au Maroc | Hostino"
-const description =  "Hébergement web pas cher Maroc. Starty® vous permet d&#039;héberger vos sites web à petit prix pour débuter votre activité en ligne"
-const imageUrl = "https://www.hostino.ma/wp-content/uploads/2024/10/hebergement-web.png" 
-const canonical_url = "https://www.hostino.ma/starty"
-const og_alt = "Hébergement web pas cher"
+const title = "Hébergement web pas cher au Maroc | Hostino";
+const description =
+  "Hébergement web pas cher Maroc. Starty® vous permet d&#039;héberger vos sites web à petit prix pour débuter votre activité en ligne";
+const imageUrl =
+  "https://www.hostino.ma/wp-content/uploads/2024/10/hebergement-web.png";
+const canonical_url = "https://www.hostino.ma/starty";
+const og_alt = "Hébergement web pas cher";
+
+export const metadata = {
+  title: title,
+  description: description,
+  robots:
+    "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  alternates: {
+    canonical: canonical_url,
+  },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: canonical_url,
+    siteName: "Hostino",
+    title: title,
+    description: description,
+    images: [
+      {
+        url: imageUrl,
+        secureUrl: imageUrl,
+        width: 1200,
+        height: 630,
+        alt: og_alt,
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: title,
+    description: description,
+    images: [imageUrl],
+    creator: "@admin",
+  },
+};
+
+const articleShema = {
+  "@graph": [
+    {
+      "@type": "Product",
+      name: "Nom de domaine Maroc - .Ma à seulement 118 DH",
+      url: "canonical_url",
+      description: "description",
+      brand: { "@type": "Brand", name: "Hostino" },
+      offers: {
+        "@type": "AggregateOffer",
+        url: "canonical_url",
+        lowPrice: "118",
+        priceCurrency: "MAD",
+        availability: "InStock",
+      },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "5",
+        reviewCount: "920",
+      },
+    },
+  ],
+};
 
 const hostingPlans: Plan[] = [
   {
@@ -94,14 +156,63 @@ const hostingPlans: Plan[] = [
   },
 ];
 
-
-
 export default async function StartyPage() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      ...main_schema,
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.hostino.ma/#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: "1",
+            item: {
+              "@id": "https://www.hostino.ma",
+              name: "Hostino - Noms de domaine et hébergement web au Maroc",
+            },
+          },
+          {
+            "@type": "ListItem",
+            position: "2",
+            item: {
+              "@id": canonical_url,
+              name: og_alt,
+            },
+          },
+        ],
+      },
+      {
+        "@type": "Product",
+        name: title,
+        url: canonical_url,
+        description: description,
+        brand: { "@type": "Brand", name: "Hostino" },
+        offers: {
+          "@type": "AggregateOffer",
+          url: canonical_url,
+          lowPrice: "118",
+          priceCurrency: "MAD",
+          availability: "InStock",
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "5",
+          reviewCount: "920",
+        },
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+
       <main>
-        
-        
         <HeroHeadingPages
           smallTitle="Hébergement web pas cher"
           bigTitle="Starty®, Hébergement web pas cher"

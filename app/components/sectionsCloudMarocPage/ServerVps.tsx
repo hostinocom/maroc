@@ -150,7 +150,7 @@ export default function ServerVps() {
                 <li className="text-center mx-auto"> 
                    <div className="flex mx-auto justify-center">
                      <Image
-                      src="/images/cloud-maroc/flag-maroc.svg"
+                      src="/images/03/flag-maroc.svg"
                       alt="Check"
                       width={20}
                       height={20}

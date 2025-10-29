@@ -5,6 +5,50 @@ import TrustedBySection from "../components/sections/TrustedBySection";
 import VPSQuoteForm from "../components/sectionsPageVpsMaroc/VPSQuoteForm";
 import HeroHeadingPages from "../components/ui/heroHeadingPages";
 import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter";
+import { main_schema } from "../schema";
+
+const title = "Hébergement web pas cher au Maroc | Hostino";
+const description =
+  "Hébergement web pas cher Maroc. Starty® vous permet d&#039;héberger vos sites web à petit prix pour débuter votre activité en ligne";
+const imageUrl =
+  "https://www.hostino.ma/wp-content/uploads/2024/10/hebergement-web.png";
+const canonical_url = "https://www.hostino.ma/starty";
+const og_alt = "Hébergement web pas cher";
+
+export const metadata = {
+  title: title,
+  description: description,
+  robots:
+    "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  alternates: {
+    canonical: canonical_url,
+  },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: canonical_url,
+    siteName: "Hostino",
+    title: title,
+    description: description,
+    images: [
+      {
+        url: imageUrl,
+        secureUrl: imageUrl,
+        width: 1200,
+        height: 630,
+        alt: og_alt,
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: title,
+    description: description,
+    images: [imageUrl],
+    creator: "@admin",
+  },
+};
 
 const hostingFeatures = [
   {
@@ -18,7 +62,7 @@ const hostingFeatures = [
     `,
   },
   {
-    image: "cloud-maroc/adresse-ip-maroc.png",
+    image: "03/adresse-ip-maroc.png",
     alt: "Adresse IP marocaine",
     title: "Adresse <span>IP marocaine</span>",
     description: `
@@ -28,7 +72,7 @@ const hostingFeatures = [
     `,
   },
   {
-    image: "cloud-maroc/coonectivite-haut-debit.png",
+    image: "03/coonectivite-haut-debit.png",
     alt: "Connectivité Haut-Débit",
     title: "Connectivité <span>Haut-Débit</span>",
     description: `
@@ -38,7 +82,7 @@ const hostingFeatures = [
     `,
   },
   {
-    image: "cloud-maroc/services-manages.png",
+    image: "03/services-manages.png",
     alt: "Services managés",
     title: "Services <span>Managés</span>",
     description: `
@@ -48,7 +92,7 @@ const hostingFeatures = [
     `,
   },
   {
-    image: "cloud-maroc/securite-monitoring.png",
+    image: "03/securite-monitoring.png",
     alt: "Monitoring et sécurité",
     title: "Monitoring et <span>Sécurité</span>",
     description: `
@@ -58,7 +102,7 @@ const hostingFeatures = [
     `,
   },
   {
-    image: "cloud-maroc/conformite-anrt.png",
+    image: "03/conformite-anrt.png",
     alt: "Conformité réglementaire",
     title: "Conformité <span>réglementaire</span>",
     description: `
@@ -116,55 +160,108 @@ const faqData = [
 ];
 
 const VpsMarocPage = () => {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      ...main_schema,
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.hostino.ma/#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: "1",
+            item: {
+              "@id": "https://www.hostino.ma",
+              name: "Hostino - Noms de domaine et hébergement web au Maroc",
+            },
+          },
+          {
+            "@type": "ListItem",
+            position: "2",
+            item: {
+              "@id": canonical_url,
+              name: og_alt,
+            },
+          },
+        ],
+      },
+      {
+        "@type": "Product",
+        name: title,
+        url: canonical_url,
+        description: description,
+        brand: { "@type": "Brand", name: "Hostino" },
+        offers: {
+          "@type": "AggregateOffer",
+          url: canonical_url,
+          lowPrice: "118",
+          priceCurrency: "MAD",
+          availability: "InStock",
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "5",
+          reviewCount: "920",
+        },
+      },
+    ],
+  };
+
   return (
-    <main>
-      
-      <HeroHeadingPages
-        smallTitle="VPS Maroc"
-        bigTitle="Location de serveur <br/> Cloud VPS Maroc"
-        className="pb-[80px]"
-        lineGreen={true}
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+      <main>
+        <HeroHeadingPages
+          smallTitle="VPS Maroc"
+          bigTitle="Location de serveur <br/> Cloud VPS Maroc"
+          className="pb-[80px]"
+          lineGreen={true}
+        />
 
-      <TextLeftImageRight
-        title="Hébergement Cloud VPS Maroc"
-        paragraphs={[
-          "Que vous soyez une entreprise du secteur financier, de la santé, de l'administration publique ou toute autre organisation traitant des données sensibles ou soumise à des <b>exigences de souveraineté</b> des données, opter pour un VPS au Maroc représente une solution stratégique.",
-          "Ce choix vous permet de respecter les réglementations marocaines tout en réduisant considérablement les risques liés à l'hébergement de données à l'étranger. En hébergeant votre infrastructure sur un serveur VPS au Maroc, vos données restent sous le contrôle des juridictions marocaines, assurant ainsi une conformité totale avec la <strong><a href='https://www.dgssi.gov.ma/fr/loi-09-08-relative-la-protection-des-personnes-physiques-legard-du-traitement-des' rel='noopener'>loi 09-08</a></strong> relative à la protection des données personnelles, la <strong><a href='https://www.dgssi.gov.ma/fr/loi-ndeg-0520-relative-la-cybersecurite' rel='noopener'>loi 05-20 sur la cybersécurité</a></strong>, ainsi qu'avec les recommandations de la CNDP.",
-          "Appelez le +212 531-031-186 et confiez l'hébergement de vos données sensibles à un fournisseur VPS de confiance, avec une <b>équipe 100 % marocaine</b> à votre service.",
-        ]}
-        imageSrc="images/vps-maroc/vps-maroc.jpg"
-        imageAlt="VPS au Maroc"
-        consultButtonTextExiste={false}
-      />
+        <TextLeftImageRight
+          title="Hébergement Cloud VPS Maroc"
+          paragraphs={[
+            "Que vous soyez une entreprise du secteur financier, de la santé, de l'administration publique ou toute autre organisation traitant des données sensibles ou soumise à des <b>exigences de souveraineté</b> des données, opter pour un VPS au Maroc représente une solution stratégique.",
+            "Ce choix vous permet de respecter les réglementations marocaines tout en réduisant considérablement les risques liés à l'hébergement de données à l'étranger. En hébergeant votre infrastructure sur un serveur VPS au Maroc, vos données restent sous le contrôle des juridictions marocaines, assurant ainsi une conformité totale avec la <strong><a href='https://www.dgssi.gov.ma/fr/loi-09-08-relative-la-protection-des-personnes-physiques-legard-du-traitement-des' rel='noopener'>loi 09-08</a></strong> relative à la protection des données personnelles, la <strong><a href='https://www.dgssi.gov.ma/fr/loi-ndeg-0520-relative-la-cybersecurite' rel='noopener'>loi 05-20 sur la cybersécurité</a></strong>, ainsi qu'avec les recommandations de la CNDP.",
+            "Appelez le +212 531-031-186 et confiez l'hébergement de vos données sensibles à un fournisseur VPS de confiance, avec une <b>équipe 100 % marocaine</b> à votre service.",
+          ]}
+          imageSrc="images/vps-maroc/vps-maroc.jpg"
+          imageAlt="VPS au Maroc"
+          consultButtonTextExiste={false}
+        />
 
-      <TrustedBySection classNameImage="lg:w-[60%] w-[100%] " />
+        <TrustedBySection classNameImage="lg:w-[60%] w-[100%] " />
 
-      <VPSQuoteForm />
+        <VPSQuoteForm />
 
-      <SixCards
-        title={"Pourquoi choisir un<br /> hébergement VPS Maroc"}
-        alignment="left"
-        features={hostingFeatures}
-      />
+        <SixCards
+          title={"Pourquoi choisir un<br /> hébergement VPS Maroc"}
+          alignment="left"
+          features={hostingFeatures}
+        />
 
-      <TextLeftImageRight
-        title="Qu'est-ce qu'un VPS Maroc ?"
-        paragraphs={[
-          "Un VPS Maroc (serveur privé virtuel hébergé localement) est une solution d'hébergement qui repose sur des infrastructures Cloud situées au Maroc. Il s'agit d'un environnement serveur isolé, offrant les mêmes fonctionnalités qu'un serveur dédié, tout en étant hébergé dans un <b>data center marocain</b>. Cette solution permet aux entreprises de bénéficier de performances élevées, de flexibilité et surtout, d'une maîtrise totale de leurs données critiques.",
-          "Le Cloud VPS englobe l'ensemble des infrastructures, services et solutions de traitement et de stockage des données opérés localement. Il s'inscrit dans une démarche stratégique visant à renforcer la <b>souveraineté numérique du Royaume</b>, en réduisant la dépendance aux fournisseurs étrangers et en développant des capacités technologiques nationales.",
-        ]}
-        imageSrc="images/vps-maroc/cloud-souverain-maroc.jpg"
-        imageAlt="Cloud souverain au Maroc"
-        consultButtonTextExiste={true}
-        textButton="Consultez les plans et tarifs"
-        href="#vps"
-      />
+        <TextLeftImageRight
+          title="Qu'est-ce qu'un VPS Maroc ?"
+          paragraphs={[
+            "Un VPS Maroc (serveur privé virtuel hébergé localement) est une solution d'hébergement qui repose sur des infrastructures Cloud situées au Maroc. Il s'agit d'un environnement serveur isolé, offrant les mêmes fonctionnalités qu'un serveur dédié, tout en étant hébergé dans un <b>data center marocain</b>. Cette solution permet aux entreprises de bénéficier de performances élevées, de flexibilité et surtout, d'une maîtrise totale de leurs données critiques.",
+            "Le Cloud VPS englobe l'ensemble des infrastructures, services et solutions de traitement et de stockage des données opérés localement. Il s'inscrit dans une démarche stratégique visant à renforcer la <b>souveraineté numérique du Royaume</b>, en réduisant la dépendance aux fournisseurs étrangers et en développant des capacités technologiques nationales.",
+          ]}
+          imageSrc="images/vps-maroc/cloud-souverain-maroc.jpg"
+          imageAlt="Cloud souverain au Maroc"
+          consultButtonTextExiste={true}
+          textButton="Consultez les plans et tarifs"
+          href="#vps"
+        />
 
-      <FAQSection faqData={faqData} title="FAQ - VPS Maroc" />
+        <FAQSection faqData={faqData} title="FAQ - VPS Maroc" />
 
-      <StartsRatingYellowFooter totalVotes={3} />
-    </main>
+        <StartsRatingYellowFooter totalVotes={3} />
+      </main>
+    </>
   );
 };
 

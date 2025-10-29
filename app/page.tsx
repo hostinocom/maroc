@@ -12,6 +12,8 @@ import EasyHebergementSection from "./components/sections/EasyHebergementSection
 import BenchmarkHostingMorocco from "./components/sections/BenchmarkHostingMorocco";
 import SixCards from "./components/commonSections/SixCards";
 import Head from "next/head";
+import { Article, WithContext } from "schema-dts";
+import { main_schema } from "./schema";
 
 const title = "Hébergement Web Maroc - Hébergeur web 100% marocain";
 const description =
@@ -56,78 +58,10 @@ export const metadata = {
   },
 };
 export default async function HomePage() {
-  const jsonLd = {
+  const articleSchema = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Place",
-        "@id": "https://www.hostino.ma/#place",
-        geo: {
-          "@type": "GeoCoordinates",
-          latitude: "35.77594947083067",
-          longitude: "-5.80348479866106",
-        },
-        hasMap:
-          "https://www.google.com/maps/search/?api=1&query=35.77594947083067,-5.80348479866106",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "T100 Technopark Tanger",
-          addressLocality: "Tanger",
-          addressRegion: "Tanger",
-          postalCode: "90000",
-          addressCountry: "Maroc",
-        },
-      },
-      {
-        "@type": "Organization",
-        "@id": "https://www.hostino.ma/#organization",
-        name: "Hostino",
-        url: "https://www.hostino.ma",
-        email: "info@hostino.com",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "T100 Technopark Tanger",
-          addressLocality: "Tanger",
-          addressRegion: "Tanger",
-          postalCode: "90000",
-          addressCountry: "Maroc",
-        },
-        logo: {
-          "@type": "ImageObject",
-          "@id": "https://www.hostino.ma/#logo",
-          url: "https://www.hostino.ma/logo-icon-square.jpg",
-          contentUrl: "https://www.hostino.ma/logo-icon-square.jpg",
-          caption: "Hostino",
-          inLanguage: "fr-FR",
-          width: "1200",
-          height: "1200",
-        },
-        contactPoint: [
-          {
-            "@type": "ContactPoint",
-            telephone: "+212531031186",
-            contactType: "customer support",
-          },
-        ],
-        location: { "@id": "https://www.hostino.ma/#place" },
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://www.hostino.ma/#website",
-        url: "https://www.hostino.ma",
-        name: "Hostino",
-        publisher: { "@id": "https://www.hostino.ma/#organization" },
-        inLanguage: "fr-FR",
-      },
-      {
-        "@type": "ImageObject",
-        "@id":
-          "https://www.hostino.ma/wp-content/uploads/2025/06/google-svg.svg",
-        url: "https://www.hostino.ma/wp-content/uploads/2025/06/google-svg.svg",
-        width: "200",
-        height: "200",
-        inLanguage: "fr-FR",
-      },
+      ...main_schema,
       {
         "@type": "BreadcrumbList",
         "@id": "https://www.hostino.ma/#breadcrumb",
@@ -144,15 +78,15 @@ export default async function HomePage() {
             "@type": "ListItem",
             position: "2",
             item: {
-              "@id": "https://www.hostino.ma/nom-de-domaine-ma",
-              name: "Nom de domaine",
+              "@id": canonical_url,
+              name: og_alt,
             },
           },
         ],
       },
       {
         "@type": "Product",
-        name: "Nom de domaine Maroc - .Ma à seulement 118 DH",
+        name: title,
         url: canonical_url,
         description: description,
         brand: { "@type": "Brand", name: "Hostino" },
@@ -166,18 +100,18 @@ export default async function HomePage() {
         aggregateRating: {
           "@type": "AggregateRating",
           ratingValue: "5",
-          reviewCount: "918",
+          reviewCount: "920",
         },
       },
     ],
   };
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
-
       <main>
         <HeroSection />
         <PlansSection />
@@ -197,4 +131,3 @@ export default async function HomePage() {
     </>
   );
 }
-

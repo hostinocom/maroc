@@ -9,12 +9,50 @@ import GmbServices from "../components/commonSections/GmbServices";
 import StarRating from "../components/ui/StartRatingFooter";
 import TitleParagraphButton from "../components/commonSections/TitleParagraphButton";
 import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter";
+import { main_schema } from "../schema";
 
-const title = "Agence Marketing Immobilier | Plus de ventes + de clients"
-const description =  "Agence Marketing Immobilier Maroc. Publicité Google &amp; SEO local et international pour promoteurs et projets immobiliers Maroc ☎️ 0663 75 09 08"
-const imageUrl = "https://maroc-1hp.pages.dev/images/agence-marketing-immobilier/agence-marketing-immobilier-maroc.png" 
-const canonical_url = "https://www.hostino.ma/agence-marketing-immobilier"
-const og_alt = "Agence Marketing Immobilier"
+const title = "Agence Marketing Immobilier | Plus de ventes + de clients";
+const description =
+  "Agence Marketing Immobilier Maroc. Publicité Google &amp; SEO local et international pour promoteurs et projets immobiliers Maroc ☎️ 0663 75 09 08";
+const imageUrl =
+  "https://maroc-1hp.pages.dev/images/agence-marketing-immobilier/agence-marketing-immobilier-maroc.png";
+const canonical_url = "https://www.hostino.ma/agence-marketing-immobilier";
+const og_alt = "Agence Marketing Immobilier";
+
+export const metadata = {
+  title: title,
+  description: description,
+  robots:
+    "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  alternates: {
+    canonical: canonical_url,
+  },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: canonical_url,
+    siteName: "Hostino",
+    title: title,
+    description: description,
+    images: [
+      {
+        url: imageUrl,
+        secureUrl: imageUrl,
+        width: 1200,
+        height: 630,
+        alt: og_alt,
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: title,
+    description: description,
+    images: [imageUrl],
+    creator: "@admin",
+  },
+};
 
 const faqData = [
   {
@@ -105,92 +143,144 @@ const prestations = [
   },
 ];
 export default async function AgenceMarketingImmobilierPage() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      ...main_schema,
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.hostino.ma/#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: "1",
+            item: {
+              "@id": "https://www.hostino.ma",
+              name: "Hostino - Noms de domaine et hébergement web au Maroc",
+            },
+          },
+          {
+            "@type": "ListItem",
+            position: "2",
+            item: {
+              "@id": canonical_url,
+              name: og_alt,
+            },
+          },
+        ],
+      },
+      {
+        "@type": "Product",
+        name: title,
+        url: canonical_url,
+        description: description,
+        brand: { "@type": "Brand", name: "Hostino" },
+        offers: {
+          "@type": "AggregateOffer",
+          url: canonical_url,
+          lowPrice: "118",
+          priceCurrency: "MAD",
+          availability: "InStock",
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "5",
+          reviewCount: "920",
+        },
+      },
+    ],
+  };
+
   return (
-    <main>
-     
-
-      <HeroSection
-        subtitle="Agence Marketing Immobilier Maroc"
-        title="Agence marketing immobilier au Maroc"
-        text="Agence de marketing immobilier au Maroc : plus de <b>ventes</b>, plus <b>d'appels</b>, plus de <b>visites à vos bureaux de vente</b>."
-        emailLabel={{
-          textEmail: "Consultation par Email ?",
-          color: "text-primary",
-        }}
-        email="info@hostino.com"
-        imageSrc="images/16/agence-marketing-immobilier-maroc.png"
-        imageAlt="Agence marketing immobilier au Maroc"
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+      <main>
+        <HeroSection
+          subtitle="Agence Marketing Immobilier Maroc"
+          title="Agence marketing immobilier au Maroc"
+          text="Agence de marketing immobilier au Maroc : plus de <b>ventes</b>, plus <b>d'appels</b>, plus de <b>visites à vos bureaux de vente</b>."
+          emailLabel={{
+            textEmail: "Consultation par Email ?",
+            color: "text-primary",
+          }}
+          email="info@hostino.com"
+          imageSrc="images/16/agence-marketing-immobilier-maroc.png"
+          imageAlt="Agence marketing immobilier au Maroc"
+        />
 
-      <ContactForm
-        title={
-          <>
-            Marketing Immobilier : un conseiller{" "}
-            <br className="lg:hidden block " />
-            <span className="border-bottom">vous rappelle !</span>
-          </>
-        }
-      />
+        <ContactForm
+          title={
+            <>
+              Marketing Immobilier : un conseiller{" "}
+              <br className="lg:hidden block " />
+              <span className="border-bottom">vous rappelle !</span>
+            </>
+          }
+        />
 
-      <TextLeftImageRight
-        title="Agence marketing pour projets immobiliers"
-        paragraphs={[
-          "Hostino, agence de marketing immobilier expérimentée au Maroc, accompagne les <b>promoteurs</b>, agences et porteurs de projets immobiliers en leur offrant un éventail complet de services pour renforcer leur visibilité sur Google, <b>générer davantage d'appels</b> et accroître leurs ventes auprès de <b>clients réellement intéressés</b>.",
-          "Que ce soit à travers une stratégie de référencement <b>SEO</b> ou via des <b>campagnes Google Ads</b> capables de générer des clients dès les premiers jours.",
-          "L'acquisition de clients via Google est la plus performante en termes de conversion, surtout dans l'immobilier : les prospects qui recherchent activement un appartement à vendre sont des acheteurs prêts à investir. Il ne reste qu'à les convaincre grâce à une <b>offre attractive</b> et un <b>suivi commercial de qualité</b>.",
-          "Appelez le +212 663 75 09 08 et confiez votre marketing immo à des experts de confiance au Maroc.",
-        ]}
-        imageSrc="images/16/agence-marketing-immobilier-maroc.jpg"
-        imageAlt="Publicité et marketing immobilier au Maroc"
-        consultButtonTextExiste={true}
-        textButton="Contactez-nous"
-        href="https://www.hostino.ma/contact"
-      />
+        <TextLeftImageRight
+          title="Agence marketing pour projets immobiliers"
+          paragraphs={[
+            "Hostino, agence de marketing immobilier expérimentée au Maroc, accompagne les <b>promoteurs</b>, agences et porteurs de projets immobiliers en leur offrant un éventail complet de services pour renforcer leur visibilité sur Google, <b>générer davantage d'appels</b> et accroître leurs ventes auprès de <b>clients réellement intéressés</b>.",
+            "Que ce soit à travers une stratégie de référencement <b>SEO</b> ou via des <b>campagnes Google Ads</b> capables de générer des clients dès les premiers jours.",
+            "L'acquisition de clients via Google est la plus performante en termes de conversion, surtout dans l'immobilier : les prospects qui recherchent activement un appartement à vendre sont des acheteurs prêts à investir. Il ne reste qu'à les convaincre grâce à une <b>offre attractive</b> et un <b>suivi commercial de qualité</b>.",
+            "Appelez le +212 663 75 09 08 et confiez votre marketing immo à des experts de confiance au Maroc.",
+          ]}
+          imageSrc="images/16/agence-marketing-immobilier-maroc.jpg"
+          imageAlt="Publicité et marketing immobilier au Maroc"
+          consultButtonTextExiste={true}
+          textButton="Contactez-nous"
+          href="https://www.hostino.ma/contact"
+        />
 
-      <TitleParagraphButton
-        title={`SEO et Google Ads <br/><span style="font-weight: 400">vs</span> plateformes des annonces immobilières au Maroc`}
-        paragraphs={[
-          `Il y a encore quelques années, publier ses annonces sur les grandes <b>plateformes immobilières</b> pouvait sembler être une solution rentable et efficace. <span style="font-weight: bold;">Mais aujourd'hui, la réalité a changé</span> : ces plateformes sont saturées, les coûts de mise en avant ont explosé et il devient de plus en plus difficile de se démarquer. Pourtant, le premier réflexe des promoteurs et agences immobilières reste souvent de s'y tourner. En pratique, ces plateformes mettent surtout en avant leur propre marque et leur trafic.`,
-          `Vos biens ou projets se retrouvent noyés dans une longue liste d'annonces concurrentes, au lieu d'apparaître directement et en première ligne sur Google avec votre propre identité.`,
-          `Notre approche est différente : nous créons pour vous un site web optimisé, que ce soit pour un projet immobilier unique ou pour plusieurs projets à la fois. Ce site est pensé pour être <b>Google-friendly</b> et conçu afin de se positionner en haut des résultats de recherche sur des mots-clés stratégiques liés à votre marché et à votre ville.`,
-          `En parallèle, nous déployons des campagnes de référencement SEO et Google Ads ciblées, capables d'attirer immédiatement des leads qualifiés et d'assurer une visibilité durable à vos projets immobiliers.`,
-          `Ainsi, les prospects qui arrivent sur votre site sont déjà fortement intéressés et dans une démarche active d'achat. Il ne reste alors qu'à les transformer en clients grâce à une offre compétitive et un <b>accompagnement commercial personnalisé</b>.`,
-          `Cela se traduit par la prise de rendez-vous, la confirmation de <b>visites au bureau de vente</b> et, à terme, la conclusion de ventes plus rapides et plus efficaces. Cette stratégie vous permet de générer des contacts directs, d'augmenter vos ventes et de construire une image forte et indépendante pour votre marque immobilière, sans dépendre uniquement des plateformes d'annonces.`,
-        ]}
-        buttonText="Contactez-nous"
-        buttonHref="https://www.hostino.ma/contact"
-      />
+        <TitleParagraphButton
+          title={`SEO et Google Ads <br/><span style="font-weight: 400">vs</span> plateformes des annonces immobilières au Maroc`}
+          paragraphs={[
+            `Il y a encore quelques années, publier ses annonces sur les grandes <b>plateformes immobilières</b> pouvait sembler être une solution rentable et efficace. <span style="font-weight: bold;">Mais aujourd'hui, la réalité a changé</span> : ces plateformes sont saturées, les coûts de mise en avant ont explosé et il devient de plus en plus difficile de se démarquer. Pourtant, le premier réflexe des promoteurs et agences immobilières reste souvent de s'y tourner. En pratique, ces plateformes mettent surtout en avant leur propre marque et leur trafic.`,
+            `Vos biens ou projets se retrouvent noyés dans une longue liste d'annonces concurrentes, au lieu d'apparaître directement et en première ligne sur Google avec votre propre identité.`,
+            `Notre approche est différente : nous créons pour vous un site web optimisé, que ce soit pour un projet immobilier unique ou pour plusieurs projets à la fois. Ce site est pensé pour être <b>Google-friendly</b> et conçu afin de se positionner en haut des résultats de recherche sur des mots-clés stratégiques liés à votre marché et à votre ville.`,
+            `En parallèle, nous déployons des campagnes de référencement SEO et Google Ads ciblées, capables d'attirer immédiatement des leads qualifiés et d'assurer une visibilité durable à vos projets immobiliers.`,
+            `Ainsi, les prospects qui arrivent sur votre site sont déjà fortement intéressés et dans une démarche active d'achat. Il ne reste alors qu'à les transformer en clients grâce à une offre compétitive et un <b>accompagnement commercial personnalisé</b>.`,
+            `Cela se traduit par la prise de rendez-vous, la confirmation de <b>visites au bureau de vente</b> et, à terme, la conclusion de ventes plus rapides et plus efficaces. Cette stratégie vous permet de générer des contacts directs, d'augmenter vos ventes et de construire une image forte et indépendante pour votre marque immobilière, sans dépendre uniquement des plateformes d'annonces.`,
+          ]}
+          buttonText="Contactez-nous"
+          buttonHref="https://www.hostino.ma/contact"
+        />
 
-      <TextLeftImageRight
-        title="Le référencement Google, la solution idéale pour vendre vos projets immobiliers"
-        paragraphs={[
-          "Le référencement SEO et <span style=\"text-decoration: underline;\"><strong><a href=\"https://www.hostino.ma/google-ads-maroc/\">Google Ads</a></strong></span> sont la clé pour vendre vos projets immobiliers. Ils permettent de toucher directement les acheteurs qui recherchent activement un bien, qu'il s'agisse d'un appartement à Rabat, d'une villa à Casablanca ou d'un terrain à Tanger.",
-          'Les <a href="https://www.mre.gov.ma/" rel="noopener"><b>Marocains Résidant à l\'Étranger</b></a>, notamment en France, en Belgique, aux Pays-Bas ou en Espagne, cherchent de plus en plus à investir au Maroc. Être visible en première ligne sur Google vous permet de capter leur attention et de les convaincre plus facilement.',
-          "Cette visibilité est tout aussi essentielle localement : à Rabat, Fès ou Marrakech, les acheteurs veulent trouver immédiatement un promoteur de confiance.",
-        ]}
-        imageSrc="images/16/marketing-google-immobilier.jpg"
-        imageAlt="Marketing et Publicité Google pour projets immobiliers"
-        consultButtonTextExiste={true}
-        textButton="Contactez-nous"
-        href="https://www.hostino.ma/contact"
-      />
+        <TextLeftImageRight
+          title="Le référencement Google, la solution idéale pour vendre vos projets immobiliers"
+          paragraphs={[
+            "Le référencement SEO et <span style=\"text-decoration: underline;\"><strong><a href=\"https://www.hostino.ma/google-ads-maroc/\">Google Ads</a></strong></span> sont la clé pour vendre vos projets immobiliers. Ils permettent de toucher directement les acheteurs qui recherchent activement un bien, qu'il s'agisse d'un appartement à Rabat, d'une villa à Casablanca ou d'un terrain à Tanger.",
+            'Les <a href="https://www.mre.gov.ma/" rel="noopener"><b>Marocains Résidant à l\'Étranger</b></a>, notamment en France, en Belgique, aux Pays-Bas ou en Espagne, cherchent de plus en plus à investir au Maroc. Être visible en première ligne sur Google vous permet de capter leur attention et de les convaincre plus facilement.',
+            "Cette visibilité est tout aussi essentielle localement : à Rabat, Fès ou Marrakech, les acheteurs veulent trouver immédiatement un promoteur de confiance.",
+          ]}
+          imageSrc="images/16/marketing-google-immobilier.jpg"
+          imageAlt="Marketing et Publicité Google pour projets immobiliers"
+          consultButtonTextExiste={true}
+          textButton="Contactez-nous"
+          href="https://www.hostino.ma/contact"
+        />
 
-      <GmbServices
-        data={prestations}
-        title="Prestations de notre agence<br />de marketing Immobilier Maroc"
-      />
+        <GmbServices
+          data={prestations}
+          title="Prestations de notre agence<br />de marketing Immobilier Maroc"
+        />
 
-      <SeoServiceCards />
+        <SeoServiceCards />
 
-      <NationalCoverage
-        title="FAQ - Agence Marketing Immobilier Maroc"
-        topic={"Marketing immobilier "}
-      />
-      <FAQSection
-        faqData={faqData}
-        title="FAQ - Agence Marketing Immobilier Maroc"
-      />
-      <StartsRatingYellowFooter />
-    </main>
+        <NationalCoverage
+          title="FAQ - Agence Marketing Immobilier Maroc"
+          topic={"Marketing immobilier "}
+        />
+        <FAQSection
+          faqData={faqData}
+          title="FAQ - Agence Marketing Immobilier Maroc"
+        />
+        <StartsRatingYellowFooter />
+      </main>
+    </>
   );
 }

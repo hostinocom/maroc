@@ -29,7 +29,7 @@ export default function BenefitsSection() {
           >
             <div>
               <Image
-                src={`/images/home/${benefit.image}`}
+                src={`/images/01/${benefit.image}`}
                 alt={benefit.title}
                 width={1024}
                 height={597}

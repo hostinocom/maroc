@@ -7,12 +7,50 @@ import SeoServiceCards from "../components/commonSections/SeoServiceCards";
 import GmbServices from "../components/commonSections/GmbServices";
 import TitleParagraphButton from "../components/commonSections/TitleParagraphButton";
 import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter";
+import { main_schema } from "../schema";
 
-const title = "Agence Marketing News | SEO et Visibilité Google Actualités"
-const description =  "Agence marketing pour sites d’actualités, radios et chaînes TV. Génération de trafic organique via Google et réseaux sociaux ☎️ 0663 75 09 08"
-const imageUrl = "https://maroc-1hp.pages.dev/images/agence-marketing-news/agence-marketing-news.png" 
-const canonical_url = "https://www.hostino.ma/agence-marketing-news"
-const og_alt = "Agence Marketing News"
+const title = "Agence Marketing News | SEO et Visibilité Google Actualités";
+const description =
+  "Agence marketing pour sites d’actualités, radios et chaînes TV. Génération de trafic organique via Google et réseaux sociaux ☎️ 0663 75 09 08";
+const imageUrl =
+  "https://maroc-1hp.pages.dev/images/agence-marketing-news/agence-marketing-news.png";
+const canonical_url = "https://www.hostino.ma/agence-marketing-news";
+const og_alt = "Agence Marketing News";
+
+export const metadata = {
+  title: title,
+  description: description,
+  robots:
+    "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  alternates: {
+    canonical: canonical_url,
+  },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: canonical_url,
+    siteName: "Hostino",
+    title: title,
+    description: description,
+    images: [
+      {
+        url: imageUrl,
+        secureUrl: imageUrl,
+        width: 1200,
+        height: 630,
+        alt: og_alt,
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: title,
+    description: description,
+    images: [imageUrl],
+    creator: "@admin",
+  },
+};
 
 const faqData = [
   {
@@ -130,94 +168,150 @@ const prestations = [
 ];
 
 export default async function HomePage() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      ...main_schema,
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.hostino.ma/#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: "1",
+            item: {
+              "@id": "https://www.hostino.ma",
+              name: "Hostino - Noms de domaine et hébergement web au Maroc",
+            },
+          },
+          {
+            "@type": "ListItem",
+            position: "2",
+            item: {
+              "@id": canonical_url,
+              name: og_alt,
+            },
+          },
+        ],
+      },
+      {
+        "@type": "Product",
+        name: title,
+        url: canonical_url,
+        description: description,
+        brand: { "@type": "Brand", name: "Hostino" },
+        offers: {
+          "@type": "AggregateOffer",
+          url: canonical_url,
+          lowPrice: "118",
+          priceCurrency: "MAD",
+          availability: "InStock",
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "5",
+          reviewCount: "920",
+        },
+      },
+    ],
+  };
+
   return (
-    <main>
-     
-      <HeroSection
-        subtitle="Agence Marketing News Maroc"
-        title="Agence marketing news & médias"
-        text="Agence de <b>visibilité Google</b> & marketing digital pour sites d’actualités, radios et chaînes TV."
-        emailLabel={{
-          textEmail: "Consultation par Email ?",
-          color: "text-primary",
-        }}
-        email="info@hostino.com"
-        imageSrc="images/17/agence-marketing-news.png"
-        imageAlt="Agence Marketing News et SEO"
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+      <main>
+        <HeroSection
+          subtitle="Agence Marketing News Maroc"
+          title="Agence marketing news & médias"
+          text="Agence de <b>visibilité Google</b> & marketing digital pour sites d’actualités, radios et chaînes TV."
+          emailLabel={{
+            textEmail: "Consultation par Email ?",
+            color: "text-primary",
+          }}
+          email="info@hostino.com"
+          imageSrc="images/17/agence-marketing-news.png"
+          imageAlt="Agence Marketing News et SEO"
+        />
 
-      <ContactForm
-        title={
-          <>
-            Agence marketing News : un conseiller{" "}
-            <br className="lg:hidden block " />
-            <span className="border-bottom">vous rappelle !</span>
-          </>
-        }
-      />
+        <ContactForm
+          title={
+            <>
+              Agence marketing News : un conseiller{" "}
+              <br className="lg:hidden block " />
+              <span className="border-bottom">vous rappelle !</span>
+            </>
+          }
+        />
 
-      <TextLeftImageRight
-        title="Agence SEO & marketing digital pour sites d'actualités"
-        paragraphs={[
-          "Hostino, agence de marketing digital expérimentée au Maroc, accompagne les <b>sites d'actualités</b>, les <b>radios</b> et les <b>chaînes TV</b> en leur offrant un éventail complet de services destinés à renforcer leur visibilité digitale et à accroître leur audience en ligne.",
-          "Nous mettons à votre disposition une équipe d'experts prête à vous guider dans la conception, l'exécution, le suivi et l'optimisation de votre stratégie digitale, afin de générer <b>plus de trafic organique</b> et fidéliser vos lecteurs et auditeurs.",
-          "En complément du SEO News, notre agence de marketing média vous accompagne dans la validation et l'optimisation de votre visibilité sur <b>Google Actualités</b> et <b>Discover</b>, tout en renforçant la portée de vos <b>publications sur les réseaux sociaux</b>.",
-          "Appelez le +212 663 75 09 08 et confiez votre marketing digital à des experts en médias et consultants au Maroc.",
-        ]}
-        imageSrc="/wp-content/uploads/2025/10/agence-seo-markeing-news-1024x969.jpg"
-        imageAlt="Agence SEO marketing News et médias"
-        consultButtonTextExiste={true}
-        textButton="Contactez-nous"
-        href="https://www.hostino.ma/contact"
-      />
+        <TextLeftImageRight
+          title="Agence SEO & marketing digital pour sites d'actualités"
+          paragraphs={[
+            "Hostino, agence de marketing digital expérimentée au Maroc, accompagne les <b>sites d'actualités</b>, les <b>radios</b> et les <b>chaînes TV</b> en leur offrant un éventail complet de services destinés à renforcer leur visibilité digitale et à accroître leur audience en ligne.",
+            "Nous mettons à votre disposition une équipe d'experts prête à vous guider dans la conception, l'exécution, le suivi et l'optimisation de votre stratégie digitale, afin de générer <b>plus de trafic organique</b> et fidéliser vos lecteurs et auditeurs.",
+            "En complément du SEO News, notre agence de marketing média vous accompagne dans la validation et l'optimisation de votre visibilité sur <b>Google Actualités</b> et <b>Discover</b>, tout en renforçant la portée de vos <b>publications sur les réseaux sociaux</b>.",
+            "Appelez le +212 663 75 09 08 et confiez votre marketing digital à des experts en médias et consultants au Maroc.",
+          ]}
+          imageSrc="/wp-content/uploads/2025/10/agence-seo-markeing-news-1024x969.jpg"
+          imageAlt="Agence SEO marketing News et médias"
+          consultButtonTextExiste={true}
+          textButton="Contactez-nous"
+          href="https://www.hostino.ma/contact"
+        />
 
-      <TitleParagraphButton
-        title={`Boostez l'audience de votre site d'actualités grâce à Google et réseaux sociaux`}
-        paragraphs={[
-          <h3 className="text-title text-[27px] font-[600] mb-[20px] tracking-[-0.8px]">
-            Optimisation de la visibilité sur Google
-          </h3>,
-          `Nous vous aidons à bien classer vos articles, vidéos et podcasts dans les résultats de recherche Google afin de <b>générer un trafic organique constant</b> et qualifié. Grâce à un accompagnement complet, nous mettons en place des stratégies SEO adaptées au secteur média, incluant <b>Google Actualités</b> et Google Discover, pour que vos contenus atteignent un maximum de lecteurs.`,
-          <h3 className="text-title text-[27px] font-[600] mb-[20px] tracking-[-0.8px]">
-            Amélioration technique de votre site média
-          </h3>,
-          `La partie technique est essentielle pour répondre aux normes de Google. Nos experts optimisent la rapidité de votre site, renforcent sa sécurité et corrigent les points bloquants pour <b>garantir une indexation optimale</b>. Un site rapide et conforme aux exigences techniques de Google augmente vos chances d'obtenir plus de visibilité et donc plus de trafic.`,
-          <h3 className="text-title text-[27px] font-[600] mb-[20px] tracking-[-0.8px]">
-            Formation éditoriale de vos rédacteurs
-          </h3>,
-          `Nos consultants <b>accompagnent vos équipes rédactionnelles</b> pour adopter les meilleures pratiques de rédaction "Google friendly". Nous les formons à écrire des titres accrocheurs, des contenus structurés et optimisés SEO, <b>tout en respectant l'identité éditoriale</b> de votre média. L'objectif est de produire des articles qui plaisent autant aux lecteurs qu'aux algorithmes de Google.`,
-          <h3 className="text-title text-[27px] font-[600] mb-[20px] tracking-[-0.8px]">
-            Maximisation de la portée sur les réseaux sociaux
-          </h3>,
-          `Publier ne suffit pas : encore faut-il toucher son audience. Nous vous formons aux techniques de publication sur les réseaux sociaux pour <b>démultiplier le reach de vos posts</b>. Par exemple, certains médias disposent de plus de 2 millions d'abonnés, mais leurs publications ne touchent que 1 à 3 % de cette audience. Nous vous aidons à dépasser cette limite et à maximiser la portée de vos contenus.`,
-        ]}
-        buttonText="Contactez-nous"
-        buttonHref="https://www.hostino.ma/contact"
-      />
+        <TitleParagraphButton
+          title={`Boostez l'audience de votre site d'actualités grâce à Google et réseaux sociaux`}
+          paragraphs={[
+            <h3 className="text-title text-[27px] font-[600] mb-[20px] tracking-[-0.8px]">
+              Optimisation de la visibilité sur Google
+            </h3>,
+            `Nous vous aidons à bien classer vos articles, vidéos et podcasts dans les résultats de recherche Google afin de <b>générer un trafic organique constant</b> et qualifié. Grâce à un accompagnement complet, nous mettons en place des stratégies SEO adaptées au secteur média, incluant <b>Google Actualités</b> et Google Discover, pour que vos contenus atteignent un maximum de lecteurs.`,
+            <h3 className="text-title text-[27px] font-[600] mb-[20px] tracking-[-0.8px]">
+              Amélioration technique de votre site média
+            </h3>,
+            `La partie technique est essentielle pour répondre aux normes de Google. Nos experts optimisent la rapidité de votre site, renforcent sa sécurité et corrigent les points bloquants pour <b>garantir une indexation optimale</b>. Un site rapide et conforme aux exigences techniques de Google augmente vos chances d'obtenir plus de visibilité et donc plus de trafic.`,
+            <h3 className="text-title text-[27px] font-[600] mb-[20px] tracking-[-0.8px]">
+              Formation éditoriale de vos rédacteurs
+            </h3>,
+            `Nos consultants <b>accompagnent vos équipes rédactionnelles</b> pour adopter les meilleures pratiques de rédaction "Google friendly". Nous les formons à écrire des titres accrocheurs, des contenus structurés et optimisés SEO, <b>tout en respectant l'identité éditoriale</b> de votre média. L'objectif est de produire des articles qui plaisent autant aux lecteurs qu'aux algorithmes de Google.`,
+            <h3 className="text-title text-[27px] font-[600] mb-[20px] tracking-[-0.8px]">
+              Maximisation de la portée sur les réseaux sociaux
+            </h3>,
+            `Publier ne suffit pas : encore faut-il toucher son audience. Nous vous formons aux techniques de publication sur les réseaux sociaux pour <b>démultiplier le reach de vos posts</b>. Par exemple, certains médias disposent de plus de 2 millions d'abonnés, mais leurs publications ne touchent que 1 à 3 % de cette audience. Nous vous aidons à dépasser cette limite et à maximiser la portée de vos contenus.`,
+          ]}
+          buttonText="Contactez-nous"
+          buttonHref="https://www.hostino.ma/contact"
+        />
 
-      <GmbServices
-        data={prestations}
-        title="Prestations de notre <br />Agence Marketing News Maroc"
-      />
+        <GmbServices
+          data={prestations}
+          title="Prestations de notre <br />Agence Marketing News Maroc"
+        />
 
-      <TitleParagraphButton
-        title={`Formation SEO pour<br/>équipes éditoriales et journalistes`}
-        paragraphs={[
-          `Notre formation SEO est conçue pour aider vos <b>équipes éditoriales et journalistes</b> à maîtriser les <b>bonnes pratiques</b> qui permettent d'améliorer la visibilité de chaque article publié. Nous abordons les fondamentaux du référencement éditorial : structuration du contenu, hiérarchisation des titres, optimisation des balises, fréquence de publication et respect des standards techniques SEO.`,
-          `<img loading="lazy" src="https://www.hostino.ma/wp-content/uploads/2025/10/formation-seo-news-maroc.jpg" alt="Formation SEO pour équipes éditoriales et journalistes au Maroc" width="2458" height="809" style="max-width: 100%; height: auto;" />`,
-          `L'objectif est de donner à vos équipes les bons réflexes pour que chaque publication contribue efficacement au positionnement global de votre média. Une partie essentielle de la formation est dédiée à l'art du choix des titres. Nous expliquons comment créer des titres percutants, à la fois optimisés pour les moteurs de recherche et attractifs pour les lecteurs. Vos journalistes apprendront à combiner mots-clés stratégiques et clarté rédactionnelle pour maximiser le taux de clic et le référencement naturel.`,
-          `Nous formons également vos équipes sur <b>l'optimisation des images</b> : choix des formats, poids adaptés pour améliorer la vitesse de chargement, balises ALT descriptives pour le SEO, et bonnes pratiques de placement dans les articles. Une gestion efficace des visuels contribue non seulement au référencement, mais aussi à une meilleure expérience utilisateur. Enfin, nous abordons la définition et le respect de la <b>ligne éditoriale</b>, un élément clé pour garantir la cohérence et la crédibilité de votre média.`,
-          `Vos équipes apprendront à aligner chaque contenu avec votre identité éditoriale, à définir les thématiques prioritaires, le ton rédactionnel et la structure globale des publications. Nous traitons aussi l'intégration des liens internes (tags) et externes, deux leviers majeurs du référencement : création d'une architecture cohérente, valorisation du contenu existant et sélection de sources externes fiables.`,
-          `La formation est proposée en <b>présentiel ou à distance</b>, selon les besoins et la disponibilité de vos équipes.`,
-        ]}
-        buttonText="Contactez-nous"
-        buttonHref="https://www.hostino.ma/contact"
-      />
+        <TitleParagraphButton
+          title={`Formation SEO pour<br/>équipes éditoriales et journalistes`}
+          paragraphs={[
+            `Notre formation SEO est conçue pour aider vos <b>équipes éditoriales et journalistes</b> à maîtriser les <b>bonnes pratiques</b> qui permettent d'améliorer la visibilité de chaque article publié. Nous abordons les fondamentaux du référencement éditorial : structuration du contenu, hiérarchisation des titres, optimisation des balises, fréquence de publication et respect des standards techniques SEO.`,
+            `<img loading="lazy" src="https://www.hostino.ma/wp-content/uploads/2025/10/formation-seo-news-maroc.jpg" alt="Formation SEO pour équipes éditoriales et journalistes au Maroc" width="2458" height="809" style="max-width: 100%; height: auto;" />`,
+            `L'objectif est de donner à vos équipes les bons réflexes pour que chaque publication contribue efficacement au positionnement global de votre média. Une partie essentielle de la formation est dédiée à l'art du choix des titres. Nous expliquons comment créer des titres percutants, à la fois optimisés pour les moteurs de recherche et attractifs pour les lecteurs. Vos journalistes apprendront à combiner mots-clés stratégiques et clarté rédactionnelle pour maximiser le taux de clic et le référencement naturel.`,
+            `Nous formons également vos équipes sur <b>l'optimisation des images</b> : choix des formats, poids adaptés pour améliorer la vitesse de chargement, balises ALT descriptives pour le SEO, et bonnes pratiques de placement dans les articles. Une gestion efficace des visuels contribue non seulement au référencement, mais aussi à une meilleure expérience utilisateur. Enfin, nous abordons la définition et le respect de la <b>ligne éditoriale</b>, un élément clé pour garantir la cohérence et la crédibilité de votre média.`,
+            `Vos équipes apprendront à aligner chaque contenu avec votre identité éditoriale, à définir les thématiques prioritaires, le ton rédactionnel et la structure globale des publications. Nous traitons aussi l'intégration des liens internes (tags) et externes, deux leviers majeurs du référencement : création d'une architecture cohérente, valorisation du contenu existant et sélection de sources externes fiables.`,
+            `La formation est proposée en <b>présentiel ou à distance</b>, selon les besoins et la disponibilité de vos équipes.`,
+          ]}
+          buttonText="Contactez-nous"
+          buttonHref="https://www.hostino.ma/contact"
+        />
 
-      <SeoServiceCards />
+        <SeoServiceCards />
 
-      <FAQSection faqData={faqData} title="FAQ - Agence Marketing News Maroc" />
-      <StartsRatingYellowFooter />
-    </main>
+        <FAQSection
+          faqData={faqData}
+          title="FAQ - Agence Marketing News Maroc"
+        />
+        <StartsRatingYellowFooter />
+      </main>
+    </>
   );
 }

@@ -9,12 +9,50 @@ import NationalCoverage from "../components/commonSections/NationalCoverage";
 import FAQSection from "../components/commonSections/FaqSection";
 import GooglePositioning from "../components/commonSections/GooglePositioning";
 import Head from "next/head";
+import { main_schema } from "../schema";
 
-const title = "Agence SEO Maroc | Référencement Google et moteurs d&#039;IA"
-const description =  "Agence SEO Maroc. Agence de référencement Google et moteurs de recherche IA : Ventes, trafic, notoriété. SEO Maroc ☎️ 0663 75 09 08"
-const imageUrl = "https://maroc-1hp.pages.dev/images/agence-seo-maroc/agence-seo-maroc.png" 
-const canonical_url = "https://www.hostino.ma/agence-seo-maroc"
-const og_alt = "Agence SEO Maroc"
+const title = "Agence SEO Maroc | Référencement Google et moteurs d&#039;IA";
+const description =
+  "Agence SEO Maroc. Agence de référencement Google et moteurs de recherche IA : Ventes, trafic, notoriété. SEO Maroc ☎️ 0663 75 09 08";
+const imageUrl =
+  "https://maroc-1hp.pages.dev/images/agence-seo-maroc/agence-seo-maroc.png";
+const canonical_url = "https://www.hostino.ma/agence-seo-maroc";
+const og_alt = "Agence SEO Maroc";
+
+export const metadata = {
+  title: title,
+  description: description,
+  robots:
+    "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  alternates: {
+    canonical: canonical_url,
+  },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: canonical_url,
+    siteName: "Hostino",
+    title: title,
+    description: description,
+    images: [
+      {
+        url: imageUrl,
+        secureUrl: imageUrl,
+        width: 1200,
+        height: 630,
+        alt: og_alt,
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: title,
+    description: description,
+    images: [imageUrl],
+    creator: "@admin",
+  },
+};
 
 const faqData = [
   {
@@ -316,152 +354,199 @@ const rankingsData = [
 ];
 
 export default async function HomePage() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      ...main_schema,
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.hostino.ma/#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: "1",
+            item: {
+              "@id": "https://www.hostino.ma",
+              name: "Hostino - Noms de domaine et hébergement web au Maroc",
+            },
+          },
+          {
+            "@type": "ListItem",
+            position: "2",
+            item: {
+              "@id": canonical_url,
+              name: og_alt,
+            },
+          },
+        ],
+      },
+      {
+        "@type": "Product",
+        name: title,
+        url: canonical_url,
+        description: description,
+        brand: { "@type": "Brand", name: "Hostino" },
+        offers: {
+          "@type": "AggregateOffer",
+          url: canonical_url,
+          lowPrice: "118",
+          priceCurrency: "MAD",
+          availability: "InStock",
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "5",
+          reviewCount: "920",
+        },
+      },
+    ],
+  };
+
   return (
-
-
     <>
-    <Head>
-      <title>Agence SEO Maroc - Référencement Google</title>
-    </Head>
-    <main>
-     
-      <HeroSection
-        subtitle="Agence SEO Maroc"
-        title="L’agence SEO qui délivre de vrais résultats"
-        text="Votre agence SEO Maroc pour une visibilité maximale sur <b>Google</b> et les <b>moteurs d’IA</b>"
-        emailLabel={{
-          textEmail: "CONSULTATION PAR EMAIL ?",
-          color: "text-primary",
-        }}
-        email="info@hostino.com"
-        imageSrc="/images/06/agence-seo-maroc.png"
-        imageAlt="Agence SEO au Maroc"
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
-      <ContactForm
-        title={
-          <>
-            Votre stratégie SEO , <br className="lg:hidden block " />
-            <span className="border-bottom">commence ici !</span>
-          </>
-        }
-      />
+      <main>
+        <HeroSection
+          subtitle="Agence SEO Maroc"
+          title="L’agence SEO qui délivre de vrais résultats"
+          text="Votre agence SEO Maroc pour une visibilité maximale sur <b>Google</b> et les <b>moteurs d’IA</b>"
+          emailLabel={{
+            textEmail: "CONSULTATION PAR EMAIL ?",
+            color: "text-primary",
+          }}
+          email="info@hostino.com"
+          imageSrc="/images/06/agence-seo-maroc.png"
+          imageAlt="Agence SEO au Maroc"
+        />
+        <ContactForm
+          title={
+            <>
+              Votre stratégie SEO , <br className="lg:hidden block " />
+              <span className="border-bottom">commence ici !</span>
+            </>
+          }
+        />
 
-      <TextLeftImageRight
-        title="Agence de référencement SEO Maroc"
-        paragraphs={[
-          "Hostino™ est une agence SEO au Maroc dont l’objectif est de booster la visibilité en ligne des professionnels et des entreprises, quels que soient leur taille ou leur secteur, en positionnant leurs sites web parmi les <b>premiers résultats sur Google</b>",
-          "Nous déployons des stratégies SEO avancées pour vous aider à atteindre vos objectifs commerciaux — <b>trafic, leads et ventes</b> — tout en consolidant durablement votre notoriété.",
-          "En plus du SEO classique, notre agence vous accompagne également dans le référencement sur les nouveaux <b>moteurs d’IA</b> (ChatGPT, Gemini, etc.), afin de vous aider à profiter pleinement de ce nouveau canal d’acquisition.",
-          '<span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Appelez le +212 663 75 09 08 et confiez votre stratégie SEO à des experts reconnus dans le domaine.</span>',
-        ]}
-        imageSrc="/images/06/agence-seo-maroc.jpg"
-        imageAlt="Vendez plus grâce à l'agence SEO Maroc"
-        consultButtonTextExiste={true}
-        textButton={"Contactez-nous"}
-        href={"https://www.hostino.ma/contact"}
-      />
+        <TextLeftImageRight
+          title="Agence de référencement SEO Maroc"
+          paragraphs={[
+            "Hostino™ est une agence SEO au Maroc dont l’objectif est de booster la visibilité en ligne des professionnels et des entreprises, quels que soient leur taille ou leur secteur, en positionnant leurs sites web parmi les <b>premiers résultats sur Google</b>",
+            "Nous déployons des stratégies SEO avancées pour vous aider à atteindre vos objectifs commerciaux — <b>trafic, leads et ventes</b> — tout en consolidant durablement votre notoriété.",
+            "En plus du SEO classique, notre agence vous accompagne également dans le référencement sur les nouveaux <b>moteurs d’IA</b> (ChatGPT, Gemini, etc.), afin de vous aider à profiter pleinement de ce nouveau canal d’acquisition.",
+            '<span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Appelez le +212 663 75 09 08 et confiez votre stratégie SEO à des experts reconnus dans le domaine.</span>',
+          ]}
+          imageSrc="/images/06/agence-seo-maroc.jpg"
+          imageAlt="Vendez plus grâce à l'agence SEO Maroc"
+          consultButtonTextExiste={true}
+          textButton={"Contactez-nous"}
+          href={"https://www.hostino.ma/contact"}
+        />
 
-      <GooglePositioning
-        title="Cas clients de <br/>notre agence SEO Maroc"
-        rankingsData={rankingsData}
-        subtitle="Marre de payer des agences&nbsp;<b>sans résultats ? </b>Il est temps de passer à une <b>solution qui fonctionne</b>."
-      />
+        <GooglePositioning
+          title="Cas clients de <br/>notre agence SEO Maroc"
+          rankingsData={rankingsData}
+          subtitle="Marre de payer des agences&nbsp;<b>sans résultats ? </b>Il est temps de passer à une <b>solution qui fonctionne</b>."
+        />
 
-      <TextLeftImageRight
-        title="Agence SEO Maroc : qu'est-ce que c'est ?"
-        paragraphs={[
-          "Une agence SEO est une société spécialisée dont la mission est d’accompagner les startups, les PME/PMI, les marques, les médias, ainsi que les ONG et les institutions publiques dans l’amélioration du classement de leurs sites web, que ce soit au <b> niveau local, national ou international.</b>",
-          "La nouveauté aujourd’hui est que les agences SEO ne se limitent plus aux moteurs de recherche traditionnels. Elles interviennent désormais aussi sur les nouveaux moteurs d’intelligence artificielle. C’est ce que l’on appelle une Agence GEO <b>(Generative Engine Optimization)</b>, une évolution du SEO qui représente une opportunité unique pour exploiter des canaux encore peu saturés, renforcer sa présence digitale et toucher un public beaucoup plus large.",
-          "Appelez le +212 663 75 09 08et confiez votre stratégie de visibilité SEO et GEO à une <b>agence innovante</b>, toujours à la pointe des tendances technologiques internationales.",
-        ]}
-        imageSrc="images/06/quoi-agence-seo-maroc.jpg"
-        imageAlt="Agence SEO Maroc"
-        consultButtonTextExiste={true}
-        textButton="Contactez-nous"
-        href="https://www.hostino.ma/contact"
-      />
-      <BigTitleTextButton />
+        <TextLeftImageRight
+          title="Agence SEO Maroc : qu'est-ce que c'est ?"
+          paragraphs={[
+            "Une agence SEO est une société spécialisée dont la mission est d’accompagner les startups, les PME/PMI, les marques, les médias, ainsi que les ONG et les institutions publiques dans l’amélioration du classement de leurs sites web, que ce soit au <b> niveau local, national ou international.</b>",
+            "La nouveauté aujourd’hui est que les agences SEO ne se limitent plus aux moteurs de recherche traditionnels. Elles interviennent désormais aussi sur les nouveaux moteurs d’intelligence artificielle. C’est ce que l’on appelle une Agence GEO <b>(Generative Engine Optimization)</b>, une évolution du SEO qui représente une opportunité unique pour exploiter des canaux encore peu saturés, renforcer sa présence digitale et toucher un public beaucoup plus large.",
+            "Appelez le +212 663 75 09 08et confiez votre stratégie de visibilité SEO et GEO à une <b>agence innovante</b>, toujours à la pointe des tendances technologiques internationales.",
+          ]}
+          imageSrc="images/06/quoi-agence-seo-maroc.jpg"
+          imageAlt="Agence SEO Maroc"
+          consultButtonTextExiste={true}
+          textButton="Contactez-nous"
+          href="https://www.hostino.ma/contact"
+        />
+        <BigTitleTextButton />
 
-      <TextLeftImageRight
-        title="Une agence SEO qui vous aide à être trouvé sur ChatGPT au Maroc"
-        paragraphs={[
-          "Le SEO évolue rapidement, et aujourd’hui il ne se limite plus à Google. Les moteurs de recherche basés sur l’intelligence artificielle, comme ChatGPT ou Gemini, ouvrent un <b>nouveau canal d’acquisition</b> encore très peu exploité au Maroc. En vous positionnant dès maintenant, vous profitez d’une avance stratégique pour capter l’attention de vos futurs clients.",
-          "<b>Être visible sur ChatGPT</b>, c’est apparaître directement dans les réponses que les utilisateurs consultent chaque jour. Là où vos concurrents n’ont pas encore investi, vous pouvez placer vos services et vos solutions au cœur des recommandations de l’IA et ainsi créer un avantage compétitif décisif.",
-          'Notre agence SEO vous accompagne dans cette transition. Grâce à une méthodologie avancée — analyse des requêtes, optimisation des contenus et intégration des <b>signaux adaptés à l’IA</b> — nous transformons cette opportunité en croissance durable. Selon nos experts seniors, ChatGPT deviendra le nouveau SEO d’ici les deux prochaines années.&nbsp;<b style="font-family: inherit; font-size: inherit; font-style: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Agir dès aujourd’hui, c’est s’assurer une place de leader demain.</b>',
-        ]}
-        imageSrc="images/06/agence-seo-chatgpt.jpg"
-        imageAlt="Agence SEO Chatgpt"
-        consultButtonTextExiste={true}
-        textButton="Contactez-nous"
-        href="https://www.hostino.ma/contact"
-      />
+        <TextLeftImageRight
+          title="Une agence SEO qui vous aide à être trouvé sur ChatGPT au Maroc"
+          paragraphs={[
+            "Le SEO évolue rapidement, et aujourd’hui il ne se limite plus à Google. Les moteurs de recherche basés sur l’intelligence artificielle, comme ChatGPT ou Gemini, ouvrent un <b>nouveau canal d’acquisition</b> encore très peu exploité au Maroc. En vous positionnant dès maintenant, vous profitez d’une avance stratégique pour capter l’attention de vos futurs clients.",
+            "<b>Être visible sur ChatGPT</b>, c’est apparaître directement dans les réponses que les utilisateurs consultent chaque jour. Là où vos concurrents n’ont pas encore investi, vous pouvez placer vos services et vos solutions au cœur des recommandations de l’IA et ainsi créer un avantage compétitif décisif.",
+            'Notre agence SEO vous accompagne dans cette transition. Grâce à une méthodologie avancée — analyse des requêtes, optimisation des contenus et intégration des <b>signaux adaptés à l’IA</b> — nous transformons cette opportunité en croissance durable. Selon nos experts seniors, ChatGPT deviendra le nouveau SEO d’ici les deux prochaines années.&nbsp;<b style="font-family: inherit; font-size: inherit; font-style: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Agir dès aujourd’hui, c’est s’assurer une place de leader demain.</b>',
+          ]}
+          imageSrc="images/06/agence-seo-chatgpt.jpg"
+          imageAlt="Agence SEO Chatgpt"
+          consultButtonTextExiste={true}
+          textButton="Contactez-nous"
+          href="https://www.hostino.ma/contact"
+        />
 
-      <CaseStudyPalaisFajar />
+        <CaseStudyPalaisFajar />
 
-      <TextLeftImageRight
-        title="Expert SEO Maroc : Le meilleur en 2026 ! 🏆"
-        paragraphs={[
-          "Nos experts SEO, piliers de notre agence, maîtrisent tous les aspects du référencement — optimisation de contenu, technique, <b>relations presse (PR)</b>, stratégie de <b>netlinking</b>, IA et automatisation — afin de mettre leur expertise au service de votre visibilité digitale.",
-          'L’agence Hostino est la seule au Maroc à avoir mis en place une cellule de <b>recherche et développement (R&amp;D)</b> dédiée exclusivement au SEO, afin de rester à l’avant-garde des innovations et des futures mises à jour de Google.&nbsp;<span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Grâce à cette veille proactive, nous optimisons en continu nos performances et garantissons à nos clients la stabilité de leurs positions, tout en restant pleinement conformes aux normes et recommandations de Google.</span>',
-          '<span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Ce groupe de consultants SEO est dirigé par&nbsp;<span style="text-decoration: underline;"><strong><a href="https://www.linkedin.com/in/aniss-kiassi" rel="noopener">Aniss Kiassi</a></strong></span>, CEO – expert international réputé en SEO, lauréat du prestigieux programme d’innovation <span style="text-decoration: underline;"><strong><a href="https://www.investinspain.org/content/icex-invest/en/rising-up-in-spain.html" rel="noopener">Rising UP Spain</a></strong></span> et vainqueur de plusieurs prix nationaux et internationaux.</span>',
-        ]}
-        imageSrc="images/06/expert-seo-maroc.jpg"
-        imageAlt="Expert SEO au Maroc"
-        consultButtonTextExiste={true}
-        textButton="Contactez-nous"
-        href="https://www.hostino.ma/contact"
-      />
+        <TextLeftImageRight
+          title="Expert SEO Maroc : Le meilleur en 2026 ! 🏆"
+          paragraphs={[
+            "Nos experts SEO, piliers de notre agence, maîtrisent tous les aspects du référencement — optimisation de contenu, technique, <b>relations presse (PR)</b>, stratégie de <b>netlinking</b>, IA et automatisation — afin de mettre leur expertise au service de votre visibilité digitale.",
+            'L’agence Hostino est la seule au Maroc à avoir mis en place une cellule de <b>recherche et développement (R&amp;D)</b> dédiée exclusivement au SEO, afin de rester à l’avant-garde des innovations et des futures mises à jour de Google.&nbsp;<span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Grâce à cette veille proactive, nous optimisons en continu nos performances et garantissons à nos clients la stabilité de leurs positions, tout en restant pleinement conformes aux normes et recommandations de Google.</span>',
+            '<span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Ce groupe de consultants SEO est dirigé par&nbsp;<span style="text-decoration: underline;"><strong><a href="https://www.linkedin.com/in/aniss-kiassi" rel="noopener">Aniss Kiassi</a></strong></span>, CEO – expert international réputé en SEO, lauréat du prestigieux programme d’innovation <span style="text-decoration: underline;"><strong><a href="https://www.investinspain.org/content/icex-invest/en/rising-up-in-spain.html" rel="noopener">Rising UP Spain</a></strong></span> et vainqueur de plusieurs prix nationaux et internationaux.</span>',
+          ]}
+          imageSrc="images/06/expert-seo-maroc.jpg"
+          imageAlt="Expert SEO au Maroc"
+          consultButtonTextExiste={true}
+          textButton="Contactez-nous"
+          href="https://www.hostino.ma/contact"
+        />
 
-      <section className="lg:mt-[150px] mt-[80px]">
-        <div className="container">
-          <h2 className="title-section mb-[20px]">
-            L'agence SEO de la diaspora marocaine
-          </h2>
+        <section className="lg:mt-[150px] mt-[80px]">
+          <div className="container">
+            <h2 className="title-section mb-[20px]">
+              L'agence SEO de la diaspora marocaine
+            </h2>
 
-          <p className="paragraph">
-            Hostino, l'agence SEO des Marocains du monde, s'engage à accompagner
-            la diaspora en mettant en place des offres exclusives et des
-            stratégies sur-mesure adaptées à leurs réalités à l'étranger.
-          </p>
+            <p className="paragraph">
+              Hostino, l'agence SEO des Marocains du monde, s'engage à
+              accompagner la diaspora en mettant en place des offres exclusives
+              et des stratégies sur-mesure adaptées à leurs réalités à
+              l'étranger.
+            </p>
 
-          <p className="paragraph">
-            De la <strong>France à l'Espagne</strong>, de la{" "}
-            <strong>Belgique</strong> aux Pays-Bas, du Canada aux États-Unis,
-            jusqu'aux <strong>Émirats et à l'Arabie Saoudite</strong>, nous
-            aidons les Marocains du monde entier à renforcer leur visibilité en
-            ligne et à hisser leurs startups et entreprises parmi les premiers
-            résultats locaux dans leurs pays de résidence.
-          </p>
-        </div>
-      </section>
+            <p className="paragraph">
+              De la <strong>France à l'Espagne</strong>, de la{" "}
+              <strong>Belgique</strong> aux Pays-Bas, du Canada aux États-Unis,
+              jusqu'aux <strong>Émirats et à l'Arabie Saoudite</strong>, nous
+              aidons les Marocains du monde entier à renforcer leur visibilité
+              en ligne et à hisser leurs startups et entreprises parmi les
+              premiers résultats locaux dans leurs pays de résidence.
+            </p>
+          </div>
+        </section>
 
-      <TextLeftImageRight
-        title="Pcreparatieam.nl : 1er sur Google.nl"
-        paragraphs={[
-          "Le site Pcreparatieamsterdam.nl a considérablement renforcé sa visibilité en ligne grâce à une stratégie SEO personnalisée, conçue pour s’adapter aux spécificités du <b>marché néerlandais.</b> En misant sur des mots-clés stratégiques tels que « <b>PC reparatie Amsterdam</b> » et « Laptop reparatie Amsterdam », complétés par un large éventail de requêtes long-tail, le site a bénéficié d’une optimisation en profondeur qui lui a permis de mieux se positionner dans les résultats des moteurs de recherche.",
-          "Résultat : une hausse de <b>130 % du trafic organique</b> en seulement 6 mois, accompagnée d’une augmentation de <b>40 % du taux de conversion.</b>&nbsp;",
-          'En parallèle, une stratégie de contenu éditorial de qualité a été déployée et des partenariats locaux ont été établis afin de renforcer l’autorité et la crédibilité du site.&nbsp;&nbsp;<span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Cette approche globale a permis à Pcreparatieamsterdam.nl de s’imposer comme le </span><span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;"><b>référent local en matière de réparation informatique</b></span><span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">, attirant une clientèle fidèle et générant une croissance significative de son chiffre d’affaires.</span>',
-        ]}
-        imageSrc="images/06/agence-seo-maroc-pour-diaspora.jpg"
-        imageAlt=""
-        consultButtonTextExiste={true}
-        textButton="Contactez-nous"
-        href="https://www.hostino.ma/contact"
-        className="lg:mb-[150px] mt-[30px] mb-[80px] "
-      />
+        <TextLeftImageRight
+          title="Pcreparatieam.nl : 1er sur Google.nl"
+          paragraphs={[
+            "Le site Pcreparatieamsterdam.nl a considérablement renforcé sa visibilité en ligne grâce à une stratégie SEO personnalisée, conçue pour s’adapter aux spécificités du <b>marché néerlandais.</b> En misant sur des mots-clés stratégiques tels que « <b>PC reparatie Amsterdam</b> » et « Laptop reparatie Amsterdam », complétés par un large éventail de requêtes long-tail, le site a bénéficié d’une optimisation en profondeur qui lui a permis de mieux se positionner dans les résultats des moteurs de recherche.",
+            "Résultat : une hausse de <b>130 % du trafic organique</b> en seulement 6 mois, accompagnée d’une augmentation de <b>40 % du taux de conversion.</b>&nbsp;",
+            'En parallèle, une stratégie de contenu éditorial de qualité a été déployée et des partenariats locaux ont été établis afin de renforcer l’autorité et la crédibilité du site.&nbsp;&nbsp;<span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Cette approche globale a permis à Pcreparatieamsterdam.nl de s’imposer comme le </span><span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;"><b>référent local en matière de réparation informatique</b></span><span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">, attirant une clientèle fidèle et générant une croissance significative de son chiffre d’affaires.</span>',
+          ]}
+          imageSrc="images/06/agence-seo-maroc-pour-diaspora.jpg"
+          imageAlt=""
+          consultButtonTextExiste={true}
+          textButton="Contactez-nous"
+          href="https://www.hostino.ma/contact"
+          className="lg:mb-[150px] mt-[30px] mb-[80px] "
+        />
 
-      <SeoImpactSection />
+        <SeoImpactSection />
 
-      <SeoServiceCards />
+        <SeoServiceCards />
 
-      <NationalCoverage
-        topic="Agence SEO"
-        text="Chez Hostino™, nous accompagnons des clients de tous niveaux et de tous secteurs d'activité, partout au Maroc, dans leur stratégie de référencement Google et IA."
-        title="Agence SEO, une <br /> couverture nationale"
-      />
+        <NationalCoverage
+          topic="Agence SEO"
+          text="Chez Hostino™, nous accompagnons des clients de tous niveaux et de tous secteurs d'activité, partout au Maroc, dans leur stratégie de référencement Google et IA."
+          title="Agence SEO, une <br /> couverture nationale"
+        />
 
-      <FAQSection faqData={faqData} title="FAQ - Agence SEO Maroc" />
-    </main>
+        <FAQSection faqData={faqData} title="FAQ - Agence SEO Maroc" />
+      </main>
     </>
   );
 }

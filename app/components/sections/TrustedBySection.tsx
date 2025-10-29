@@ -14,7 +14,7 @@ export default function TrustedBySection({ classNameImage }: TrustedBySectionPro
         </p>
         <div className="flex justify-center">
           <Image
-            src="/images/home/references-hebergement-maroc.png"
+            src="/images/01/references-hebergement-maroc.png"
             alt="Réferences hébergement web maroc"
             width={2048}
             height={107}

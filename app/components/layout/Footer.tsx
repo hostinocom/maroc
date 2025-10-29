@@ -1,4 +1,3 @@
-"use client";
 
 import Image from "next/image";
 // src/components/layout/Footer.tsx
@@ -10,7 +9,7 @@ export default function Footer() {
       <div className="container">
         <div className=" md:w-[65%]  w-[100%] mx-auto  mb-16">
           <Image
-            src="/images/home/cmi-hebergement.jpg"
+            src="/images/01/cmi-hebergement.jpg"
             alt="CMI Hosting"
             className="mx-auto mb-6"
             width={1024}

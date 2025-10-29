@@ -7,6 +7,7 @@ import GmbServices from "../components/commonSections/GmbServices";
 import TextLeftVideoRight from "../components/commonSections/TextLeftVideoRight";
 import GmbAdvantages from "../components/commonSections/GmbAdvantage";
 import StarRating from "../components/ui/StartRatingFooter";
+import { main_schema } from "../schema";
 
 const title = "Agence Google My Business Maroc | Référencement Maps"
 const description =  "Google My Business Maroc, Création et gestion des fiches Google Business (GMB) pour entreprises et marques au Maroc ☎️ 0663 75 09 08"
@@ -14,6 +15,40 @@ const imageUrl = "https://maroc-1hp.pages.dev/images/agence-my-business-maroc/go
 const canonical_url = "https://www.hostino.ma/google-my-business-maroc"
 const og_alt = "Agence Google My Business Maroc"
 
+export const metadata = {
+  title: title,
+  description: description,
+  robots:
+    "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  alternates: {
+    canonical: canonical_url,
+  },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: canonical_url,
+    siteName: "Hostino",
+    title: title,
+    description: description,
+    images: [
+      {
+        url: imageUrl,
+        secureUrl: imageUrl,
+        width: 1200,
+        height: 630,
+        alt: og_alt,
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: title,
+    description: description,
+    images: [imageUrl],
+    creator: "@admin",
+  },
+};
 const faqData = [
   {
     question:
@@ -159,7 +194,61 @@ const gmbAdvantagesData = [
 ];
 
 export default async function HomePage() {
-  return (
+  const articleSchema = {
+      "@context": "https://schema.org",
+      "@graph": [
+        ...main_schema,
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://www.hostino.ma/#breadcrumb",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: "1",
+              item: {
+                "@id": "https://www.hostino.ma",
+                name: "Hostino - Noms de domaine et hébergement web au Maroc",
+              },
+            },
+            {
+              "@type": "ListItem",
+              position: "2",
+              item: {
+                "@id": canonical_url,
+                name: og_alt,
+              },
+            },
+          ],
+        },
+        {
+          "@type": "Product",
+          name: title,
+          url: canonical_url,
+          description: description,
+          brand: { "@type": "Brand", name: "Hostino" },
+          offers: {
+            "@type": "AggregateOffer",
+            url: canonical_url,
+            lowPrice: "118",
+            priceCurrency: "MAD",
+            availability: "InStock",
+          },
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "5",
+            reviewCount: "920",
+          },
+        },
+      ],
+    };
+  
+    return (
+      <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        />
+  
     <main>
       
       <HeroSection
@@ -286,5 +375,6 @@ export default async function HomePage() {
 
       <StarRating />
     </main>
+    </>
   );
 }

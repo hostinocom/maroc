@@ -5,12 +5,15 @@ import FAQSection from "../components/commonSections/FaqSection";
 import TitleParagraphButton from "../components/commonSections/TitleParagraphButton";
 import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter";
 import GmbServices from "../components/commonSections/GmbServices";
+import { main_schema } from "../schema";
 
-const title = "Cloudflare Maroc | Cybersécurité et performance"
-const description =  "Sécurisez vos sites web et applications avec Cloudflare. Hostino est une agence partenaire officielle de Cloudflare au Maroc ☎️ 0663 75 09 08"
-const imageUrl = "https://maroc-1hp.pages.dev/images/cloudflare-maroc/cloudflare-maroc.png" 
-const canonical_url = "https://www.hostino.ma/cloudflare-maroc"
-const og_alt = "Cloudflare Maroc"
+const title = "Cloudflare Maroc | Cybersécurité et performance";
+const description =
+  "Sécurisez vos sites web et applications avec Cloudflare. Hostino est une agence partenaire officielle de Cloudflare au Maroc ☎️ 0663 75 09 08";
+const imageUrl =
+  "https://maroc-1hp.pages.dev/images/cloudflare-maroc/cloudflare-maroc.png";
+const canonical_url = "https://www.hostino.ma/cloudflare-maroc";
+const og_alt = "Cloudflare Maroc";
 
 // FAQ Data extracted from Cloudflare Maroc HTML
 const faqData = [
@@ -92,91 +95,178 @@ const services = [
   },
 ];
 
+export const metadata = {
+  title: title,
+  description: description,
+  robots:
+    "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  alternates: {
+    canonical: canonical_url,
+  },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: canonical_url,
+    siteName: "Hostino",
+    title: title,
+    description: description,
+    images: [
+      {
+        url: imageUrl,
+        secureUrl: imageUrl,
+        width: 1200,
+        height: 630,
+        alt: og_alt,
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: title,
+    description: description,
+    images: [imageUrl],
+    creator: "@admin",
+  },
+};
+
 export default async function CloudflarePage() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      ...main_schema,
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.hostino.ma/#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: "1",
+            item: {
+              "@id": "https://www.hostino.ma",
+              name: "Hostino - Noms de domaine et hébergement web au Maroc",
+            },
+          },
+          {
+            "@type": "ListItem",
+            position: "2",
+            item: {
+              "@id": canonical_url,
+              name: og_alt,
+            },
+          },
+        ],
+      },
+      {
+        "@type": "Product",
+        name: title,
+        url: canonical_url,
+        description: description,
+        brand: { "@type": "Brand", name: "Hostino" },
+        offers: {
+          "@type": "AggregateOffer",
+          url: canonical_url,
+          lowPrice: "118",
+          priceCurrency: "MAD",
+          availability: "InStock",
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "5",
+          reviewCount: "920",
+        },
+      },
+    ],
+  };
+
   return (
-    <main>
-      
-
-      {/* Hero Section */}
-      <HeroSection
-        subtitle="Cloudflare Maroc"
-        title="Cloudflare, sécurité et performance"
-        text="Hostino, <b>agence partenaire Cloudflare</b> au Maroc pour une présence en ligne sécurisée et efficace."
-        emailLabel={{
-          textEmail: "Consultation par Email ?",
-          color: "text-primary",
-        }}
-        email="info@hostino.com"
-        imageSrc="images/09/cloudflare-maroc.png"
-        imageAlt="Agence Cloudflare au Maroc"
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+      <main>
+        {/* Hero Section */}
+        <HeroSection
+          subtitle="Cloudflare Maroc"
+          title="Cloudflare, sécurité et performance"
+          text="Hostino, <b>agence partenaire Cloudflare</b> au Maroc pour une présence en ligne sécurisée et efficace."
+          emailLabel={{
+            textEmail: "Consultation par Email ?",
+            color: "text-primary",
+          }}
+          email="info@hostino.com"
+          imageSrc="images/09/cloudflare-maroc.png"
+          imageAlt="Agence Cloudflare au Maroc"
+        />
 
-      {/* Contact Form */}
-      <ContactForm
-        title={
-          <>
-            Intégration Cloudflare : un conseiller{" "}
-            <span className="border-bottom">vous rappelle !</span>
-          </>
-        }
-      />
+        {/* Contact Form */}
+        <ContactForm
+          title={
+            <>
+              Intégration Cloudflare : un conseiller{" "}
+              <span className="border-bottom">vous rappelle !</span>
+            </>
+          }
+        />
 
-      {/* First TextLeftImageRight Section */}
-      <TextLeftImageRight
-        title="Hostino, agence partenaire de Cloudflare au Maroc"
-        paragraphs={[
-          "Hostino, agence partenaire intégrateur de Cloudflare au Maroc, accompagne les entreprises dans la mise en place de solutions de sécurité et de performance web issues des <b>dernières innovations technologiques</b>.",
-          "En tant que leader mondial, Cloudflare offre une protection DDoS avancée, des solutions <b>Zero Trust</b>, un cache<b> intelligent</b>, Rocket Loader… et bien plus encore pour des sites ultra-rapides et sécurisés.",
-          "Ces technologies permettent aux organisations de mieux protéger leurs données, de renforcer leur présence en ligne et d'assurer la sécurité de leurs collaborateurs.",
-          "Appelez le +212 663 75 09 08&nbsp;et confiez l'intégration Cloudflare à des experts reconnus dans le domaine de la cybersécurité au Maroc.",
-        ]}
-        imageSrc="images/09/agence-cloudflare-maroc.jpg"
-        imageAlt="Agence Cloudflare Maroc"
-        consultButtonTextExiste={true}
-        textButton="Contactez-nous"
-        href="https://www.hostino.ma/contact"
-      />
+        {/* First TextLeftImageRight Section */}
+        <TextLeftImageRight
+          title="Hostino, agence partenaire de Cloudflare au Maroc"
+          paragraphs={[
+            "Hostino, agence partenaire intégrateur de Cloudflare au Maroc, accompagne les entreprises dans la mise en place de solutions de sécurité et de performance web issues des <b>dernières innovations technologiques</b>.",
+            "En tant que leader mondial, Cloudflare offre une protection DDoS avancée, des solutions <b>Zero Trust</b>, un cache<b> intelligent</b>, Rocket Loader… et bien plus encore pour des sites ultra-rapides et sécurisés.",
+            "Ces technologies permettent aux organisations de mieux protéger leurs données, de renforcer leur présence en ligne et d'assurer la sécurité de leurs collaborateurs.",
+            "Appelez le +212 663 75 09 08&nbsp;et confiez l'intégration Cloudflare à des experts reconnus dans le domaine de la cybersécurité au Maroc.",
+          ]}
+          imageSrc="images/09/agence-cloudflare-maroc.jpg"
+          imageAlt="Agence Cloudflare Maroc"
+          consultButtonTextExiste={true}
+          textButton="Contactez-nous"
+          href="https://www.hostino.ma/contact"
+        />
 
-      {/* Services Section */}
-      <GmbServices
-        data={services}
-        title="Découvrez l'ensemble de<br>nos services Cloudflare au Maroc"
-      />
+        {/* Services Section */}
+        <GmbServices
+          data={services}
+          title="Découvrez l'ensemble de<br>nos services Cloudflare au Maroc"
+        />
 
-      {/* TextLeftImageRight with image on right */}
-      <TextLeftImageRight
-        title="Pourquoi utiliser Cloudflare dans une stratégie SEO"
-        paragraphs={[
-          'Dans une stratégie SEO efficace, la vitesse et la disponibilité d\'un site web sont essentielles. Notre <span style="text-decoration: underline;"><strong><a href="/agence-seo-maroc/">agence SEO au Maroc</a></strong></span> intègre Cloudflare pour optimiser les temps de chargement grâce à son CDN mondial et offrir une navigation fluide.&nbsp;Un site rapide améliore directement le taux de conversion et le positionnement sur Google, surtout dans un marché compétitif comme le Maroc.',
-          "Un site performant doit aussi répondre aux standards de Google PageSpeed Insights, l'outil de référence pour mesurer la qualité technique et la rapidité d'un site web. Grâce à l'intégration de Cloudflare, il est possible d'améliorer <b>significativement les scores PageSpeed</b> en exploitant le cache intelligent, Rocket Loader et l'optimisation avancée des ressources.",
-          "Appelez le +212 663 75 09 08 et confiez l'intégration Cloudflare à des experts reconnus au Maroc.",
-        ]}
-        imageSrc="images/09/agence-seo-cloudflare.jpg"
-        imageAlt="Agence SEO Cloudflare au Maroc"
-        consultButtonTextExiste={true}
-        textButton="Contactez-nous"
-        href="https://www.hostino.ma/contact"
-      />
+        {/* TextLeftImageRight with image on right */}
+        <TextLeftImageRight
+          title="Pourquoi utiliser Cloudflare dans une stratégie SEO"
+          paragraphs={[
+            'Dans une stratégie SEO efficace, la vitesse et la disponibilité d\'un site web sont essentielles. Notre <span style="text-decoration: underline;"><strong><a href="/agence-seo-maroc/">agence SEO au Maroc</a></strong></span> intègre Cloudflare pour optimiser les temps de chargement grâce à son CDN mondial et offrir une navigation fluide.&nbsp;Un site rapide améliore directement le taux de conversion et le positionnement sur Google, surtout dans un marché compétitif comme le Maroc.',
+            "Un site performant doit aussi répondre aux standards de Google PageSpeed Insights, l'outil de référence pour mesurer la qualité technique et la rapidité d'un site web. Grâce à l'intégration de Cloudflare, il est possible d'améliorer <b>significativement les scores PageSpeed</b> en exploitant le cache intelligent, Rocket Loader et l'optimisation avancée des ressources.",
+            "Appelez le +212 663 75 09 08 et confiez l'intégration Cloudflare à des experts reconnus au Maroc.",
+          ]}
+          imageSrc="images/09/agence-seo-cloudflare.jpg"
+          imageAlt="Agence SEO Cloudflare au Maroc"
+          consultButtonTextExiste={true}
+          textButton="Contactez-nous"
+          href="https://www.hostino.ma/contact"
+        />
 
-      {/* TitleParagraphButton Section */}
-      <TitleParagraphButton
-        title="Pourquoi Cloudflare est indispensable pour toute entreprise au Maroc"
-        paragraphs={[
-          'Le portail <b>officiel du Maroc, maroc.ma</b>, utilise déjà Cloudflare, preuve de l\'importance stratégique de cette technologie pour le pays. Selon <span style="text-decoration: underline;"><a href="https://trends.builtwith.com/fr/websitelist/Cloudflare-DNS/Morocco" rel="noopener"><strong>BuiltWith</strong></a></span>, 9 436 sites marocains reposent sur Cloudflare DNS, ce qui en fait l\'un des services les plus adoptés dans le domaine du web au Maroc.',
-          "Cloudflare apporte une double valeur : sécurité et performance. Il protège contre les attaques DDoS, intègre un pare-feu applicatif (WAF), sécurise les DNS et optimise la vitesse grâce au cache avancé et au routage intelligent. Concrètement, les sites qui l'utilisent peuvent réduire <b>jusqu'à 50 % leur temps de chargement</b> et économiser jusqu'à <b>70 % de bande passante</b>, ce qui améliore à la fois l'expérience utilisateur et les coûts d'infrastructure.",
-          `<img loading="lazy" src="images/09/sites-maroc-cloudflare-scaled.jpg" alt="Marketing médical pour médecins au Maroc" width="2560" height="940" />`,
-          "De grands acteurs marocains s'appuient déjà sur Cloudflare, notamment <b>Attijariwafa Bank</b>, <b>Sanlam</b>, <b>Marjanmall</b> ou encore la MAP (Maghreb Arabe Presse). Ces entreprises traitent chaque jour des millions de connexions et de données sensibles, et la protection offerte par Cloudflare est devenue essentielle pour garantir la continuité des services et maintenir la confiance numérique.",
-          "Dans un marché en pleine digitalisation, Cloudflare n'est plus une option mais <b>une nécessité stratégique</b> pour toute entreprise souhaitant sécuriser sa présence en ligne et renforcer sa compétitivité au Maroc comme à l'international.",
-        ]}
-        buttonText="Contactez-nous"
-        buttonHref="https://www.hostino.ma/contact"
-      />
+        {/* TitleParagraphButton Section */}
+        <TitleParagraphButton
+          title="Pourquoi Cloudflare est indispensable pour toute entreprise au Maroc"
+          paragraphs={[
+            'Le portail <b>officiel du Maroc, maroc.ma</b>, utilise déjà Cloudflare, preuve de l\'importance stratégique de cette technologie pour le pays. Selon <span style="text-decoration: underline;"><a href="https://trends.builtwith.com/fr/websitelist/Cloudflare-DNS/Morocco" rel="noopener"><strong>BuiltWith</strong></a></span>, 9 436 sites marocains reposent sur Cloudflare DNS, ce qui en fait l\'un des services les plus adoptés dans le domaine du web au Maroc.',
+            "Cloudflare apporte une double valeur : sécurité et performance. Il protège contre les attaques DDoS, intègre un pare-feu applicatif (WAF), sécurise les DNS et optimise la vitesse grâce au cache avancé et au routage intelligent. Concrètement, les sites qui l'utilisent peuvent réduire <b>jusqu'à 50 % leur temps de chargement</b> et économiser jusqu'à <b>70 % de bande passante</b>, ce qui améliore à la fois l'expérience utilisateur et les coûts d'infrastructure.",
+            `<img loading="lazy" src="images/09/sites-maroc-cloudflare-scaled.jpg" alt="Marketing médical pour médecins au Maroc" width="2560" height="940" />`,
+            "De grands acteurs marocains s'appuient déjà sur Cloudflare, notamment <b>Attijariwafa Bank</b>, <b>Sanlam</b>, <b>Marjanmall</b> ou encore la MAP (Maghreb Arabe Presse). Ces entreprises traitent chaque jour des millions de connexions et de données sensibles, et la protection offerte par Cloudflare est devenue essentielle pour garantir la continuité des services et maintenir la confiance numérique.",
+            "Dans un marché en pleine digitalisation, Cloudflare n'est plus une option mais <b>une nécessité stratégique</b> pour toute entreprise souhaitant sécuriser sa présence en ligne et renforcer sa compétitivité au Maroc comme à l'international.",
+          ]}
+          buttonText="Contactez-nous"
+          buttonHref="https://www.hostino.ma/contact"
+        />
 
-      {/* FAQ Section */}
-      <FAQSection faqData={faqData} title="FAQ - Cloudflare Maroc" />
+        {/* FAQ Section */}
+        <FAQSection faqData={faqData} title="FAQ - Cloudflare Maroc" />
 
-      {/* Star Rating Footer */}
-      <StartsRatingYellowFooter totalVotes={22} />
-    </main>
+        {/* Star Rating Footer */}
+        <StartsRatingYellowFooter totalVotes={22} />
+      </main>
+    </>
   );
 }

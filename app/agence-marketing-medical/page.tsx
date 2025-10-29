@@ -9,12 +9,50 @@ import SeoServiceCards from "../components/commonSections/SeoServiceCards";
 import GmbServices from "../components/commonSections/GmbServices";
 import TitleParagraphButton from "../components/commonSections/TitleParagraphButton";
 import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter";
+import { main_schema } from "../schema";
 
-const title = "Agence Marketing Médical | SEO Santé – Médecins &amp; Cliniques"
-const description =  "Agence Marketing Medical Au Maroc. Publicité Google &amp; Référencement SEO pour Médecins, Cabinets, Cliniques et Laboratoires ☎️ 0663 75 09 08"
-const imageUrl = "https://maroc-1hp.pages.dev/images/agence-marketing-medical/agence-marketing-medical-maroc.png" 
-const canonical_url = "https://www.hostino.ma/agence-marketing-medical"
-const og_alt = "Agence Marketing Médical"
+const title = "Agence Marketing Médical | SEO Santé – Médecins &amp; Cliniques";
+const description =
+  "Agence Marketing Medical Au Maroc. Publicité Google &amp; Référencement SEO pour Médecins, Cabinets, Cliniques et Laboratoires ☎️ 0663 75 09 08";
+const imageUrl =
+  "https://maroc-1hp.pages.dev/images/agence-marketing-medical/agence-marketing-medical-maroc.png";
+const canonical_url = "https://www.hostino.ma/agence-marketing-medical";
+const og_alt = "Agence Marketing Médical";
+
+export const metadata = {
+  title: title,
+  description: description,
+  robots:
+    "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  alternates: {
+    canonical: canonical_url,
+  },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: canonical_url,
+    siteName: "Hostino",
+    title: title,
+    description: description,
+    images: [
+      {
+        url: imageUrl,
+        secureUrl: imageUrl,
+        width: 1200,
+        height: 630,
+        alt: og_alt,
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: title,
+    description: description,
+    images: [imageUrl],
+    creator: "@admin",
+  },
+};
 
 const faqData = [
   {
@@ -197,106 +235,158 @@ const prestations = [
 ];
 
 export default async function AgenceMarketingMedicalPage() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      ...main_schema,
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.hostino.ma/#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: "1",
+            item: {
+              "@id": "https://www.hostino.ma",
+              name: "Hostino - Noms de domaine et hébergement web au Maroc",
+            },
+          },
+          {
+            "@type": "ListItem",
+            position: "2",
+            item: {
+              "@id": canonical_url,
+              name: og_alt,
+            },
+          },
+        ],
+      },
+      {
+        "@type": "Product",
+        name: title,
+        url: canonical_url,
+        description: description,
+        brand: { "@type": "Brand", name: "Hostino" },
+        offers: {
+          "@type": "AggregateOffer",
+          url: canonical_url,
+          lowPrice: "118",
+          priceCurrency: "MAD",
+          availability: "InStock",
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "5",
+          reviewCount: "920",
+        },
+      },
+    ],
+  };
+
   return (
-    <main>
-      
-
-      <HeroSection
-        subtitle="Agence Marketing Médical Maroc"
-        title="Agence marketing digital santé"
-        text="Agence de visibilité Google et de marketing digital pour <b>médecins</b>, <b>cliniques</b>, <b>laboratoires</b> et <b>parapharmacies</b> au Maroc."
-        emailLabel={{
-          textEmail: "Consultation par Email ?",
-          color: "text-primary",
-        }}
-        email="info@hostino.com"
-        imageSrc="images/14/agence-marketing-medical-maroc.png"
-        imageAlt="Agence Marketing Médical au Maroc"
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+      <main>
+        <HeroSection
+          subtitle="Agence Marketing Médical Maroc"
+          title="Agence marketing digital santé"
+          text="Agence de visibilité Google et de marketing digital pour <b>médecins</b>, <b>cliniques</b>, <b>laboratoires</b> et <b>parapharmacies</b> au Maroc."
+          emailLabel={{
+            textEmail: "Consultation par Email ?",
+            color: "text-primary",
+          }}
+          email="info@hostino.com"
+          imageSrc="images/14/agence-marketing-medical-maroc.png"
+          imageAlt="Agence Marketing Médical au Maroc"
+        />
 
-      <ContactForm
-        title={
-          <>
-            Marketing Médical : un conseiller{" "}
-            <br className="lg:hidden block " />
-            <span className="border-bottom">vous rappelle !</span>
-          </>
-        }
-      />
+        <ContactForm
+          title={
+            <>
+              Marketing Médical : un conseiller{" "}
+              <br className="lg:hidden block " />
+              <span className="border-bottom">vous rappelle !</span>
+            </>
+          }
+        />
 
-      <TextLeftImageRight
-        title="Référencement Google pour articles de presse"
-        paragraphs={[
-          "Le référencement Google pour articles de presse est aujourd’hui indispensable. Il permet aux <b>sites médias</b>, aux <b>chaînes de télévision</b> et aux <b>radios</b>, qu’elles soient <b>publiques ou privées</b>, d’optimiser leur stratégie de génération de trafic afin que leurs dépêches, articles, podcasts et vidéos ressortent davantage sur Google.",
-          "L’objectif est clair : <b>générer un trafic organique</b> régulier et renforcer la visibilité de votre site web sur le moteur de recherche.",
-          "Avec Hostino, vous bénéficiez d’un <b>suivi complet</b> : optimisation technique (vitesse du site, sécurité, structure) et accompagnement rédactionnel pour écrire selon les critères de Google. Résultat : vos articles gardent leur visibilité plus longtemps et continuent à attirer régulièrement des lecteurs.",
-          "Appelez le +212 663 75 09 08 et confiez le marketing digital de votre site média à l’agence SEO n°1 au Maroc.",
-        ]}
-        imageSrc="images/17/referencement-seo-articles-google-maroc.jpg"
-        imageAlt="Référencement Google pour articles de presse au Maroc"
-        consultButtonTextExiste={true}
-        textButton="Contactez-nous"
-        href="https://www.hostino.ma/contact"
-      />
+        <TextLeftImageRight
+          title="Référencement Google pour articles de presse"
+          paragraphs={[
+            "Le référencement Google pour articles de presse est aujourd’hui indispensable. Il permet aux <b>sites médias</b>, aux <b>chaînes de télévision</b> et aux <b>radios</b>, qu’elles soient <b>publiques ou privées</b>, d’optimiser leur stratégie de génération de trafic afin que leurs dépêches, articles, podcasts et vidéos ressortent davantage sur Google.",
+            "L’objectif est clair : <b>générer un trafic organique</b> régulier et renforcer la visibilité de votre site web sur le moteur de recherche.",
+            "Avec Hostino, vous bénéficiez d’un <b>suivi complet</b> : optimisation technique (vitesse du site, sécurité, structure) et accompagnement rédactionnel pour écrire selon les critères de Google. Résultat : vos articles gardent leur visibilité plus longtemps et continuent à attirer régulièrement des lecteurs.",
+            "Appelez le +212 663 75 09 08 et confiez le marketing digital de votre site média à l’agence SEO n°1 au Maroc.",
+          ]}
+          imageSrc="images/17/referencement-seo-articles-google-maroc.jpg"
+          imageAlt="Référencement Google pour articles de presse au Maroc"
+          consultButtonTextExiste={true}
+          textButton="Contactez-nous"
+          href="https://www.hostino.ma/contact"
+        />
 
-      <TitleParagraphButton
-        title={`Référencement Google <br/><span style="font-weight: 400">vs</span> plateforme de prise de rendez-vous en ligne`}
-        paragraphs={[
-          `Lorsqu’un médecin souhaite renforcer sa visibilité, il pense souvent d’abord aux réseaux sociaux ou aux plateformes de prise de rendez-vous en ligne. Ces solutions semblent simples et rapides à mettre en place, mais elles restent limitées : <span><b>tout le monde peut le faire</b></span>, et au final, cela ne permet pas de réellement se différencier.`,
-          `En réalité, lorsqu’on parle de plateformes de prise de rendez-vous, elles mettent souvent en avant l’argument selon lequel votre cabinet serait « <span style="font-weight: bold;">référencé sur Google</span> ». Mais en vérité, ce n’est pas le médecin qui est mis en avant, <span style="font-weight: bold;">c’est la plateforme elle-même</span>.`,
-          `Votre nom se retrouve alors intégré dans une <span style="font-weight: bold;">longue liste de confrères</span> sur leur site, au lieu de mettre en avant votre cabinet directement et en première ligne sur Google, capable même de <b>dépasser ces plateformes</b>.`,
-          `<img loading="lazy" src="images/14/marketing-medecin-maroc-google-scaled-e1759336272263.jpg" alt="Marketing médical pour médecins au Maroc" width="2560" height="940" />`,
-          `Notre approche est différente : nous <span style="text-decoration: underline;"><strong><a href="/creation-site-web-maroc/">créons pour vous un site</a></strong></span> web Google-friendly, conçu pour être positionné en haut des résultats Google sur des mots-clés très concurrentiels liés à votre spécialité et votre ville.`,
-          `Cette stratégie vous permet de générer des consultations directes, de développer la notoriété de votre cabinet et d’installer une image forte et indépendante auprès de vos patients.`,
-        ]}
-        buttonText="Contactez-nous"
-        buttonHref="https://www.hostino.ma/contact"
-      />
+        <TitleParagraphButton
+          title={`Référencement Google <br/><span style="font-weight: 400">vs</span> plateforme de prise de rendez-vous en ligne`}
+          paragraphs={[
+            `Lorsqu’un médecin souhaite renforcer sa visibilité, il pense souvent d’abord aux réseaux sociaux ou aux plateformes de prise de rendez-vous en ligne. Ces solutions semblent simples et rapides à mettre en place, mais elles restent limitées : <span><b>tout le monde peut le faire</b></span>, et au final, cela ne permet pas de réellement se différencier.`,
+            `En réalité, lorsqu’on parle de plateformes de prise de rendez-vous, elles mettent souvent en avant l’argument selon lequel votre cabinet serait « <span style="font-weight: bold;">référencé sur Google</span> ». Mais en vérité, ce n’est pas le médecin qui est mis en avant, <span style="font-weight: bold;">c’est la plateforme elle-même</span>.`,
+            `Votre nom se retrouve alors intégré dans une <span style="font-weight: bold;">longue liste de confrères</span> sur leur site, au lieu de mettre en avant votre cabinet directement et en première ligne sur Google, capable même de <b>dépasser ces plateformes</b>.`,
+            `<img loading="lazy" src="images/14/marketing-medecin-maroc-google-scaled-e1759336272263.jpg" alt="Marketing médical pour médecins au Maroc" width="2560" height="940" />`,
+            `Notre approche est différente : nous <span style="text-decoration: underline;"><strong><a href="/creation-site-web-maroc/">créons pour vous un site</a></strong></span> web Google-friendly, conçu pour être positionné en haut des résultats Google sur des mots-clés très concurrentiels liés à votre spécialité et votre ville.`,
+            `Cette stratégie vous permet de générer des consultations directes, de développer la notoriété de votre cabinet et d’installer une image forte et indépendante auprès de vos patients.`,
+          ]}
+          buttonText="Contactez-nous"
+          buttonHref="https://www.hostino.ma/contact"
+        />
 
-      <TextLeftImageRight
-        title="Référencement Google pour médecins et cliniques"
-        paragraphs={[
-          "Le <a href='/agence-seo-maroc/' style='text-decoration: underline;' target='_blank'><strong>référencement SEO</strong></a> pour votre cabinet médical ou clinique est un levier incontournable pour attirer plus de patients et développer votre notoriété en ligne.",
-          "Grâce à une stratégie SEO adaptée, votre établissement peut apparaître <b>parmi les premiers résultats</b> lorsqu'un patient potentiel recherche un médecin, une spécialité ou une clinique dans votre ville.",
-          "Cela passe par l'optimisation technique de votre site, la création de contenus de santé pertinents, et une gestion efficace de votre fiche <a href='/google-my-business-maroc/' style='text-decoration: underline;' target='_blank'><strong>Google Business</strong></a> afin de renforcer votre <b>visibilité locale</b>. Être bien référencé vous permet également d'inspirer confiance et de faciliter la prise de rendez-vous, un atout majeur pour fidéliser vos patients.",
-          "Contactez-nous au +212 663 75 09 08 et confiez le référencement SEO de votre cabinet à des experts reconnus en marketing santé au Maroc.",
-        ]}
-        imageSrc="images/14/marketing-google-medecins-maroc.png"
-        imageAlt="Marketing Google pour médecins et cliniques au Maroc"
-        consultButtonTextExiste={true}
-        textButton="Contactez-nous"
-        href="https://www.hostino.ma/contact"
-      />
+        <TextLeftImageRight
+          title="Référencement Google pour médecins et cliniques"
+          paragraphs={[
+            "Le <a href='/agence-seo-maroc/' style='text-decoration: underline;' target='_blank'><strong>référencement SEO</strong></a> pour votre cabinet médical ou clinique est un levier incontournable pour attirer plus de patients et développer votre notoriété en ligne.",
+            "Grâce à une stratégie SEO adaptée, votre établissement peut apparaître <b>parmi les premiers résultats</b> lorsqu'un patient potentiel recherche un médecin, une spécialité ou une clinique dans votre ville.",
+            "Cela passe par l'optimisation technique de votre site, la création de contenus de santé pertinents, et une gestion efficace de votre fiche <a href='/google-my-business-maroc/' style='text-decoration: underline;' target='_blank'><strong>Google Business</strong></a> afin de renforcer votre <b>visibilité locale</b>. Être bien référencé vous permet également d'inspirer confiance et de faciliter la prise de rendez-vous, un atout majeur pour fidéliser vos patients.",
+            "Contactez-nous au +212 663 75 09 08 et confiez le référencement SEO de votre cabinet à des experts reconnus en marketing santé au Maroc.",
+          ]}
+          imageSrc="images/14/marketing-google-medecins-maroc.png"
+          imageAlt="Marketing Google pour médecins et cliniques au Maroc"
+          consultButtonTextExiste={true}
+          textButton="Contactez-nous"
+          href="https://www.hostino.ma/contact"
+        />
 
-      <GmbServices
-        data={prestations}
-        title="Prestations de notre <br/> agence de marketing médical"
-      />
+        <GmbServices
+          data={prestations}
+          title="Prestations de notre <br/> agence de marketing médical"
+        />
 
-      <TitleParagraphButton
-        title="Référencement Google<br/>pour médecins au Maroc"
-        paragraphs={[
-          "Aujourd’hui, la majorité des marocains cherchent un médecin en ligne avant de prendre rendez-vous. Être bien positionné sur Google permet à un <b>cabinet médical</b> ou à une <b>clinique</b> d’apparaître parmi les premiers résultats lorsqu’un patient recherche un médecin dans sa ville ou pour une spécialité précise. Sans visibilité, même un cabinet compétent peut passer inaperçu face à d’autres <b>confrères plus présents sur Google</b>.",
-          "Le référencement en ligne ne consiste pas seulement à apparaître en haut des résultats de recherche, mais aussi à offrir une information claire, fiable et accessible aux patients. Pour un médecin, c’est un investissement qui doit toujours respecter <strong><span style='text-decoration: underline;'><a href='https://www.wma.net/wp-content/uploads/2016/11/Ethics_manual_3rd_Nov2015_fr.pdf' rel='noopener'>l’éthique médicale</a></span></strong> : transparence, véracité des informations et mise en avant de la qualité des soins <b>plutôt que de simples arguments commerciaux</b>.",
-          "Ainsi, le référencement Google devient un véritable levier au service de la médecine elle-même : il facilite la recherche de spécialités et de services médicaux par les patients, en leur offrant la possibilité de <b>trouver rapidement le médecin</b> ou la clinique qui répond le mieux à leurs besoins de santé.",
-        ]}
-        buttonText="Contactez-nous"
-        buttonHref="https://www.hostino.ma/contact"
-      />
+        <TitleParagraphButton
+          title="Référencement Google<br/>pour médecins au Maroc"
+          paragraphs={[
+            "Aujourd’hui, la majorité des marocains cherchent un médecin en ligne avant de prendre rendez-vous. Être bien positionné sur Google permet à un <b>cabinet médical</b> ou à une <b>clinique</b> d’apparaître parmi les premiers résultats lorsqu’un patient recherche un médecin dans sa ville ou pour une spécialité précise. Sans visibilité, même un cabinet compétent peut passer inaperçu face à d’autres <b>confrères plus présents sur Google</b>.",
+            "Le référencement en ligne ne consiste pas seulement à apparaître en haut des résultats de recherche, mais aussi à offrir une information claire, fiable et accessible aux patients. Pour un médecin, c’est un investissement qui doit toujours respecter <strong><span style='text-decoration: underline;'><a href='https://www.wma.net/wp-content/uploads/2016/11/Ethics_manual_3rd_Nov2015_fr.pdf' rel='noopener'>l’éthique médicale</a></span></strong> : transparence, véracité des informations et mise en avant de la qualité des soins <b>plutôt que de simples arguments commerciaux</b>.",
+            "Ainsi, le référencement Google devient un véritable levier au service de la médecine elle-même : il facilite la recherche de spécialités et de services médicaux par les patients, en leur offrant la possibilité de <b>trouver rapidement le médecin</b> ou la clinique qui répond le mieux à leurs besoins de santé.",
+          ]}
+          buttonText="Contactez-nous"
+          buttonHref="https://www.hostino.ma/contact"
+        />
 
-      <SeoServiceCards />
+        <SeoServiceCards />
 
-      <NationalCoverage
-        title="Agence marketing médical, une couverture nationale"
-        text="Chez Hostino™, nous accompagnons les cliniques, médecins, centres de santé et professionnels du secteur médical dans la mise en place de stratégies marketing et SEO ciblées."
-        topic={"Marketing Médical "}
-      />
+        <NationalCoverage
+          title="Agence marketing médical, une couverture nationale"
+          text="Chez Hostino™, nous accompagnons les cliniques, médecins, centres de santé et professionnels du secteur médical dans la mise en place de stratégies marketing et SEO ciblées."
+          topic={"Marketing Médical "}
+        />
 
-      <FAQSection
-        faqData={faqData}
-        title="FAQ - Agence Marketing Médical Maroc"
-      />
-      <StartsRatingYellowFooter />
-    </main>
+        <FAQSection
+          faqData={faqData}
+          title="FAQ - Agence Marketing Médical Maroc"
+        />
+        <StartsRatingYellowFooter />
+      </main>
+    </>
   );
 }

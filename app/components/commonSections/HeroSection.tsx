@@ -35,7 +35,7 @@ export default function HeroSection({
             {subtitle}
           </h1>
 
-          <h2 className="big-title title font-semibold text-title">
+          <h2  className="big-title title-hero-section title font-semibold text-title">
             {title}
           </h2>
 

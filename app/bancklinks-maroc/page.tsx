@@ -5,6 +5,50 @@ import FAQSection from "../components/commonSections/FaqSection";
 import TitleParagraphButton from "../components/commonSections/TitleParagraphButton";
 import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter";
 import GmbServices from "../components/commonSections/GmbServices";
+import { main_schema } from "../schema";
+
+const title = "Agence SEO Maroc | Référencement Google et moteurs d&#039;IA";
+const description =
+  "Agence SEO Maroc. Agence de référencement Google et moteurs de recherche IA : Ventes, trafic, notoriété. SEO Maroc ☎️ 0663 75 09 08";
+const imageUrl =
+  "https://maroc-1hp.pages.dev/images/agence-seo-maroc/agence-seo-maroc.png";
+const canonical_url = "https://www.hostino.ma/agence-seo-maroc";
+const og_alt = "Agence SEO Maroc";
+
+export const metadata = {
+  title: title,
+  description: description,
+  robots:
+    "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  alternates: {
+    canonical: canonical_url,
+  },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: canonical_url,
+    siteName: "Hostino",
+    title: title,
+    description: description,
+    images: [
+      {
+        url: imageUrl,
+        secureUrl: imageUrl,
+        width: 1200,
+        height: 630,
+        alt: og_alt,
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: title,
+    description: description,
+    images: [imageUrl],
+    creator: "@admin",
+  },
+};
 
 const faqData = [
   {
@@ -97,78 +141,132 @@ const services = [
 ];
 
 export default async function BacklinksPage() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      ...main_schema,
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.hostino.ma/#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: "1",
+            item: {
+              "@id": "https://www.hostino.ma",
+              name: "Hostino - Noms de domaine et hébergement web au Maroc",
+            },
+          },
+          {
+            "@type": "ListItem",
+            position: "2",
+            item: {
+              "@id": canonical_url,
+              name: og_alt,
+            },
+          },
+        ],
+      },
+      {
+        "@type": "Product",
+        name: title,
+        url: canonical_url,
+        description: description,
+        brand: { "@type": "Brand", name: "Hostino" },
+        offers: {
+          "@type": "AggregateOffer",
+          url: canonical_url,
+          lowPrice: "118",
+          priceCurrency: "MAD",
+          availability: "InStock",
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "5",
+          reviewCount: "920",
+        },
+      },
+    ],
+  };
+
   return (
-    <main>
-     
-      <HeroSection
-        subtitle="Agence de Backlinks Maroc"
-        title="Agence de backlinks au Maroc"
-        text="Agence Netlinking offre un service premium <b>d'acquisition de backlinks</b> pour optimiser votre SEO au Maroc."
-        emailLabel={{
-          textEmail: "Consultation par Email ?",
-          color: "text-primary",
-        }}
-        email="info@hostino.com"
-        imageSrc="images/12/backlinks-maroc.png"
-        imageAlt="Backlinks Maroc"
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+      <main>
+        <HeroSection
+          subtitle="Agence de Backlinks Maroc"
+          title="Agence de backlinks au Maroc"
+          text="Agence Netlinking offre un service premium <b>d'acquisition de backlinks</b> pour optimiser votre SEO au Maroc."
+          emailLabel={{
+            textEmail: "Consultation par Email ?",
+            color: "text-primary",
+          }}
+          email="info@hostino.com"
+          imageSrc="images/12/backlinks-maroc.png"
+          imageAlt="Backlinks Maroc"
+        />
 
-      <ContactForm
-        title={
-          <>
-            Backlinks Maroc : un conseiller <br className="lg:hidden block " />
-            <span className="border-bottom">vous rappelle !</span>
-          </>
-        }
-      />
+        <ContactForm
+          title={
+            <>
+              Backlinks Maroc : un conseiller{" "}
+              <br className="lg:hidden block " />
+              <span className="border-bottom">vous rappelle !</span>
+            </>
+          }
+        />
 
-      <TextLeftImageRight
-        title="Agence d'acquisition de backlinks au Maroc"
-        paragraphs={[
-          "Notre agence accompagne les marques et les entreprises dans l'acquisition de backlinks locaux au Maroc.",
-          'Nous disposons d\'un <b>réseau stratégique de plus de 200 sites web</b> à forte autorité (DA) répartis dans différents secteurs d\'activité. Grâce à ces partenariats solides, nous vous aidons à renforcer votre visibilité sur Google et à améliorer durablement votre positionnement <strong><span style="text-decoration: underline;"><a href="/bancklinks-maroc/">SEO</a></span></strong>.',
-          "En plus de la mise à disposition de backlinks de qualité, nous proposons un service complet <b>d'acquisition et de négociation</b> personnalisée. Nous identifions les opportunités les plus pertinentes en fonction de votre secteur d'activité, de vos objectifs stratégiques et de votre budget.",
-          "Appelez le +212 663 75 09 08 et confiez l'acquisition de backlinks à une agence SEO experte au Maroc.",
-        ]}
-        imageSrc="images/12/backlinks-maroc.jpg"
-        imageAlt="Agence Backlinks Maroc"
-        consultButtonTextExiste={true}
-        textButton="Contactez-nous"
-        href="https://www.hostino.ma/contact"
-      />
+        <TextLeftImageRight
+          title="Agence d'acquisition de backlinks au Maroc"
+          paragraphs={[
+            "Notre agence accompagne les marques et les entreprises dans l'acquisition de backlinks locaux au Maroc.",
+            'Nous disposons d\'un <b>réseau stratégique de plus de 200 sites web</b> à forte autorité (DA) répartis dans différents secteurs d\'activité. Grâce à ces partenariats solides, nous vous aidons à renforcer votre visibilité sur Google et à améliorer durablement votre positionnement <strong><span style="text-decoration: underline;"><a href="/bancklinks-maroc/">SEO</a></span></strong>.',
+            "En plus de la mise à disposition de backlinks de qualité, nous proposons un service complet <b>d'acquisition et de négociation</b> personnalisée. Nous identifions les opportunités les plus pertinentes en fonction de votre secteur d'activité, de vos objectifs stratégiques et de votre budget.",
+            "Appelez le +212 663 75 09 08 et confiez l'acquisition de backlinks à une agence SEO experte au Maroc.",
+          ]}
+          imageSrc="images/12/backlinks-maroc.jpg"
+          imageAlt="Agence Backlinks Maroc"
+          consultButtonTextExiste={true}
+          textButton="Contactez-nous"
+          href="https://www.hostino.ma/contact"
+        />
 
-      <TitleParagraphButton
-        title={`Netlinking et rédaction<br/>de contenu au Maroc`}
-        paragraphs={[
-          `Le netlinking est aujourd'hui l'un des leviers les plus puissants du référencement naturel au Maroc pour toute <b>marque, entreprise</b> ou institution. Il repose sur l'acquisition de liens entrants de qualité, provenant de sites fiables, bien positionnés et pertinents dans votre domaine. Ces backlinks renforcent <b>l'autorité et la crédibilité de votre site</b> aux yeux de Google et des moteurs de recherche IA, ce qui se traduit par une meilleure visibilité, un positionnement durable et une augmentation significative du trafic organique.`,
-          `Dans le contexte marocain, le netlinking repose à la fois sur des partenariats avec des <b>sites médias locaux</b> à forte audience et sur des publications ciblées sur des blogs bien référencés. Cette approche locale permet de maximiser la pertinence des liens obtenus et d'ancrer votre visibilité dans l'écosystème numérique marocain.`,
-          `En parallèle, la rédaction de contenu joue un rôle clé dans toute stratégie de netlinking. Notre agence prend en charge la rédaction d'articles et de contenus optimisés pour votre marque ou votre entreprise, en <span style="font-weight: bold;"><b>combinant SEO et storytelling</b></span> pour captiver votre audience. Nous rédigeons des textes structurés, pertinents et engageants, qui racontent une véritable histoire autour de votre activité, de vos valeurs et de votre expertise. Cette approche permet non seulement d'améliorer votre visibilité sur Google, mais aussi de créer un lien émotionnel fort avec vos lecteurs, <span style="font-weight: bold;"><b>renforçant ainsi la crédibilité et l'impact de chaque backlink obtenu</b></span>.`,
-        ]}
-        buttonText="Contactez-nous"
-        buttonHref="https://www.hostino.ma/contact"
-      />
+        <TitleParagraphButton
+          title={`Netlinking et rédaction<br/>de contenu au Maroc`}
+          paragraphs={[
+            `Le netlinking est aujourd'hui l'un des leviers les plus puissants du référencement naturel au Maroc pour toute <b>marque, entreprise</b> ou institution. Il repose sur l'acquisition de liens entrants de qualité, provenant de sites fiables, bien positionnés et pertinents dans votre domaine. Ces backlinks renforcent <b>l'autorité et la crédibilité de votre site</b> aux yeux de Google et des moteurs de recherche IA, ce qui se traduit par une meilleure visibilité, un positionnement durable et une augmentation significative du trafic organique.`,
+            `Dans le contexte marocain, le netlinking repose à la fois sur des partenariats avec des <b>sites médias locaux</b> à forte audience et sur des publications ciblées sur des blogs bien référencés. Cette approche locale permet de maximiser la pertinence des liens obtenus et d'ancrer votre visibilité dans l'écosystème numérique marocain.`,
+            `En parallèle, la rédaction de contenu joue un rôle clé dans toute stratégie de netlinking. Notre agence prend en charge la rédaction d'articles et de contenus optimisés pour votre marque ou votre entreprise, en <span style="font-weight: bold;"><b>combinant SEO et storytelling</b></span> pour captiver votre audience. Nous rédigeons des textes structurés, pertinents et engageants, qui racontent une véritable histoire autour de votre activité, de vos valeurs et de votre expertise. Cette approche permet non seulement d'améliorer votre visibilité sur Google, mais aussi de créer un lien émotionnel fort avec vos lecteurs, <span style="font-weight: bold;"><b>renforçant ainsi la crédibilité et l'impact de chaque backlink obtenu</b></span>.`,
+          ]}
+          buttonText="Contactez-nous"
+          buttonHref="https://www.hostino.ma/contact"
+        />
 
-      <TextLeftImageRight
-        title="Achat backlinks Maroc"
-        paragraphs={[
-          "Chez Hostino, nous vous proposons une <b>sélection exclusive</b> de backlinks stratégiques, conçus pour propulser le site web de votre marque ou de votre entreprise vers les premières positions des moteurs de recherche.",
-          'Imaginez un article publié sur Maroc24.com ou un autre grand média local, mettant en avant votre société tout en intégrant un backlink "<span style="text-decoration: underline;"><strong><a href="https://developers.google.com/search/docs/crawling-indexing/qualify-outbound-links?hl=fr" rel="noopener">dofollow</a></strong></span>" vers votre site. Cette action renforce considérablement votre autorité en ligne, améliore votre référencement naturel et vous permet de <b>dépasser efficacement vos concurrents</b>.',
-          "Boostez vos positions sur Google et atteignez de nouveaux sommets grâce à nos solutions de <b>backlinking de qualité supérieure</b>, proposées à des prix très compétitifs.",
-        ]}
-        imageSrc="images/12/achat-backlinks-maroc.jpg"
-        imageAlt="Achat backlinks au Maroc"
-        consultButtonTextExiste={true}
-        textButton="Contactez-nous"
-        href="https://www.hostino.ma/contact"
-      />
+        <TextLeftImageRight
+          title="Achat backlinks Maroc"
+          paragraphs={[
+            "Chez Hostino, nous vous proposons une <b>sélection exclusive</b> de backlinks stratégiques, conçus pour propulser le site web de votre marque ou de votre entreprise vers les premières positions des moteurs de recherche.",
+            'Imaginez un article publié sur Maroc24.com ou un autre grand média local, mettant en avant votre société tout en intégrant un backlink "<span style="text-decoration: underline;"><strong><a href="https://developers.google.com/search/docs/crawling-indexing/qualify-outbound-links?hl=fr" rel="noopener">dofollow</a></strong></span>" vers votre site. Cette action renforce considérablement votre autorité en ligne, améliore votre référencement naturel et vous permet de <b>dépasser efficacement vos concurrents</b>.',
+            "Boostez vos positions sur Google et atteignez de nouveaux sommets grâce à nos solutions de <b>backlinking de qualité supérieure</b>, proposées à des prix très compétitifs.",
+          ]}
+          imageSrc="images/12/achat-backlinks-maroc.jpg"
+          imageAlt="Achat backlinks au Maroc"
+          consultButtonTextExiste={true}
+          textButton="Contactez-nous"
+          href="https://www.hostino.ma/contact"
+        />
 
-      <GmbServices
-        data={services}
-        title="Notre service<br />de netlinking au Maroc"
-      />
+        <GmbServices
+          data={services}
+          title="Notre service<br />de netlinking au Maroc"
+        />
 
-      <FAQSection faqData={faqData} title="FAQ - Backlinks Maroc" />
-      <StartsRatingYellowFooter totalVotes={49} />
-    </main>
+        <FAQSection faqData={faqData} title="FAQ - Backlinks Maroc" />
+        <StartsRatingYellowFooter totalVotes={49} />
+      </main>
+    </>
   );
 }

@@ -12,13 +12,50 @@ import SeoServiceCards from "../components/sectionsGoogleAdsMarocPage/SeoService
 import GmbServices from "../components/commonSections/GmbServices";
 import GooglePositioning from "../components/commonSections/GooglePositioning";
 import ComparisonTable from "../components/commonSections/ComparisonTable";
+import { main_schema } from "../schema";
 
-const title = "Création site web Maroc | Agence web – sites optimisés SEO"
-const description =  "Création site web Maroc, Hostino crée des sites web 100 % optimisés SEO &amp; IA pour booster la visibilité de votre entreprise ☎️ 0663 75 09 08"
-const imageUrl = "https://maroc-1hp.pages.dev/images/creation-site-web-maroc/creation-site-web-maroc.png" 
-const canonical_url = "https://www.hostino.ma/creation-site-web-maroc"
-const og_alt = "Création site web Maroc"
+const title = "Création site web Maroc | Agence web – sites optimisés SEO";
+const description =
+  "Création site web Maroc, Hostino crée des sites web 100 % optimisés SEO &amp; IA pour booster la visibilité de votre entreprise ☎️ 0663 75 09 08";
+const imageUrl =
+  "https://maroc-1hp.pages.dev/images/18/creation-site-web-maroc.png";
+const canonical_url = "https://www.hostino.ma/creation-site-web-maroc";
+const og_alt = "Création site web Maroc";
 
+export const metadata = {
+  title: title,
+  description: description,
+  robots:
+    "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  alternates: {
+    canonical: canonical_url,
+  },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: canonical_url,
+    siteName: "Hostino",
+    title: title,
+    description: description,
+    images: [
+      {
+        url: imageUrl,
+        secureUrl: imageUrl,
+        width: 1200,
+        height: 630,
+        alt: og_alt,
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: title,
+    description: description,
+    images: [imageUrl],
+    creator: "@admin",
+  },
+};
 const faqData = [
   {
     question:
@@ -254,121 +291,173 @@ const tableData = [
 ];
 
 export default async function HomePage() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      ...main_schema,
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.hostino.ma/#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: "1",
+            item: {
+              "@id": "https://www.hostino.ma",
+              name: "Hostino - Noms de domaine et hébergement web au Maroc",
+            },
+          },
+          {
+            "@type": "ListItem",
+            position: "2",
+            item: {
+              "@id": canonical_url,
+              name: og_alt,
+            },
+          },
+        ],
+      },
+      {
+        "@type": "Product",
+        name: title,
+        url: canonical_url,
+        description: description,
+        brand: { "@type": "Brand", name: "Hostino" },
+        offers: {
+          "@type": "AggregateOffer",
+          url: canonical_url,
+          lowPrice: "118",
+          priceCurrency: "MAD",
+          availability: "InStock",
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "5",
+          reviewCount: "920",
+        },
+      },
+    ],
+  };
+
   return (
-    <main>
-     
-
-      <HeroSection
-        subtitle="Création site web Maroc"
-        title="Création site web 100 % optimisé SEO"
-        text="Agence de création site web Maroc, optimisés pour le <b>SEO</b> et <b>les moteurs d’IA..</b>"
-        emailLabel={{
-          textEmail: "CONSULTATION PAR EMAIL ?",
-          color: "text-primary",
-        }}
-        email="info@hostino.com"
-        imageSrc="/images/creation-site-web-maroc/creation-site-web-maroc.png"
-        imageAlt="Google My Business au Maroc"
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+      <main>
+        <HeroSection
+          subtitle="Création site web Maroc"
+          title="Création site web 100 % optimisé SEO"
+          text="Agence de création site web Maroc, optimisés pour le <b>SEO</b> et <b>les moteurs d’IA..</b>"
+          emailLabel={{
+            textEmail: "CONSULTATION PAR EMAIL ?",
+            color: "text-primary",
+          }}
+          email="info@hostino.com"
+          imageSrc="/images/18/creation-site-web-maroc.png"
+          imageAlt="Google My Business au Maroc"
+        />
 
-      <ContactForm
-        title={
-          <>
-            Création de site web : un conseiller{" "}
-            <br className="lg:hidden block " />
-            <span className="border-bottom">vous rappelle !</span>
-          </>
-        }
-      />
+        <ContactForm
+          title={
+            <>
+              Création de site web : un conseiller{" "}
+              <br className="lg:hidden block " />
+              <span className="border-bottom">vous rappelle !</span>
+            </>
+          }
+        />
 
-      <TextLeftImageRight
-        title="Agence de création site web Maroc"
-        paragraphs={[
-          "Hostino® est une agence web spécialisée dans la création de sites web au Maroc. Nous accompagnons tous les professionnels — auto-entrepreneurs, PME/PMI, professions libérales, grandes entreprises, institutions et associations — dans la <b>création ou la refonte</b> de leur site internet.",
-          "Notre service va bien au-delà du simple design et des fonctionnalités : chaque site est pensé pour être <b>100 % Google Friendly</b>, garantissant ainsi une indexation rapide et efficace.",
-          "Nous accordons une attention particulière à l’optimisation des <b>appels à l’action</b>, au <b>respect des normes de sécurité</b> et à la <b>rapidité</b> de chargement, afin d’offrir à vos visiteurs une expérience fluide, engageante et orientée vers la conversion.",
-          "Appelez le +212 663 75 09 08 et confiez la création de votre site web à des experts reconnus dans le domaine du SEO au Maroc.",
-        ]}
-        imageSrc="/images/creation-site-web-maroc/creation-site-web-maroc.jpg"
-        imageAlt="Création de site web au Maroc"
-        consultButtonTextExiste={true}
-        textButton={"Contactez-nous"}
-        href={"https://www.hostino.ma/contact"}
-      />
+        <TextLeftImageRight
+          title="Agence de création site web Maroc"
+          paragraphs={[
+            "Hostino® est une agence web spécialisée dans la création de sites web au Maroc. Nous accompagnons tous les professionnels — auto-entrepreneurs, PME/PMI, professions libérales, grandes entreprises, institutions et associations — dans la <b>création ou la refonte</b> de leur site internet.",
+            "Notre service va bien au-delà du simple design et des fonctionnalités : chaque site est pensé pour être <b>100 % Google Friendly</b>, garantissant ainsi une indexation rapide et efficace.",
+            "Nous accordons une attention particulière à l’optimisation des <b>appels à l’action</b>, au <b>respect des normes de sécurité</b> et à la <b>rapidité</b> de chargement, afin d’offrir à vos visiteurs une expérience fluide, engageante et orientée vers la conversion.",
+            "Appelez le +212 663 75 09 08 et confiez la création de votre site web à des experts reconnus dans le domaine du SEO au Maroc.",
+          ]}
+          imageSrc="/images/18/creation-site-web-maroc.jpg"
+          imageAlt="Création de site web au Maroc"
+          consultButtonTextExiste={true}
+          textButton={"Contactez-nous"}
+          href={"https://www.hostino.ma/contact"}
+        />
 
-      <TextLeftImageRight
-        title={
-          <>
-            Création de site web :{" "}
-            <span style={{ textDecoration: "underline" }}>
-              l'erreur à ne pas commettre{" "}
-            </span>
-            ⚠️
-          </>
-        }
-        paragraphs={[
-          "Aujourd’hui, créer un site web est devenu extrêmement simple grâce aux <b>plateformes no code</b>, aux éditeurs drag & drop, aux <b>générateurs de sites IA</b>, mais aussi aux agences web qui proposent des sites low-cost (<strong><span style='color: #ff0000;'>parfois à moins de 999 DH</span></strong>).",
-          "Bien que beaucoup de gens l’ignorent au départ, ces sites n’atteindront <b>jamais un bon classement sur Google</b>. Ils ne généreront donc ni trafic, ni prospects, ni visibilité, et ne serviront au mieux que de simple vitrine, <b>à mentionner sur une carte de visite</b> <img width='20px' height='20px' role='img' draggable='false' src='/images/creation-site-web-maroc/1f923.svg' alt='🤣'>.",
-          "Contrairement à ces solutions, chaque site que nous développons est conçu dès le départ pour une <b>visibilité maximale</b>. Nous l’optimisons méticuleusement pour le <a href='/agence-seo-maroc/'><span style='text-decoration: underline;'><strong>référencement naturel (SEO)</strong></span></a>, ce qui garantit non seulement un excellent classement sur Google, mais aussi une visibilité accrue sur les <b>nouvelles plateformes d’IA</b>.",
-          "Appelez le +212 663 75 09 08 et confiez la création de votre site internet à des experts reconnus dans le domaine.",
-        ]}
-        imageSrc="/images/creation-site-web-maroc/erreur-creation-site-web-maroc.jpg"
-        imageAlt="Pourquoi le site web low-cost est une erreur"
-        consultButtonTextExiste={true}
-        textButton={"Contactez-nous"}
-        href={"https://www.hostino.ma/contact"}
-      />
+        <TextLeftImageRight
+          title={
+            <>
+              Création de site web :{" "}
+              <span style={{ textDecoration: "underline" }}>
+                l'erreur à ne pas commettre{" "}
+              </span>
+              ⚠️
+            </>
+          }
+          paragraphs={[
+            "Aujourd’hui, créer un site web est devenu extrêmement simple grâce aux <b>plateformes no code</b>, aux éditeurs drag & drop, aux <b>générateurs de sites IA</b>, mais aussi aux agences web qui proposent des sites low-cost (<strong><span style='color: #ff0000;'>parfois à moins de 999 DH</span></strong>).",
+            "Bien que beaucoup de gens l’ignorent au départ, ces sites n’atteindront <b>jamais un bon classement sur Google</b>. Ils ne généreront donc ni trafic, ni prospects, ni visibilité, et ne serviront au mieux que de simple vitrine, <b>à mentionner sur une carte de visite</b> <img width='20px' height='20px' role='img' draggable='false' src='/images/18/1f923.svg' alt='🤣'>.",
+            "Contrairement à ces solutions, chaque site que nous développons est conçu dès le départ pour une <b>visibilité maximale</b>. Nous l’optimisons méticuleusement pour le <a href='/agence-seo-maroc/'><span style='text-decoration: underline;'><strong>référencement naturel (SEO)</strong></span></a>, ce qui garantit non seulement un excellent classement sur Google, mais aussi une visibilité accrue sur les <b>nouvelles plateformes d’IA</b>.",
+            "Appelez le +212 663 75 09 08 et confiez la création de votre site internet à des experts reconnus dans le domaine.",
+          ]}
+          imageSrc="/images/18/erreur-creation-site-web-maroc.jpg"
+          imageAlt="Pourquoi le site web low-cost est une erreur"
+          consultButtonTextExiste={true}
+          textButton={"Contactez-nous"}
+          href={"https://www.hostino.ma/contact"}
+        />
 
-      <GmbServices
-        data={prestations}
-        title="Découvrez l’ensemble de nos services de création site web Maroc"
-      />
+        <GmbServices
+          data={prestations}
+          title="Découvrez l’ensemble de nos services de création site web Maroc"
+        />
 
-      <GooglePositioning
-        rankingsData={rankingsData}
-        title="Création site web <br/> et positionnement Google"
-        subtitle="Hostino™ a aidé de nombreux clients au Maroc et à l’étranger à améliorer leur positionnement Google. <b>Découvrez nos succès</b> et imaginez ce que nous pourrions faire pour votre entreprise."
-      />
+        <GooglePositioning
+          rankingsData={rankingsData}
+          title="Création site web <br/> et positionnement Google"
+          subtitle="Hostino™ a aidé de nombreux clients au Maroc et à l’étranger à améliorer leur positionnement Google. <b>Découvrez nos succès</b> et imaginez ce que nous pourrions faire pour votre entreprise."
+        />
 
-      <TextLeftImageRight
-        title="Sites web conformes CNDP au Maroc et au RGPD en Europe"
-        paragraphs={[
-          `Notre agence de création de sites web au Maroc s’engage à garantir la conformité de votre site, tant avec le Règlement Général sur la Protection des Données <b>(RGPD) en Europe</b> qu’avec le cadre juridique marocain, sous l’égide de la Commission Nationale de Contrôle de la Protection des Données à Caractère Personnel <b>(<span style="text-decoration: underline;"><a href="https://www.cndp.ma/wp-content/uploads/2023/01/CNDP-guide-conformite-sites-web-fr.pdf" rel="noopener">CNDP</a></span>)</b>.`,
-          "Chaque site que nous concevons est pensé et développé pour intégrer les normes les plus strictes de confidentialité et de sécurité, tout en respectant les <b>exigences légales spécifiques à chaque pays.</b>",
-          "Ces normes, que la plupart des agences web n'appliquent malheureusement pas, ne sont pas à prendre à la légère. Dans <b>l'Union européenne</b>, le non-respect du RGPD peut entraîner <b>des amendes</b> allant de quelques milliers d'euros à plusieurs dizaines de millions.",
-        ]}
-        imageSrc="images/creation-site-web-maroc/creation-site-web-gdpr.jpg"
-        imageAlt="Création site web GDPR et ANRT au Maroc"
-        consultButtonTextExiste={true}
-        textButton="Contactez-nous"
-        href="https://www.hostino.ma/contact"
-      />
+        <TextLeftImageRight
+          title="Sites web conformes CNDP au Maroc et au RGPD en Europe"
+          paragraphs={[
+            `Notre agence de création de sites web au Maroc s’engage à garantir la conformité de votre site, tant avec le Règlement Général sur la Protection des Données <b>(RGPD) en Europe</b> qu’avec le cadre juridique marocain, sous l’égide de la Commission Nationale de Contrôle de la Protection des Données à Caractère Personnel <b>(<span style="text-decoration: underline;"><a href="https://www.cndp.ma/wp-content/uploads/2023/01/CNDP-guide-conformite-sites-web-fr.pdf" rel="noopener">CNDP</a></span>)</b>.`,
+            "Chaque site que nous concevons est pensé et développé pour intégrer les normes les plus strictes de confidentialité et de sécurité, tout en respectant les <b>exigences légales spécifiques à chaque pays.</b>",
+            "Ces normes, que la plupart des agences web n'appliquent malheureusement pas, ne sont pas à prendre à la légère. Dans <b>l'Union européenne</b>, le non-respect du RGPD peut entraîner <b>des amendes</b> allant de quelques milliers d'euros à plusieurs dizaines de millions.",
+          ]}
+          imageSrc="images/18/creation-site-web-gdpr.jpg"
+          imageAlt="Création site web GDPR et ANRT au Maroc"
+          consultButtonTextExiste={true}
+          textButton="Contactez-nous"
+          href="https://www.hostino.ma/contact"
+        />
 
-      <GmbAdvantages
-        advantages={advantages}
-        title="Pourquoi choisir Hostino pour la<br/> création site web Maroc ?"
-      />
+        <GmbAdvantages
+          advantages={advantages}
+          title="Pourquoi choisir Hostino pour la<br/> création site web Maroc ?"
+        />
 
-      <TextLeftImageRight
-        title="Création de site web orientée génération de leads"
-        paragraphs={[
-          "Créer un site internet <b>optimisé pour la génération de leads</b>&nbsp;ne se limite pas à des compétences techniques de base. Cela implique une véritable expertise en développement web, une parfaite maîtrise des standards Google et l’accompagnement de chefs de projet ainsi que de professionnels expérimentés.",
-          "Que vous souhaitiez mettre en place un site web corporate conçu pour <b>générer des leads qualifiés</b> ou développer une boutique en ligne <b>optimisée pour la conversion</b>, notre agence web Maroc vous accompagne à chaque étape — de la conception à la mise en ligne — afin de garantir un site performant, durable et compétitif.",
-          "Appelez le +212 663 75 09 08 et confiez la création de votre site web à une agence LeadGen réputée au Maroc.",
-        ]}
-        imageSrc="images/creation-site-web-maroc/creation-site-web-lead-generation.jpg"
-        imageAlt="creation-site-web-lead-generation.jpg"
-        consultButtonTextExiste={false}
-        className="lg:mt-[150px] mb-[20px] mt-[80px]"
-      />
-      <ComparisonTable tableData={tableData} />
+        <TextLeftImageRight
+          title="Création de site web orientée génération de leads"
+          paragraphs={[
+            "Créer un site internet <b>optimisé pour la génération de leads</b>&nbsp;ne se limite pas à des compétences techniques de base. Cela implique une véritable expertise en développement web, une parfaite maîtrise des standards Google et l’accompagnement de chefs de projet ainsi que de professionnels expérimentés.",
+            "Que vous souhaitiez mettre en place un site web corporate conçu pour <b>générer des leads qualifiés</b> ou développer une boutique en ligne <b>optimisée pour la conversion</b>, notre agence web Maroc vous accompagne à chaque étape — de la conception à la mise en ligne — afin de garantir un site performant, durable et compétitif.",
+            "Appelez le +212 663 75 09 08 et confiez la création de votre site web à une agence LeadGen réputée au Maroc.",
+          ]}
+          imageSrc="images/18/creation-site-web-lead-generation.jpg"
+          imageAlt="creation-site-web-lead-generation.jpg"
+          consultButtonTextExiste={false}
+          className="lg:mt-[150px] mb-[20px] mt-[80px]"
+        />
+        <ComparisonTable tableData={tableData} />
 
-      <NationalCoverage
-        title="Création site web partout au Maroc"
-        topic={"Création site web "}
-      />
+        <NationalCoverage
+          title="Création site web partout au Maroc"
+          topic={"Création site web "}
+        />
 
-      <FAQSection faqData={faqData} title="FAQ - Création site web Maroc" />
-    </main>
+        <FAQSection faqData={faqData} title="FAQ - Création site web Maroc" />
+      </main>
+    </>
   );
 }

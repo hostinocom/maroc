@@ -109,7 +109,7 @@ export default function DomainSearchSection({id} : {id : string}) {
         </form>
 
         <Image
-          src="/images/home/nav-domaines.png"
+          src="/images/01/nav-domaines.png"
           alt="Nav domaines"
           className="mx-auto md:w-[50%] sm:w-[80%] w-[100%] "
           width={1226}

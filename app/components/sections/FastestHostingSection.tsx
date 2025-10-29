@@ -38,7 +38,7 @@ export default function FastestHostingSection() {
           </div>
           <div className="col-span-1 flex justify-end">
             <Image
-              src="/images/home/hebergement-web-maroc-cloud.svg"
+              src="/images/01/hebergement-web-maroc-cloud.svg"
               alt="Cloud Hosting in Morocco"
               width={3508}
               height={2481}

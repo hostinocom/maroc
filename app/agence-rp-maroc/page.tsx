@@ -6,12 +6,50 @@ import FAQSection from "../components/commonSections/FaqSection";
 import TitleParagraphButton from "../components/commonSections/TitleParagraphButton";
 import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter";
 import GmbServices from "../components/commonSections/GmbServices";
+import { main_schema } from "../schema";
 
-const title = "Agence RP Maroc | Communication presse, relations publiques"
-const description =  "Agence RP Maroc. Actions RP, influence, digitales, brand content et évènementielles. Publication d’articles sur des sites médias ☎️ 0663 75 09 08"
-const imageUrl = "https://maroc-1hp.pages.dev/images/agence-rp-maroc/agence-marketing-hotel-maroc.png" 
-const canonical_url = "https://www.hostino.ma/agence-rp-maroc"
-const og_alt = "Agence RP Maroc"
+const title = "Agence RP Maroc | Communication presse, relations publiques";
+const description =
+  "Agence RP Maroc. Actions RP, influence, digitales, brand content et évènementielles. Publication d’articles sur des sites médias ☎️ 0663 75 09 08";
+const imageUrl =
+  "https://maroc-1hp.pages.dev/images/agence-rp-maroc/agence-marketing-hotel-maroc.png";
+const canonical_url = "https://www.hostino.ma/agence-rp-maroc";
+const og_alt = "Agence RP Maroc";
+
+export const metadata = {
+  title: title,
+  description: description,
+  robots:
+    "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  alternates: {
+    canonical: canonical_url,
+  },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: canonical_url,
+    siteName: "Hostino",
+    title: title,
+    description: description,
+    images: [
+      {
+        url: imageUrl,
+        secureUrl: imageUrl,
+        width: 1200,
+        height: 630,
+        alt: og_alt,
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: title,
+    description: description,
+    images: [imageUrl],
+    creator: "@admin",
+  },
+};
 
 const faqData = [
   {
@@ -124,79 +162,132 @@ const services = [
 ];
 
 export default async function RPAgencyPage() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      ...main_schema,
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.hostino.ma/#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: "1",
+            item: {
+              "@id": "https://www.hostino.ma",
+              name: "Hostino - Noms de domaine et hébergement web au Maroc",
+            },
+          },
+          {
+            "@type": "ListItem",
+            position: "2",
+            item: {
+              "@id": canonical_url,
+              name: og_alt,
+            },
+          },
+        ],
+      },
+      {
+        "@type": "Product",
+        name: title,
+        url: canonical_url,
+        description: description,
+        brand: { "@type": "Brand", name: "Hostino" },
+        offers: {
+          "@type": "AggregateOffer",
+          url: canonical_url,
+          lowPrice: "118",
+          priceCurrency: "MAD",
+          availability: "InStock",
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "5",
+          reviewCount: "920",
+        },
+      },
+    ],
+  };
+
   return (
-    <main>
-     
-      <HeroSection
-        subtitle="Agence RP Maroc"
-        title="Agence relations presse & influence"
-        text="Notre agence RP Maroc accompagne les <strong>marques</strong>, les <strong>entreprises</strong> et les <strong>personnalités</strong> dans leur visibilité médiatique."
-        emailLabel={{
-          textEmail: "Consultation par Email ?",
-          color: "text-primary",
-        }}
-        email="info@hostino.com"
-        imageSrc="images/13/agence-marketing-hotel-maroc.png"
-        imageAlt="Agence RP au Maroc"
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+      <main>
+        <HeroSection
+          subtitle="Agence RP Maroc"
+          title="Agence relations presse & influence"
+          text="Notre agence RP Maroc accompagne les <strong>marques</strong>, les <strong>entreprises</strong> et les <strong>personnalités</strong> dans leur visibilité médiatique."
+          emailLabel={{
+            textEmail: "Consultation par Email ?",
+            color: "text-primary",
+          }}
+          email="info@hostino.com"
+          imageSrc="images/13/agence-marketing-hotel-maroc.png"
+          imageAlt="Agence RP au Maroc"
+        />
 
-      <ContactForm
-        title={
-          <>
-            RP Maroc : un conseiller <br className="lg:hidden block " />
-            <span className="border-bottom">vous rappelle !</span>
-          </>
-        }
-      />
+        <ContactForm
+          title={
+            <>
+              RP Maroc : un conseiller <br className="lg:hidden block " />
+              <span className="border-bottom">vous rappelle !</span>
+            </>
+          }
+        />
 
-      <TextLeftImageRight
-        title="Affirmez votre présence dans les médias"
-        paragraphs={[
-          "Hostino est une agence RP innovante basée au Maroc, spécialisée dans la communication stratégique et éditoriale, accompagnant multinationales, marques, entreprises et personnalités pour <b>sécuriser leur visibilité médiatique</b>.",
-          "Nous proposons un panel complet de services de relations presse, incluant la <b>rédaction de communiqués</b>, le <b>storytelling</b>, la <b>diffusion dans les grands médias nationaux</b>, la veille médiatique ainsi que la communication de crise.",
-          "En s'appuyant sur une connaissance approfondie de la culture locale marocaine, de son paysage médiatique et de ses spécificités <b>culturelles et linguistiques</b>, Hostino conçoit des stratégies de communication authentiques, ancrées dans la réalité du terrain.",
-          "Appelez le +212 663 75 09 08 et confiez votre stratégie RP à des experts reconnus au Maroc.",
-        ]}
-        imageSrc="images/13/agence-rp-maroc.jpg"
-        imageAlt="Agence de RP au Maroc"
-        consultButtonTextExiste={true}
-        textButton="Contactez-nous"
-        href="https://www.hostino.ma/contact"
-      />
+        <TextLeftImageRight
+          title="Affirmez votre présence dans les médias"
+          paragraphs={[
+            "Hostino est une agence RP innovante basée au Maroc, spécialisée dans la communication stratégique et éditoriale, accompagnant multinationales, marques, entreprises et personnalités pour <b>sécuriser leur visibilité médiatique</b>.",
+            "Nous proposons un panel complet de services de relations presse, incluant la <b>rédaction de communiqués</b>, le <b>storytelling</b>, la <b>diffusion dans les grands médias nationaux</b>, la veille médiatique ainsi que la communication de crise.",
+            "En s'appuyant sur une connaissance approfondie de la culture locale marocaine, de son paysage médiatique et de ses spécificités <b>culturelles et linguistiques</b>, Hostino conçoit des stratégies de communication authentiques, ancrées dans la réalité du terrain.",
+            "Appelez le +212 663 75 09 08 et confiez votre stratégie RP à des experts reconnus au Maroc.",
+          ]}
+          imageSrc="images/13/agence-rp-maroc.jpg"
+          imageAlt="Agence de RP au Maroc"
+          consultButtonTextExiste={true}
+          textButton="Contactez-nous"
+          href="https://www.hostino.ma/contact"
+        />
 
-      <TitleParagraphButton
-        subtitle="Agence RP depuis le Maroc"
-        title={`Nous aidons les marques à se positionner<br/>sur le marché marocain`}
-        paragraphs={[
-          "Notre agence RP au Maroc accompagne les marques dans leur ancrage stratégique sur un marché en pleine transformation. Nous aidons nos clients à <b>comprendre les dynamiques locales</b>, à adapter leur discours aux réalités culturelles et à bâtir une présence médiatique crédible et durable.",
-          "Grâce à notre expertise, chaque prise de parole devient une <b>opportunité d'influence</b> et de notoriété. Nous concevons des campagnes RP sur mesure, mêlant communication éditoriale, relations médias et actions ciblées auprès des acteurs clés de l'écosystème marocain. Qu'il s'agisse de valoriser une identité de marque, de soutenir une croissance ou d'accompagner une implantation, nous élaborons des stratégies qui génèrent un impact réel sur l'opinion publique.",
-        ]}
-        buttonText="Contactez-nous"
-        buttonHref="https://www.hostino.ma/contact"
-      />
+        <TitleParagraphButton
+          subtitle="Agence RP depuis le Maroc"
+          title={`Nous aidons les marques à se positionner<br/>sur le marché marocain`}
+          paragraphs={[
+            "Notre agence RP au Maroc accompagne les marques dans leur ancrage stratégique sur un marché en pleine transformation. Nous aidons nos clients à <b>comprendre les dynamiques locales</b>, à adapter leur discours aux réalités culturelles et à bâtir une présence médiatique crédible et durable.",
+            "Grâce à notre expertise, chaque prise de parole devient une <b>opportunité d'influence</b> et de notoriété. Nous concevons des campagnes RP sur mesure, mêlant communication éditoriale, relations médias et actions ciblées auprès des acteurs clés de l'écosystème marocain. Qu'il s'agisse de valoriser une identité de marque, de soutenir une croissance ou d'accompagner une implantation, nous élaborons des stratégies qui génèrent un impact réel sur l'opinion publique.",
+          ]}
+          buttonText="Contactez-nous"
+          buttonHref="https://www.hostino.ma/contact"
+        />
 
-      <GmbServices
-        data={services}
-        title="Nos services relations<br/>presse au Maroc"
-      />
+        <GmbServices
+          data={services}
+          title="Nos services relations<br/>presse au Maroc"
+        />
 
-      <TextLeftImageRight
-        title="Notre agence RP garantit votre visibilité sur Google"
-        paragraphs={[
-          "Notre agence RP garantit votre visibilité sur Google grâce à une stratégie éditoriale ciblée et une diffusion sur des supports à forte autorité. Nous renforçons votre image et maximisons votre impact en ligne.",
-          "Nous collaborons avec un large réseau de médias et de plateformes influentes pour publier des contenus à forte valeur ajoutée, rapidement indexés et bien positionnés sur Google.",
-          "Chaque publication est optimisée selon les standards SEO pour assurer une visibilité accrue, une notoriété renforcée et un trafic qualifié vers votre marque.",
-          "Appelez le +212 663 75 09 08 et confiez votre stratégie RP à des experts reconnus au Maroc.",
-        ]}
-        imageSrc="images/13/agence-seo-markeing-news.jpg"
-        imageAlt="Agence SEO marketing News et médias"
-        consultButtonTextExiste={true}
-        textButton="Contactez-nous"
-        href="https://www.hostino.ma/contact"
-      />
+        <TextLeftImageRight
+          title="Notre agence RP garantit votre visibilité sur Google"
+          paragraphs={[
+            "Notre agence RP garantit votre visibilité sur Google grâce à une stratégie éditoriale ciblée et une diffusion sur des supports à forte autorité. Nous renforçons votre image et maximisons votre impact en ligne.",
+            "Nous collaborons avec un large réseau de médias et de plateformes influentes pour publier des contenus à forte valeur ajoutée, rapidement indexés et bien positionnés sur Google.",
+            "Chaque publication est optimisée selon les standards SEO pour assurer une visibilité accrue, une notoriété renforcée et un trafic qualifié vers votre marque.",
+            "Appelez le +212 663 75 09 08 et confiez votre stratégie RP à des experts reconnus au Maroc.",
+          ]}
+          imageSrc="images/13/agence-seo-markeing-news.jpg"
+          imageAlt="Agence SEO marketing News et médias"
+          consultButtonTextExiste={true}
+          textButton="Contactez-nous"
+          href="https://www.hostino.ma/contact"
+        />
 
-      <FAQSection faqData={faqData} title="FAQ - Agence RP Maroc" />
-      <StartsRatingYellowFooter totalVotes={49} />
-    </main>
+        <FAQSection faqData={faqData} title="FAQ - Agence RP Maroc" />
+        <StartsRatingYellowFooter totalVotes={49} />
+      </main>
+    </>
   );
 }

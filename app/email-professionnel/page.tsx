@@ -14,6 +14,7 @@ import PlansEmail from "../components/sectionsEmailProfessionnelPage/PlansEmail"
 import ServiceProximite from "../components/commonSections/ServiceProximite";
 import StarRatingYellowFooter from "../components/ui/StartsRatingYellowFooter";
 import Head from "next/head";
+import { main_schema } from "../schema";
 
 const title = "Email professionnel - Solution Mail Pro rapide et chiffrée"
 const description =  "Email professionnel Maroc. Créer votre email Pro avec Hostino. Solution de messagerie d&#039;entreprise nom@entreprise.ma ✉️ dès 25 DH/mois"
@@ -21,6 +22,40 @@ const imageUrl = "https://www.hostino.ma/wp-content/uploads/2024/10/hebergement-
 const canonical_url = "https://www.hostino.ma/email-professionnel"
 const og_alt = "Email professionnel"
 
+export const metadata = {
+  title: title,
+  description: description,
+  robots:
+    "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  alternates: {
+    canonical: canonical_url,
+  },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: canonical_url,
+    siteName: "Hostino",
+    title: title,
+    description: description,
+    images: [
+      {
+        url: imageUrl,
+        secureUrl: imageUrl,
+        width: 1200,
+        height: 630,
+        alt: og_alt,
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: title,
+    description: description,
+    images: [imageUrl],
+    creator: "@admin",
+  },
+};
 const faqData = [
   {
     question: "Quels sont les avantages d'utiliser Maily® ?",
@@ -285,23 +320,61 @@ const hostingFeatures = [
 // ];
 
 export default async function EmailProfessionnelPage() {
-  return (
-    <>
-      <Head>
-          <Head>
-        <title>Cool Title</title>
-        <meta name="description" content="Checkout our cool page" key="desc" />
-        <meta property="og:title" content="Social Title for Cool Page" />
-        <meta
-          property="og:description"
-          content="And a social description for our cool page"
-        />
-        <meta
-          property="og:image"
-          content="https://example.com/images/cool-page.jpg"
-        />
-      </Head>
-      </Head>
+  const articleSchema = {
+        "@context": "https://schema.org",
+        "@graph": [
+          ...main_schema,
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://www.hostino.ma/#breadcrumb",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: "1",
+                item: {
+                  "@id": "https://www.hostino.ma",
+                  name: "Hostino - Noms de domaine et hébergement web au Maroc",
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: "2",
+                item: {
+                  "@id": canonical_url,
+                  name: og_alt,
+                },
+              },
+            ],
+          },
+          {
+            "@type": "Product",
+            name: title,
+            url: canonical_url,
+            description: description,
+            brand: { "@type": "Brand", name: "Hostino" },
+            offers: {
+              "@type": "AggregateOffer",
+              url: canonical_url,
+              lowPrice: "118",
+              priceCurrency: "MAD",
+              availability: "InStock",
+            },
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "5",
+              reviewCount: "920",
+            },
+          },
+        ],
+      };
+    
+      return (
+        <>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+          />
+    
 
       
 
@@ -311,7 +384,7 @@ export default async function EmailProfessionnelPage() {
           bigTitle="Adresse email professionnelle pour votre entreprise"
           lineGreen={true}
         />
-        <div className="bg-gray-100 md:pb-[100px] pb-[80px]">
+        <div className="bg-gray-200 md:pb-[100px] pb-[80px]">
           <div className="container">
             <div className=" text-center">
               <p className="paragraph">

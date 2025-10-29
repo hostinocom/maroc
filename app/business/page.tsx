@@ -7,13 +7,51 @@ import Plans from "../components/commonSections/Plans";
 import HeroHeadingPages from "../components/ui/heroHeadingPages";
 import TrustedBySection from "../components/sections/TrustedBySection";
 import PromoBanner from "../components/ui/PromoBanner";
+import { main_schema } from "../schema";
 
-const title = "Hébergement web Business - Solutions d&#039;hébergement pour les Pros"
-const description =  "Hébergement de site web d&#039;entreprise au Maroc, Solution d&#039;hébergement professionnel parfaitement adaptée aux sites corporate"
-const imageUrl = "https://www.hostino.ma/wp-content/uploads/2024/10/hebergement-web.png" 
-const canonical_url = "https://www.hostino.ma/business"
-const og_alt = "Hébergement web Business"
+const title =
+  "Hébergement web Business - Solutions d&#039;hébergement pour les Pros";
+const description =
+  "Hébergement de site web d&#039;entreprise au Maroc, Solution d&#039;hébergement professionnel parfaitement adaptée aux sites corporate";
+const imageUrl =
+  "https://www.hostino.ma/wp-content/uploads/2024/10/hebergement-web.png";
+const canonical_url = "https://www.hostino.ma/business";
+const og_alt = "Hébergement web Business";
 
+export const metadata = {
+  title: title,
+  description: description,
+  robots:
+    "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  alternates: {
+    canonical: canonical_url,
+  },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: canonical_url,
+    siteName: "Hostino",
+    title: title,
+    description: description,
+    images: [
+      {
+        url: imageUrl,
+        secureUrl: imageUrl,
+        width: 1200,
+        height: 630,
+        alt: og_alt,
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: title,
+    description: description,
+    images: [imageUrl],
+    creator: "@admin",
+  },
+};
 const hostingPlans = [
   {
     id: 1,
@@ -171,51 +209,104 @@ const faqData = [
   },
 ];
 
-export default async function StartyPage() {
+export default async function BusinessPage() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      ...main_schema,
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.hostino.ma/#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: "1",
+            item: {
+              "@id": "https://www.hostino.ma",
+              name: "Hostino - Noms de domaine et hébergement web au Maroc",
+            },
+          },
+          {
+            "@type": "ListItem",
+            position: "2",
+            item: {
+              "@id": canonical_url,
+              name: og_alt,
+            },
+          },
+        ],
+      },
+      {
+        "@type": "Product",
+        name: title,
+        url: canonical_url,
+        description: description,
+        brand: { "@type": "Brand", name: "Hostino" },
+        offers: {
+          "@type": "AggregateOffer",
+          url: canonical_url,
+          lowPrice: "118",
+          priceCurrency: "MAD",
+          availability: "InStock",
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "5",
+          reviewCount: "920",
+        },
+      },
+    ],
+  };
+
   return (
-    <main>
-      
-      <HeroHeadingPages
-        smallTitle="Hébergement web business"
-        bigTitle="Business®, Hébergement web pour les professionnels"
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
-      <Plans
-        title="Starty®, Hébergement web pas cher"
-        smallTitle="Hébergement web pas cher"
-        plans={hostingPlans}
-        heroHeading={true}
-        namePlaneBold={true}
-      />
-      <PromoBanner
-        icon="⚠️"
-        text="Lancez votre site à petit prix avec nos offres d’hébergement web <b><i>Starty</i></b>. Quand votre activité grandit, passez aux packs <b><a style={{textDecoration:'underline'}} href='/business/'>Business</a></b> pour des performances pro."
-      />
-      <TrustedBySection classNameImage="md:w-[65%]  w-[100%] mx-auto h-auto" />
+      <main>
+        <HeroHeadingPages
+          smallTitle="Hébergement web business"
+          bigTitle="Business®, Hébergement web pour les professionnels"
+        />
+        <Plans
+          title="Starty®, Hébergement web pas cher"
+          smallTitle="Hébergement web pas cher"
+          plans={hostingPlans}
+          heroHeading={true}
+          namePlaneBold={true}
+        />
+        <PromoBanner
+          icon="⚠️"
+          text="Lancez votre site à petit prix avec nos offres d’hébergement web <b><i>Starty</i></b>. Quand votre activité grandit, passez aux packs <b><a style={{textDecoration:'underline'}} href='/business/'>Business</a></b> pour des performances pro."
+        />
+        <TrustedBySection classNameImage="md:w-[65%]  w-[100%] mx-auto h-auto" />
 
-      <StartyComparison />
-      <TextLeftImageRight
-        title="Découvrez Maily®,
+        <StartyComparison />
+        <TextLeftImageRight
+          title="Découvrez Maily®,
 la révolution de la messagerie <i>pro</i>"
-        paragraphs={[
-          "Sécurisez vos échanges professionnels avec Maily®, la messagerie cloud la plus fiable du marché, conçue par Hostino®.",
-          "Oubliez les problèmes d’envoi et de réception liés aux solutions mail traditionnelles intégrées au cPanel (webmail de Roundcube). Maily® est bien plus qu’une simple boîte mail : c’est la solution qui allie sécurité, productivité et efficacité pour une expérience collaborative inégalée.",
-          "Notre équipe d’experts est à votre écoute pour vous accompagner dans la mise en place, la configuration et l’utilisation de Maily®. Appelez-nous dès maintenant au +212 (05) 31 03 11 86.",
-        ]}
-        imageSrc="/images/02/email-professionnel-maroc.jpg"
-        imageAlt="Maily - Messagerie professionnelle"
-      />
-      <SixCards
-        title={
-          "Pourquoi faire confiance à Hostino pour l'hébergement de votre site web ?"
-        }
-        alignment="left"
-      />
+          paragraphs={[
+            "Sécurisez vos échanges professionnels avec Maily®, la messagerie cloud la plus fiable du marché, conçue par Hostino®.",
+            "Oubliez les problèmes d’envoi et de réception liés aux solutions mail traditionnelles intégrées au cPanel (webmail de Roundcube). Maily® est bien plus qu’une simple boîte mail : c’est la solution qui allie sécurité, productivité et efficacité pour une expérience collaborative inégalée.",
+            "Notre équipe d’experts est à votre écoute pour vous accompagner dans la mise en place, la configuration et l’utilisation de Maily®. Appelez-nous dès maintenant au +212 (05) 31 03 11 86.",
+          ]}
+          imageSrc="/images/02/email-professionnel-maroc.jpg"
+          imageAlt="Maily - Messagerie professionnelle"
+        />
+        <SixCards
+          title={
+            "Pourquoi faire confiance à Hostino pour l'hébergement de votre site web ?"
+          }
+          alignment="left"
+        />
 
-      <FAQSection
-        faqData={faqData}
-        title={"FAQ sur l'hébergement web Business"}
-      />
-      <StarRating />
-    </main>
+        <FAQSection
+          faqData={faqData}
+          title={"FAQ sur l'hébergement web Business"}
+        />
+        <StarRating />
+      </main>
+    </>
   );
 }

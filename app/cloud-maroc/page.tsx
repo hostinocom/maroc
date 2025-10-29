@@ -9,13 +9,50 @@ import HostingSolutionsCards from "../components/sectionsCloudMarocPage/HostingS
 import ServerVps from "../components/sectionsCloudMarocPage/ServerVps";
 import PlansPack from "../components/sectionsCloudMarocPage/PlansPack";
 import ContactForm from "../components/commonSections/ContactForm";
+import { main_schema } from "../schema";
 
-const title = "Cloud Maroc | Sécurité et souveraineté des données"
-const description =  "Cloud Maroc. Solution Cloud de souveraineté numérique, conforme aux obligations légales d’hébergement des données sur le Cloud au Maroc."
-const imageUrl = "https://www.hostino.ma/wp-content/uploads/2024/10/hebergement-web.png" 
-const canonical_url = "https://www.hostino.ma/cloud-maroc/"
-const og_alt = "Cloud Maroc"
+const title = "Cloud Maroc | Sécurité et souveraineté des données";
+const description =
+  "Cloud Maroc. Solution Cloud de souveraineté numérique, conforme aux obligations légales d’hébergement des données sur le Cloud au Maroc.";
+const imageUrl =
+  "https://www.hostino.ma/wp-content/uploads/2024/10/hebergement-web.png";
+const canonical_url = "https://www.hostino.ma/cloud-maroc/";
+const og_alt = "Cloud Maroc";
 
+export const metadata = {
+  title: title,
+  description: description,
+  robots:
+    "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  alternates: {
+    canonical: canonical_url,
+  },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: canonical_url,
+    siteName: "Hostino",
+    title: title,
+    description: description,
+    images: [
+      {
+        url: imageUrl,
+        secureUrl: imageUrl,
+        width: 1200,
+        height: 630,
+        alt: og_alt,
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: title,
+    description: description,
+    images: [imageUrl],
+    creator: "@admin",
+  },
+};
 const faqData = [
   {
     question: "Qu’est-ce qu’un cloud souverain au Maroc ?",
@@ -126,7 +163,7 @@ const faqData = [
 
 const hostingFeatures = [
   {
-    image: "cloud-maroc/hebergeur-marocain.jpg",
+    image: "03/hebergeur-marocain.jpg",
     alt: "Souveraineté numérique",
     title: "Souveraineté <span>numérique</span>",
     description: `
@@ -136,7 +173,7 @@ const hostingFeatures = [
     `,
   },
   {
-    image: "cloud-maroc/adresse-ip-maroc.png",
+    image: "03/adresse-ip-maroc.png",
     alt: "Adresse IP marocaine",
     title: "Adresse <span>IP marocaine</span>",
     description: `
@@ -146,7 +183,7 @@ const hostingFeatures = [
     `,
   },
   {
-    image: "cloud-maroc/coonectivite-haut-debit.png",
+    image: "03/coonectivite-haut-debit.png",
     alt: "Connectivité Haut-Débit",
     title: "Connectivité <span>Haut-Débit</span>",
     description: `
@@ -156,7 +193,7 @@ const hostingFeatures = [
     `,
   },
   {
-    image: "cloud-maroc/services-manages.png",
+    image: "03/services-manages.png",
     alt: "Services managés",
     title: "Services <span>Managés</span>",
     description: `
@@ -166,7 +203,7 @@ const hostingFeatures = [
     `,
   },
   {
-    image: "cloud-maroc/securite-monitoring.png",
+    image: "03/securite-monitoring.png",
     alt: "Monitoring et sécurité",
     title: "Monitoring et <span>Sécurité</span>",
     description: `
@@ -176,7 +213,7 @@ const hostingFeatures = [
     `,
   },
   {
-    image: "cloud-maroc/conformite-anrt.png",
+    image: "03/conformite-anrt.png",
     alt: "Conformité réglementaire",
     title: "Conformité <span>réglementaire</span>",
     description: `
@@ -285,98 +322,151 @@ const hostingFeatures = [
 // ];
 
 export default async function CloudMarocPage() {
-  return (
-    <main>
-      
-      <HeroHeadingPages
-        smallTitle="Cloud Maroc"
-        bigTitle="Commander un Cloud souverain au Maroc"
-      />
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      ...main_schema,
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.hostino.ma/#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: "1",
+            item: {
+              "@id": "https://www.hostino.ma",
+              name: "Hostino - Noms de domaine et hébergement web au Maroc",
+            },
+          },
+          {
+            "@type": "ListItem",
+            position: "2",
+            item: {
+              "@id": canonical_url,
+              name: og_alt,
+            },
+          },
+        ],
+      },
+      {
+        "@type": "Product",
+        name: title,
+        url: canonical_url,
+        description: description,
+        brand: { "@type": "Brand", name: "Hostino" },
+        offers: {
+          "@type": "AggregateOffer",
+          url: canonical_url,
+          lowPrice: "118",
+          priceCurrency: "MAD",
+          availability: "InStock",
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "5",
+          reviewCount: "920",
+        },
+      },
+    ],
+  };
 
-      <div className="bg-gray-200 lg:pb-[100px] pb-[80px]">
-        <div className="container">
-          <div className="md:px-[220px]  text-center">
-            <p className="paragraph">
-              Hébergez vos données sensibles, e-mails, sites web et applications
-              dans <b>un datacenter au Maroc </b>🇲🇦. Avec Hostino®, profitez de
-              l’offre de
-              <b>Cloud souverain</b> la plus accessible et avantageuse du
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <main>
+        <HeroHeadingPages
+          smallTitle="Cloud Maroc"
+          bigTitle="Commander un Cloud souverain au Maroc"
+        />
+
+        <div className="bg-gray-200 lg:pb-[100px] pb-[80px]">
+          <div className="container">
+            <div className="md:px-[220px]  text-center">
+              <p className="paragraph">
+                Hébergez vos données sensibles, e-mails, sites web et
+                applications dans <b>un datacenter au Maroc </b>🇲🇦. Avec
+                Hostino®, profitez de l’offre de
+                <b>Cloud souverain</b> la plus accessible et avantageuse du
+                Royaume.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <ContactForm
+          title={
+            <>
+              Remplissez vos infos, <br className="lg:hidden block " />
+              <span className="border-bottom">on s’occupe du reste !</span>
+            </>
+          }
+        />
+
+        <HostingSolutionsCards />
+
+        <PromoBanner
+          icon="⚠️"
+          text='Nos offres Cloud Maroc sont destinées aux clients qui souhaitent que leurs données <b>soient hébergées sur le territoire marocain</b>. Si vous ne faites pas partie de cette catégorie, découvrez nos offres <span style="text-decoration: underline;"><a href="https://www.hostino.ma/">d’hébergement web</a></span> situées dans des <b>datacenters internationaux</b>.'
+          className="lg:w-[70%]"
+        />
+
+        <TextLeftImageRight
+          title="Hébergez vos données sensibles au Maroc"
+          paragraphs={[
+            "Que vous soyez une entreprise du secteur financier, de la santé, de <b>l’administration publique</b>, ou toute organisation traitant des données sensibles ou soumise à des régulations strictes, choisir un serveur Cloud hébergé au Maroc vous offre une solution conforme aux réglementations locales et permet de réduire significativement les risques liés à la <b>souveraineté des données.</b>",
+            'Cette solution garantit que vos données restent sous la juridiction marocaine, tout en assurant une conformité totale avec la <span style="text-decoration: underline;"><a href="https://www.dgssi.gov.ma/fr/loi-09-08-relative-la-protection-des-personnes-physiques-legard-du-traitement-des" rel="noopener"><b>loi 09-08</b></a></span> relative à la protection des données personnelles, la <span style="text-decoration: underline;"><a href="https://www.dgssi.gov.ma/fr/loi-ndeg-0520-relative-la-cybersecurite" rel="noopener"><b>loi 05-20</b></a></span> sur la cybersécurité, ainsi qu’avec les recommandations de la CNDP.',
+            "Appelez le +212 531-031-186 et confiez l’hébergement de vos données sensibles à un prestataire de confiance basé au Maroc.",
+          ]}
+          imageSrc="/images/03/cloud-maroc.jpg"
+          imageAlt="Cloud au Maroc"
+          consultButtonTextExiste={false}
+        />
+        <TrustedBySection classNameImage="md:w-[65%]  w-[100%] mx-auto h-auto" />
+
+        <SixCards
+          title={"Avantages de l'hébergement <br/> Cloud Maroc"}
+          alignment="center"
+          features={hostingFeatures}
+        />
+
+        <div className="lg:pt-[120px]  bg-gray-200 pt-[50px] pb-[30px]">
+          <div className="container text-center flex flex-col gap-7 items-center">
+            <h2 className="max-big-title leading-[65px] mb-[20px] tracking-[-3.1px]">
+              Hébergement <br className="md:block hidden" />
+              <span className="border-bottom">Mutualisé</span> au Maroc
+            </h2>
+            <p className="paragraph lg:px-[200px] pr-[0]">
+              L’hébergement mutualisé de Hostino est une solution économique et
+              performante pour héberger vos sites web en toute simplicité sur un
+              cloud souverain. En partageant les ressources du serveur, vous
+              optimisez vos coûts tout en garantissant la{" "}
+              <b>conformité avec la réglementation </b> en vigueur dans le
               Royaume.
             </p>
           </div>
         </div>
-      </div>
 
-      <ContactForm
-        title={
-          <>
-            Remplissez vos infos, <br className="lg:hidden block " />
-            <span className="border-bottom">on s’occupe du reste !</span>
-          </>
-        }
-      />
+        <PlansPack />
 
-      <HostingSolutionsCards />
+        <TextLeftImageRight
+          title="Qu’est-ce que le Cloud Maroc ?"
+          paragraphs={[
+            'Le Cloud Maroc (<span style="text-decoration: underline;"><a href="https://www.hostino.ma/en/cloud-morocco/">Cloud Morocco</a></span>) désigne l’ensemble des infrastructures, services et solutions de stockage et de traitement de données numériques opérés localement dans des data centers situés au Maroc. Il répond à une ambition stratégique du pays : renforcer sa <span style="text-decoration: underline;"><a href="https://www.ires.ma/iip/souverainete-numerique/" rel="noopener"><b>souveraineté numérique</b></a></span> en développant des capacités technologiques nationales et en réduisant la dépendance vis-à-vis des solutions étrangères.',
+            "Ce modèle localisé permet une meilleure maîtrise des données sensibles, qu’elles soient <b>d’ordre gouvernemental</b>, industriel ou personnel. Grâce à une approche rigoureuse de la gouvernance des données, les flux numériques sont encadrés de manière transparente, conforme aux exigences de traçabilité, de confidentialité et d’intégrité. Le Cloud Maroc contribue ainsi à renforcer la cybersécurité du pays, en intégrant des protocoles stricts de <b>surveillance et de défense contre les menaces</b> numériques, tout en développant des compétences locales en sécurité informatique.",
+          ]}
+          imageSrc="images/10/cloud-souverain-maroc.jpg"
+          imageAlt="Cloud souverain au Maroc"
+          consultButtonTextExiste={false}
+        />
 
-      <PromoBanner
-        icon="⚠️"
-        text='Nos offres Cloud Maroc sont destinées aux clients qui souhaitent que leurs données <b>soient hébergées sur le territoire marocain</b>. Si vous ne faites pas partie de cette catégorie, découvrez nos offres <span style="text-decoration: underline;"><a href="https://www.hostino.ma/">d’hébergement web</a></span> situées dans des <b>datacenters internationaux</b>.'
-        className="lg:w-[70%]"
-      />
+        <ServerVps />
 
-      <TextLeftImageRight
-        title="Hébergez vos données sensibles au Maroc"
-        paragraphs={[
-          "Que vous soyez une entreprise du secteur financier, de la santé, de <b>l’administration publique</b>, ou toute organisation traitant des données sensibles ou soumise à des régulations strictes, choisir un serveur Cloud hébergé au Maroc vous offre une solution conforme aux réglementations locales et permet de réduire significativement les risques liés à la <b>souveraineté des données.</b>",
-          'Cette solution garantit que vos données restent sous la juridiction marocaine, tout en assurant une conformité totale avec la <span style="text-decoration: underline;"><a href="https://www.dgssi.gov.ma/fr/loi-09-08-relative-la-protection-des-personnes-physiques-legard-du-traitement-des" rel="noopener"><b>loi 09-08</b></a></span> relative à la protection des données personnelles, la <span style="text-decoration: underline;"><a href="https://www.dgssi.gov.ma/fr/loi-ndeg-0520-relative-la-cybersecurite" rel="noopener"><b>loi 05-20</b></a></span> sur la cybersécurité, ainsi qu’avec les recommandations de la CNDP.',
-          "Appelez le +212 531-031-186 et confiez l’hébergement de vos données sensibles à un prestataire de confiance basé au Maroc.",
-        ]}
-        imageSrc="/images/cloud-maroc/cloud-maroc.jpg"
-        imageAlt="Cloud au Maroc"
-        consultButtonTextExiste={false}
-      />
-      <TrustedBySection classNameImage="md:w-[65%]  w-[100%] mx-auto h-auto" />
-
-      <SixCards
-        title={"Avantages de l'hébergement <br/> Cloud Maroc"}
-        alignment="center"
-        features={hostingFeatures}
-      />
-
-      <div className="lg:pt-[120px]  bg-gray-200 pt-[50px] pb-[30px]">
-        <div className="container text-center flex flex-col gap-7 items-center">
-          <h2 className="max-big-title leading-[65px] mb-[20px] tracking-[-3.1px]">
-            Hébergement <br className="md:block hidden" />
-            <span className="border-bottom">Mutualisé</span> au Maroc
-          </h2>
-          <p className="paragraph lg:px-[200px] pr-[0]">
-            L’hébergement mutualisé de Hostino est une solution économique et
-            performante pour héberger vos sites web en toute simplicité sur un
-            cloud souverain. En partageant les ressources du serveur, vous
-            optimisez vos coûts tout en garantissant la{" "}
-            <b>conformité avec la réglementation </b> en vigueur dans le
-            Royaume.
-          </p>
-        </div>
-      </div>
-
-      <PlansPack />
-
-      <TextLeftImageRight
-        title="Qu’est-ce que le Cloud Maroc ?"
-        paragraphs={[
-          'Le Cloud Maroc (<span style="text-decoration: underline;"><a href="https://www.hostino.ma/en/cloud-morocco/">Cloud Morocco</a></span>) désigne l’ensemble des infrastructures, services et solutions de stockage et de traitement de données numériques opérés localement dans des data centers situés au Maroc. Il répond à une ambition stratégique du pays : renforcer sa <span style="text-decoration: underline;"><a href="https://www.ires.ma/iip/souverainete-numerique/" rel="noopener"><b>souveraineté numérique</b></a></span> en développant des capacités technologiques nationales et en réduisant la dépendance vis-à-vis des solutions étrangères.',
-          "Ce modèle localisé permet une meilleure maîtrise des données sensibles, qu’elles soient <b>d’ordre gouvernemental</b>, industriel ou personnel. Grâce à une approche rigoureuse de la gouvernance des données, les flux numériques sont encadrés de manière transparente, conforme aux exigences de traçabilité, de confidentialité et d’intégrité. Le Cloud Maroc contribue ainsi à renforcer la cybersécurité du pays, en intégrant des protocoles stricts de <b>surveillance et de défense contre les menaces</b> numériques, tout en développant des compétences locales en sécurité informatique.",
-        ]}
-        imageSrc="images/10/cloud-souverain-maroc.jpg"
-        imageAlt="Cloud souverain au Maroc"
-        consultButtonTextExiste={false}
-      />
-
-      <ServerVps />
-
-      <FAQSection faqData={faqData} title={"FAQ - Cloud Maroc"} />
-      <StarRating />
-    </main>
+        <FAQSection faqData={faqData} title={"FAQ - Cloud Maroc"} />
+        <StarRating />
+      </main>
+    </>
   );
 }

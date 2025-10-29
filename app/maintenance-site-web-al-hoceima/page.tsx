@@ -9,12 +9,50 @@ import GmbServices from "../components/commonSections/GmbServices";
 import TrustedBySection from "../components/sections/TrustedBySection";
 import StarRating from "../components/ui/StartRatingFooter";
 import TitleParagraphButton from "../components/commonSections/TitleParagraphButton";
+import { main_schema } from "../schema";
 
-const title = "Maintenance site web Al Hoceima | Performances et sécurité"
-const description =  "Maintenance site web Al Hoceima, Agence spécialisée dans la maintenance web, l’optimisation, la sécurité et le suivi continu ☎️ 0663 75 09 08"
-const imageUrl = "https://maroc-1hp.pages.dev/images/maintenance-site-web-al-hoceima/maintenance-site-web-maroc.png" 
-const canonical_url = "https://www.hostino.ma/maintenance-site-web-al-hoceima"
-const og_alt = "Maintenance site web Al Hoceima"
+const title = "Maintenance site web Al Hoceima | Performances et sécurité";
+const description =
+  "Maintenance site web Al Hoceima, Agence spécialisée dans la maintenance web, l’optimisation, la sécurité et le suivi continu ☎️ 0663 75 09 08";
+const imageUrl =
+  "https://maroc-1hp.pages.dev/images/maintenance-site-web-al-hoceima/maintenance-site-web-maroc.png";
+const canonical_url = "https://www.hostino.ma/maintenance-site-web-al-hoceima";
+const og_alt = "Maintenance site web Al Hoceima";
+
+export const metadata = {
+  title: title,
+  description: description,
+  robots:
+    "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  alternates: {
+    canonical: canonical_url,
+  },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: canonical_url,
+    siteName: "Hostino",
+    title: title,
+    description: description,
+    images: [
+      {
+        url: imageUrl,
+        secureUrl: imageUrl,
+        width: 1200,
+        height: 630,
+        alt: og_alt,
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: title,
+    description: description,
+    images: [imageUrl],
+    creator: "@admin",
+  },
+};
 
 const faqData = [
   {
@@ -142,97 +180,151 @@ const advantages = [
 ];
 
 export default async function HomePage() {
-  return (
-    <main>
-     
-      <HeroSection
-        subtitle="Maintenance site web Al Hoceima"
-        title="Agence de maintenance web à Al Hoceima"
-        text="Hostino, agence de maintenance de sites web à Al Hoceima qui <b>surveille</b>, <b>corrige</b> et <b>optimise</b> vos plateformes en ligne."
-        emailLabel={{
-          textEmail: "Consultation par Email ?",
-          color: "text-primary",
-        }}
-        email="info@hostino.com"
-        imageSrc="/images/15/maintenance-site-web-maroc.png"
-        imageAlt="Maintenance site web au Maroc"
-      />
+  const articleSchema = {
+      "@context": "https://schema.org",
+      "@graph": [
+        ...main_schema,
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://www.hostino.ma/#breadcrumb",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: "1",
+              item: {
+                "@id": "https://www.hostino.ma",
+                name: "Hostino - Noms de domaine et hébergement web au Maroc",
+              },
+            },
+            {
+              "@type": "ListItem",
+              position: "2",
+              item: {
+                "@id": canonical_url,
+                name: og_alt,
+              },
+            },
+          ],
+        },
+        {
+          "@type": "Product",
+          name: title,
+          url: canonical_url,
+          description: description,
+          brand: { "@type": "Brand", name: "Hostino" },
+          offers: {
+            "@type": "AggregateOffer",
+            url: canonical_url,
+            lowPrice: "118",
+            priceCurrency: "MAD",
+            availability: "InStock",
+          },
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "5",
+            reviewCount: "920",
+          },
+        },
+      ],
+    };
+  
+    return (
+      <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        />
+  
+      <main>
+        <HeroSection
+          subtitle="Maintenance site web Al Hoceima"
+          title="Agence de maintenance web à Al Hoceima"
+          text="Hostino, agence de maintenance de sites web à Al Hoceima qui <b>surveille</b>, <b>corrige</b> et <b>optimise</b> vos plateformes en ligne."
+          emailLabel={{
+            textEmail: "Consultation par Email ?",
+            color: "text-primary",
+          }}
+          email="info@hostino.com"
+          imageSrc="/images/15/maintenance-site-web-maroc.png"
+          imageAlt="Maintenance site web au Maroc"
+        />
 
-      <ContactForm
-        title={
-          <>
-            Maintenance site web : un conseiller{" "}
-            <br className="lg:hidden block " />
-            <span className="border-bottom">vous rappelle !</span>
-          </>
-        }
-      />
+        <ContactForm
+          title={
+            <>
+              Maintenance site web : un conseiller{" "}
+              <br className="lg:hidden block " />
+              <span className="border-bottom">vous rappelle !</span>
+            </>
+          }
+        />
 
-      <TextLeftImageRight
-        title="Agence de maintenance web à Al Hoceima"
-        paragraphs={[
-          "Hostino, agence de maintenance de sites web à Al Hoceima, accompagne les entreprises et les institutions pour assurer la <b>sécurité et la performance</b> de leurs sites internet.",
-          "Grâce à notre expertise et à notre suivi permanent, nous veillons à ce que les sites de nos clients restent protégés, accessibles et toujours <b>conformes aux normes de qualité et de sécurité</b> les plus exigeantes.",
-          "Chaque prestation de maintenance est <b>encadrée par un SLA</b> clair et transparent. Cet engagement définit les niveaux de disponibilité, les délais d'intervention et la qualité de service que nous garantissons.",
-          "Appelez le (+212) 663 75 09 08 et confiez la maintenance de votre site web à nos experts reconnus dans le domaine.",
-        ]}
-        imageSrc="images/15/maintenance-site-web-maroc.jpg"
-        imageAlt="Maintenance de votre site web au Maroc"
-        consultButtonTextExiste={true}
-        textButton="Contactez-nous"
-        href="https://www.hostino.ma/contact"
-      />
+        <TextLeftImageRight
+          title="Agence de maintenance web à Al Hoceima"
+          paragraphs={[
+            "Hostino, agence de maintenance de sites web à Al Hoceima, accompagne les entreprises et les institutions pour assurer la <b>sécurité et la performance</b> de leurs sites internet.",
+            "Grâce à notre expertise et à notre suivi permanent, nous veillons à ce que les sites de nos clients restent protégés, accessibles et toujours <b>conformes aux normes de qualité et de sécurité</b> les plus exigeantes.",
+            "Chaque prestation de maintenance est <b>encadrée par un SLA</b> clair et transparent. Cet engagement définit les niveaux de disponibilité, les délais d'intervention et la qualité de service que nous garantissons.",
+            "Appelez le (+212) 663 75 09 08 et confiez la maintenance de votre site web à nos experts reconnus dans le domaine.",
+          ]}
+          imageSrc="images/15/maintenance-site-web-maroc.jpg"
+          imageAlt="Maintenance de votre site web au Maroc"
+          consultButtonTextExiste={true}
+          textButton="Contactez-nous"
+          href="https://www.hostino.ma/contact"
+        />
 
-      <TrustedBySection classNameImage="lg:w-[70%] w-[100%]" />
+        <TrustedBySection classNameImage="lg:w-[70%] w-[100%]" />
 
-      <TextLeftImageRight
-        title="Service de maintenance web à Al Hoceima"
-        paragraphs={[
-          "La performance et la sécurité d'un site web sont des enjeux majeurs pour toute entreprise. Un site robuste doit être en mesure de résister aux <b>cyberattaques</b>, de gérer sans accroc <b>les pics de trafic</b>, d'assurer une <b>accessibilité</b> continue et de garantir une <b>visibilité optimale</b> sur Google.",
-          "Notre agence propose des services de maintenance web haut de gamme. Nous nous appuyons sur l'expertise de spécialistes expérimentés et intégrons les <b>dernières technologies</b> pour que votre site soit toujours performant, sécurisé et visible.",
-          "Appelez le (+212) 663 75 09 08 et confiez la maintenance de votre site web à nos experts reconnus dans le domaine.",
-        ]}
-        imageSrc="/images/15/service-maintenance-site-web-maroc.jpg"
-        imageAlt="Service maintenance site web au Maroc"
-        consultButtonTextExiste={true}
-        textButton="Contactez-nous"
-        href="https://www.hostino.ma/contact"
-      />
+        <TextLeftImageRight
+          title="Service de maintenance web à Al Hoceima"
+          paragraphs={[
+            "La performance et la sécurité d'un site web sont des enjeux majeurs pour toute entreprise. Un site robuste doit être en mesure de résister aux <b>cyberattaques</b>, de gérer sans accroc <b>les pics de trafic</b>, d'assurer une <b>accessibilité</b> continue et de garantir une <b>visibilité optimale</b> sur Google.",
+            "Notre agence propose des services de maintenance web haut de gamme. Nous nous appuyons sur l'expertise de spécialistes expérimentés et intégrons les <b>dernières technologies</b> pour que votre site soit toujours performant, sécurisé et visible.",
+            "Appelez le (+212) 663 75 09 08 et confiez la maintenance de votre site web à nos experts reconnus dans le domaine.",
+          ]}
+          imageSrc="/images/15/service-maintenance-site-web-maroc.jpg"
+          imageAlt="Service maintenance site web au Maroc"
+          consultButtonTextExiste={true}
+          textButton="Contactez-nous"
+          href="https://www.hostino.ma/contact"
+        />
 
-      <GmbServices
-        data={servicesMaintenance}
-        title="Découvrez l’ensemble de nos services de Maintenance site web Al Hoceima"
-      />
+        <GmbServices
+          data={servicesMaintenance}
+          title="Découvrez l’ensemble de nos services de Maintenance site web Al Hoceima"
+        />
 
-      <GmbAdvantages
-        advantages={advantages}
-        title="Pourquoi choisir Hostino <br/> pour la maintenance de votre site web à Al Hoceima ?"
-      />
+        <GmbAdvantages
+          advantages={advantages}
+          title="Pourquoi choisir Hostino <br/> pour la maintenance de votre site web à Al Hoceima ?"
+        />
 
-      <TitleParagraphButton
-        title="Contrat de maintenance<br/>site web à Al Hoceima"
-        paragraphs={[
-          "Un contrat de maintenance de site web au Maroc est un <b>accord essentiel</b> qui permet aux entreprises de garantir la stabilité, la sécurité et la performance de leur présence en ligne.",
-          "Dans un environnement numérique en constante évolution, les sites doivent être régulièrement mis à jour, surveillés et optimisés pour éviter les pannes, les failles de sécurité ou encore la perte de données. Un tel contrat offre aux sociétés marocaines une <b>tranquillité d'esprit</b>, en leur assurant un accompagnement technique continu et adapté à leurs besoins.",
-          "Les prestations incluses dans un contrat de maintenance peuvent varier selon la taille de l'entreprise et la nature de son activité. Elles comprennent généralement la mise à jour des CMS (WordPress, Joomla, Drupal), la correction des bugs, la sécurisation contre les cyberattaques, la sauvegarde régulière des données, ainsi que l'optimisation de la vitesse et du référencement (SEO).",
-          "Pour une PME ou une grande entreprise au Maroc, disposer d'un suivi professionnel permet de réduire les coûts liés aux interventions d'urgence et <b>d'améliorer durablement l'expérience utilisateur.</b> Enfin, le contrat de maintenance joue un rôle stratégique pour les entreprises marocaines qui souhaitent rester compétitives.",
-          "Que ce soit pour un site e-commerce, une plateforme institutionnelle ou un portail d'entreprise, la maintenance régulière garantit une accessibilité continue, essentielle pour fidéliser les clients et renforcer la crédibilité de la marque.",
-          "Au-delà de l'aspect technique, il s'agit d'un investissement dans la pérennité et la croissance digitale de l'entreprise.",
-        ]}
-        buttonText="Contactez-nous"
-        buttonHref="https://www.hostino.ma/contact"
-      />
+        <TitleParagraphButton
+          title="Contrat de maintenance<br/>site web à Al Hoceima"
+          paragraphs={[
+            "Un contrat de maintenance de site web au Maroc est un <b>accord essentiel</b> qui permet aux entreprises de garantir la stabilité, la sécurité et la performance de leur présence en ligne.",
+            "Dans un environnement numérique en constante évolution, les sites doivent être régulièrement mis à jour, surveillés et optimisés pour éviter les pannes, les failles de sécurité ou encore la perte de données. Un tel contrat offre aux sociétés marocaines une <b>tranquillité d'esprit</b>, en leur assurant un accompagnement technique continu et adapté à leurs besoins.",
+            "Les prestations incluses dans un contrat de maintenance peuvent varier selon la taille de l'entreprise et la nature de son activité. Elles comprennent généralement la mise à jour des CMS (WordPress, Joomla, Drupal), la correction des bugs, la sécurisation contre les cyberattaques, la sauvegarde régulière des données, ainsi que l'optimisation de la vitesse et du référencement (SEO).",
+            "Pour une PME ou une grande entreprise au Maroc, disposer d'un suivi professionnel permet de réduire les coûts liés aux interventions d'urgence et <b>d'améliorer durablement l'expérience utilisateur.</b> Enfin, le contrat de maintenance joue un rôle stratégique pour les entreprises marocaines qui souhaitent rester compétitives.",
+            "Que ce soit pour un site e-commerce, une plateforme institutionnelle ou un portail d'entreprise, la maintenance régulière garantit une accessibilité continue, essentielle pour fidéliser les clients et renforcer la crédibilité de la marque.",
+            "Au-delà de l'aspect technique, il s'agit d'un investissement dans la pérennité et la croissance digitale de l'entreprise.",
+          ]}
+          buttonText="Contactez-nous"
+          buttonHref="https://www.hostino.ma/contact"
+        />
 
-      <NationalCoverage
-        title="Maintenance site web à Al Hoceima et partout au Maroc"
-        topic={"Maintenance web "}
-      />
+        <NationalCoverage
+          title="Maintenance site web à Al Hoceima et partout au Maroc"
+          topic={"Maintenance web "}
+        />
 
-      <FAQSection
-        faqData={faqData}
-        title="FAQ - Maintenance site web Al Hoceima"
-      />
-      <StarRating />
-    </main>
+        <FAQSection
+          faqData={faqData}
+          title="FAQ - Maintenance site web Al Hoceima"
+        />
+        <StarRating />
+      </main>
+    </>
   );
 }

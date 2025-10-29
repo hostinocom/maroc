@@ -1,4 +1,3 @@
-"use client";
 
 // src/components/sections/WhatIsHostingSection.tsx
 import Image from "next/image";
@@ -44,7 +43,7 @@ export default function WhatIsHostingSection() {
           </div>
           <div className="col-span-1  flex justify-end">
             <Image
-              src="/images/home/hebergement-web.jpg"
+              src="/images/01/hebergement-web.jpg"
               alt="What is Web Hosting?"
               width={1484}
               height={1243}

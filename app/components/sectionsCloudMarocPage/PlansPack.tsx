@@ -1,11 +1,8 @@
-"use client";
 
 import Image from "next/image";
-// src/components/sections/PlansSection.tsx
 import Link from "next/link";
 import AnimatedButton from "../ui/AnimatedButton";
 import { montserrat } from "@/public/font";
-import { HtmlContext } from "next/dist/server/route-modules/pages/vendored/contexts/entrypoints";
 
 // Define plan type
 
@@ -38,7 +35,7 @@ const hostingPlans: Plan[] = [
       (<div className="flex items-center lg:justify-start justify-center">
         <>
           <Image
-            src="/images/cloud-maroc/flag-maroc.svg"
+            src="/images/03/flag-maroc.svg"
             alt="SEO Optimized"
             width={16}
             height={16}
@@ -52,7 +49,7 @@ const hostingPlans: Plan[] = [
       <div className="flex items-center lg:justify-start justify-center">
         <>
           <Image
-            src="/images/cloud-maroc/flag-maroc.svg"
+            src="/images/03/flag-maroc.svg"
             alt="SEO Optimized"
             width={16}
             height={16}
@@ -67,7 +64,7 @@ const hostingPlans: Plan[] = [
       <div className="flex items-center lg:justify-start justify-center">
         <>
           <Image
-            src="/images/cloud-maroc/wp.svg"
+            src="/images/03/wp.svg"
             alt="SEO Optimized"
             width={16}
             height={16}
@@ -102,7 +99,7 @@ const hostingPlans: Plan[] = [
       <div className="flex items-center lg:justify-start justify-center">
         <>
           <Image
-            src="/images/cloud-maroc/flag-maroc.svg"
+            src="/images/03/flag-maroc.svg"
             alt="SEO Optimized"
             width={16}
             height={16}
@@ -116,7 +113,7 @@ const hostingPlans: Plan[] = [
       <div className="flex items-center lg:justify-start justify-center">
         <>
           <Image
-            src="/images/cloud-maroc/flag-maroc.svg"
+            src="/images/03/flag-maroc.svg"
             alt="SEO Optimized"
             width={16}
             height={16}
@@ -131,7 +128,7 @@ const hostingPlans: Plan[] = [
       <div className="flex items-center lg:justify-start justify-center">
         <>
           <Image
-            src="/images/cloud-maroc/wp.svg"
+            src="/images/03/wp.svg"
             alt="SEO Optimized"
             width={16}
             height={16}
@@ -166,7 +163,7 @@ const hostingPlans: Plan[] = [
       <div className="flex items-center lg:justify-start justify-center">
         <>
           <Image
-            src="/images/cloud-maroc/flag-maroc.svg"
+            src="/images/03/flag-maroc.svg"
             alt="SEO Optimized"
             width={16}
             height={16}
@@ -180,7 +177,7 @@ const hostingPlans: Plan[] = [
       <div className="flex items-center lg:justify-start justify-center">
         <>
           <Image
-            src="/images/cloud-maroc/flag-maroc.svg"
+            src="/images/03/flag-maroc.svg"
             alt="SEO Optimized"
             width={16}
             height={16}
@@ -195,7 +192,7 @@ const hostingPlans: Plan[] = [
       <div className="flex items-center lg:justify-start justify-center">
         <>
           <Image
-            src="/images/cloud-maroc/wp.svg"
+            src="/images/03/wp.svg"
             alt="SEO Optimized"
             width={16}
             height={16}

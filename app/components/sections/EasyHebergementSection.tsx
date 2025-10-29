@@ -55,7 +55,7 @@ export default function EasyHebergementSection() {
               <div className='flex justify-end'>
                 {/* Replace this div with actual Image component */}
                 <Image 
-                  src="/images/home/hebergement-web-facile.jpg" 
+                  src="/images/01/hebergement-web-facile.jpg" 
                   alt="Hébergement web Maroc"
                    width={3508}
                   height={2481}

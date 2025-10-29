@@ -8,13 +8,50 @@ import TextLeftVideoRight from "../components/commonSections/TextLeftVideoRight"
 import GmbAdvantages from "../components/commonSections/GmbAdvantage";
 import HostingImpactSection from "../components/sectionsGoogleAdsMarocPage/HostingImpactSection";
 import SeoServiceCards from "../components/sectionsGoogleAdsMarocPage/SeoServiceCards";
+import { main_schema } from "../schema";
 
-const title = "Agence Google Ads Maroc | Publicité Google et Sponsoring"
-const description =  "Google Ads Maroc. Hostino accompagne les professionnels et les marques dans la gestion des campagnes Google Ads au Maroc ☎️ 0663 75 09 08"
-const imageUrl = "https://maroc-1hp.pages.dev/images/google-ads-maroc/google-ads-maroc.png" 
-const canonical_url = "https://www.hostino.ma/google-ads-maroc"
-const og_alt = "Agence Google Ads Maroc"
+const title = "Agence Google Ads Maroc | Publicité Google et Sponsoring";
+const description =
+  "Google Ads Maroc. Hostino accompagne les professionnels et les marques dans la gestion des campagnes Google Ads au Maroc ☎️ 0663 75 09 08";
+const imageUrl =
+  "https://maroc-1hp.pages.dev/images/google-ads-maroc/google-ads-maroc.png";
+const canonical_url = "https://www.hostino.ma/google-ads-maroc";
+const og_alt = "Agence Google Ads Maroc";
 
+export const metadata = {
+  title: title,
+  description: description,
+  robots:
+    "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  alternates: {
+    canonical: canonical_url,
+  },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: canonical_url,
+    siteName: "Hostino",
+    title: title,
+    description: description,
+    images: [
+      {
+        url: imageUrl,
+        secureUrl: imageUrl,
+        width: 1200,
+        height: 630,
+        alt: og_alt,
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: title,
+    description: description,
+    images: [imageUrl],
+    creator: "@admin",
+  },
+};
 const faqData = [
   {
     question:
@@ -133,151 +170,205 @@ const advantages = [
 ];
 
 export default async function HomePage() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      ...main_schema,
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.hostino.ma/#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: "1",
+            item: {
+              "@id": "https://www.hostino.ma",
+              name: "Hostino - Noms de domaine et hébergement web au Maroc",
+            },
+          },
+          {
+            "@type": "ListItem",
+            position: "2",
+            item: {
+              "@id": canonical_url,
+              name: og_alt,
+            },
+          },
+        ],
+      },
+      {
+        "@type": "Product",
+        name: title,
+        url: canonical_url,
+        description: description,
+        brand: { "@type": "Brand", name: "Hostino" },
+        offers: {
+          "@type": "AggregateOffer",
+          url: canonical_url,
+          lowPrice: "118",
+          priceCurrency: "MAD",
+          availability: "InStock",
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "5",
+          reviewCount: "920",
+        },
+      },
+    ],
+  };
+
   return (
-    <main>
-      
-      <HeroSection
-        subtitle="Agence Google Ads Maroc"
-        title="Agence de publicité Google Ads"
-        text="Agence Google Ads Maroc qui vous aide à générer <b>instantanément</b> des appels et des clients."
-        emailLabel={{
-          textEmail: "CONSULTATION PAR EMAIL ? ?",
-          color: "text-primary",
-        }}
-        email="info@hostino.com"
-        imageSrc="/images/07/google-ads-maroc.png"
-        imageAlt="Google My Business au Maroc"
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
 
-      <ContactForm
-        title={
-          <>
-            Votre stratégie Google Ads <br className="lg:hidden block " />
-            <span className="border-bottom">commence ici !</span>
-          </>
-        }
-      />
+      <main>
+        <HeroSection
+          subtitle="Agence Google Ads Maroc"
+          title="Agence de publicité Google Ads"
+          text="Agence Google Ads Maroc qui vous aide à générer <b>instantanément</b> des appels et des clients."
+          emailLabel={{
+            textEmail: "CONSULTATION PAR EMAIL ? ?",
+            color: "text-primary",
+          }}
+          email="info@hostino.com"
+          imageSrc="/images/07/google-ads-maroc.png"
+          imageAlt="Google My Business au Maroc"
+        />
 
-      <TextLeftImageRight
-        title="Agence Google Ads au Maroc"
-        paragraphs={[
-          "Hostino est une agence Google Ads au Maroc qui accompagne les <b>entreprises de toutes tailles</b> et de tous <b>secteurs</b> dans la gestion et l’optimisation de leurs campagnes sur le Réseau de recherche, YouTube et Display, afin que chaque dirham investi génère des résultats concrets.",
-          `<span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Nous aidons les </span><span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;"><b>entreprises de toutes tailles</b></span><span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;"> à gagner en visibilité, générer des appels, attirer un trafic qualifié et transformer chaque clic en opportunité de croissance.&nbsp;</span>`,
-          "Notre force réside dans notre parfaite compréhension du <b>marché marocain</b> : ses langues, sa culture, ses zones géographiques et ses habitudes de consommation.",
-          "Appelez-nous dès maintenant au +212 663 75 09 08 et confiez vos campagnes publicitaires à des experts Google Ads reconnus.",
-        ]}
-        imageSrc="/images/07/agence-google-ads.jpg"
-        imageAlt="Google My Business au Maroc"
-        consultButtonTextExiste={true}
-        textButton={"Contactez-nous"}
-        href={"https://www.hostino.ma/contact"}
-      />
+        <ContactForm
+          title={
+            <>
+              Votre stratégie Google Ads <br className="lg:hidden block " />
+              <span className="border-bottom">commence ici !</span>
+            </>
+          }
+        />
 
-      <SeoServiceCards />
+        <TextLeftImageRight
+          title="Agence Google Ads au Maroc"
+          paragraphs={[
+            "Hostino est une agence Google Ads au Maroc qui accompagne les <b>entreprises de toutes tailles</b> et de tous <b>secteurs</b> dans la gestion et l’optimisation de leurs campagnes sur le Réseau de recherche, YouTube et Display, afin que chaque dirham investi génère des résultats concrets.",
+            `<span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Nous aidons les </span><span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;"><b>entreprises de toutes tailles</b></span><span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;"> à gagner en visibilité, générer des appels, attirer un trafic qualifié et transformer chaque clic en opportunité de croissance.&nbsp;</span>`,
+            "Notre force réside dans notre parfaite compréhension du <b>marché marocain</b> : ses langues, sa culture, ses zones géographiques et ses habitudes de consommation.",
+            "Appelez-nous dès maintenant au +212 663 75 09 08 et confiez vos campagnes publicitaires à des experts Google Ads reconnus.",
+          ]}
+          imageSrc="/images/07/agence-google-ads.jpg"
+          imageAlt="Google My Business au Maroc"
+          consultButtonTextExiste={true}
+          textButton={"Contactez-nous"}
+          href={"https://www.hostino.ma/contact"}
+        />
 
-      <TextLeftImageRight
-        title="Qu’est-ce qu’une agence Google Ads ?"
-        paragraphs={[
-          "Une agence Google Ads est une entreprise spécialisée dans la création, la gestion et l’optimisation de campagnes publicitaires sur la plateforme Google Ads.",
-          "Son rôle couvre la sélection de mots-clés, la rédaction d’annonces percutantes, la mise en place d’une segmentation précise, le suivi des conversions, ainsi que l’amélioration continue des performances grâce à des ajustements des <b>enchères</b>, de la qualité des annonces et de <b>l’expérience utilisateur sur le site web de l’annonceur</b>.",
-          "Notre agence spécialisée en Google Ads se distingue par son professionnalisme dans la création de campagnes rentables pour votre entreprise, aussi bien au niveau local qu’au niveau national partout au Maroc.",
-          "Nous combinons expérience, outils avancés et connaissance approfondie du marché marocain afin de garantir des résultats mesurables et durables.",
-        ]}
-        imageSrc="images/07/quoi-agence-google-ads-maroc.jpg"
-        imageAlt="Qu’est-ce qu’une agence Google Ads Maroc"
-        consultButtonTextExiste={true}
-        textButton="Contactez-nous"
-        href="https://www.hostino.ma/contact"
-      />
+        <SeoServiceCards />
 
-      <section className="lg:mt-[150px] mt-[80px]">
-        <div className="container">
-          <h2 className="title-section mb-[20px]">
-            Comment fonctionne <br />
-            Google Ads au Maroc ?
-          </h2>
+        <TextLeftImageRight
+          title="Qu’est-ce qu’une agence Google Ads ?"
+          paragraphs={[
+            "Une agence Google Ads est une entreprise spécialisée dans la création, la gestion et l’optimisation de campagnes publicitaires sur la plateforme Google Ads.",
+            "Son rôle couvre la sélection de mots-clés, la rédaction d’annonces percutantes, la mise en place d’une segmentation précise, le suivi des conversions, ainsi que l’amélioration continue des performances grâce à des ajustements des <b>enchères</b>, de la qualité des annonces et de <b>l’expérience utilisateur sur le site web de l’annonceur</b>.",
+            "Notre agence spécialisée en Google Ads se distingue par son professionnalisme dans la création de campagnes rentables pour votre entreprise, aussi bien au niveau local qu’au niveau national partout au Maroc.",
+            "Nous combinons expérience, outils avancés et connaissance approfondie du marché marocain afin de garantir des résultats mesurables et durables.",
+          ]}
+          imageSrc="images/07/quoi-agence-google-ads-maroc.jpg"
+          imageAlt="Qu’est-ce qu’une agence Google Ads Maroc"
+          consultButtonTextExiste={true}
+          textButton="Contactez-nous"
+          href="https://www.hostino.ma/contact"
+        />
 
-          <p className="paragraph">
-            Google Ads au Maroc repose sur un système d’enchères au coût par
-            clic (CPC) où les entreprises choisissent leurs mots-clés,
-            définissent un budget et diffusent des <b>annonces sur Google</b>,
-            YouTube ou le réseau Display. Avec près de 97 % de parts de marché
-            pour Google, la plateforme est incontournable pour capter
-            l’attention des <b>internautes marocains</b>.
-          </p>
+        <section className="lg:mt-[150px] mt-[80px]">
+          <div className="container">
+            <h2 className="title-section mb-[20px]">
+              Comment fonctionne <br />
+              Google Ads au Maroc ?
+            </h2>
 
-          <p className="paragraph">
-            Un atout majeur du marché marocain réside dans le prix : le{" "}
-            <b>coût par clic est beaucoup plus bas</b> que dans les{" "}
-            <b>marchés européens</b>, américains et ceux des pays du Golfe, où
-            la concurrence est plus intense et les budgets souvent plus élevés.
-            On estime ainsi que le{" "}
-            <a
-              href="https://support.google.com/google-ads/answer/14074?hl=fr"
-              rel="noopener"
-            >
-              CPC moyen
-            </a>{" "}
-            au Maroc est jusqu’à 78 % inférieur à celui des États-Unis, ce qui
-            permet aux entreprises locales d’obtenir une visibilité importante à
-            moindre coût.
-          </p>
-        </div>
-      </section>
+            <p className="paragraph">
+              Google Ads au Maroc repose sur un système d’enchères au coût par
+              clic (CPC) où les entreprises choisissent leurs mots-clés,
+              définissent un budget et diffusent des <b>annonces sur Google</b>,
+              YouTube ou le réseau Display. Avec près de 97 % de parts de marché
+              pour Google, la plateforme est incontournable pour capter
+              l’attention des <b>internautes marocains</b>.
+            </p>
 
-      <TextLeftVideoRight
-        paragraphs={[
-          "L’efficacité dépend toutefois d’une bonne stratégie : choix judicieux des mots-clés, annonces attractives, optimisation des pages d’atterrissage et <b>suivi des conversions</b>. Les secteurs compétitifs comme le tourisme ou l’immobilier voient leurs coûts grimper, tandis que d’autres segments restent largement sous-exploités, offrant un fort potentiel aux annonceurs agiles.",
-          "Le marché de la publicité digitale connaît par ailleurs une forte dynamique, avec une croissance estimée à 20 % en 2023 par rapport à 2022, preuve que de plus en plus d’entreprises marocaines intègrent Google Ads dans leur stratégie marketing. Dans un pays où l’usage du mobile domine, ce levier s’impose comme un outil incontournable pour développer rapidement visibilité et ventes en ligne.",
-        ]}
-        videoUrl="https://www.youtube.com/c3146b9d-8d55-4e9e-99e8-78785347c52c"
-        className="mt-[10px] lg:mb-[150px] mb-[80px]"
-      />
+            <p className="paragraph">
+              Un atout majeur du marché marocain réside dans le prix : le{" "}
+              <b>coût par clic est beaucoup plus bas</b> que dans les{" "}
+              <b>marchés européens</b>, américains et ceux des pays du Golfe, où
+              la concurrence est plus intense et les budgets souvent plus
+              élevés. On estime ainsi que le{" "}
+              <a
+                href="https://support.google.com/google-ads/answer/14074?hl=fr"
+                rel="noopener"
+              >
+                CPC moyen
+              </a>{" "}
+              au Maroc est jusqu’à 78 % inférieur à celui des États-Unis, ce qui
+              permet aux entreprises locales d’obtenir une visibilité importante
+              à moindre coût.
+            </p>
+          </div>
+        </section>
 
-      <TextLeftImageRight
-        title="Consultant expert Google Ads au Maroc"
-        paragraphs={[
-          "Chez Hostino, nos experts Google Ads au Maroc pilotent depuis <b>plus de 20 ans</b> des campagnes publicitaires performantes sur Google Ads et YouTube Ads.&nbsp;",
-          "En tant que <b>consultants seniors</b>, nous mettons à profit une expertise approfondie pour éviter les pièges courants et maximiser le retour sur investissement de vos campagnes. Notre objectif est clair : transformer chaque budget investi en résultats concrets et mesurables pour votre entreprise.",
-          "Grâce à une solide expérience dans des secteurs variés, nos experts Google Ads savent exactement quelle méthodologie adopter selon les spécificités de votre entreprise. Nous avons accompagné avec succès de grandes marques de l’agroalimentaire, des <b>compagnies aériennes</b>, des <b>banques</b>, des <b>assureurs</b> ainsi que de nombreux <b>prestataires de services</b>.",
-          "Appelez-nous dès maintenant au +212 663 75 09 08 et confiez vos campagnes publicitaires à des experts Google Ads reconnus.",
-        ]}
-        imageSrc="images/07/expert-google-ads-maroc.jpg"
-        imageAlt="Expert Google Ads au Maroc"
-        consultButtonTextExiste={true}
-        textButton="Contactez-nous"
-        href="https://www.hostino.ma/contact"
-      />
+        <TextLeftVideoRight
+          paragraphs={[
+            "L’efficacité dépend toutefois d’une bonne stratégie : choix judicieux des mots-clés, annonces attractives, optimisation des pages d’atterrissage et <b>suivi des conversions</b>. Les secteurs compétitifs comme le tourisme ou l’immobilier voient leurs coûts grimper, tandis que d’autres segments restent largement sous-exploités, offrant un fort potentiel aux annonceurs agiles.",
+            "Le marché de la publicité digitale connaît par ailleurs une forte dynamique, avec une croissance estimée à 20 % en 2023 par rapport à 2022, preuve que de plus en plus d’entreprises marocaines intègrent Google Ads dans leur stratégie marketing. Dans un pays où l’usage du mobile domine, ce levier s’impose comme un outil incontournable pour développer rapidement visibilité et ventes en ligne.",
+          ]}
+          videoUrl="https://www.youtube.com/c3146b9d-8d55-4e9e-99e8-78785347c52c"
+          className="mt-[10px] lg:mb-[150px] mb-[80px]"
+        />
 
-      <HostingImpactSection />
+        <TextLeftImageRight
+          title="Consultant expert Google Ads au Maroc"
+          paragraphs={[
+            "Chez Hostino, nos experts Google Ads au Maroc pilotent depuis <b>plus de 20 ans</b> des campagnes publicitaires performantes sur Google Ads et YouTube Ads.&nbsp;",
+            "En tant que <b>consultants seniors</b>, nous mettons à profit une expertise approfondie pour éviter les pièges courants et maximiser le retour sur investissement de vos campagnes. Notre objectif est clair : transformer chaque budget investi en résultats concrets et mesurables pour votre entreprise.",
+            "Grâce à une solide expérience dans des secteurs variés, nos experts Google Ads savent exactement quelle méthodologie adopter selon les spécificités de votre entreprise. Nous avons accompagné avec succès de grandes marques de l’agroalimentaire, des <b>compagnies aériennes</b>, des <b>banques</b>, des <b>assureurs</b> ainsi que de nombreux <b>prestataires de services</b>.",
+            "Appelez-nous dès maintenant au +212 663 75 09 08 et confiez vos campagnes publicitaires à des experts Google Ads reconnus.",
+          ]}
+          imageSrc="images/07/expert-google-ads-maroc.jpg"
+          imageAlt="Expert Google Ads au Maroc"
+          consultButtonTextExiste={true}
+          textButton="Contactez-nous"
+          href="https://www.hostino.ma/contact"
+        />
 
-      <GmbAdvantages
-        advantages={advantages}
-        title="Avantages de la fiche
+        <HostingImpactSection />
+
+        <GmbAdvantages
+          advantages={advantages}
+          title="Avantages de la fiche
           <br />
           Google My Business"
-      />
+        />
 
-      <TextLeftImageRight
-        title="Maximiser vos résultats grâce à la synergie Google Ads & SEO"
-        paragraphs={[
-          "La synergie entre Google Ads et le SEO permet de combiner <strong>visibilité immédiate</strong> et positionnement durable. Les annonces Google Ads assurent une présence instantanée, tandis que le SEO consolide la notoriété à long terme dans les résultats naturels.",
-          "Les deux leviers se complètent : les données issues des campagnes Ads aident à cibler les bons mots-clés pour le <strong>SEO</strong>, et un site bien optimisé améliore le Quality Score, réduisant ainsi le <strong>coût par clic</strong>.",
-          "Résultat : plus de visibilité, un trafic qualifié et des conversions accrues. L’association <strong>Google Ads + SEO</strong> offre un impact rapide et une croissance pérenne.",
-        ]}
-        imageSrc="/images/07/seo-google-ads-maroc.jpg"
-        imageAlt="Synergie entre Google Ads et SEO"
-        consultButtonTextExiste={true}
-        textButton="Contactez-nous"
-        href="https://www.hostino.ma/contact"
-      />
+        <TextLeftImageRight
+          title="Maximiser vos résultats grâce à la synergie Google Ads & SEO"
+          paragraphs={[
+            "La synergie entre Google Ads et le SEO permet de combiner <strong>visibilité immédiate</strong> et positionnement durable. Les annonces Google Ads assurent une présence instantanée, tandis que le SEO consolide la notoriété à long terme dans les résultats naturels.",
+            "Les deux leviers se complètent : les données issues des campagnes Ads aident à cibler les bons mots-clés pour le <strong>SEO</strong>, et un site bien optimisé améliore le Quality Score, réduisant ainsi le <strong>coût par clic</strong>.",
+            "Résultat : plus de visibilité, un trafic qualifié et des conversions accrues. L’association <strong>Google Ads + SEO</strong> offre un impact rapide et une croissance pérenne.",
+          ]}
+          imageSrc="/images/07/seo-google-ads-maroc.jpg"
+          imageAlt="Synergie entre Google Ads et SEO"
+          consultButtonTextExiste={true}
+          textButton="Contactez-nous"
+          href="https://www.hostino.ma/contact"
+        />
 
-      <NationalCoverage
-        title="Une agence Google Ads à vos côtés partout au Maroc"
-        topic={"Google Ads "}
-      />
+        <NationalCoverage
+          title="Une agence Google Ads à vos côtés partout au Maroc"
+          topic={"Google Ads "}
+        />
 
-      <FAQSection faqData={faqData} title="FAQ - Agence Google Ads Maroc" />
-    </main>
+        <FAQSection faqData={faqData} title="FAQ - Agence Google Ads Maroc" />
+      </main>
+    </>
   );
 }
