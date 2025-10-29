@@ -75,7 +75,7 @@ select {
 }
 
 .big-title.title-hero-section {
-  @apply lg:text-[56px] md:text-[45px] text-[43px] leading-[50px] tracking-[-1.5px] lg:tracking-[-2.6px] md:leading-[52px] md:tracking-[-3px] sm:px-[0px] px-[100px] lg:leading-[59px] font-[600] text-title;
+  @apply lg:text-[56px] md:text-[45px] text-[43px] leading-[50px] tracking-[-1.5px] lg:tracking-[-2.6px] md:leading-[52px] md:tracking-[-3px] sm:px-[0px] px-[30px] lg:leading-[59px] font-[600] text-title;
 }
 
 .max-big-title {

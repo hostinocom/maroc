@@ -1,8 +1,7 @@
 import Link from "next/link";
-import PlansSection, { Plan } from "../components/sections/PlansSection";
+import { Plan } from "../components/sections/PlansSection";
 import StartyComparison from "../components/sectionsStartyPage/StartyComparison";
 import TextLeftImageRight from "../components/commonSections/TextLeftImageRight";
-import WhyChooseSection from "../components/sections/WhyChooseSection";
 import SixCards from "../components/commonSections/SixCards";
 import FAQSection from "../components/commonSections/FaqSection";
 import StarRating from "../components/ui/StartRatingFooter";

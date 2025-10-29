@@ -2,4 +2,5 @@
 User-agent: *
 Allow: /
 
-sitemap: https://mysite.com/sitemap.xml 
+sitemap: https://https://maroc-1hp.pages.dev//sitemap.xml 
+

@@ -14,7 +14,7 @@ export default function HeroHeadingPages({ smallTitle, bigTitle , lineGreen=fals
             {smallTitle}
           </h1>
           <div className="xl:px-[250px] md:px-[0px] px-[10px]">
-            <h2 className="max-big-title title text-center font-semibold text-title" dangerouslySetInnerHTML={{__html : bigTitle}} />
+            <h2 className="max-big-title title-hero-section title text-center font-semibold text-title" dangerouslySetInnerHTML={{__html : bigTitle}} />
           </div>
          {
           lineGreen && 
