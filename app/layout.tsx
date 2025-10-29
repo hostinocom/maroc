@@ -3,7 +3,7 @@ import "./globals.css";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import CookieBanner from "./components/CookieBanner";
-import GoogleAnalytics from "./components/GoogleAnalytics";
+//import GoogleAnalytics from "./components/GoogleAnalytics";
 import Script from "next/script";
 
 const geistSans = Geist({
@@ -163,6 +163,7 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
+        
         <Header />
         {children}
         <CookieBanner />

@@ -1,47 +1,67 @@
-"use client";
-import Script from "next/script";
-import { usePathname, useSearchParams } from "next/navigation";
-import { useEffect } from "react";
-import { pageview } from "../lib/gtagHelper";
+// "use client";
+// import { useEffect, useState } from "react";
+// import { updateConsent, waitForGtag } from "../lib/gtag";
+// import Link from "next/link";
 
-export default function GoogleAnalytics({
-  GA_MEASUREMENT_ID,
-}: {
-  GA_MEASUREMENT_ID: string;
-}) {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
+// export default function CookieBanner() {
+//   const [cookieConsent, setCookieConsent] = useState<boolean | null>(null);
 
-  useEffect(() => {
-    const url = pathname + searchParams.toString();
+//   useEffect(() => {
+//     const storedConsent = localStorage.getItem("cookie_consent");
+//     if (storedConsent !== null) {
+//       setCookieConsent(storedConsent === "true");
+//     }
+//   }, []);
 
-    pageview(GA_MEASUREMENT_ID, url);
-  }, [pathname, searchParams, GA_MEASUREMENT_ID]);
-  return (
-    <>
-      <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-      />
-      <Script
-        id="google-analytics"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
+//   useEffect(() => {
+//     if (cookieConsent === null) return;
 
-                gtag('consent', 'default', {
-                    'analytics_storage': 'denied'
-                });
-                
-                gtag('config', '${GA_MEASUREMENT_ID}', {
-                    page_path: window.location.pathname,
-                });
-                `,
-        }}
-      />
-    </>
-  );
-}
+//     const newValue = cookieConsent ? "granted" : "denied";
+
+//     waitForGtag(() => {
+//       updateConsent(newValue);
+//     });
+//   }, [cookieConsent]);
+
+//   const acceptCookies = () => {
+//     setCookieConsent(true);
+//     localStorage.setItem("cookie_consent", "true");
+//   };
+
+//   const declineCookies = () => {
+//     setCookieConsent(false);
+//     localStorage.setItem("cookie_consent", "false");
+//   };
+
+//   if (cookieConsent !== null) return null;
+
+//   return (
+//     <div
+//       className={` bg-white mx-auto lg:w-[45%] sm:w-[80%] w-[90%] z-[111]
+//                         fixed bottom-[10px] left-0 right-0 
+//                         flex px-3 md:px-4 py-3 justify-between  items-center flex-col sm:flex-row gap-4  
+//                           rounded-lg shadow_main`}
+//     >
+//       <div className="text-center z-2">
+//         <p className="text-title sm:text-left text-center text-[14px] sm:px-[0] px-[25px]">
+//           Ce site web utilise des cookies pour améliorer votre expérience.
+//         </p>
+//       </div>
+
+//       <div className="flex gap-2">
+//         <button
+//           onClick={declineCookies}
+//           className="px-5 py-2 text-title font-[400] text-[14px] rounded-md border-gray-300 border-1"
+//         >
+//           Refuser
+//         </button>
+//         <button
+//           onClick={acceptCookies}
+//           className="bg-primary font-[400] px-5 py-2 text-[14px] text-white rounded-lg"
+//         >
+//           Accepter
+//         </button>
+//       </div>
+//     </div>
+//   );
+// }
