@@ -157,13 +157,13 @@ export default function RootLayout({
       >
         <noscript>
           <iframe
-            src={`https://www.googletagmanager.com/ns.html?id=${process.env.ID_IN_URL}`}
+            src="https://www.googletagmanager.com/ns.html?id=GTM-5QLCSWWS"
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
-        
+
         <Header />
         {children}
         <CookieBanner />
