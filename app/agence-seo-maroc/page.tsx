@@ -10,6 +10,7 @@ import FAQSection from "../components/commonSections/FaqSection";
 import GooglePositioning from "../components/commonSections/GooglePositioning";
 import Head from "next/head";
 import { main_schema } from "../schema";
+import Script from "next/script";
 
 const title = "Agence SEO Maroc | Référencement Google et moteurs d&#039;IA";
 const description =
@@ -404,9 +405,10 @@ export default async function HomePage() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+       <Script
+       strategy="worker"
+       type="application/ld+json"
+       dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} 
       />
       <main>
         <HeroSection

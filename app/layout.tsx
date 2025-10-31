@@ -1,22 +1,23 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import CookieBanner from "./components/CookieBanner";
-import { Metadata } from "next";
-
-
+import {
+  GoogleAnalytics,
+  GoogleMapsEmbed,
+  GoogleTagManager,
+} from "@next/third-parties/google";
 
 // app/layout.tsx
-export const dynamic = 'force-static'
+export const dynamic = "force-static";
 export const metadata = {
   title: "Hébergement Web Maroc - Hébergeur web 100% marocain",
-  description: "Hébergement Web Maroc. Hostino™️ Hébergeur recommandé par les développeurs, les agences web et les professionnels du numérique au Maroc",
+  description:
+    "Hébergement Web Maroc. Hostino™️ Hébergeur recommandé par les développeurs, les agences web et les professionnels du numérique au Maroc",
   icons: {
     icon: "/favicon.png",
   },
-}
-
+};
 
 export default function RootLayout({
   children,
@@ -25,20 +26,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr-MA">
-     
-      <body
-      >
-        <iframe
-          src={`https://www.googletagmanager.com/ns.html?id=GTM-5QLCSWWS`}
-          height="0"
-          width="0"
-          style={{ display: "none", visibility: "hidden" }}
-        ></iframe>
-
+      <GoogleTagManager gtmId="GTM-5QLCSWWS " />
+      <body>
         <Header />
         {children}
         <CookieBanner />
         <Footer />
+
+        <GoogleAnalytics gaId="G-5QLCSWWS" />
+        <GoogleTagManager gtmId="GTM-5QLCSWWS " />
+        <GoogleMapsEmbed
+          apiKey="XYZ"
+          height={200}
+          width="100%"
+          mode="place"
+          q="Brooklyn+Bridge,New+York,NY"
+        />
 
         {/* <script
           id="gtm-script"
