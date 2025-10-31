@@ -68,7 +68,7 @@ export default function BenchmarkHostingMorocco() {
           <div className="relative">
             {/* Morocco Map */}
             <Image
-              src="/images/01/hebergeur-web-maroc.jpg"
+              src="/images/01/hebergeur-web-maroc.webp"
               alt="Hébergeur web au Maroc"
               width={900}
               height={600}

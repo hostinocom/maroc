@@ -385,7 +385,7 @@ const NomDeDomaineMaPage = () => {
           lineGreen={false}
         />
 
-        <section className="bg-gray-200 pb-[50px]">
+        <section className="bg-gray-200 pb-[80px]">
           <div className="container flex flex-col items-center text-center justify-center">
             <p className="mb-[20px] paragraph-white ">
               Un nom de domaine Maroc (.MA) indique que votre entreprise est{" "}

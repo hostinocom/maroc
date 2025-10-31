@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const HostingSolutionsCards = () => {
   return (
-    <div className="flex w-full relative mt-[60px] mb-[20px]">
+    <div className="flex w-full relative lg:mt-[150px] mt-[60px] mb-[20px]">
       <div className="container flex md:flex-row flex-col">
         <div className="md:w-[50%] w-[100%]  bg-white border-1 border-gray-300 flex flex-col justify-center text-center rounded-[10px] lg:ml-[160px] mr-[15px] py-[40px] px-[30px]">
           <h3 className="md:text-[29px] sm:text-[33px] text-[35px] text-title mb-[20px] font-[600] sm:leading-[33px] tracking-[-1.8px] sm:tracking-[-1.5px]">
@@ -38,7 +38,7 @@ const HostingSolutionsCards = () => {
             serveur mutualisé <b>dans un datacenter au Maroc</b>, garantissant
             la souveraineté et la confidentialité des données sensibles.
           </p>
-          <Link href={"#vps"} className="text-white bg-primary ">
+          <Link href={"#plans"} className="text-white bg-primary ">
             <AnimatedButton
               text={"Découvrir nos offres"}
               hoverText={"Découvrir nos offres"}
@@ -49,14 +49,7 @@ const HostingSolutionsCards = () => {
             />
           </Link>
         </div>
-        {/* <div className="absolute top-[0%] z-[-4] left-0 w-full">
-        <Image
-            src="/images/Ellipse.png"
-            alt="hosting solutions"
-            width={800} height={400}
-            className="w-full h-full  "
-        />
-       </div> */}
+        
       </div>
     </div>
   );

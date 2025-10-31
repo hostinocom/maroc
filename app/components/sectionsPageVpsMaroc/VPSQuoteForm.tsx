@@ -264,7 +264,7 @@ const VPSQuoteForm: React.FC = () => {
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-title text-sm font-medium mb-2"
+                  className="block text-title text-[17] font-medium mb-2"
                 >
                   Nom et prénom
                 </label>
@@ -282,7 +282,7 @@ const VPSQuoteForm: React.FC = () => {
               <div>
                 <label
                   htmlFor="company"
-                  className="block text-title text-sm font-medium mb-2"
+                  className="block text-title text-[17] font-medium mb-2"
                 >
                   Entreprise <span className="text-red-500">*</span>
                 </label>
@@ -307,7 +307,7 @@ const VPSQuoteForm: React.FC = () => {
               <div>
                 <label
                   htmlFor="phone"
-                  className="block text-title text-sm font-medium mb-2"
+                  className="block text-title text-[17] font-medium mb-2"
                 >
                   Téléphone <span className="text-red-500">*</span>
                 </label>
@@ -328,7 +328,7 @@ const VPSQuoteForm: React.FC = () => {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-title text-sm font-medium mb-2"
+                  className="block text-title text-[17] font-medium mb-2"
                 >
                   Email <span className="text-red-500">*</span>
                 </label>
@@ -358,7 +358,7 @@ const VPSQuoteForm: React.FC = () => {
                 <div>
                   <label
                     htmlFor="vcpu"
-                    className="block text-title text-sm font-medium mb-2"
+                    className="block text-title text-[17] font-medium mb-2"
                   >
                     vCPU <span className="text-red-500">*</span>
                   </label>
@@ -379,7 +379,7 @@ const VPSQuoteForm: React.FC = () => {
                 <div>
                   <label
                     htmlFor="ram"
-                    className="block text-title text-sm font-medium mb-2"
+                    className="block text-title text-[17] font-medium mb-2"
                   >
                     RAM <span className="text-red-500">*</span>
                   </label>
@@ -400,7 +400,7 @@ const VPSQuoteForm: React.FC = () => {
                 <div>
                   <label
                     htmlFor="storage"
-                    className="block text-title text-sm font-medium mb-2"
+                    className="block text-title text-[17] font-medium mb-2"
                   >
                     Stockage <span className="text-red-500">*</span>
                   </label>
@@ -425,7 +425,7 @@ const VPSQuoteForm: React.FC = () => {
               <div>
                 <label
                   htmlFor="useCase"
-                  className="block text-title text-sm font-medium mb-2"
+                  className="block text-title text-[17] font-medium mb-2"
                 >
                   Cas d'utilisation :
                 </label>
@@ -450,7 +450,7 @@ const VPSQuoteForm: React.FC = () => {
               <div className="mb-6">
                 <label
                   htmlFor="os"
-                  className="block text-title text-sm font-medium mb-2"
+                  className="block text-title text-[17] font-medium mb-2"
                 >
                   Système d'exploitation :{" "}
                   <span className="text-red-500">*</span>
@@ -481,7 +481,7 @@ const VPSQuoteForm: React.FC = () => {
               <div className="mb-6">
                 <label
                   htmlFor="controlPanel"
-                  className="block text-title text-sm font-medium mb-2"
+                  className="block text-title text-[17] font-medium mb-2"
                 >
                   Panneau de contrôle : <span className="text-red-500">*</span>
                 </label>
@@ -510,7 +510,7 @@ const VPSQuoteForm: React.FC = () => {
               </div>
 
               <div className="mb-6">
-                <p className="block text-title text-sm font-[400] mb-3">
+                <p className="block text-title text-[17] font-[400] mb-3">
                   Avez-vous besoin d'infogérance ?
                 </p>
                 <div className="flex gap-8">
@@ -538,7 +538,7 @@ const VPSQuoteForm: React.FC = () => {
               </div>
 
               <div className="mb-8">
-                <p className="block text-title text-sm font-[400] mb-3">
+                <p className="block text-title text-[17] font-[400] mb-3">
                   Avez-vous besoin d'une sauvegarde distante ?
                 </p>
                 <div className="flex gap-8">
@@ -581,7 +581,7 @@ const VPSQuoteForm: React.FC = () => {
             </div>
 
             {/* Footer Note */}
-            <p className="paragraph text-sm text-center mt-6 text-gray-600">
+            <p className="paragraph text-[14px] text-center mt-6 text-gray-600">
               En cliquant sur "Envoyer", vous autorisez Hostino™ à traiter les
               données que vous avez fournies, conformément à sa{" "}
               <a

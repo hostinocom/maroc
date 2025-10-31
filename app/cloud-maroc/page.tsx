@@ -224,103 +224,6 @@ const hostingFeatures = [
   },
 ];
 
-// const hostingPlans = [
-//   {
-//     id: 1,
-//     name: "Business",
-//     subtext:
-//       "",
-//     price_original: "1199 DH/an",
-//     price_discounted: "999 DH/an",
-//     save: "20%",
-//     price_ttc: "Pour 1 an, vous payez <b>1198,8 DH TTC.</b>",
-//     performance_stars: 4,
-//     more_performance:false,
-//     order: {
-//       text: "Commander",
-//       href: "https://my.hostino.com/order.php?pid=79&language=french&country=MA",
-//     },
-//     features: {
-//       seo_optimized: true,
-//       free_domain: true,
-//       wordpress_preinstalled: true,
-//       control_panel: "cPanel®",
-//       ssl: "Gratuit et illimité",
-//       disk_space: "50 GB NVMe",
-//       bandwidth: "Illimitée",
-//       databases: "Illimitées",
-//       email_accounts: 10,
-//       subdomains: 10,
-//       backups: "JetBackup",
-//     },
-//     most_popular: {
-//       text: "Le plus vendu",
-//       is_most_popular: true,
-//     },
-//   },
-//   {
-//     id: 2,
-//     name: "Business Plus",
-//     subtext: "",
-//     price_discounted: "1800 DH/an",
-//     price_ttc: "Pour 1 an, vous payez <b>2160 DH TTC.</b>",
-//     performance_stars: 5,
-//     more_performance: false,
-//     order: {
-//       text: "Commander",
-//       href: "https://my.hostino.com/order.php?pid=80&language=french&country=MA",
-//     },
-//     features: {
-//       seo_optimized: true,
-//       free_domain: true,
-//       wordpress_preinstalled: true,
-//       control_panel: "cPanel®",
-//       ssl: "Gratuit et illimité",
-//       disk_space: "100 GB NVMe",
-//       bandwidth: "Illimitée",
-//       databases: "Illimitées",
-//       email_accounts: 50,
-//       subdomains: 50,
-//       backups: "JetBackup",
-//     },
-//     most_popular: {
-//       text: "",
-//       is_most_popular: false,
-//     },
-//   },
-//   {
-//     id: 3,
-//     name: "Business <i>Pro</i>",
-//     subtext:
-//       "",
-//     price_discounted: "3000 DH/an",
-//     price_ttc: "Pour 1 an, vous payez <b>3600 DH TTC.</b>",
-//     performance_stars: 5,
-//     more_performance: false,
-//     order: {
-//       text: "Commander",
-//       href: "https://my.hostino.com/order.php?pid=81&language=french&country=MA",
-//     },
-//     features: {
-//       seo_optimized: true,
-//       free_domain: true,
-//       wordpress_preinstalled: true,
-//       control_panel: "cPanel®",
-//       ssl: "Gratuit et illimité",
-//       disk_space: "200 GB NVMe",
-//       bandwidth: "Illimitée",
-//       databases: "Illimitées",
-//       email_accounts: "Illimitées",
-//       subdomains: "Illimitées",
-//       backups: "JetBackup",
-//     },
-//     most_popular: {
-//       text: "",
-//       is_most_popular: false,
-//     },
-//   },
-// ];
-
 export default async function CloudMarocPage() {
   const articleSchema = {
     "@context": "https://schema.org",
@@ -410,7 +313,7 @@ export default async function CloudMarocPage() {
         <PromoBanner
           icon="⚠️"
           text='Nos offres Cloud Maroc sont destinées aux clients qui souhaitent que leurs données <b>soient hébergées sur le territoire marocain</b>. Si vous ne faites pas partie de cette catégorie, découvrez nos offres <span style="text-decoration: underline;"><a href="https://www.hostino.ma/">d’hébergement web</a></span> situées dans des <b>datacenters internationaux</b>.'
-          className="lg:w-[70%]"
+          className="lg:w-[70%] lg:mb-[150px] mb-[60px]"
         />
 
         <TextLeftImageRight
@@ -432,24 +335,24 @@ export default async function CloudMarocPage() {
           features={hostingFeatures}
         />
 
-        <div className="lg:pt-[120px]  bg-gray-200 pt-[50px] pb-[30px]">
-          <div className="container text-center flex flex-col gap-7 items-center">
-            <h2 className="max-big-title leading-[65px] mb-[20px] tracking-[-3.1px]">
-              Hébergement <br className="md:block hidden" />
-              <span className="border-bottom">Mutualisé</span> au Maroc
-            </h2>
-            <p className="paragraph lg:px-[200px] pr-[0]">
-              L’hébergement mutualisé de Hostino est une solution économique et
-              performante pour héberger vos sites web en toute simplicité sur un
-              cloud souverain. En partageant les ressources du serveur, vous
-              optimisez vos coûts tout en garantissant la{" "}
-              <b>conformité avec la réglementation </b> en vigueur dans le
-              Royaume.
-            </p>
+          <div className="lg:pt-[120px]  bg-gray-200 pt-[50px] pb-[30px]">
+            <div className="container text-center flex flex-col gap-7 items-center">
+              <h2 className="max-big-title leading-[65px] mb-[20px] tracking-[-3.1px]">
+                Hébergement <br className="md:block hidden" />
+                <span className="border-bottom">Mutualisé</span> au Maroc
+              </h2>
+              <p className="paragraph lg:px-[200px] pr-[0]">
+                L’hébergement mutualisé de Hostino est une solution économique
+                et performante pour héberger vos sites web en toute simplicité
+                sur un cloud souverain. En partageant les ressources du serveur,
+                vous optimisez vos coûts tout en garantissant la{" "}
+                <b>conformité avec la réglementation </b> en vigueur dans le
+                Royaume.
+              </p>
+            </div>
           </div>
-        </div>
 
-        <PlansPack />
+          <PlansPack />
 
         <TextLeftImageRight
           title="Qu’est-ce que le Cloud Maroc ?"

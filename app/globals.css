@@ -25,11 +25,13 @@
   --color-gray-200: var(--gray-200);
   --content-spacing: var(--spa);
   --bg-secondary: var(--title);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
   --row-gap: var(--gap);
 }
 
+
+*{
+  scroll-behavior: smooth;
+}
 .custom-row-gap {
   gap: var(--row-gap);
 }
@@ -145,8 +147,8 @@ span {
   @apply max-w-7xl mx-auto px-4 lg:px-7;
 }
 
-.header{
-    @apply max-w-7xl mx-auto px-3 lg:px-7;
+.header {
+  @apply max-w-7xl mx-auto px-3 lg:px-7;
 
 }
 
@@ -299,6 +301,7 @@ span {
 
 .animated-link {
   position: relative;
+  width: max-content;
 }
 
 .animated-link::after {
@@ -312,8 +315,9 @@ span {
   transition: width 0.4s ease;
 }
 
-.animated-link:hover {
-  color: var(--color-primary);
+
+.dropDown-menu {
+  border: 1px solid #e7e7e7
 }
 
 .animated-link:hover::after {
@@ -551,6 +555,9 @@ label.label-radio:hover label.label-radio {
 
 .shadow_main {
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.1),
-              0 0px 2px 0px rgba(0, 0, 0, 0.1);
+    0 0px 2px 0px rgba(0, 0, 0, 0.1);
 }
 
+.brightness {
+  filter : brightness(100%) contrast(100%) saturate(128%) blur(0px) hue-rotate(0deg)
+}

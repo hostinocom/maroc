@@ -117,7 +117,7 @@ export default function ServerVps() {
   ];
 
   return (
-    <section className="lg:my-[150px] my-[80px]">
+    <section id="vps" className="lg:my-[150px] my-[80px]">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           {/* Text Section */}

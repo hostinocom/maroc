@@ -326,7 +326,7 @@ export default function PlansPack({
 }: Props) {
   return (
     <section
-      id="plans"
+    id="plans"
       className={`${className} overflow-hidden  plans-section  relative`}
     >
       <div className="container">

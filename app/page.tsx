@@ -12,8 +12,8 @@ import EasyHebergementSection from "./components/sections/EasyHebergementSection
 import BenchmarkHostingMorocco from "./components/sections/BenchmarkHostingMorocco";
 import SixCards from "./components/commonSections/SixCards";
 import Head from "next/head";
-import { Article, WithContext } from "schema-dts";
 import { main_schema } from "./schema";
+import Script from "next/script";
 
 const title = "Hébergement Web Maroc - Hébergeur web 100% marocain";
 const description =
@@ -24,7 +24,10 @@ const canonical_url = "https://www.hostino.ma/";
 const og_alt = "Hébergement Web Maroc";
 
 export const metadata = {
-  title: title,
+  title: {
+    template: "%s | Hostino",
+    default: title,
+  },
   description: description,
   robots:
     "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
@@ -57,6 +60,7 @@ export const metadata = {
     creator: "@admin",
   },
 };
+
 export default async function HomePage() {
   const articleSchema = {
     "@context": "https://schema.org",
@@ -108,14 +112,17 @@ export default async function HomePage() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      
+      <Script
+       strategy="worker"
+       type="application/ld+json"
+       dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} 
       />
+
       <main>
         <HeroSection />
         <PlansSection />
-        <TrustedBySection classNameImage="md:w-[80%]  w-[100%] mx-auto h-auto" />
+        <TrustedBySection classNameImage="md:w-[80%]  w-[100%] mx-auto h-auto brightness" />
         <WhatIsHostingSection />
         <DomainSearchSection id="ma" />
         <SixCards

@@ -3,18 +3,20 @@ import "./globals.css";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import CookieBanner from "./components/CookieBanner";
-//import GoogleAnalytics from "./components/GoogleAnalytics";
-import Script from "next/script";
+import { Metadata } from "next";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+
+// app/layout.tsx
+export const dynamic = 'force-static'
+export const metadata = {
+  title: "Hébergement Web Maroc - Hébergeur web 100% marocain",
+  description: "Hébergement Web Maroc. Hostino™️ Hébergeur recommandé par les développeurs, les agences web et les professionnels du numérique au Maroc",
+  icons: {
+    icon: "/favicon.png",
+  },
+}
+
 
 export default function RootLayout({
   children,
@@ -23,11 +25,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr-MA">
-      {/* <!-- Google Tag Manager --> */}
-
-      {/*  <!-- End Google Tag Manager --> */}
+     
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <iframe
           src={`https://www.googletagmanager.com/ns.html?id=GTM-5QLCSWWS`}
@@ -41,7 +40,7 @@ export default function RootLayout({
         <CookieBanner />
         <Footer />
 
-        <script
+        {/* <script
           id="gtm-script"
           dangerouslySetInnerHTML={{
             __html: 
@@ -57,7 +56,7 @@ export default function RootLayout({
             })(window, document, "script", "dataLayer", "GTM-5QLCSWWS")`
           ,
           }}
-        />
+        /> */}
       </body>
     </html>
   );

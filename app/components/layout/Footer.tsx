@@ -11,7 +11,7 @@ export default function Footer() {
           <Image
             src="/images/01/cmi-hebergement.jpg"
             alt="CMI Hosting"
-            className="mx-auto mb-6"
+            className="mx-auto mb-6 brightness"
             width={1024}
             height={70}
           />
@@ -20,7 +20,7 @@ export default function Footer() {
           <div className="md:col-span-4 col-span-1">
             <Link href="/">
               <Image
-                src="/images/logo-maroc.png"
+                src="/images/logo-maroc.webp"
                 alt="Hostino"
                 width={941}
                 height={159}

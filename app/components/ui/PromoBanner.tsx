@@ -8,7 +8,7 @@ const PromoBanner = ({
   return (
     <div className="container">
       <div
-        className={`lg:w-[65%]  w-[100%] rounded-lg mx-auto border-2 border-dashed border-gray-300  px-[39px] py-[25px] ${className} `}
+        className={`lg:w-[65%] w-[100%] rounded-lg mx-auto border-2 border-dashed border-gray-300  px-[39px] py-[25px] ${className} `}
       >
         <div className="max-w-6xl w-full  bg-white">
           <div className="flex justify-center text-center">

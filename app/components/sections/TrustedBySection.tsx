@@ -18,7 +18,7 @@ export default function TrustedBySection({ classNameImage }: TrustedBySectionPro
             alt="Réferences hébergement web maroc"
             width={2048}
             height={107}
-            className={`${classNameImage}`}
+            className={`${classNameImage} w-full brightness`}
           />
         </div>
       </div>
